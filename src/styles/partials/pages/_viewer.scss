@@ -54,20 +54,37 @@ $grid-size: 3.5rem;
   &--panel {
     padding: calc(var(--viewer-inner-pad) * 0.725) var(--viewer-inner-pad);
     @include viewer-border(bottom);
+  }
+
+  &--button {
     @include flex-row;
+    @include trans;
+    @include hover {
+      background-color: $col-primary;
+      cursor: pointer;
+    }
   }
 
-  &--index{
+  &--index {
     color: $col-primary;
-    margin-right:1rem;
+    margin-right: 1rem;
+    @include trans;
+    @include hover(".sidebar--button", ".sidebar--index") {
+      color: $col-background;
+    }
   }
-
+  &--name {
+    color: $col-dim;
+    margin-right: 1rem;
+    @include trans;
+    @include hover(".sidebar--button", ".sidebar--name") {
+      color: $col-light;
+    }
+  }
 
   &--title {
     padding: calc(var(--viewer-inner-pad) * 0.65) var(--viewer-inner-pad);
   }
-
-
 }
 
 .viewer {

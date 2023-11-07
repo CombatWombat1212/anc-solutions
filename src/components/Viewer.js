@@ -39,7 +39,7 @@ function Panel({ type }) {
   return (
     <div className="sidebar--panel sidebar--button">
       <h2 className="viewer--h2 sidebar--index">{ind}</h2>
-      <h2 className="viewer--h2">{type.long}</h2>
+      <h2 className="viewer--h2 sidebar--name">{type.long}</h2>
     </div>
   );
 }

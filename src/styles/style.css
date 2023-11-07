@@ -87,6 +87,7 @@ input, button, textarea, select {
 :root {
   background-color: #1A1918;
   color: #FFFFFF;
+  --transition:0.115s;
 }
 
 :root {
@@ -139,13 +140,49 @@ input, button, textarea, select {
 .viewer .sidebar--panel {
   padding: calc(var(--viewer-inner-pad) * 0.725) var(--viewer-inner-pad);
   border-bottom: 0.125rem solid #ffffff;
+}
+
+.viewer .sidebar--button {
   display: flex;
   flex-direction: row;
+  transition: var(--transition);
+}
+
+.viewer .sidebar--button {
+  transition: var(--transition);
+}
+
+.viewer .sidebar--button:hover, .viewer .sidebar--button:focus, .viewer .sidebar--button.focus, .viewer .sidebar--button.hover {
+  background-color: #EC0719;
+  cursor: pointer;
 }
 
 .viewer .sidebar--index {
   color: #EC0719;
   margin-right: 1rem;
+  transition: var(--transition);
+}
+
+.sidebar--button:hover .sidebar--index, .sidebar--button:focus .sidebar--index, .sidebar--button.focus .sidebar--index, .sidebar--button.hover .sidebar--index {
+  color: #1A1918;
+}
+
+.sidebar--button .sidebar--index {
+  transition: var(--transition);
+}
+
+.viewer .sidebar--name {
+  color: #BABABA;
+  margin-right: 1rem;
+  transition: var(--transition);
+}
+
+.sidebar--button:hover .sidebar--name, .sidebar--button:focus .sidebar--name, .sidebar--button.focus .sidebar--name, .sidebar--button.hover .sidebar--name {
+  color: #ffffff;
+}
+
+.sidebar--button .sidebar--name {
+  transition: var(--transition);
 }
 
 .viewer .sidebar--title {
