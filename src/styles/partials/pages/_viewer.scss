@@ -29,20 +29,6 @@ $grid-size: 3.5rem;
 
   --viewer-inner-pad: 3rem;
 
-  &--sidebar {
-    @include viewer-border(right);
-    @include col-width(4);
-  }
-
-  &--sidebar-panel {
-    padding: calc(var(--viewer-inner-pad) * 0.65) var(--viewer-inner-pad);
-    @include viewer-border(bottom);
-  }
-
-  &--title {
-    padding: calc(var(--viewer-inner-pad) * 0.65) var(--viewer-inner-pad);
-  }
-
   &--content {
     width: 100%;
     background-image: linear-gradient($col-darker $b-width, transparent $b-width), linear-gradient(90deg, $col-darker $b-width, transparent $b-width);
@@ -61,16 +47,33 @@ $grid-size: 3.5rem;
   }
 }
 
+.viewer .sidebar {
+  @include viewer-border(right);
+  @include col-width(4);
+
+  &--panel {
+    padding: calc(var(--viewer-inner-pad) * 0.725) var(--viewer-inner-pad);
+    @include viewer-border(bottom);
+    @include flex-row;
+  }
+
+  &--index{
+    color: $col-primary;
+    margin-right:1rem;
+  }
 
 
+  &--title {
+    padding: calc(var(--viewer-inner-pad) * 0.65) var(--viewer-inner-pad);
+  }
 
 
-
+}
 
 .viewer {
-    --underline-width: 0.0625rem;
+  --underline-width: 0.0625rem;
 
   &__underline {
     // TODO: Underline
-}
+  }
 }

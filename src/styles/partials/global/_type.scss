@@ -14,9 +14,10 @@ $font-body: acumin-variable, sans-serif;
   &--h2 {
     font-family: $font-body;
     font-size: 2.125rem;
-    font-weight: 400;
     color: $col-dim;
     font-stretch: extra-condensed;
+    font-weight: 365;
+    font-variation-settings: "wght" 365, "wdth" 55;
   }
 
   &--h3 {

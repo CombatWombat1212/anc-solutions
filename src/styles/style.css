@@ -42,9 +42,10 @@ input, button, textarea, select {
 .viewer--h2 {
   font-family: acumin-variable, sans-serif;
   font-size: 2.125rem;
-  font-weight: 400;
   color: #BABABA;
   font-stretch: extra-condensed;
+  font-weight: 365;
+  font-variation-settings: "wght" 365, "wdth" 55;
 }
 
 .viewer--h3 {
@@ -112,21 +113,6 @@ input, button, textarea, select {
   --viewer-inner-pad: 3rem;
 }
 
-.viewer--sidebar {
-  border-right: 0.125rem solid #ffffff;
-  width: 33.33333%;
-  --column-width: 4;
-}
-
-.viewer--sidebar-panel {
-  padding: calc(var(--viewer-inner-pad) * 0.65) var(--viewer-inner-pad);
-  border-bottom: 0.125rem solid #ffffff;
-}
-
-.viewer--title {
-  padding: calc(var(--viewer-inner-pad) * 0.65) var(--viewer-inner-pad);
-}
-
 .viewer--content {
   width: 100%;
   background-image: linear-gradient(#333231 0.125rem, transparent 0.125rem), linear-gradient(90deg, #333231 0.125rem, transparent 0.125rem);
@@ -142,6 +128,28 @@ input, button, textarea, select {
     background-position: 3.5rem -3.5rem;
     /* Shift background to the left and up */
   }
+}
+
+.viewer .sidebar {
+  border-right: 0.125rem solid #ffffff;
+  width: 33.33333%;
+  --column-width: 4;
+}
+
+.viewer .sidebar--panel {
+  padding: calc(var(--viewer-inner-pad) * 0.725) var(--viewer-inner-pad);
+  border-bottom: 0.125rem solid #ffffff;
+  display: flex;
+  flex-direction: row;
+}
+
+.viewer .sidebar--index {
+  color: #EC0719;
+  margin-right: 1rem;
+}
+
+.viewer .sidebar--title {
+  padding: calc(var(--viewer-inner-pad) * 0.65) var(--viewer-inner-pad);
 }
 
 .viewer {

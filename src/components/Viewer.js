@@ -4,36 +4,44 @@ const { ROLL_TYPES } = PRODUCT_DATA;
 function Viewer() {
   return (
     <div className="viewer">
-      <div className="viewer--sidebar">
-        <Title />
-
-        <div className="viewer--sidebar-panel viewer--sidebar-button">
-          <h2 className="viewer--h2">Traditional Pre-Rolls</h2>
-        </div>
-        <div className="viewer--sidebar-panel viewer--sidebar-button">
-          <h2 className="viewer--h2">Cigarette Pre-Rolls</h2>
-        </div>
-      </div>
-
+      <Sidebar className="viewer--sidebar" />
       <div className="viewer--content"></div>
+    </div>
+  );
+}
+
+
+
+
+
+function Sidebar({ className }) {
+  return (
+    <div className={`${className} sidebar`}>
+      <Title />
+      {ROLL_TYPES.types.map((type) => (
+        <Panel key={type.id} type={type} />
+      ))}
     </div>
   );
 }
 
 function Title() {
   return (
-    <div className="viewer--title viewer--sidebar-panel">
+    <div className="sidebar--title sidebar--panel">
       <h1 className="viewer--h1 viewer__underline">Pre-Rolls</h1>
     </div>
   );
 }
 
-// function Viewer() {
-//     return (
-//         <div>
-//             Enter
-//         </div>
-//     );
-// }
+function Panel({ type }) {
+  const ind = String(type.index).padStart(2, "0");
+
+  return (
+    <div className="sidebar--panel sidebar--button">
+      <h2 className="viewer--h2 sidebar--index">{ind}</h2>
+      <h2 className="viewer--h2">{type.long}</h2>
+    </div>
+  );
+}
 
 export default Viewer;
