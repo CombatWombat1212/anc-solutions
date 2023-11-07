@@ -1,0 +1,322 @@
+// $font-title: "Gira Sans";
+// $font-body: "Tenon";
+
+// :root {
+//   --font-size-h1: 3.395rem;
+//   --font-size-h2: 2.375rem;
+//   --font-size-h3: 1.625rem;
+//   --font-size-h4: 0.875rem;
+//   --font-size-body: 1.125rem;
+//   --font-size-quote: 0.9875rem;
+
+//   --font-size-logo: 1.375rem;
+
+//   --font-leading-h1: 4rem;
+//   // --font-leading-h2: 3.17rem;
+//   // --font-leading-h2: 3.15rem;
+//   --font-leading-h2: 3.1rem;
+//   // --font-leading-h3: 2.225rem;
+//   --font-leading-h3: 2.285rem;
+//   --font-leading-h4: 1.15rem;
+
+//   --font-leading-body: 1.545rem;
+//   --font-leading-quote: 1.43rem;
+
+//   // --font-margin-bottom-h2: 1.4rem;
+//   --font-margin-bottom-h2: 1.25rem;
+//   --font-margin-bottom-h2_less: 0.65rem;
+//   --font-margin-bottom-h3: 1.125rem;
+//   --font-margin-bottom-h3_less: 0.695rem;
+//   --font-margin-bottom-h4: 0.25rem;
+
+//   font-family: $font-body;
+//   color: $col-primary;
+
+//   @include xxl-down {
+//     --font-size-h1: 3.235rem;
+//     --font-size-h2: 2.3125rem;
+//     --font-size-h3: 1.575rem;
+//     --font-size-h4: 0.84375rem;
+//     --font-size-body: 1.09375rem;
+//     --font-size-quote: 0.98rem;
+
+//     --font-size-logo: 1.3125rem;
+
+//     --font-leading-h1: 3.875rem;
+//     --font-leading-h2: 3.125rem;
+//     --font-leading-h3: 2.15rem;
+//     --font-leading-h4: 1.21875rem;
+
+//     --font-leading-body: 1.53125rem;
+//     --font-leading-quote: 1.4285rem;
+
+//     // --font-margin-bottom-h2: 1.25rem;
+//     // --font-margin-bottom-h2_less: 0.5rem;
+//     // --font-margin-bottom-h3: 0.875rem;
+//     // --font-margin-bottom-h3_less: 0.625rem;
+//     // --font-margin-bottom-h4: 0.125rem;
+//   }
+
+//   @include xl-down {
+//     --font-size-h1: 2.8125rem;
+//     --font-size-h2: 2.0625rem;
+//     --font-size-h3: 1.485rem;
+//     --font-size-h4: 0.8125rem;
+//     --font-size-body: 1.05rem;
+//     --font-size-quote: 0.975rem;
+
+//     --font-size-logo: 1.3125rem;
+
+//     --font-leading-h1: 3.3825rem;
+//     --font-leading-h2: 2.725rem;
+//     --font-leading-h3: 2.085rem;
+//     --font-leading-h4: 1.125rem;
+
+//     --font-leading-body: 1.475rem;
+//     --font-leading-quote: 1.41rem;
+
+//     // --font-margin-bottom-h2: 1.125rem;
+//     // --font-margin-bottom-h2_less: 0.4rem;
+//     // --font-margin-bottom-h3: 0.75rem;
+//     // --font-margin-bottom-h3_less: 0.5rem;
+//     // --font-margin-bottom-h4: 0.1rem;
+//   }
+
+//   @include lg-down {
+//     --font-size-h1: 2.75rem;
+//     --font-size-h2: 2rem;
+//     --font-size-h3: 1.35rem;
+//     --font-size-h4: 0.8125rem;
+//     --font-size-body: 1.0265rem;
+//     --font-size-quote: 0.9525rem;
+
+//     --font-size-logo: 1.3125rem;
+
+//     --font-leading-h1: 3.15rem;
+//     --font-leading-h2: 2.635rem;
+//     // --font-leading-h3: 1.865rem;
+//     // --font-leading-h3: 1.885rem;
+//     --font-leading-h3: 1.915rem;
+//     --font-leading-h4: 1.125rem;
+
+//     --font-leading-body: 1.345rem;
+//     --font-leading-quote: 1.275rem;
+
+//     --font-margin-bottom-h2: 1.25rem;
+//     --font-margin-bottom-h2_less: 0.5rem;
+//     --font-margin-bottom-h3: 0.875rem;
+//     // --font-margin-bottom-h3_less: 0.55rem;
+//     --font-margin-bottom-h4: 0.35rem;
+//   }
+
+//   @include md-down {
+//     --font-size-h1: 2.575rem;
+//     --font-size-h2: 1.775rem;
+//     --font-size-h3: 1.295rem;
+//     --font-size-h4: 0.8125rem;
+//     --font-size-body: 1.015rem;
+//     --font-size-quote: 0.895rem;
+
+//     --font-size-logo: 1.3125rem;
+
+//     --font-leading-h1: 2.805rem;
+//     // --font-leading-h2: 2.275rem;
+//     --font-leading-h2: 2.205rem;
+//     // --font-leading-h3:  1.785rem;
+//     // --font-leading-h3:  1.795rem;
+//     // --font-leading-h3:  1.835rem;
+//     // --font-leading-h3:  1.825rem;
+//     --font-leading-h3:  1.775rem;
+//     --font-leading-h4: 1.105rem;
+
+//     --font-leading-body: 1.3235rem;
+//     // --font-leading-quote: 1.32rem;
+//     --font-leading-quote: 1.25rem;
+
+//     // --font-margin-bottom-h2: 0.875rem;
+//     // --font-margin-bottom-h2_less: 0.2rem;
+//     // --font-margin-bottom-h3: 0.5rem;
+//     // --font-margin-bottom-h3_less: 0.25rem;
+//     // --font-margin-bottom-h4: 0.05rem;
+//   }
+// }
+
+// @mixin font-body {
+//   font-family: $font-body;
+// }
+
+// @mixin font-title {
+//   font-family: $font-title;
+// }
+
+// @mixin weight-light {
+//   font-weight: 300;
+// }
+// @mixin weight-reg {
+//   font-weight: 400 !important;
+//   & > * {
+//     font-weight: 400 !important;
+//   }
+// }
+// @mixin weight-med {
+//   font-weight: 500 !important;
+//   & > * {
+//     font-weight: 500 !important;
+//   }
+// }
+// @mixin weight-bold {
+//   font-weight: 600;
+// }
+
+// @mixin italic {
+//   font-style: italic;
+// }
+
+// @mixin h1 {
+//   font-family: $font-title;
+//   font-size: var(--font-size-h1);
+//   line-height: var(--font-leading-h1);
+//   @include weight-med;
+// }
+
+// @mixin h2 {
+//   font-family: $font-title;
+//   font-size: var(--font-size-h2);
+//   line-height: var(--font-leading-h2);
+//   @include weight-med;
+// }
+
+// @mixin h2-margin {
+//   margin-bottom: var(--font-margin-bottom-h2);
+// }
+
+// @mixin h3 {
+//   font-family: $font-title;
+//   font-size: var(--font-size-h3);
+//   line-height: var(--font-leading-h3);
+//   @include weight-light;
+// }
+
+// @mixin h4-text {
+//   font-family: $font-body;
+//   font-size: var(--font-size-h4);
+//   line-height: var(--font-leading-h4);
+// }
+// @mixin h4 {
+//   @include h4-text;
+//   color: $col-secondary;
+//   @include weight-reg;
+// }
+
+// @mixin h5 {
+//   font-family: $font-body;
+//   font-size: var(--font-size-body);
+//   line-height: var(--font-leading-body);
+//   @include weight-bold;
+// }
+
+// @mixin h4-margin {
+//   margin-bottom: var(--font-margin-bottom-h4);
+// }
+
+// @mixin body-text($important: false) {
+//   $importance: if($important, !important, null);
+
+//   font-family: $font-body $importance;
+//   font-size: var(--font-size-body) $importance;
+//   line-height: var(--font-leading-body) $importance;
+// }
+
+// @mixin body {
+//   @include body-text;
+//   font-weight: 400;
+// }
+
+// @mixin body-med {
+//   @include body-text;
+//   @include weight-med;
+// }
+
+// @mixin quote {
+//   font-family: $font-title;
+//   font-size: var(--font-size-quote);
+//   line-height: var(--font-leading-quote);
+//   word-spacing: 0.0125rem;
+//   @include weight-light;
+//   @include italic;
+// }
+
+// h1,
+// .text--h1 {
+//   @include h1;
+// }
+
+// h2,
+// .text--h2 {
+//   @include h2;
+// }
+
+// h3,
+// .text--h3 {
+//   @include h3;
+  
+//   b{
+//     font-weight: 500;
+//   }
+// }
+
+// h4,
+// .text--h4 {
+//   @include h4;
+// }
+
+// .text-size-h4 {
+//   font-size: var(--font-size-h4);
+// }
+
+// h5,
+// .text--h5 {
+//   @include body;
+//   @include weight-med;
+// }
+
+// p,
+// .text--body,
+// li,
+// span {
+//   @include body;
+// }
+
+// .weight {
+//   &-light {
+//     @include weight-light;
+//   }
+//   &-reg {
+//     @include weight-reg;
+//   }
+//   &-med {
+//     @include weight-med;
+//   }
+//   &-bold {
+//     @include weight-bold;
+//   }
+// }
+
+// .text {
+//   &--italic {
+//     @include italic;
+//   }
+//   &--center {
+//     text-align: center;
+//   }
+// }
+
+// // .text--body {
+// //   font-size: var(--font-size-h4);
+// //   line-height: 1.25rem;
+
+// //   &__tertiary {
+// //     @extend .body;
+// //     color: $col-secondary_mid;
+// //   }
+// // }

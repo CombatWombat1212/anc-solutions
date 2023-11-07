@@ -1,0 +1,76 @@
+
+
+
+
+
+
+
+// $col-primary: #074391;
+
+// $col-primary_hovered: darken($col-primary, 5%);
+
+// $col-secondary: #C41263;
+// $col-secondary_hovered: #950647;
+
+// $col-tertiary_light: #5D5D7E;
+// $col-tertiary: #404064;
+// $col-tertiary_makeright: #25313C;
+
+
+// $col-background: #F3F3F7;
+// $col-background_darker: #E9E9F2;
+// $col-background_darkest: #E0E0EA;
+
+
+// $col-negative: #C4123C;
+// $col-positive: #08B430;
+
+
+
+// $colors: (
+//   primary: $col-primary,
+//   primary-hovered: darken($col-primary, 5%),
+//   secondary: $col-secondary,
+//   secondary-hovered: $col-secondary-hovered,
+//   tertiary-light: $col-tertiary_light,
+//   tertiary: $col-tertiary,
+//   tertiary-makeright: $col-tertiary_makeright,
+//   background: $col-background,
+//   background-darker: $col-background_darker,
+//   background-darkest: $col-background_darkest,
+//     negative: $col-negative,
+//     positive: $col-positive
+// );
+
+
+// :root {
+    
+//     @each $name, $value in $colors {
+//         --col-#{$name}: #{$value};
+//     }
+    
+//     $color-names: ();
+//     @each $name, $value in $colors {
+//       $color-names: append($color-names, unquote("--col-#{ $name }"), comma);
+//     }
+//     --colors: #{ $color-names };
+        
+// }
+  
+
+
+
+
+// .color{
+
+//     &--primary{
+//         color: $col-primary;
+//     }
+//     &--secondary{
+//         color: $col-secondary;
+//     }
+//     &--tertiary{
+//         color: $col-tertiary;
+//     }
+
+// }
