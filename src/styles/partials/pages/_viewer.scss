@@ -1,16 +1,37 @@
+$viewer-border: $b-width solid $col-light;
+$grid-size: 3.5rem;
 
+.viewer {
+  @include mx-auto;
+  @include flex-row;
+  border: $viewer-border;
+  border-radius: 0rem 4rem 4rem 0rem;
+  overflow: hidden;
 
+  width: 88%; //TODO: this is temporary
+  height: 44rem; //TODO: this is temporary
 
+  &--controls {
+    border: $viewer-border;
+    border-width: 0rem $b-width 0rem 0rem;
 
-.viewer{
+    @include col-width(4);
+  }
 
+  &--content {
+    width: 100%;
+    background-image: linear-gradient($col-darker $b-width, transparent $b-width), linear-gradient(90deg, $col-darker $b-width, transparent $b-width);
+    background-size: $grid-size $grid-size; /* Size of the grid */
+    // opacity: 0.3; /* Overall opacity of the div */
+    // animation: backgroundMove 6s linear infinite; /* Adjust timing as needed */
+  }
+}
 
-    @include mx-auto;
-    width:88%;
-
-    font-family: $font-body;
-
-
-
-
+@keyframes backgroundMove {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: $grid-size #{-$grid-size}; /* Shift background to the left and up */
+  }
 }

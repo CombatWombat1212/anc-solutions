@@ -86,15 +86,50 @@ input, button, textarea, select {
   color: #FFFFFF;
 }
 
+:root {
+  --column-grid-min: 0;
+  --column-grid-max: 12;
+}
+
 .sandbox {
   width: 100%;
   height: 100%;
+  margin-top: 5rem;
 }
 
 .viewer {
   margin-right: auto;
   margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  border: 0.125rem solid #ffffff;
+  border-radius: 0rem 4rem 4rem 0rem;
+  overflow: hidden;
   width: 88%;
-  font-family: acumin-variable, sans-serif;
+  height: 44rem;
+}
+
+.viewer--controls {
+  border: 0.125rem solid #ffffff;
+  border-width: 0rem 0.125rem 0rem 0rem;
+  width: 33.33333%;
+  --column-width: 4;
+}
+
+.viewer--content {
+  width: 100%;
+  background-image: linear-gradient(#333231 0.125rem, transparent 0.125rem), linear-gradient(90deg, #333231 0.125rem, transparent 0.125rem);
+  background-size: 3.5rem 3.5rem;
+  /* Size of the grid */
+}
+
+@keyframes backgroundMove {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 3.5rem -3.5rem;
+    /* Shift background to the left and up */
+  }
 }
 /*# sourceMappingURL=style.css.map */
