@@ -1,21 +1,46 @@
 $viewer-border: $b-width solid $col-light;
 $grid-size: 3.5rem;
 
+@mixin viewer-border($side: all) {
+  @if $side == all {
+    border: $b-width solid $col-light;
+  } @else if $side == top {
+    border-top: $b-width solid $col-light;
+  } @else if $side == bottom {
+    border-bottom: $b-width solid $col-light;
+  } @else if $side == left {
+    border-left: $b-width solid $col-light;
+  } @else if $side == right {
+    border-right: $b-width solid $col-light;
+  } @else {
+    @error "Invalid value for $side. Expected 'top', 'bottom', 'left', 'right', or 'all'.";
+  }
+}
+
 .viewer {
   @include mx-auto;
   @include flex-row;
-  border: $viewer-border;
+  @include viewer-border;
   border-radius: 0rem 4rem 4rem 0rem;
   overflow: hidden;
 
-  width: 88%; //TODO: this is temporary
+  width: 90%; //TODO: this is temporary
   height: 44rem; //TODO: this is temporary
 
-  &--controls {
-    border: $viewer-border;
-    border-width: 0rem $b-width 0rem 0rem;
+  --viewer-inner-pad: 3rem;
 
+  &--sidebar {
+    @include viewer-border(right);
     @include col-width(4);
+  }
+
+  &--sidebar-panel {
+    padding: calc(var(--viewer-inner-pad) * 0.65) var(--viewer-inner-pad);
+    @include viewer-border(bottom);
+  }
+
+  &--title {
+    padding: calc(var(--viewer-inner-pad) * 0.65) var(--viewer-inner-pad);
   }
 
   &--content {
@@ -34,4 +59,18 @@ $grid-size: 3.5rem;
   100% {
     background-position: $grid-size #{-$grid-size}; /* Shift background to the left and up */
   }
+}
+
+
+
+
+
+
+
+.viewer {
+    --underline-width: 0.0625rem;
+
+  &__underline {
+    // TODO: Underline
+}
 }
