@@ -1,5 +1,58 @@
-// $font-title: "Gira Sans";
-// $font-body: "Tenon";
+$font-title: urbane, sans-serif;
+$font-body: acumin-variable, sans-serif;
+
+.viewer {
+  &--h1 {
+    font-family: $font-title;
+    font-size: 3.4375rem;
+    font-weight: 500;
+    letter-spacing: 0.016em;
+    color: $col-light;
+  }
+
+  &--h2 {
+    font-family: $font-body;
+    font-size: 2.125rem;
+    color: $col-dim;
+    font-stretch: condensed;
+}
+
+&--h3 {
+    font-family: $font-body;
+    font-size: 1.6875rem;
+    color: $col-light;
+    font-stretch: condensed;
+  }
+
+  &--h4 {
+    font-size: 0.6875rem;
+    color: $col-dim;
+  }
+
+  &--body {
+    font-family: $font-body;
+    font-size: 1rem;
+    font-weight: 500;
+    color: $col-light;
+  }
+
+  &--label-1 {
+    font-family: $font-body;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: $col-primary;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+  }
+
+  &--label-2 {
+    font-family: $font-body;
+    font-size: 1rem;
+    font-weight: 500;
+    color: $col-primary;
+    font-stretch: condensed;
+  }
+}
 
 // :root {
 //   --font-size-h1: 3.395rem;
@@ -259,7 +312,7 @@
 // h3,
 // .text--h3 {
 //   @include h3;
-  
+
 //   b{
 //     font-weight: 500;
 //   }
