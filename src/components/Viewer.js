@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import PRODUCT_DATA from "../data/PRODUCT_DATA";
 import Content from "./Content";
 import Sidebar from "./Sidebar";
@@ -13,12 +13,16 @@ function Viewer() {
     const [sideItem, setSideItem] = useState(false);
     const [page, setPage] = useState("roll-types");
 
+    const pageRef = useRef(null);
+
 
     const view = {
         page: page,
         setPage: setPage,
         sideItem: sideItem,
         setSideItem: setSideItem,
+        pageRef: pageRef,
+    
     }
 
 

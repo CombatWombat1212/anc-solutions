@@ -1,16 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import PRODUCT_DATA from "../data/PRODUCT_DATA";
 import Graphic from "./Graphic";
 import { Body, H1, H2, H3, H4, Label1, Label2 } from "./Text";
 import useInOut from "../scripts/hooks/useInOut";
+import { splitS } from "../scripts/Split";
 const { ROLL_TYPES } = PRODUCT_DATA;
 
 function Content({ view }) {
-  const { page } = view;
+  const { page, pageRef } = view;
 
   return (
     <>
-      <div className={`viewer--content content ${page}`}>
+      <div className={`viewer--content content ${page}`} ref={pageRef}>
         <Inner view={view} />
       </div>
     </>
@@ -28,26 +29,35 @@ function Inner({ view }) {
 
 function RollTypes({ view }) {
   const rollTypesArray = Object.values(ROLL_TYPES.types);
-
   const [selectedRoll, setSelectedRoll] = useState(false);
   const [prevSelectedRoll, setPrevSelectedRoll] = useState();
   const [description, setDescription] = useState(false);
 
+  const setSelectedRollByTypeRef = useRef(); // Create a ref to store the timeout ID
 
-
-  
   const setSelectedRollByType = (input) => {
     const type = input === false || input === null ? false : typeof input === "string" ? input : input.currentTarget.dataset.rollType;
     const roll = type && ROLL_TYPES.types[type] ? ROLL_TYPES.types[type] : false;
+    const timeout = splitS(
+      view.pageRef.current ? getComputedStyle(view.pageRef.current).getPropertyValue("--roll-types-mouse-leave-timeout") : "200ms"
+    );
+    clearTimeout(setSelectedRollByTypeRef.current); // Clear any existing timeouts
     if (roll) {
-      setPrevSelectedRoll(selectedRoll);
+      setSelectedRoll(roll);
+    } else {
+      // Wait for 500ms before setting to false
+      setSelectedRollByTypeRef.current = setTimeout(() => {
+        setSelectedRoll(roll); // Only set to false if not interrupted by a new roll
+      }, timeout);
     }
-    setSelectedRoll(roll);
   };
 
-
-
-
+  // Don't forget to clear the timeout when the component unmounts or when setSelectedRollByType is no longer relevant.
+  useEffect(() => {
+    return () => {
+      clearTimeout(setSelectedRollByTypeRef.current);
+    };
+  }, []);
 
   const handleMouseEnter = (e) => {
     setSelectedRollByType(e);
@@ -62,8 +72,8 @@ function RollTypes({ view }) {
   }, [view.sideItem]);
 
   useEffect(() => {
-    if (selectedRoll || prevSelectedRoll) {
-      setDescription(prevSelectedRoll.description || selectedRoll.description);
+    if (prevSelectedRoll || selectedRoll) {
+      setDescription(selectedRoll.description || prevSelectedRoll.description);
     }
   }, [selectedRoll, prevSelectedRoll]);
 
@@ -76,14 +86,10 @@ function RollTypes({ view }) {
           <div
             className={`content--col roll-types--col`}
             key={type.id}
-            onMouseEnter={handleMouseEnter} // Set description on hover
-            onMouseLeave={handleMouseLeave} // Clear description when not hovering
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
             data-roll-type={type.id}>
-            <div className="roll-types--head">
-              <H2 className={"roll-types--label__main"}>{type.short}</H2>
-              <H2 className={"roll-types--label__sub"}>Figure {String(type.index).padStart(2, "0")}</H2>
-            </div>
-
+            <Head type={type} selectedRoll={selectedRoll} />
             <Visual type={type} selectedRoll={selectedRoll} />
           </div>
         ))}
@@ -97,33 +103,48 @@ function RollTypes({ view }) {
   );
 }
 
-// either they're hovered, someone else is hovered, or no one is hovered, active, inactive, or idle
-
-function Visual({ type, selectedRoll }) {
-
-  const [active, setActive] = useState('idle');
+function Head({ type, selectedRoll }) {
+  const [active, setActive] = useState("idle");
 
   useEffect(() => {
     if (selectedRoll) {
-      setActive(type.id === selectedRoll.id ? 'active' : 'inactive');
+      setActive(type.id === selectedRoll.id ? "active" : "inactive");
     } else {
-      setActive('idle');
+      setActive("idle");
     }
   }, [selectedRoll, type.id]);
 
-
   return (
-    <div className="roll-types--visual">
-
-
-      <Graphic className={`roll-types--graphic roll-types--graphic-photo__${active} roll-types--graphic-photo roll-types--graphic__${active}`} img={type.images.photo} />
-      <Graphic className={`roll-types--graphic roll-types--graphic-vector__${active} roll-types--graphic-vector roll-types--graphic__${active}`} img={type.images.vector} />
-
-
-
+    <div className={`roll-types--head roll-types--head__${active}`}>
+      <H2 className={"roll-types--label__main"}>{type.short}</H2>
+      <H2 className={"roll-types--label__sub"}>Figure {String(type.index).padStart(2, "0")}</H2>
     </div>
   );
 }
 
+function Visual({ type, selectedRoll }) {
+  const [active, setActive] = useState("idle");
+
+  useEffect(() => {
+    if (selectedRoll) {
+      setActive(type.id === selectedRoll.id ? "active" : "inactive");
+    } else {
+      setActive("idle");
+    }
+  }, [selectedRoll, type.id]);
+
+  return (
+    <div className="roll-types--visual">
+      <Graphic
+        className={`roll-types--graphic roll-types--graphic-photo__${active} roll-types--graphic-photo roll-types--graphic__${active}`}
+        img={type.images.photo}
+      />
+      <Graphic
+        className={`roll-types--graphic roll-types--graphic-vector__${active} roll-types--graphic-vector roll-types--graphic__${active}`}
+        img={type.images.vector}
+      />
+    </div>
+  );
+}
 
 export default Content;

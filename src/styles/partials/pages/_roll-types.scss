@@ -1,18 +1,19 @@
 .roll-types {
-  --roll-types-col-gap: 6rem;
-  --roll-types-mouse-leave-timeout: 0.5s;
+  --roll-types-col-gap: 8rem;
+  --roll-types-mouse-leave-timeout: 0.35s;
+  --roll-types-transition: 0.35s;
 
   display: flex;
 
   &--inner {
-    padding: 5.5rem 6rem;
+    padding: 6rem 8rem;
     width: 100%;
-    @include flex-col;
-    gap: 2rem;
-  }
+    @include flex-col-center;
+
+}
 
   &--body {
-    height: 100%;
+    height: 95%;
     @include flex-row;
     gap: var(--roll-types-col-gap);
   }
@@ -26,6 +27,17 @@
 
   &--head {
     text-align: center;
+    transition: var(--roll-types-transition);
+
+    &__active {
+      opacity: 1;
+    }
+    &__inactive {
+      opacity: 0.25;
+    }
+    &__idle {
+      opacity: 1;
+    }
   }
 
   &--label {
@@ -51,16 +63,16 @@
 
     // @include trans;
 
-    transition: 0.5s;
+    transition: var(--roll-types-transition);
 
     &__active {
       transform: scale(1.025);
     }
     &__inactive {
-        transform: scale(0.985);
+      transform: scale(0.985);
     }
     &__idle {
-        transform: scale(1);
+      transform: scale(1);
     }
   }
 
@@ -69,11 +81,10 @@
       opacity: 1;
     }
     &__inactive {
-        opacity: 0;
-        
+      opacity: 0;
     }
     &__idle {
-        opacity: 0;
+      opacity: 0;
     }
   }
 
@@ -99,16 +110,9 @@
   &--modal {
     position: absolute;
     padding: 2rem 2rem;
-    transform: translateY(-100%);
-    // margin-top: -20%;
-    // min-width:100%;
-    // height: calc(100% - (var(--roll-types-modal-pad) * 2));
-
+    transform: translateY(-80%);
     background-color: rgba($col-background, 1);
-    // background-color: $col-background;
     outline: solid 0.125rem $col-primary;
-
-    // @include no-select;
     pointer-events: none;
 
     @include in-out(
