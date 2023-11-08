@@ -10,12 +10,15 @@ const { ROLL_TYPES } = PRODUCT_DATA;
 function Viewer() {
 
 
-    const [hovered, setHovered] = useState(false);
-
+    const [sideItem, setSideItem] = useState(false);
     const [page, setPage] = useState("roll-types");
+
+
     const view = {
         page: page,
         setPage: setPage,
+        sideItem: sideItem,
+        setSideItem: setSideItem,
     }
 
 
