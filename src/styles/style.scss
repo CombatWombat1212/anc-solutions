@@ -17,8 +17,12 @@
 
 // @import "./partials/global/Utility";
 
+@import "./partials/components/viewer";
+@import "./partials/components/sidebar";
+@import "./partials/components/content";
+@import "./partials/components/graphic";
+
+
 @import "./partials/pages/sandbox";
-@import "./partials/pages/viewer";
-
-
+@import "./partials/pages/roll-types";
 

@@ -95,12 +95,6 @@ input, button, textarea, select {
   --column-grid-max: 12;
 }
 
-.sandbox {
-  width: 100%;
-  height: 100%;
-  margin-top: 5rem;
-}
-
 .viewer {
   margin-right: auto;
   margin-left: auto;
@@ -110,15 +104,17 @@ input, button, textarea, select {
   border-radius: 0rem 4rem 4rem 0rem;
   overflow: hidden;
   width: 90%;
-  height: 44rem;
+  height: 50rem;
   --viewer-inner-pad: 3rem;
 }
 
 .viewer--content {
   width: 100%;
-  background-image: linear-gradient(#333231 0.125rem, transparent 0.125rem), linear-gradient(90deg, #333231 0.125rem, transparent 0.125rem);
+  background-image: linear-gradient(#292826 0.125rem, transparent 0.125rem), linear-gradient(90deg, #292826 0.125rem, transparent 0.125rem);
   background-size: 3.5rem 3.5rem;
   /* Size of the grid */
+  animation: backgroundMove 7s linear infinite;
+  /* Adjust timing as needed */
 }
 
 @keyframes backgroundMove {
@@ -189,7 +185,83 @@ input, button, textarea, select {
   padding: calc(var(--viewer-inner-pad) * 0.65) var(--viewer-inner-pad);
 }
 
-.viewer {
-  --underline-width: 0.0625rem;
+.viewer .content {
+  display: flex;
+  flex-direction: row;
+}
+
+.viewer .graphic {
+  display: flex;
+  position: relative;
+}
+
+.viewer .graphic img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.sandbox {
+  width: 100%;
+  height: 100%;
+  margin-top: 5rem;
+}
+
+.roll-types {
+  --roll-types-pad: 6rem;
+}
+
+.roll-types--inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.roll-types--body {
+  padding: var(--roll-types-pad);
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 8rem;
+}
+
+.roll-types--col {
+  width: 33.33333%;
+  --column-width: 4;
+  display: flex;
+  flex-direction: column;
+}
+
+.roll-types--head {
+  text-align: center;
+}
+
+.roll-types--label__main {
+  color: #ffffff;
+  font-size: 1.85rem;
+}
+
+.roll-types--label__sub {
+  font-size: 1.15rem;
+}
+
+.roll-types--visual {
+  margin-top: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  --size: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.roll-types--graphic {
+  position: absolute !important;
+  --size: 100%;
+  width: 100%;
+  height: 100%;
+  margin-right: auto;
+  margin-left: auto;
 }
 /*# sourceMappingURL=style.css.map */

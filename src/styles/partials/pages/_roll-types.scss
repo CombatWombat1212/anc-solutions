@@ -1,0 +1,54 @@
+.roll-types {
+
+    --roll-types-pad: 6rem;
+
+
+  &--inner {
+    width: 100%;
+    @include flex-col;
+  }
+
+  &--body {
+    padding: var(--roll-types-pad);
+    height:100%;
+    @include flex-row;
+    gap: 8rem;
+  }
+
+  &--col {
+    @include col-width(4);
+    @include flex-col;
+  }
+
+  &--head {
+    text-align: center;
+  }
+
+  &--label {
+    &__main {
+      color: $col-light;
+      font-size: 1.85rem;
+    }
+    &__sub {
+      font-size: 1.15rem;
+    }
+  }
+
+  &--visual {
+    margin-top: 2rem;
+    position: relative;
+    @include flex-row-center;
+    @include s(100%);
+  }
+
+  &--graphic {
+    position: absolute !important;
+    @include s(100%);
+    @include mx-auto;
+
+    &__vector {
+    }
+    &__photo {
+    }
+  }
+}

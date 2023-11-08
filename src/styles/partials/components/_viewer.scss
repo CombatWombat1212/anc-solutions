@@ -17,6 +17,8 @@ $grid-size: 3.5rem;
   }
 }
 
+
+
 .viewer {
   @include mx-auto;
   @include flex-row;
@@ -25,7 +27,7 @@ $grid-size: 3.5rem;
   overflow: hidden;
 
   width: 90%; //TODO: this is temporary
-  height: 44rem; //TODO: this is temporary
+  height: 50rem; //TODO: this is temporary
 
   --viewer-inner-pad: 3rem;
 
@@ -33,10 +35,12 @@ $grid-size: 3.5rem;
     width: 100%;
     background-image: linear-gradient($col-darker $b-width, transparent $b-width), linear-gradient(90deg, $col-darker $b-width, transparent $b-width);
     background-size: $grid-size $grid-size; /* Size of the grid */
-    // opacity: 0.3; /* Overall opacity of the div */
-    // animation: backgroundMove 6s linear infinite; /* Adjust timing as needed */
+    animation: backgroundMove 7s linear infinite; /* Adjust timing as needed */
   }
 }
+
+
+
 
 @keyframes backgroundMove {
   0% {
@@ -47,50 +51,6 @@ $grid-size: 3.5rem;
   }
 }
 
-.viewer .sidebar {
-  @include viewer-border(right);
-  @include col-width(4);
 
-  &--panel {
-    padding: calc(var(--viewer-inner-pad) * 0.725) var(--viewer-inner-pad);
-    @include viewer-border(bottom);
-  }
 
-  &--button {
-    @include flex-row;
-    @include trans;
-    @include hover {
-      background-color: $col-primary;
-      cursor: pointer;
-    }
-  }
 
-  &--index {
-    color: $col-primary;
-    margin-right: 1rem;
-    @include trans;
-    @include hover(".sidebar--button", ".sidebar--index") {
-      color: $col-background;
-    }
-  }
-  &--name {
-    color: $col-dim;
-    margin-right: 1rem;
-    @include trans;
-    @include hover(".sidebar--button", ".sidebar--name") {
-      color: $col-light;
-    }
-  }
-
-  &--title {
-    padding: calc(var(--viewer-inner-pad) * 0.65) var(--viewer-inner-pad);
-  }
-}
-
-.viewer {
-  --underline-width: 0.0625rem;
-
-  &__underline {
-    // TODO: Underline
-  }
-}
