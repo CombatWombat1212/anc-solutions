@@ -209,6 +209,7 @@ input, button, textarea, select {
 
 .roll-types {
   --roll-types-col-gap: 6rem;
+  --roll-types-mouse-leave-timeout: 0.5s;
   display: flex;
 }
 
@@ -266,7 +267,7 @@ input, button, textarea, select {
   height: 100%;
   margin-right: auto;
   margin-left: auto;
-  transition: var(--transition);
+  transition: 0.5s;
 }
 
 .roll-types--graphic__active {
@@ -274,6 +275,10 @@ input, button, textarea, select {
 }
 
 .roll-types--graphic__inactive {
+  transform: scale(0.985);
+}
+
+.roll-types--graphic__idle {
   transform: scale(1);
 }
 
@@ -290,11 +295,11 @@ input, button, textarea, select {
 }
 
 .roll-types--graphic-photo__active {
-  opacity: 0.15;
+  opacity: 0.5;
 }
 
 .roll-types--graphic-photo__inactive {
-  opacity: 0.25;
+  opacity: 0.15;
 }
 
 .roll-types--graphic-photo__idle {
@@ -319,19 +324,19 @@ input, button, textarea, select {
 
 .roll-types--modal__initial {
   opacity: 0 ;
-  transition: transform 0.5s, opacity 0.5s 0s, visibility 0s 0.2s ;
-  transition: "transform 0.5s, opacity 0.5s 0s, visibility 0s 0.2s" ;
+  transition: transform 0.5s, opacity 0.5s, visibility 0s 0.2s ;
+  transition: "transform 0.5s, opacity 0.5s, visibility 0s 0.2s" ;
 }
 
 .roll-types--modal__animate {
   opacity: 1 ;
-  transition: transform 0.5s, opacity 0.5s 0s, visibility 0s 0s ;
-  transition: "transform 0.5s, opacity 0.5s 0s, visibility 0s 0s" ;
+  transition: transform 0.5s, opacity 0.5s, visibility 0s 0s ;
+  transition: "transform 0.5s, opacity 0.5s, visibility 0s 0s" ;
 }
 
 .roll-types--modal__exit {
   opacity: 0 ;
-  transition: transform 0.5s, opacity 0.5s 0.5s, visibility 0s 0.2s ;
-  transition: "transform 0.5s, opacity 0.5s 0.5s, visibility 0s 0.2s" ;
+  transition: transform 0.5s, opacity 0.5s, visibility 0s 0.2s ;
+  transition: "transform 0.5s, opacity 0.5s, visibility 0s 0.2s" ;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,5 +1,7 @@
 .roll-types {
   --roll-types-col-gap: 6rem;
+  --roll-types-mouse-leave-timeout: 0.5s;
+
   display: flex;
 
   &--inner {
@@ -47,13 +49,18 @@
     @include s(100%);
     @include mx-auto;
 
-    @include trans;
+    // @include trans;
+
+    transition: 0.5s;
 
     &__active {
       transform: scale(1.025);
     }
     &__inactive {
-      transform: scale(1);
+        transform: scale(0.985);
+    }
+    &__idle {
+        transform: scale(1);
     }
   }
 
@@ -62,22 +69,23 @@
       opacity: 1;
     }
     &__inactive {
-      opacity: 0;
+        opacity: 0;
+        
     }
-    &__idle{
+    &__idle {
         opacity: 0;
     }
   }
 
   &--graphic-photo {
     &__active {
-      opacity: 0.15;
+      opacity: 0.5;
     }
     &__inactive {
-      opacity: 0.25;
+      opacity: 0.15;
     }
-    &__idle{
-        opacity: 1;
+    &__idle {
+      opacity: 1;
     }
   }
 
@@ -107,15 +115,15 @@
       (
         initial: (
           opacity: 0,
-          transition: "transform 0.5s, opacity 0.5s 0s, visibility 0s 0.2s",
+          transition: "transform 0.5s, opacity 0.5s, visibility 0s 0.2s",
         ),
         animate: (
           opacity: 1,
-          transition: "transform 0.5s, opacity 0.5s 0s, visibility 0s 0s",
+          transition: "transform 0.5s, opacity 0.5s, visibility 0s 0s",
         ),
         exit: (
           opacity: 0,
-          transition: "transform 0.5s, opacity 0.5s 0.5s, visibility 0s 0.2s",
+          transition: "transform 0.5s, opacity 0.5s, visibility 0s 0.2s",
         ),
       )
     );

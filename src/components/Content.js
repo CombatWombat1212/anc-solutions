@@ -30,38 +30,45 @@ function RollTypes({ view }) {
   const rollTypesArray = Object.values(ROLL_TYPES.types);
 
   const [selectedRoll, setSelectedRoll] = useState(false);
-  const [modalVisible, setModalVisible] = useState(false);
+  const [prevSelectedRoll, setPrevSelectedRoll] = useState();
+  const [description, setDescription] = useState(false);
 
+
+
+  
   const setSelectedRollByType = (input) => {
-    const type = typeof input === "string" ? input : input.currentTarget.dataset.rollType;
-    const roll = ROLL_TYPES.types[type];
-
+    const type = input === false || input === null ? false : typeof input === "string" ? input : input.currentTarget.dataset.rollType;
+    const roll = type && ROLL_TYPES.types[type] ? ROLL_TYPES.types[type] : false;
     if (roll) {
-      setSelectedRoll(roll);
-      setModalVisible(true);
-    } else {
-      setModalVisible(false);
+      setPrevSelectedRoll(selectedRoll);
     }
+    setSelectedRoll(roll);
   };
+
+
+
+
 
   const handleMouseEnter = (e) => {
     setSelectedRollByType(e);
   };
 
   const handleMouseLeave = () => {
-    setModalVisible(false);
+    setSelectedRollByType(false);
   };
 
   useEffect(() => {
-    if (view.sideItem && ROLL_TYPES.types[view.sideItem]) {
-      setSelectedRollByType(view.sideItem);
-    }
+    setSelectedRollByType(view.sideItem);
   }, [view.sideItem]);
 
-  const modalState = useInOut(modalVisible);
+  useEffect(() => {
+    if (selectedRoll || prevSelectedRoll) {
+      setDescription(prevSelectedRoll.description || selectedRoll.description);
+    }
+  }, [selectedRoll, prevSelectedRoll]);
 
+  const modalState = useInOut(selectedRoll);
 
-  
   return (
     <>
       <div className="roll-types--body">
@@ -83,7 +90,7 @@ function RollTypes({ view }) {
       </div>
       <div className="roll-types--description">
         <div className={`roll-types--modal roll-types--modal__${modalState}`}>
-          <Body>{selectedRoll.description && selectedRoll.description}</Body>
+          <Body>{description}</Body>
         </div>
       </div>
     </>
@@ -93,24 +100,30 @@ function RollTypes({ view }) {
 // either they're hovered, someone else is hovered, or no one is hovered, active, inactive, or idle
 
 function Visual({ type, selectedRoll }) {
-  const [active, setActive] = useState(false);
+
+  const [active, setActive] = useState('idle');
 
   useEffect(() => {
-    setActive(selectedRoll && selectedRoll.id === type.id);
-  }, [selectedRoll]);
+    if (selectedRoll) {
+      setActive(type.id === selectedRoll.id ? 'active' : 'inactive');
+    } else {
+      setActive('idle');
+    }
+  }, [selectedRoll, type.id]);
+
 
   return (
     <div className="roll-types--visual">
-      <VisualVariant type={type} active={active} graphicType="photo" />
-      <VisualVariant type={type} active={active} graphicType="vector" />
+
+
+      <Graphic className={`roll-types--graphic roll-types--graphic-photo__${active} roll-types--graphic-photo roll-types--graphic__${active}`} img={type.images.photo} />
+      <Graphic className={`roll-types--graphic roll-types--graphic-vector__${active} roll-types--graphic-vector roll-types--graphic__${active}`} img={type.images.vector} />
+
+
+
     </div>
   );
 }
 
-const VisualVariant = ({ type, active, graphicType }) => {
-  const isActive = active ? "active" : "inactive";
-  const graphicClass = `roll-types--graphic roll-types--graphic-${graphicType} roll-types--graphic-${graphicType}__${isActive} roll-types--graphic__${isActive}`;
-  return <Graphic className={graphicClass} img={type.images[graphicType]} />;
-};
 
 export default Content;
