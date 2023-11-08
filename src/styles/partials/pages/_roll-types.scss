@@ -8,12 +8,12 @@
   &--inner {
     padding: 6rem 8rem;
     width: 100%;
-    @include flex-col-center;
+    @include flex-col;
 
 }
 
   &--body {
-    height: 95%;
+    height: 90%;
     @include flex-row;
     gap: var(--roll-types-col-gap);
   }
@@ -110,7 +110,7 @@
   &--modal {
     position: absolute;
     padding: 2rem 2rem;
-    transform: translateY(-80%);
+    transform: translateY(-50%);
     background-color: rgba($col-background, 1);
     outline: solid 0.125rem $col-primary;
     pointer-events: none;
