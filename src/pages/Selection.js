@@ -5,8 +5,8 @@ import useInOut from "../scripts/hooks/useInOut";
 import { Body, H2 } from "../components/Text";
 import Graphic from "../components/Graphic";
 
-function RollTypes({ view }) {
-  const rollTypesArray = Object.values(PRODUCT_DATA);
+function Selection({ view }) {
+  const selectionArray = Object.values(PRODUCT_DATA);
 
   const [active, setActive] = useState(false);
   const [description, setDescription] = useState(false);
@@ -23,7 +23,7 @@ function RollTypes({ view }) {
       rollType = PRODUCT_DATA[input.currentTarget.dataset.rollType] ? PRODUCT_DATA[input.currentTarget.dataset.rollType] : false;
     }
 
-    const timeoutDur = view.pageRef.current ? getComputedStyle(view.pageRef.current).getPropertyValue("--roll-types-mouse-leave-timeout") : "200ms";
+    const timeoutDur = view.pageRef.current ? getComputedStyle(view.pageRef.current).getPropertyValue("--selection-mouse-leave-timeout") : "200ms";
     const timeout = splitS(timeoutDur);
 
     clearTimeout(setActiveByTypeRef.current); // Clear any existing timeouts
@@ -48,7 +48,7 @@ function RollTypes({ view }) {
 
   useEffect(() => {
     if (!active) return;
-    setDescription(active.pages["roll-types"].description);
+    setDescription(active.pages["selection"].description);
   }, [active]);
 
   const modalState = useInOut(active);
@@ -62,18 +62,19 @@ function RollTypes({ view }) {
   };
 
   const handleClick = (e) => {
-    // const type = e.currentTarget.dataset.rollType;
-    // const id = ROLL_TYPES.types[type].id;
-    // view.setPage("schematic");
-    // view.setType(id);
+    const type = PRODUCT_DATA[e.currentTarget.dataset.rollType];
+    const page = type.pages["selection"].link.page;
+    const link = type.pages["selection"].link.type;
+    view.setPage(page);
+    view.setType(link);
   };
 
   return (
     <>
-      <div className="roll-types--body">
-        {rollTypesArray.map((type) => (
+      <div className="selection--body">
+        {selectionArray.map((type) => (
           <a
-            className={`content--col roll-types--col`}
+            className={`content--col selection--col`}
             key={type.id}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
@@ -84,8 +85,8 @@ function RollTypes({ view }) {
           </a>
         ))}
       </div>
-      <div className="roll-types--description">
-        <div className={`roll-types--modal roll-types--modal__${modalState}`}>
+      <div className="selection--description">
+        <div className={`selection--modal selection--modal__${modalState}`}>
           <Body>{description}</Body>
         </div>
       </div>
@@ -105,9 +106,9 @@ function Head({ type, active }) {
   }, [active, type.id]);
 
   return (
-    <div className={`roll-types--head roll-types--head__${style}`}>
-      <H2 className={"roll-types--label__main"}>{type.short}</H2>
-      <H2 className={"roll-types--label__sub"}>Figure {String(type.index).padStart(2, "0")}</H2>
+    <div className={`selection--head selection--head__${style}`}>
+      <H2 className={"selection--label__main"}>{type.short}</H2>
+      <H2 className={"selection--label__sub"}>Figure {String(type.index).padStart(2, "0")}</H2>
     </div>
   );
 }
@@ -115,7 +116,7 @@ function Head({ type, active }) {
 function Visual({ type, active }) {
   const [style, setStyle] = useState("idle");
 
-  const imgs = type.pages["roll-types"].images;
+  const imgs = type.pages["selection"].images;
 
   useEffect(() => {
     if (active) {
@@ -126,17 +127,17 @@ function Visual({ type, active }) {
   }, [active, type.id]);
 
   return (
-    <div className="roll-types--visual">
+    <div className="selection--visual">
       <Graphic
-        className={`roll-types--graphic roll-types--graphic-photo__${style} roll-types--graphic-photo roll-types--graphic__${style}`}
+        className={`selection--graphic selection--graphic-photo__${style} selection--graphic-photo selection--graphic__${style}`}
         img={imgs.photo}
       />
       <Graphic
-        className={`roll-types--graphic roll-types--graphic-vector__${style} roll-types--graphic-vector roll-types--graphic__${style}`}
+        className={`selection--graphic selection--graphic-vector__${style} selection--graphic-vector selection--graphic__${style}`}
         img={imgs.vector}
       />
     </div>
   );
 }
 
-export default RollTypes;
+export default Selection;

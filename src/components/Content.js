@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import PRODUCT_DATA from "../data/PRODUCT_DATA";
-import RollTypes from "../pages/RollTypes";
+import Selection from "../pages/Selection";
 import Schematic from "../pages/Schematic";
 
 function Content({ view }) {
@@ -45,8 +45,8 @@ function Inner({ view }) {
 
 function Page({ view }) {
   return <>
-  {view.page == "roll-types" && <RollTypes view={view} />}
-  {/* {view.page == "schematic" && <Schematic view={view} />} */}
+  {view.page == "selection" && <Selection view={view} />}
+  {view.page == "schematic" && <Schematic view={view} />}
   </>;
 }
 

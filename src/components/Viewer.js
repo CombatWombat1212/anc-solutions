@@ -13,7 +13,7 @@ function Viewer() {
     const [hoveredSideBtn, setHoveredSideBtn] = useState(false);
     
 
-    const [page, setPage] = useState("roll-types");
+    const [page, setPage] = useState("selection");
     const [pageType, setPageType] = useState("none");
 
 

@@ -207,29 +207,29 @@ input, button, textarea, select {
   margin-top: 5rem;
 }
 
-.roll-types {
-  --roll-types-col-gap: 8rem;
-  --roll-types-mouse-leave-timeout: 0.35s;
-  --roll-types-transition: 0.35s;
+.selection {
+  --selection-col-gap: 8rem;
+  --selection-mouse-leave-timeout: 0.35s;
+  --selection-transition: 0.35s;
   display: flex;
 }
 
-.roll-types--inner {
-  padding: 6rem 8rem;
+.selection--inner {
+  padding: 6rem 8rem 4.5rem 8rem;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.roll-types--body {
+.selection--body {
   height: 70%;
   display: flex;
   flex-direction: row;
-  gap: var(--roll-types-col-gap);
+  gap: var(--selection-col-gap);
 }
 
-.roll-types--col {
+.selection--col {
   width: 33.33333%;
   --column-width: 4;
   display: flex;
@@ -238,33 +238,33 @@ input, button, textarea, select {
   cursor: pointer;
 }
 
-.roll-types--head {
+.selection--head {
   text-align: center;
-  transition: var(--roll-types-transition);
+  transition: var(--selection-transition);
 }
 
-.roll-types--head__active {
+.selection--head__active {
   opacity: 1;
 }
 
-.roll-types--head__inactive {
+.selection--head__inactive {
   opacity: 0.25;
 }
 
-.roll-types--head__idle {
+.selection--head__idle {
   opacity: 1;
 }
 
-.roll-types--label__main {
+.selection--label__main {
   color: #ffffff;
   font-size: 1.85rem;
 }
 
-.roll-types--label__sub {
+.selection--label__sub {
   font-size: 1.15rem;
 }
 
-.roll-types--visual {
+.selection--visual {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -274,62 +274,62 @@ input, button, textarea, select {
   height: 100%;
 }
 
-.roll-types--graphic {
+.selection--graphic {
   position: absolute !important;
   --size: 100%;
   width: 100%;
   height: 100%;
   margin-right: auto;
   margin-left: auto;
-  transition: var(--roll-types-transition);
+  transition: var(--selection-transition);
 }
 
-.roll-types--graphic__active {
+.selection--graphic__active {
   transform: scale(1.025);
 }
 
-.roll-types--graphic__inactive {
+.selection--graphic__inactive {
   transform: scale(0.985);
 }
 
-.roll-types--graphic__idle {
+.selection--graphic__idle {
   transform: scale(1);
 }
 
-.roll-types--graphic-vector__active {
+.selection--graphic-vector__active {
   opacity: 1;
 }
 
-.roll-types--graphic-vector__inactive {
+.selection--graphic-vector__inactive {
   opacity: 0;
 }
 
-.roll-types--graphic-vector__idle {
+.selection--graphic-vector__idle {
   opacity: 0;
 }
 
-.roll-types--graphic-photo__active {
+.selection--graphic-photo__active {
   opacity: 0.5;
 }
 
-.roll-types--graphic-photo__inactive {
+.selection--graphic-photo__inactive {
   opacity: 0.15;
 }
 
-.roll-types--graphic-photo__idle {
+.selection--graphic-photo__idle {
   opacity: 1;
 }
 
-.roll-types--description {
+.selection--description {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
   position: relative;
   margin-bottom: auto;
-  transform: translateY(2.5rem);
+  transform: translateY(3.15rem);
 }
 
-.roll-types--modal {
+.selection--modal {
   padding: 1.85rem 2rem 2.15rem 2rem;
   background-color: #1a1918;
   background-color: rgba(255, 255, 255, 0.05);
@@ -338,19 +338,19 @@ input, button, textarea, select {
   top: 0;
 }
 
-.roll-types--modal__initial {
+.selection--modal__initial {
   opacity: 0 ;
   transition: transform 0.5s, opacity 0.5s, visibility 0s 0.2s ;
   transition: "transform 0.5s, opacity 0.5s, visibility 0s 0.2s" ;
 }
 
-.roll-types--modal__animate {
+.selection--modal__animate {
   opacity: 1 ;
   transition: transform 0.5s, opacity 0.5s, visibility 0s 0s ;
   transition: "transform 0.5s, opacity 0.5s, visibility 0s 0s" ;
 }
 
-.roll-types--modal__exit {
+.selection--modal__exit {
   opacity: 0 ;
   transition: transform 0.5s, opacity 0.5s, visibility 0s 0.2s ;
   transition: "transform 0.5s, opacity 0.5s, visibility 0s 0.2s" ;

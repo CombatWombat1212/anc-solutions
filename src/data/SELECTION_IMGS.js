@@ -1,4 +1,4 @@
-const ROLL_TYPE_IMGS = {
+const SELECTION_IMGS = {
   traditional_photo: {
     name: "traditional_photo",
     src: "/assets/images/roll_types/traditional_photo.png",
@@ -60,4 +60,4 @@ const ROLL_TYPE_IMGS = {
   },
 };
 
-export default ROLL_TYPE_IMGS;
+export default SELECTION_IMGS;

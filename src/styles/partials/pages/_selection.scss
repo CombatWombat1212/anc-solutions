@@ -1,12 +1,12 @@
-.roll-types {
-  --roll-types-col-gap: 8rem;
-  --roll-types-mouse-leave-timeout: 0.35s;
-  --roll-types-transition: 0.35s;
+.selection {
+  --selection-col-gap: 8rem;
+  --selection-mouse-leave-timeout: 0.35s;
+  --selection-transition: 0.35s;
 
   display: flex;
 
   &--inner {
-    padding: 6rem 8rem;
+    padding: 6rem 8rem 4.5rem 8rem;
     width: 100%;
     @include flex-col-between;
   }
@@ -14,7 +14,7 @@
   &--body {
     height: 70%;
     @include flex-row;
-    gap: var(--roll-types-col-gap);
+    gap: var(--selection-col-gap);
   }
 
   &--col {
@@ -26,7 +26,7 @@
 
   &--head {
     text-align: center;
-    transition: var(--roll-types-transition);
+    transition: var(--selection-transition);
 
     &__active {
       opacity: 1;
@@ -62,7 +62,7 @@
 
     // @include trans;
 
-    transition: var(--roll-types-transition);
+    transition: var(--selection-transition);
 
     &__active {
       transform: scale(1.025);
@@ -104,7 +104,7 @@
     @include mx-auto;
     position: relative;
     margin-bottom: auto;
-    transform: translateY(2.5rem);
+    transform: translateY(3.15rem);
   }
 
   &--modal {

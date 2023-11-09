@@ -4,7 +4,7 @@ import { H1, H2 } from "./Text";
 import useHoverAndFocus from "../scripts/hooks/useHoverAndFocus";
 
 function Sidebar({ view }) {
-  const rollTypesArray = Object.values(PRODUCT_DATA);
+  const selectionArray = Object.values(PRODUCT_DATA);
   const [panels, setPanels] = useState([]);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ function Sidebar({ view }) {
   return (
     <div className="viewer--sidebar sidebar">
       <Title />
-      {rollTypesArray.map((type) => (
+      {selectionArray.map((type) => (
         <Panel key={type.id} type={type} view={view} panels={panels} setPanels={setPanels} />
       ))}
     </div>
@@ -56,10 +56,10 @@ function Panel({ view, type, setPanels }) {
 
 
   const handleClick = () => {
-    console.log(type);
-    // const link = type["roll-types"].link;
-    // view.setPage(type.link.page);
-    // view.setType(type.link.type);
+    const page = type.pages[view.page].link.page;
+    const link = type.pages[view.page].link.type;
+    view.setPage(page);
+    view.setType(link);
   };
 
 
