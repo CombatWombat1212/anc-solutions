@@ -32,7 +32,7 @@ input, button, textarea, select {
 @use "sass:math";
 .viewer--h1 {
   font-family: urbane, sans-serif;
-  font-size: 3.4375rem;
+  font-size: 3.25rem;
   font-weight: 600;
   line-height: 4.65rem;
   letter-spacing: 0.016em;
@@ -129,8 +129,10 @@ input, button, textarea, select {
 
 .viewer .sidebar {
   border-right: 0.125rem solid #ffffff;
-  width: 33.33333%;
-  --column-width: 4;
+  width: 29.16667%;
+  --column-width: 3.5;
+  max-width: 29.16667%;
+  min-width: 29.16667%;
 }
 
 .viewer .sidebar--panel {
@@ -362,5 +364,39 @@ input, button, textarea, select {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.schematic--graphic {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.schematic--graphic__active {
+  opacity: 1;
+}
+
+.schematic--graphic__hidden {
+  opacity: 0;
+}
+
+.schematic--graphic__idle {
+  opacity: 1;
+}
+
+.schematic--vector {
+  transition: 0.2s;
+}
+
+.schematic--vector__active {
+  opacity: 1;
+}
+
+.schematic--vector__hidden {
+  opacity: 0;
+}
+
+.schematic--vector__idle {
+  opacity: 1;
 }
 /*# sourceMappingURL=style.css.map */

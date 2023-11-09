@@ -1,7 +1,11 @@
 
 .viewer .sidebar {
     @include viewer-border(right);
-    @include col-width(4);
+
+    $width: 3.5;
+    @include col-width($width);
+    max-width: col-width($width);
+    min-width: col-width($width);
   
     &--panel {
       padding: calc(var(--viewer-inner-pad) * 0.725) var(--viewer-inner-pad);

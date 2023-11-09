@@ -16,12 +16,10 @@ function Sidebar({ view }) {
 
 
   useEffect(() => {
-    console.log("panels", panels);
     if (!panels.length > 0) return;
     const hoveredPanels = panels.filter((p) => p.hovered);
     if (hoveredPanels.length === 1) {
       view.side.setActive(hoveredPanels[0].option.id);
-      console.log(hoveredPanels[0].option);
     } else {
       view.side.setActive(false);
     }
@@ -31,7 +29,7 @@ function Sidebar({ view }) {
 
   return (
     <div className="viewer--sidebar sidebar">
-      <Title />
+      <Title view={view} />
       {optionArray.map((option, i) => (
         <Panel key={i} option={option} view={view} panels={panels} setPanels={setPanels} />
       ))}
@@ -39,10 +37,13 @@ function Sidebar({ view }) {
   );
 }
 
-function Title() {
+function Title({view}) {
+  const copy = (view.type && typeof view.type === 'string') ? view.type.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ') : "Pre-Rolls";
+
+
   return (
     <div className="sidebar--title sidebar--panel">
-      <H1>Pre-Rolls</H1>
+      <H1>{copy}</H1>
     </div>
   );
 }

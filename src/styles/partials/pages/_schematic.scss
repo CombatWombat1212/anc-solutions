@@ -1,18 +1,42 @@
-.schematic{
+.schematic {
 
 
-    &--wrapper{
+  &--wrapper {
+  }
 
+  &--inner {
+    padding: 6rem 8rem 4.5rem 8rem;
+    width: 100%;
+    @include flex-col-between;
+  }
 
-        
+  &--graphic {
+    @include img-contain;
 
+    &__active{
+        opacity:1;
     }
+    &__hidden{
+        opacity:0;
+    }
+    &__idle{
+        opacity:1;
+    }
+  }
 
- &--inner {
-        padding: 6rem 8rem 4.5rem 8rem;
-        width: 100%;
-        @include flex-col-between;
-      }
 
+  &--vector {
 
+    transition:0.2s;
+
+    &__active{
+        opacity:1;
+    }
+    &__hidden{
+        opacity:0;
+    }
+    &__idle{
+        opacity:1;
+    }
+  }
 }

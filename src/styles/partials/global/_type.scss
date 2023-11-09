@@ -4,13 +4,13 @@ $font-body: acumin-variable, sans-serif;
 .viewer {
   &--h1 {
     font-family: $font-title;
-    font-size: 3.4375rem;
+    // font-size: 3.4375rem;
+    font-size: 3.25rem;
     font-weight: 600;
     line-height: 4.65rem;
     letter-spacing: 0.016em;
     color: $col-light;
   }
-
   &--h2 {
     font-family: $font-body;
     font-size: 2.125rem;
