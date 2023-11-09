@@ -69,6 +69,8 @@ function Selection({ view }) {
     view.setType(link);
   };
 
+
+
   return (
     <>
       <div className="selection--body">
@@ -105,9 +107,11 @@ function Head({ type, active }) {
     }
   }, [active, type.id]);
 
+  const title = type.pages["selection"].title.short;
+
   return (
     <div className={`selection--head selection--head__${style}`}>
-      <H2 className={"selection--label__main"}>{type.short}</H2>
+      <H2 className={"selection--label__main"}>{title}</H2>
       <H2 className={"selection--label__sub"}>Figure {String(type.index).padStart(2, "0")}</H2>
     </div>
   );

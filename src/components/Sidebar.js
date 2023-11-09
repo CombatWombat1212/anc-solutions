@@ -1,27 +1,39 @@
 import { useEffect, useRef, useState } from "react";
-import PRODUCT_DATA from "../data/PRODUCT_DATA";
+import PRODUCT_DATA, { PAGE_DATA } from "../data/PRODUCT_DATA";
 import { H1, H2 } from "./Text";
 import useHoverAndFocus from "../scripts/hooks/useHoverAndFocus";
 
 function Sidebar({ view }) {
-  const selectionArray = Object.values(PRODUCT_DATA);
   const [panels, setPanels] = useState([]);
 
+  const optionArray =  view.type ? 
+  Object.values(PRODUCT_DATA[view.type].pages[view.page].options) :
+  Object.values(PRODUCT_DATA).map((x) => x.pages.selection);
+
+
+
+
+
+
   useEffect(() => {
+    console.log("panels", panels);
     if (!panels.length > 0) return;
     const hoveredPanels = panels.filter((p) => p.hovered);
     if (hoveredPanels.length === 1) {
-      view.side.setActive(hoveredPanels[0].type.id);
+      view.side.setActive(hoveredPanels[0].option.id);
+      console.log(hoveredPanels[0].option);
     } else {
       view.side.setActive(false);
     }
   }, [panels]);
 
+
+
   return (
     <div className="viewer--sidebar sidebar">
       <Title />
-      {selectionArray.map((type) => (
-        <Panel key={type.id} type={type} view={view} panels={panels} setPanels={setPanels} />
+      {optionArray.map((option, i) => (
+        <Panel key={i} option={option} view={view} panels={panels} setPanels={setPanels} />
       ))}
     </div>
   );
@@ -35,8 +47,7 @@ function Title() {
   );
 }
 
-function Panel({ view, type, setPanels }) {
-  const ind = String(type.index).padStart(2, "0");
+function Panel({ view, option, setPanels }) {
 
   const panelRef = useRef(null);
   const hovered = useHoverAndFocus(panelRef);
@@ -45,7 +56,7 @@ function Panel({ view, type, setPanels }) {
     const panel = {
       ref: panelRef,
       hovered: hovered,
-      type: type,
+      option: option,
     };
     setPanels((prevPanels) => {
       const otherPanels = prevPanels.filter((p) => p.ref.current !== panelRef.current);
@@ -56,12 +67,16 @@ function Panel({ view, type, setPanels }) {
 
 
   const handleClick = () => {
-    const page = type.pages[view.page].link.page;
-    const link = type.pages[view.page].link.type;
+    const page = (view.type && option[view.type]) ? option[view.type].link.page : option.link.page;
+    const type = (view.type && option[view.type]) ? option[view.type].link.type : option.link.type;
     view.setPage(page);
-    view.setType(link);
+    view.setType(type);
   };
 
+
+  
+  const title = option.title.long || option.title.short || option.title;
+  const ind = String(option.index).padStart(2, "0");
 
 
 
@@ -70,7 +85,7 @@ function Panel({ view, type, setPanels }) {
       onClick={handleClick}
     >
       <H2 className="sidebar--index">{ind}</H2>
-      <H2 className="sidebar--name">{type.long}</H2>
+      <H2 className="sidebar--name">{title}</H2>
     </a>
   );
 }

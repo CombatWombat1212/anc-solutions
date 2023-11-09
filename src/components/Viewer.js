@@ -1,22 +1,14 @@
-import { useRef, useState } from "react";
-import PRODUCT_DATA from "../data/PRODUCT_DATA";
+import { useEffect, useRef, useState } from "react";
 import Content from "./Content";
 import Sidebar from "./Sidebar";
-const { ROLL_TYPES } = PRODUCT_DATA;
-
-
 
 
 function Viewer() {
 
 
     const [hoveredSideBtn, setHoveredSideBtn] = useState(false);
-    
-
     const [page, setPage] = useState("selection");
-    const [pageType, setPageType] = useState("none");
-
-
+    const [pageType, setPageType] = useState(false);
     const pageRef = useRef(null);
 
 

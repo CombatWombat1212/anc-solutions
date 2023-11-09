@@ -6,10 +6,16 @@
 
 function Schematic() {
     return (
-        <div>
+
+        
+        <div className="">
             Enter
         </div>
     );
 }
+
+
+
+
 
 export default Schematic;

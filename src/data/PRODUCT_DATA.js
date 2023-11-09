@@ -4,143 +4,206 @@ const PRODUCT_DATA = {
   traditional: {
     index: 1,
     id: "traditional",
-    short: "Traditional",
-    long: "Traditional Pre-Roll",
-
 
     pages: {
       selection: {
+        id: "traditional",
+        index: 1,
+        title: {
+          short: "Traditional",
+          long: "Traditional Pre-Roll",
+        },
         images: {
           photo: SELECTION_IMGS.traditional_photo,
           vector: SELECTION_IMGS.traditional_vector,
         },
         description:
-        "A traditional cannabis pre-roll is a ready-made joint, eliminating the need for manual rolling and grinding. For consumers, it promises immediate convenience and a consistent smoking experience. For growers, it represents an efficient use of product and a profitable avenue with strong branding potential.",
+          "A traditional cannabis pre-roll is a ready-made joint, eliminating the need for manual rolling and grinding. For consumers, it promises immediate convenience and a consistent smoking experience. For growers, it represents an efficient use of product and a profitable avenue with strong branding potential.",
         link: { page: "schematic", type: "traditional" },
       },
-    }
-      
 
+      schematic: {
+        images: {
+          // photo: SELECTION_IMGS.traditional_photo,
+          // vector: SELECTION_IMGS.traditional_vector,
+        },
 
+        options: {
+          sizes: {
+            index: 1,
+            id: "sizes",
+            title: "Sizes",
+            options: ["0.25g - 1.0g"],
+          },
+          paper: {
+            index: 2,
+            id: "paper",
+            title: "Paper Type",
+            options: ["i. Wood (white)", "ii. Wood (brown)", "iii. Organic Hemp", "iv. Bamboo", "v. Rice"],
+          },
+          filter: {
+            index: 3,
+            id: "filter",
+            title: "Filter Type",
+            options: ["i. Spiral", "ii. Zig Zag"],
+          },
+          compaction: {
+            index: 4,
+            id: "compaction",
+            title: "Compaction",
+          },
+          end: {
+            index: 5,
+            id: "end",
+            title: "End Type",
+            options: ["i. Twisted", "ii. Punched", "iii. Crown"],
+          },
+        },
+      },
+    },
   },
 
   cigarette: {
     index: 2,
     id: "cigarette",
-    short: "Cigarette",
-    long: "Cigarette Pre-Roll",
     pages: {
+      selection: {
+        id: "cigarette",
+        index: 2,
+        title: {
+          short: "Cigarette",
+          long: "Cigarette Pre-Roll",
+        },
 
-    selection: {
-      images: {
-        photo: SELECTION_IMGS.cigarette_photo,
-        vector: SELECTION_IMGS.cigarette_vector,
+        images: {
+          photo: SELECTION_IMGS.cigarette_photo,
+          vector: SELECTION_IMGS.cigarette_vector,
+        },
+        description:
+          "A cannabis cigarette pre-roll is a professionally packed, ready-to-smoke marijuana cigarette, offering consumers immediate convenience and consistency. For growers, pre-rolls efficiently utilize trim and small buds, presenting an additional revenue stream and branding opportunity in a familiar, accessible format.",
+        link: { page: "schematic", type: "cigarette" },
       },
-      description:
-        "A cannabis cigarette pre-roll is a professionally packed, ready-to-smoke marijuana cigarette, offering consumers immediate convenience and consistency. For growers, pre-rolls efficiently utilize trim and small buds, presenting an additional revenue stream and branding opportunity in a familiar, accessible format.",
-      link: { page: "schematic", type: "cigarette" },
-    },
+      schematic: {
+        images: {
+          // photo: SELECTION_IMGS.traditional_photo,
+          // vector: SELECTION_IMGS.traditional_vector,
+        },
+
+        options: {
+          sizes: {
+            index: 1,
+            title: "Sizes",
+            options: ["0.25g - 1.0g"],
+          },
+        },
+      },
     },
   },
 
   blunt: {
     index: 3,
     id: "blunt",
-    short: "Blunt",
-    long: "Blunt",
     pages: {
+      selection: {
+        id: "blunt",
+        index: 3,
+        title: {
+          short: "Blunt",
+          long: "Blunt",
+        },
 
-    selection: {
-      images: {
-        photo: SELECTION_IMGS.blunt_photo,
-        vector: SELECTION_IMGS.blunt_vector,
+        images: {
+          photo: SELECTION_IMGS.blunt_photo,
+          vector: SELECTION_IMGS.blunt_vector,
+        },
+        description:
+          "A blunt is a cannabis-filled cigar wrap, often offering a richer flavor and longer burn. For consumers, it provides a robust and extended smoking session. For growers, blunts tap into a niche market, blending traditional cigar culture with cannabis, offering unique branding and profit opportunities.",
+        link: { page: "schematic", type: "blunt" },
       },
-      description:
-        "A blunt is a cannabis-filled cigar wrap, often offering a richer flavor and longer burn. For consumers, it provides a robust and extended smoking session. For growers, blunts tap into a niche market, blending traditional cigar culture with cannabis, offering unique branding and profit opportunities.",
-      link: { page: "schematic", type: "blunt" },
-    },
+      schematic: {
+        images: {
+          // photo: SELECTION_IMGS.traditional_photo,
+          // vector: SELECTION_IMGS.traditional_vector,
+        },
+
+        options: {
+          sizes: {
+            index: 1,
+            title: "Sizes",
+            options: ["0.25g - 1.0g"],
+          },
+        },
+      },
     },
   },
   infused: {
     index: 4,
     id: "infused",
-    short: "Infused",
-    long: "Infused Pre-Roll",
     pages: {
+      selection: {
+        index: 4,
+        id: "infused",
+        title: {
+          short: "Infused",
+          long: "Infused Pre-Roll",
+        },
 
-    selection: {
-      images: {
-        photo: SELECTION_IMGS.infused_photo,
-        vector: SELECTION_IMGS.infused_vector,
+        images: {
+          photo: SELECTION_IMGS.infused_photo,
+          vector: SELECTION_IMGS.infused_vector,
+        },
+        description:
+          "An infused pre-roll combines cannabis flower with concentrated forms like oils or kief, amplifying potency and flavor. For consumers, it delivers an enhanced, often more intense experience. For growers and producers, it offers a premium product line with higher profit margins, catering to experienced users seeking a stronger effect.",
+        link: { page: "schematic", type: "infused" },
       },
-      description:
-        "An infused pre-roll combines cannabis flower with concentrated forms like oils or kief, amplifying potency and flavor. For consumers, it delivers an enhanced, often more intense experience. For growers and producers, it offers a premium product line with higher profit margins, catering to experienced users seeking a stronger effect.",
-      link: { page: "schematic", type: "infused" },
-    },
+      schematic: {
+        images: {
+          // photo: SELECTION_IMGS.traditional_photo,
+          // vector: SELECTION_IMGS.traditional_vector,
+        },
+
+        options: {
+          sizes: {
+            index: 1,
+            title: "Sizes",
+            options: ["0.25g - 1.0g"],
+          },
+        },
+      },
     },
   },
-
-
-
-
-
-
-  
-  // types: {
-  //   traditional: {
-  //     id: "traditional",
-  //     index: 1,
-  //     short: "Traditional",
-  //     long: "Traditional Pre-Roll",
-  //     // link:{type:"traditional"},
-  //     images: {
-  //       photo: SELECTION_IMGS.traditional_photo,
-  //       vector: SELECTION_IMGS.traditional_vector,
-  //     },
-  //     description:
-  //       "A traditional cannabis pre-roll is a ready-made joint, eliminating the need for manual rolling and grinding. For consumers, it promises immediate convenience and a consistent smoking experience. For growers, it represents an efficient use of product and a profitable avenue with strong branding potential.",
-  //   },
-  // cigarette: {
-  //   id: "cigarette",
-  //   index: 2,
-  //   short: "Cigarette",
-  //   long: "Cigarette Pre-Roll",
-  //   // link:{type:"cigarette"},
-  //   images: {
-  //     photo: SELECTION_IMGS.cigarette_photo,
-  //     vector: SELECTION_IMGS.cigarette_vector,
-  //   },
-  //   description:
-  //     "A cannabis cigarette pre-roll is a professionally packed, ready-to-smoke marijuana cigarette, offering consumers immediate convenience and consistency. For growers, pre-rolls efficiently utilize trim and small buds, presenting an additional revenue stream and branding opportunity in a familiar, accessible format.",
-  // },
-  // blunt: {
-  //   id: "blunt",
-  //   index: 3,
-  //   short: "Blunt",
-  //   long: "Blunt",
-  //   // link:{type:"blunt"},
-  //   images: {
-  //     photo: SELECTION_IMGS.blunt_photo,
-  //     vector: SELECTION_IMGS.blunt_vector,
-  //   },
-  //   description:
-  //     "A blunt is a cannabis-filled cigar wrap, often offering a richer flavor and longer burn. For consumers, it provides a robust and extended smoking session. For growers, blunts tap into a niche market, blending traditional cigar culture with cannabis, offering unique branding and profit opportunities.",
-  // },
-  // infused: {
-  //   id: "infused",
-  //   index: 4,
-  //   short: "Infused",
-  //   long: "Infused Pre-Roll",
-  //   // link:{type:"infused"},
-  //   images: {
-  //     photo: SELECTION_IMGS.infused_photo,
-  //     vector: SELECTION_IMGS.infused_vector,
-  //   },
-  //   description:
-  //     "An infused pre-roll combines cannabis flower with concentrated forms like oils or kief, amplifying potency and flavor. For consumers, it delivers an enhanced, often more intense experience. For growers and producers, it offers a premium product line with higher profit margins, catering to experienced users seeking a stronger effect.",
-  // },
-  // },
-  // },
 };
 
+const processSidebar = (productData, pageData) => {
+  // Loop through all page data entries
+  for (const [pageKey, pageValue] of Object.entries(pageData)) {
+    // Check if the page has a sidebar and process it
+    if (pageValue.sidebar) {
+      // Map each sidebar item to include the parent id
+      pageValue.sidebar = pageValue.sidebar.map((sidebarItem) => {
+        // Find the parent product data entry
+        for (const [productKey, productValue] of Object.entries(productData)) {
+          if (productValue.pages[pageKey]) {
+            return {
+              ...sidebarItem,
+              id: productData[productKey].id,
+            };
+          }
+        }
+      });
+    }
+  }
+};
+
+const PAGE_DATA = {
+  selection: {
+    sidebar: Object.values(PRODUCT_DATA).map((x) => x.pages.selection),
+  },
+  schematic: {
+    sidebar: Object.values(PRODUCT_DATA).map((x) => x.pages.schematic),
+  },
+};
+
+processSidebar(PRODUCT_DATA, PAGE_DATA);
+export { PAGE_DATA };
 export default PRODUCT_DATA;
