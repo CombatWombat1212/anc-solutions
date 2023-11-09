@@ -2,19 +2,18 @@ import { useEffect, useRef, useState } from "react";
 import PRODUCT_DATA from "../data/PRODUCT_DATA";
 import { H1, H2 } from "./Text";
 import useHoverAndFocus from "../scripts/hooks/useHoverAndFocus";
-const { ROLL_TYPES } = PRODUCT_DATA;
 
 function Sidebar({ view }) {
-  const rollTypesArray = Object.values(ROLL_TYPES.types);
+  const rollTypesArray = Object.values(PRODUCT_DATA);
   const [panels, setPanels] = useState([]);
 
   useEffect(() => {
     if (!panels.length > 0) return;
     const hoveredPanels = panels.filter((p) => p.hovered);
     if (hoveredPanels.length === 1) {
-      view.setSideItem(hoveredPanels[0].type.id);
+      view.side.setActive(hoveredPanels[0].type.id);
     } else {
-      view.setSideItem(false);
+      view.side.setActive(false);
     }
   }, [panels]);
 
@@ -36,7 +35,7 @@ function Title() {
   );
 }
 
-function Panel({ type, panels, setPanels }) {
+function Panel({ view, type, setPanels }) {
   const ind = String(type.index).padStart(2, "0");
 
   const panelRef = useRef(null);
@@ -54,8 +53,22 @@ function Panel({ type, panels, setPanels }) {
     });
   }, [hovered]);
 
+
+
+  const handleClick = () => {
+    console.log(type);
+    // const link = type["roll-types"].link;
+    // view.setPage(type.link.page);
+    // view.setType(type.link.type);
+  };
+
+
+
+
   return (
-    <a className="sidebar--panel sidebar--button" ref={panelRef}>
+    <a className="sidebar--panel sidebar--button" ref={panelRef}
+      onClick={handleClick}
+    >
       <H2 className="sidebar--index">{ind}</H2>
       <H2 className="sidebar--name">{type.long}</H2>
     </a>

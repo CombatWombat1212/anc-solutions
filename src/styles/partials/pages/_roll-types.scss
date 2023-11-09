@@ -8,12 +8,11 @@
   &--inner {
     padding: 6rem 8rem;
     width: 100%;
-    @include flex-col;
-
-}
+    @include flex-col-between;
+  }
 
   &--body {
-    height: 90%;
+    height: 70%;
     @include flex-row;
     gap: var(--roll-types-col-gap);
   }
@@ -101,19 +100,22 @@
   }
 
   &--description {
-    // min-height: 10rem;
     width: 100%;
     @include mx-auto;
     position: relative;
+    margin-bottom: auto;
+    transform: translateY(2.5rem);
   }
 
   &--modal {
-    position: absolute;
-    padding: 2rem 2rem;
-    transform: translateY(-50%);
+    // position: absolute;
+    padding: 1.85rem 2rem 2.15rem 2rem;
+    // transform: translateY(-50%);
     background-color: rgba($col-background, 1);
+    background-color: rgba(#ffffff, 0.05);
     outline: solid 0.125rem $col-primary;
     pointer-events: none;
+    top:0;
 
     @include in-out(
       (
