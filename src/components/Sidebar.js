@@ -7,12 +7,10 @@ function Sidebar({ view }) {
   const [panels, setPanels] = useState([]);
 
   const optionArray =  view.type ? 
-  Object.values(PRODUCT_DATA[view.type].pages[view.page].options) :
+  Object.values(PRODUCT_DATA[view.type].pages.subpages) :
   Object.values(PRODUCT_DATA).map((x) => x.pages.selection);
 
-
-
-
+  console.log(view.type);
 
 
   useEffect(() => {

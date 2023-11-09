@@ -1,3 +1,4 @@
+import SCHEMATIC_IMGS from "./SCHEMATIC_IMGS";
 import SELECTION_IMGS from "./SELECTION_IMGS";
 
 const PRODUCT_DATA = {
@@ -24,42 +25,48 @@ const PRODUCT_DATA = {
 
       schematic: {
         images: {
-          // photo: SELECTION_IMGS.traditional_photo,
-          // vector: SELECTION_IMGS.traditional_vector,
-        },
-
-        options: {
-          sizes: {
-            index: 1,
-            id: "sizes",
-            title: "Sizes",
-            options: ["0.25g - 1.0g"],
-          },
-          paper: {
-            index: 2,
-            id: "paper",
-            title: "Paper Type",
-            options: ["i. Wood (white)", "ii. Wood (brown)", "iii. Organic Hemp", "iv. Bamboo", "v. Rice"],
-          },
-          filter: {
-            index: 3,
-            id: "filter",
-            title: "Filter Type",
-            options: ["i. Spiral", "ii. Zig Zag"],
-          },
-          compaction: {
-            index: 4,
-            id: "compaction",
-            title: "Compaction",
-          },
-          end: {
-            index: 5,
-            id: "end",
-            title: "End Type",
-            options: ["i. Twisted", "ii. Punched", "iii. Crown"],
-          },
+          vector: SCHEMATIC_IMGS.traditional,
         },
       },
+
+      subpages: {
+        sizes: {
+          index: 1,
+          id: "sizes",
+          title: "Sizes",
+          // options: ["0.25g - 1.0g"],
+          link: { page: "sizes", type:"traditional"},
+        },
+        paper: {
+          index: 2,
+          id: "paper",
+          title: "Paper Type",
+          // options: ["i. Wood (white)", "ii. Wood (brown)", "iii. Organic Hemp", "iv. Bamboo", "v. Rice"],
+          link: { page: "paper", type:"traditional"},
+        },
+        filter: {
+          index: 3,
+          id: "filter",
+          title: "Filter Type",
+          // options: ["i. Spiral", "ii. Zig Zag"],
+          link: { page: "filter", type:"traditional"},
+        },
+        compaction: {
+          index: 4,
+          id: "compaction",
+          title: "Compaction",
+          link: { page: "compaction", type:"traditional"},
+        },
+        end: {
+          index: 5,
+          id: "end",
+          title: "End Type",
+          // options: ["i. Twisted", "ii. Punched", "iii. Crown"],
+          link: { page: "end", type:"traditional"},
+        },
+      },
+
+
     },
   },
 
@@ -89,12 +96,13 @@ const PRODUCT_DATA = {
           // vector: SELECTION_IMGS.traditional_vector,
         },
 
-        options: {
-          sizes: {
-            index: 1,
-            title: "Sizes",
-            options: ["0.25g - 1.0g"],
-          },
+      },
+
+      subpages: {
+        sizes: {
+          index: 1,
+          title: "Sizes",
+          options: ["0.25g - 1.0g"],
         },
       },
     },
@@ -126,12 +134,12 @@ const PRODUCT_DATA = {
           // vector: SELECTION_IMGS.traditional_vector,
         },
 
-        options: {
-          sizes: {
-            index: 1,
-            title: "Sizes",
-            options: ["0.25g - 1.0g"],
-          },
+      },
+      subpages: {
+        sizes: {
+          index: 1,
+          title: "Sizes",
+          options: ["0.25g - 1.0g"],
         },
       },
     },
@@ -162,12 +170,12 @@ const PRODUCT_DATA = {
           // vector: SELECTION_IMGS.traditional_vector,
         },
 
-        options: {
-          sizes: {
-            index: 1,
-            title: "Sizes",
-            options: ["0.25g - 1.0g"],
-          },
+      },
+      subpages: {
+        sizes: {
+          index: 1,
+          title: "Sizes",
+          options: ["0.25g - 1.0g"],
         },
       },
     },
@@ -195,15 +203,5 @@ const processSidebar = (productData, pageData) => {
   }
 };
 
-const PAGE_DATA = {
-  selection: {
-    sidebar: Object.values(PRODUCT_DATA).map((x) => x.pages.selection),
-  },
-  schematic: {
-    sidebar: Object.values(PRODUCT_DATA).map((x) => x.pages.schematic),
-  },
-};
 
-processSidebar(PRODUCT_DATA, PAGE_DATA);
-export { PAGE_DATA };
 export default PRODUCT_DATA;

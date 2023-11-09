@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import PRODUCT_DATA from "../data/PRODUCT_DATA";
 import Selection from "../pages/Selection";
 import Schematic from "../pages/Schematic";
+import Sizes from "../pages/Sizes";
+import Paper from "../pages/Paper";
 
 function Content({ view }) {
   const { page, pageRef } = view;
@@ -47,6 +49,8 @@ function Page({ view }) {
   return <>
   {view.page == "selection" && <Selection view={view} />}
   {view.page == "schematic" && <Schematic view={view} />}
+  {view.page == "sizes" && <Sizes view={view} />}
+  {view.page == "paper" && <Paper view={view} />}
   </>;
 }
 

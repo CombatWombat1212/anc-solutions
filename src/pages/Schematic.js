@@ -6,7 +6,7 @@ import PRODUCT_DATA from "../data/PRODUCT_DATA";
 
 function Schematic({ view }) {
   const img = SCHEMATIC_IMGS[view.type];
-  const options = PRODUCT_DATA[view.type].pages.schematic.options;
+  const options = PRODUCT_DATA[view.type].pages.subpages;
 
   const [components, setComponents] = useState(false);
   const [ready, setReady] = useState(false);
@@ -26,8 +26,6 @@ function Schematic({ view }) {
     setComponents(elements);
 
   };
-
-  //   TODO: fix fonts as well
 
   useEffect(() => {
     if (!components) return;
@@ -65,8 +63,6 @@ function Schematic({ view }) {
 
   useEffect(() => {
     if (!components || view.hoveredSideBtn === undefined || !ready) return;
-
-    console.log(components);
 
     Object.keys(components).forEach((key) => {
       const componentId = options[key].id;

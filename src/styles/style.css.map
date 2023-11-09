@@ -20,7 +20,9 @@
         "partials/components/_line.scss",
         "partials/pages/_sandbox.scss",
         "partials/pages/_selection.scss",
-        "partials/pages/_schematic.scss"
+        "partials/pages/_schematic.scss",
+        "partials/pages/_sizes.scss",
+        "partials/pages/_paper.scss"
     ],
     "names": [],
     "file": "style.css"
