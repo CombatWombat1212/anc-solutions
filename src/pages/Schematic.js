@@ -3,15 +3,14 @@
 
 
 
-
 function Schematic() {
-    return (
 
-        
-        <div className="">
-            Enter
-        </div>
+
+    return (
+        <div></div>
     );
+
+
 }
 
 
