@@ -201,6 +201,18 @@ input, button, textarea, select {
   object-fit: contain;
 }
 
+.connecting-line {
+  position: absolute;
+  top: calc(var(--box-top) + (var(--start-height)/2));
+  left: var(--box-left);
+  width: var(--box-width);
+  height: var(--box-height);
+  border: 2px solid red;
+  pointer-events: none;
+  box-sizing: border-box;
+  z-index: 9999;
+}
+
 .sandbox {
   width: 100%;
   height: 100%;

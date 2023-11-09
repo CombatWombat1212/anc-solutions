@@ -1,0 +1,19 @@
+
+
+
+
+.connecting-line{
+
+    position: absolute;
+    top: calc(var(--box-top) + (var(--start-height)/2) );
+    left: calc(var(--box-left) - var(--));
+    width: var(--box-width);
+    height: var(--box-height);
+    border: 2px solid red; // just for visibility
+    pointer-events: none; // allows clicks to pass through to underlying elements
+    box-sizing: border-box;
+    z-index: 9999; // ensures the div is above most other elements
+
+
+
+}

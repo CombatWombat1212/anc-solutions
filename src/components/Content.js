@@ -4,6 +4,7 @@ import Graphic from "./Graphic";
 import { Body, H1, H2, H3, H4, Label1, Label2 } from "./Text";
 import useInOut from "../scripts/hooks/useInOut";
 import { splitS } from "../scripts/Split";
+import useConnectingLine, { BoundingBox } from "../scripts/hooks/useConnectingLine";
 const { ROLL_TYPES } = PRODUCT_DATA;
 
 function Content({ view }) {
@@ -20,10 +21,32 @@ function Content({ view }) {
 
 function Inner({ view }) {
   const { page } = view;
+
+
+    // const one = useRef(null);
+    // const two = useRef(null);
+
+
   return (
-    <div className={`content--inner ${page}--inner`}>
-      <RollTypes view={view} />
-    </div>
+    <>
+    {/* <BoundingBox startRef={one} endRef={two}/>
+
+      <div>
+        <p ref={one}>rtest</p>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br /><br /><p ref={two}>asdiojasidojhasiuhdiuashd</p>
+      </div> */}
+
+
+      <div className={`content--inner ${page}--inner`}>
+        <RollTypes view={view} />
+      </div>
+    </>
   );
 }
 
