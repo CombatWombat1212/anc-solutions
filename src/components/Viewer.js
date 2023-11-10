@@ -9,6 +9,7 @@ function Viewer() {
     const [hoveredSideBtn, setHoveredSideBtn] = useState(false);
     const [page, setPage] = useState("selection");
     const [pageType, setPageType] = useState(false);
+    const [dockType, setDockType] = useState(false);
     const pageRef = useRef(null);
 
 
@@ -18,6 +19,8 @@ function Viewer() {
         setPage: setPage,
         type: pageType,
         setType: setPageType,
+        dock: dockType,
+        setDock: setDockType,
 
         hoveredSideBtn: hoveredSideBtn,
         pageRef: pageRef,

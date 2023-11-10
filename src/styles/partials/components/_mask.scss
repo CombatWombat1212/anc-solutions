@@ -1,0 +1,23 @@
+// @mixin mask {
+// 	// --mask-aspect-width: 205;
+// 	// --mask-aspect-height: 168;
+// 	mask-image: var(--mask-img);
+// 	-webkit-mask-size: contain;
+// 	-webkit-mask-repeat: no-repeat;
+// 	-webkit-mask-position: center;
+  
+// 	@include aspect-support-fix(var(--mask-aspect-width), var(--mask-aspect-height), 100%, null);
+//   }
+
+
+
+
+.viewer--mask {
+  // --w: calc(var(--mw) * var(--graphic-scale));
+  // --h: calc(var(--mh) * var(--graphic-scale));
+
+  //   width: var(--w);
+  //   height: var(--h);
+    background-color: $col-light;
+    @include mask;
+}

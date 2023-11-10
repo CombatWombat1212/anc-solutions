@@ -1,5 +1,7 @@
 $viewer-border: $b-width solid $col-light;
 $grid-size: 3.5rem;
+$viewer-border-radius_val: 4rem;
+$viewer-border-radius: 0rem $viewer-border-radius_val $viewer-border-radius_val 0rem;
 
 @mixin viewer-border($side: all) {
   @if $side == all {
@@ -23,15 +25,16 @@ $grid-size: 3.5rem;
   @include mx-auto;
   @include flex-row;
   @include viewer-border;
-  border-radius: 0rem 4rem 4rem 0rem;
-  overflow: hidden;
-
+  border-radius: $viewer-border-radius;
+  // overflow: hidden;
+  
   width: 85%; //TODO: this is temporary
   height: 50rem; //TODO: this is temporary
-
+  
   --viewer-inner-pad: 3rem;
-
+  
   &--content {
+    border-radius: $viewer-border-radius;
     width: 100%;
     background-image: linear-gradient($col-darker $b-width, transparent $b-width), linear-gradient(90deg, $col-darker $b-width, transparent $b-width);
     background-size: $grid-size $grid-size; /* Size of the grid */

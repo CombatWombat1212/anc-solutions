@@ -1,8 +1,91 @@
+.dock {
+  --dock-height: 14rem;
+//   --dock-hover-transition: 0.1s;
+  --dock-hover-transition: 0s;
 
+  width: 100%;
+  height: var(--dock-height);
+  min-height: var(--dock-height);
 
+  background-color: $col-background;
+  border-bottom-right-radius: $viewer-border-radius_val;
+  @include flex-row;
 
+  --dock-items: Max(Min(var(--dock-item-count), var(--dock-max-items)), var(--dock-min-items));
+  --item-width: #{col-width_calc(var(--dock-items))};
+  position: relative;
 
-.dock{
+  &--item {
+    @include flex-col;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: calc(var(--item-width) - 0.125rem);
+    border: solid $b-width rgba($col-light, 0);
+    margin-left: -$b-width;
+    margin-bottom: -$b-width;
+    margin-top: -$b-width;
 
-    
+    @include no-select;
+    cursor: pointer;
+
+    // outline: 0.125rem solid $col-light;
+    // outline-offset: -0.125rem;
+  }
+
+  &--item-background {
+    --dock-item-background-width: calc(var(--item-width) - #{$b-width});
+    width: var(--dock-item-background-width);
+
+    position: absolute;
+    top: calc(#{$b-width} * -1);
+    left: calc((var(--item-width) * var(--dock-background-index)) - #{$b-width});
+    height: 100%;
+    pointer-events: none;
+    border: $b-width solid $col-light;
+    transition: border-color var(--dock-hover-transition) 0s, z-index 0s 0s;
+
+    &:last-child {
+      --dock-item-last-background-width: calc(var(--item-width));
+      width: #{weighted-average(var(--dock-item-last-background-width), var(--dock-item-background-width), var(--dock-is-full))};
+      border-bottom-right-radius: #{weighted-average($viewer-border-radius_val, 0rem, var(--dock-is-full))};
+    }
+
+    &__active {
+        z-index: 100;
+      border-color: $col-primary;
+    }
+
+    &__inactive {
+      border-color: $col-light;
+    }
+  }
+
+  &--h2 {
+    transition: var(--dock-hover-transition);
+
+    &__active {
+      color: $col-primary;
+    }
+
+    &__inactive {
+      color: $col-light;
+    }
+  }
+
+  &--graphic {
+    margin-top: 1rem;
+    object-fit: contain;
+    @include s(6rem);
+    transition: var(--dock-hover-transition);
+
+    background-color: $col-light;
+    &__active {
+      background-color: $col-primary;
+    }
+
+    &__inactive {
+      background-color: $col-light;
+    }
+  }
 }

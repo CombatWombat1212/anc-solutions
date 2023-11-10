@@ -95,6 +95,26 @@ input, button, textarea, select {
   --column-grid-max: 12;
 }
 
+.viewer--mask {
+  background-color: #ffffff;
+  mask-image: var(--mask-img);
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
+@supports (aspect-ratio: 1/1) {
+  .viewer--mask {
+    aspect-ratio: var(--mask-aspect-width) / var(--mask-aspect-height);
+  }
+}
+
+@supports not (aspect-ratio: 1/1) {
+  .viewer--mask {
+    height: calc(100% / (var(--mask-aspect-width) / var(--mask-aspect-height)));
+  }
+}
+
 .viewer {
   margin-right: auto;
   margin-left: auto;
@@ -102,13 +122,13 @@ input, button, textarea, select {
   flex-direction: row;
   border: 0.125rem solid #ffffff;
   border-radius: 0rem 4rem 4rem 0rem;
-  overflow: hidden;
   width: 85%;
   height: 50rem;
   --viewer-inner-pad: 3rem;
 }
 
 .viewer--content {
+  border-radius: 0rem 4rem 4rem 0rem;
   width: 100%;
   background-image: linear-gradient(#292826 0.125rem, transparent 0.125rem), linear-gradient(90deg, #292826 0.125rem, transparent 0.125rem);
   background-size: 3.5rem 3.5rem;
@@ -189,12 +209,16 @@ input, button, textarea, select {
 
 .viewer .content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .viewer .content--inner {
-  padding: 6rem 8rem 4.5rem 8rem;
-  width: 100%;
+  --content-inner-pad-top: 6rem;
+  --content-inner-pad-bottom: 4.5rem;
+  --content-inner-pad-y: calc(var(--content-inner-pad-top) + var(--content-inner-pad-bottom));
+  --content-inner-pad-x: 8rem;
+  padding: var(--content-inner-pad-top) var(--content-inner-pad-x) var(--content-inner-pad-bottom) var(--content-inner-pad-x);
+  height: calc(100% - var(--content-inner-pad-y));
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -209,6 +233,94 @@ input, button, textarea, select {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.dock {
+  --dock-height: 14rem;
+  --dock-hover-transition: 0s;
+  width: 100%;
+  height: var(--dock-height);
+  min-height: var(--dock-height);
+  background-color: #1A1918;
+  border-bottom-right-radius: 4rem;
+  display: flex;
+  flex-direction: row;
+  --dock-items: Max(Min(var(--dock-item-count), var(--dock-max-items)), var(--dock-min-items));
+  --item-width: calc((((12 / var(--dock-items) )) / 12)  * 100%);
+  position: relative;
+}
+
+.dock--item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--item-width) - 0.125rem);
+  border: solid 0.125rem rgba(255, 255, 255, 0);
+  margin-left: -0.125rem;
+  margin-bottom: -0.125rem;
+  margin-top: -0.125rem;
+  -webkit-touch-callout: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.dock--item-background {
+  --dock-item-background-width: calc(var(--item-width) - 0.125rem);
+  width: var(--dock-item-background-width);
+  position: absolute;
+  top: calc(0.125rem * -1);
+  left: calc((var(--item-width) * var(--dock-background-index)) - 0.125rem);
+  height: 100%;
+  pointer-events: none;
+  border: 0.125rem solid #ffffff;
+  transition: border-color var(--dock-hover-transition) 0s, z-index 0s 0s;
+}
+
+.dock--item-background:last-child {
+  --dock-item-last-background-width: calc(var(--item-width));
+  width: calc(var(--dock-item-last-background-width) * var(--dock-is-full) + var(--dock-item-background-width) * (1 - var(--dock-is-full)));
+  border-bottom-right-radius: calc(4rem * var(--dock-is-full) + 0rem * (1 - var(--dock-is-full)));
+}
+
+.dock--item-background__active {
+  z-index: 100;
+  border-color: #EC0719;
+}
+
+.dock--item-background__inactive {
+  border-color: #ffffff;
+}
+
+.dock--h2 {
+  transition: var(--dock-hover-transition);
+}
+
+.dock--h2__active {
+  color: #EC0719;
+}
+
+.dock--h2__inactive {
+  color: #ffffff;
+}
+
+.dock--graphic {
+  margin-top: 1rem;
+  object-fit: contain;
+  --size: 6rem;
+  width: 6rem;
+  height: 6rem;
+  transition: var(--dock-hover-transition);
+  background-color: #ffffff;
+}
+
+.dock--graphic__active {
+  background-color: #EC0719;
+}
+
+.dock--graphic__inactive {
+  background-color: #ffffff;
 }
 
 .sandbox {
@@ -398,9 +510,11 @@ input, button, textarea, select {
 }
 
 .viewer .sizes--inner {
+  --content-inner-pad-top: calc(10rem - var(--background-pad));
+  --content-inner-pad-bottom: 10rem;
+  --content-inner-pad-x: 11rem;
   display: flex;
   flex-direction: row;
-  padding: calc(10rem - var(--background-pad)) 11rem 10rem 11rem;
 }
 
 .viewer .sizes--body {

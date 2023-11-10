@@ -43,11 +43,11 @@ const PRODUCT_DATA = {
           title: "Paper Type",
           link: { page: "paper", type: "traditional" },
           dock:[
-            DOCK_DATA.white,
-            DOCK_DATA.brown,
-            DOCK_DATA.hemp,
-            DOCK_DATA.bamboo,
-            DOCK_DATA.cellulose,
+            DOCK_DATA.paper.wood_white,
+            DOCK_DATA.paper.wood_brown,
+            DOCK_DATA.paper.hemp,
+            DOCK_DATA.paper.bamboo,
+            DOCK_DATA.paper.cellulose,
           ]
         },
         filter: {
@@ -182,6 +182,16 @@ const PRODUCT_DATA = {
     },
   },
 };
+
+
+
+
+
+
+
+
+
+
 
 const processSidebar = (productData, pageData) => {
   // Loop through all page data entries

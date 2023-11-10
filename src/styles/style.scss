@@ -17,11 +17,13 @@
 
 // @import "./partials/global/Utility";
 
+@import "./partials/components/mask";
 @import "./partials/components/viewer";
 @import "./partials/components/sidebar";
 @import "./partials/components/content";
 @import "./partials/components/graphic";
 @import "./partials/components/line";
+@import "./partials/components/dock";
 
 
 @import "./partials/pages/sandbox";

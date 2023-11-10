@@ -6,9 +6,10 @@ const DOCK_DATA = {
 
   paper: {
     wood_white: {
+      id:"wood_white",
       title: "Wood (white)",
       img: PAPER_DOCK_IMGS.wood_white,
-      link: { dock: "white" },
+      link: { dock: "wood_white" },
 
       stats: [
         {
@@ -47,9 +48,10 @@ const DOCK_DATA = {
       ],
     },
     wood_brown: {
+      id:"wood_brown",
       title: "Wood (brown)",
       img: PAPER_DOCK_IMGS.wood_brown,
-      link: { dock: "brown" },
+      link: { dock: "wood_brown" },
 
       stats: [
         {
@@ -84,18 +86,21 @@ const DOCK_DATA = {
       ],
     },
     hemp: {
+      id:"hemp",
       title: "Hemp (organic)",
       img: PAPER_DOCK_IMGS.hemp,
       link: { dock: "hemp" },
     },
 
     bamboo: {
+      id:"bamboo",
       title: "Bamboo (organic)",
       img: PAPER_DOCK_IMGS.bamboo,
       link: { dock: "bamboo" },
     },
 
     cellulose: {
+      id:"cellulose",
       title: "Cellulose",
       img: PAPER_DOCK_IMGS.cellulose,
       link: { dock: "cellulose" },

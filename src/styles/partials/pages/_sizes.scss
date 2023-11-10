@@ -6,10 +6,11 @@
 
 &--inner {
     
-    
+
+    --content-inner-pad-top: calc(10rem - var(--background-pad));
+    --content-inner-pad-bottom: 10rem;
+    --content-inner-pad-x: 11rem;
     @include flex-row;
-    padding: calc(10rem - var(--background-pad)) 11rem 10rem 11rem ;
-    // padding: 10rem ;
   }
 
   &--body {
