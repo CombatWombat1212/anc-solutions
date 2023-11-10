@@ -35,38 +35,36 @@ const PRODUCT_DATA = {
           id: "sizes",
           title: "Sizes",
           // options: ["0.25g - 1.0g"],
-          link: { page: "sizes", type:"traditional"},
+          link: { page: "sizes", type: "traditional" },
         },
         paper: {
           index: 2,
           id: "paper",
           title: "Paper Type",
           // options: ["i. Wood (white)", "ii. Wood (brown)", "iii. Organic Hemp", "iv. Bamboo", "v. Rice"],
-          link: { page: "paper", type:"traditional"},
+          link: { page: "paper", type: "traditional" },
         },
         filter: {
           index: 3,
           id: "filter",
           title: "Filter Type",
           // options: ["i. Spiral", "ii. Zig Zag"],
-          link: { page: "filter", type:"traditional"},
+          link: { page: "filter", type: "traditional" },
         },
         compaction: {
           index: 4,
           id: "compaction",
           title: "Compaction",
-          link: { page: "compaction", type:"traditional"},
+          link: { page: "compaction", type: "traditional" },
         },
         end: {
           index: 5,
           id: "end",
           title: "End Type",
           // options: ["i. Twisted", "ii. Punched", "iii. Crown"],
-          link: { page: "end", type:"traditional"},
+          link: { page: "end", type: "traditional" },
         },
       },
-
-
     },
   },
 
@@ -95,7 +93,6 @@ const PRODUCT_DATA = {
           // photo: SELECTION_IMGS.traditional_photo,
           // vector: SELECTION_IMGS.traditional_vector,
         },
-
       },
 
       subpages: {
@@ -133,7 +130,6 @@ const PRODUCT_DATA = {
           // photo: SELECTION_IMGS.traditional_photo,
           // vector: SELECTION_IMGS.traditional_vector,
         },
-
       },
       subpages: {
         sizes: {
@@ -169,7 +165,6 @@ const PRODUCT_DATA = {
           // photo: SELECTION_IMGS.traditional_photo,
           // vector: SELECTION_IMGS.traditional_vector,
         },
-
       },
       subpages: {
         sizes: {
@@ -202,6 +197,5 @@ const processSidebar = (productData, pageData) => {
     }
   }
 };
-
 
 export default PRODUCT_DATA;

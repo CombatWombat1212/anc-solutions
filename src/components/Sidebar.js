@@ -6,12 +6,9 @@ import useHoverAndFocus from "../scripts/hooks/useHoverAndFocus";
 function Sidebar({ view }) {
   const [panels, setPanels] = useState([]);
 
-  const optionArray =  view.type ? 
-  Object.values(PRODUCT_DATA[view.type].pages.subpages) :
-  Object.values(PRODUCT_DATA).map((x) => x.pages.selection);
+  const optionArray = view.type ? Object.values(PRODUCT_DATA[view.type].pages.subpages) : Object.values(PRODUCT_DATA).map((x) => x.pages.selection);
 
   console.log(view.type);
-
 
   useEffect(() => {
     if (!panels.length > 0) return;
@@ -23,21 +20,24 @@ function Sidebar({ view }) {
     }
   }, [panels]);
 
-
-
   return (
     <div className="viewer--sidebar sidebar">
       <Title view={view} />
       {optionArray.map((option, i) => (
         <Panel key={i} option={option} view={view} panels={panels} setPanels={setPanels} />
-      ))}
+        ))}
     </div>
   );
 }
 
-function Title({view}) {
-  const copy = (view.type && typeof view.type === 'string') ? view.type.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ') : "Pre-Rolls";
-
+function Title({ view }) {
+  const copy =
+    view.type && typeof view.type === "string"
+      ? view.type
+          .split(" ")
+          .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+          .join(" ")
+      : "Pre-Rolls";
 
   return (
     <div className="sidebar--title sidebar--panel">
@@ -47,7 +47,6 @@ function Title({view}) {
 }
 
 function Panel({ view, option, setPanels }) {
-
   const panelRef = useRef(null);
   const hovered = useHoverAndFocus(panelRef);
 
@@ -63,30 +62,28 @@ function Panel({ view, option, setPanels }) {
     });
   }, [hovered]);
 
-
-
   const handleClick = () => {
-    const page = (view.type && option[view.type]) ? option[view.type].link.page : option.link.page;
-    const type = (view.type && option[view.type]) ? option[view.type].link.type : option.link.type;
+    const page = view.type && option[view.type] ? option[view.type].link.page : option.link.page;
+    const type = view.type && option[view.type] ? option[view.type].link.type : option.link.type;
     view.setPage(page);
     view.setType(type);
   };
 
-
-  
   const title = option.title.long || option.title.short || option.title;
   const ind = String(option.index).padStart(2, "0");
 
-
-
   return (
-    <a className="sidebar--panel sidebar--button" ref={panelRef}
-      onClick={handleClick}
-    >
+    <a className="sidebar--panel sidebar--button" ref={panelRef} onClick={handleClick}>
       <H2 className="sidebar--index">{ind}</H2>
       <H2 className="sidebar--name">{title}</H2>
     </a>
   );
 }
+
+
+
+
+
+
 
 export default Sidebar;

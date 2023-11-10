@@ -192,6 +192,14 @@ input, button, textarea, select {
   flex-direction: row;
 }
 
+.viewer .content--inner {
+  padding: 6rem 8rem 4.5rem 8rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .viewer .graphic {
   display: flex;
   position: relative;
@@ -214,14 +222,6 @@ input, button, textarea, select {
   --selection-mouse-leave-timeout: 0.35s;
   --selection-transition: 0.35s;
   display: flex;
-}
-
-.selection--inner {
-  padding: 6rem 8rem 4.5rem 8rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .selection--body {
@@ -358,14 +358,6 @@ input, button, textarea, select {
   transition: "transform 0.5s, opacity 0.5s, visibility 0s 0.2s" ;
 }
 
-.schematic--inner {
-  padding: 6rem 8rem 4.5rem 8rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 .schematic--graphic {
   width: 100%;
   height: 100%;
@@ -398,5 +390,96 @@ input, button, textarea, select {
 
 .schematic--vector__idle {
   opacity: 1;
+}
+
+.viewer .sizes {
+  --background-pad: 3rem;
+  --background-label-pad:1rem;
+}
+
+.viewer .sizes--inner {
+  display: flex;
+  flex-direction: row;
+  padding: calc(10rem - var(--background-pad)) 11rem 10rem 11rem;
+}
+
+.viewer .sizes--body {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  position: relative;
+}
+
+.viewer .sizes--col {
+  width: calc((((12 / var(--sizes-columns) )) / 12)  * 100%);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.viewer .sizes--graphic {
+  height: 100%;
+  width: 100%;
+  aspect-ratio: var(--graphic-width)/var(--graphic-height);
+  object-fit: contain;
+}
+
+.viewer .sizes--brace {
+  height: 1rem;
+  width: 45%;
+  margin-top: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+  border: solid 0.125rem #EC0719;
+  border-width: 0 0.125rem 0.125rem 0.125rem;
+}
+
+.viewer .sizes--brace-line {
+  height: 2rem;
+  width: 0.125rem;
+  background-color: #EC0719;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.viewer .sizes--brace-dot {
+  --size: 0.625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  background-color: #EC0719;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: calc(0.625rem / -2);
+}
+
+.viewer .sizes--brace-label {
+  margin-top: 0.55rem;
+  text-align: center;
+}
+
+.viewer .sizes--background {
+  width: calc(100% + (var(--background-pad) * 2));
+  height: calc(100% + (var(--background-pad) * 1));
+  top: 0;
+  left: calc(var(--background-pad) * -1);
+  position: absolute;
+  border: solid 0.125rem #EC0719;
+  border-width: 0 0 0.125rem 0.125rem;
+}
+
+.viewer .sizes--background-label {
+  position: absolute;
+}
+
+.viewer .sizes--background-label__x {
+  top: calc(100% + var(--background-label-pad));
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.viewer .sizes--background-label__y {
+  top: 50%;
+  left: calc((var(--background-pad) * -1) - var(--background-label-pad) - 0.125rem - 0.25rem);
+  transform: rotate(-90deg) translateY(-50%);
 }
 /*# sourceMappingURL=style.css.map */

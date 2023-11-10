@@ -5,11 +5,11 @@
 
   display: flex;
 
-  &--inner {
-    padding: 6rem 8rem 4.5rem 8rem;
-    width: 100%;
-    @include flex-col-between;
-  }
+  // &--inner {
+  //   padding: 6rem 8rem 4.5rem 8rem;
+  //   width: 100%;
+  //   @include flex-col-between;
+  // }
 
   &--body {
     height: 70%;

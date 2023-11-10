@@ -24,18 +24,16 @@ function Schematic({ view }) {
     });
 
     setComponents(elements);
-
   };
 
   useEffect(() => {
     if (!components) return;
 
     Object.values(components).forEach((value) => {
-        value.forEach((element) => {
-          element.classList.add("schematic--vector");
-        });
+      value.forEach((element) => {
+        element.classList.add("schematic--vector");
       });
-    
+    });
 
     const getElemByIdContaining = (keyword) => {
       let elements = [];
@@ -96,8 +94,8 @@ function Schematic({ view }) {
       <SVG
         className={`schematic--graphic schematic--graphic__${ready ? "ready" : "loading"}`}
         src={img.src}
-        width={img.height / 2}
-        height={img.width / 2}
+        width={img.height}
+        height={img.width}
         innerRef={graphic}
         onLoad={handleSvgLoad}
       />
