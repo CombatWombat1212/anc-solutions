@@ -4,14 +4,25 @@ import Selection from "../pages/Selection";
 import Schematic from "../pages/Schematic";
 import Sizes from "../pages/Sizes";
 import Paper from "../pages/Paper";
+import Dock from "./Dock";
+import DOCK_DATA from "../data/DOCK_DATA";
 
 function Content({ view }) {
   const { page, pageRef } = view;
+
+  const DOCK_PAGES = Object.keys(DOCK_DATA);
+  const [show, setShow] = useState(DOCK_PAGES.includes(page));
+
+  useEffect(() => {
+    setShow(DOCK_PAGES.includes(page));
+  }, [page]);
 
   return (
     <>
       <div className={`viewer--content content ${page}`} ref={pageRef}>
         <Inner view={view} />
+
+        {show && <Dock view={view} />}
       </div>
     </>
   );
@@ -46,12 +57,14 @@ function Inner({ view }) {
 }
 
 function Page({ view }) {
-  return <>
-  {view.page == "selection" && <Selection view={view} />}
-  {view.page == "schematic" && <Schematic view={view} />}
-  {view.page == "sizes" && <Sizes view={view} />}
-  {view.page == "paper" && <Paper view={view} />}
-  </>;
+  return (
+    <>
+      {view.page == "selection" && <Selection view={view} />}
+      {view.page == "schematic" && <Schematic view={view} />}
+      {view.page == "sizes" && <Sizes view={view} />}
+      {view.page == "paper" && <Paper view={view} />}
+    </>
+  );
 }
 
 export default Content;

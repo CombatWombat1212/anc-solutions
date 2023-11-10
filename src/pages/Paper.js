@@ -1,8 +1,14 @@
+
+
+
+
+
+
+
+
 function Paper() {
     return (
-        <div>
-            paper
-        </div>
+        <div>hey</div>
     );
 }
 

@@ -1,3 +1,4 @@
+import DOCK_DATA from "./DOCK_DATA";
 import SCHEMATIC_IMGS from "./SCHEMATIC_IMGS";
 import SELECTION_IMGS from "./SELECTION_IMGS";
 
@@ -34,15 +35,20 @@ const PRODUCT_DATA = {
           index: 1,
           id: "sizes",
           title: "Sizes",
-          // options: ["0.25g - 1.0g"],
           link: { page: "sizes", type: "traditional" },
         },
         paper: {
           index: 2,
           id: "paper",
           title: "Paper Type",
-          // options: ["i. Wood (white)", "ii. Wood (brown)", "iii. Organic Hemp", "iv. Bamboo", "v. Rice"],
           link: { page: "paper", type: "traditional" },
+          dock:[
+            DOCK_DATA.white,
+            DOCK_DATA.brown,
+            DOCK_DATA.hemp,
+            DOCK_DATA.bamboo,
+            DOCK_DATA.cellulose,
+          ]
         },
         filter: {
           index: 3,

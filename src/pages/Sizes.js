@@ -13,14 +13,10 @@ function Sizes({ view }) {
         {imgs.map((img, i) => {
           return <Item imgs={imgs} index={i} key={i} />;
         })}
-      <div className="sizes--background">
-        <Label1 className="sizes--background-label sizes--background-label__x">Grams</Label1>
-        <Label1 className="sizes--background-label sizes--background-label__y">Length</Label1>
-      </div>
-
-
-
-
+        <div className="sizes--background">
+          <Label1 className="sizes--background-label sizes--background-label__x">Grams</Label1>
+          <Label1 className="sizes--background-label sizes--background-label__y">Length</Label1>
+        </div>
       </div>
     </>
   );
