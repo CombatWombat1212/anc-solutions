@@ -5,23 +5,23 @@
 
   display: flex;
 
-  // &--inner {
-  //   padding: 6rem 8rem 4.5rem 8rem;
-  //   width: 100%;
-  //   @include flex-col-between;
-  // }
+  &--inner {
+    --content-inner-pad-x: 10rem!important;
+    }
 
   &--body {
     height: 70%;
-    @include flex-row;
-    gap: var(--selection-col-gap);
+    @include flex-row-between;
+    // gap: var(--selection-col-gap);
   }
 
   &--col {
-    @include col-width(4);
+    // @include col-width(4);
+    @include col-width(1);
     @include flex-col;
     gap: 2.5rem;
     cursor: pointer;
+    align-items: center;
   }
 
   &--head {

@@ -19,7 +19,12 @@ function Content({ view }) {
 
   return (
     <>
-      <div className={`viewer--content content ${page}`} ref={pageRef}>
+      <div
+        className={`viewer--content content ${page}`}
+        ref={pageRef}
+        style={{
+          "--content-has-dock": show ? 1 : 0,
+        }}>
         <Inner view={view} />
 
         {show && <Dock view={view} />}

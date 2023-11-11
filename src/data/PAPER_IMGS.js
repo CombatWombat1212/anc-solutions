@@ -2,7 +2,50 @@
 
 
 
-const PAPER_IMGS = {};
+const PAPER_IMGS = {
+
+
+
+  blunt: {
+    name: "blunt",
+    src: "/assets/images/paper/blunt.svg",
+    alt: "",
+    width: 380,
+    height: 528,
+  },
+  cigarette: {
+    name: "cigarette",
+    src: "/assets/images/paper/cigarette.svg",
+    alt: "",
+    width: 327,
+    height: 528,
+  },
+  infused: {
+    name: "infused",
+    src: "/assets/images/paper/infused.svg",
+    alt: "",
+    width: 325,
+    height: 528,
+  },
+  traditional: {
+    name: "traditional",
+    src: "/assets/images/paper/traditional.svg",
+    alt: "",
+    width: 325,
+    height: 528,
+  },
+
+
+
+
+
+};
+
+
+
+
+
+
 
 const PAPER_DOCK_IMGS = {
   bamboo: {

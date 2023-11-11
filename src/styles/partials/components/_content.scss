@@ -20,6 +20,15 @@
     padding: var(--content-inner-pad-top) var(--content-inner-pad-x) var(--content-inner-pad-bottom) var(--content-inner-pad-x);
     height: calc(100% - var(--content-inner-pad-y));
     @include flex-col-between;
+
+
+
+    --content-inner-max-height: calc(100% - var(--content-inner-pad-y));
+    --content-inner-max-height_dock: calc(100% - var(--dock-height) - var(--content-inner-pad-y));
+
+    max-height: weighted-average( var(--content-inner-max-height_dock), var(--content-inner-max-height), var(--content-has-dock) );
+
+
   }
 
 

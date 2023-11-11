@@ -32,6 +32,9 @@ input, button, textarea, select {
 @use "sass:math";
 .viewer {
   --label-2-font-size:1rem;
+  --h3-font-size: 1.6875rem;
+  --h3-line-height:2.125rem;
+  --h3-size: Max(var(--h3-font-size), var(--h3-line-height));
 }
 
 .viewer--h1 {
@@ -54,7 +57,8 @@ input, button, textarea, select {
 
 .viewer--h3 {
   font-family: acumin-variable, sans-serif;
-  font-size: 1.6875rem;
+  font-size: var(--h3-font-size);
+  line-height: var(--h3-line-height);
   color: #ffffff;
   font-stretch: condensed;
 }
@@ -226,6 +230,9 @@ input, button, textarea, select {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  --content-inner-max-height: calc(100% - var(--content-inner-pad-y));
+  --content-inner-max-height_dock: calc(100% - var(--dock-height) - var(--content-inner-pad-y));
+  max-height: calc(var(--content-inner-max-height_dock) * var(--content-has-dock) + var(--content-inner-max-height) * (1 - var(--content-has-dock)));
 }
 
 .viewer .graphic {
@@ -239,8 +246,11 @@ input, button, textarea, select {
   object-fit: contain;
 }
 
-.dock {
+:root {
   --dock-height: 14rem;
+}
+
+.dock {
   --dock-hover-transition: 0s;
   width: 100%;
   height: var(--dock-height);
@@ -329,7 +339,7 @@ input, button, textarea, select {
 
 .bar {
   border: 0.125rem solid #ffffff;
-  height: 1.75rem;
+  height: 1.35rem;
   margin-top: var(--bar-margin-top);
 }
 
@@ -365,8 +375,8 @@ input, button, textarea, select {
 }
 
 .bar--text {
-  --label-2-font-size:0.625rem;
-  transform: translateX(-100%) rotate(-90deg) translateY(calc( (var(--label-2-font-size) * -1) + (0.125rem*2)));
+  --label-2-font-size: 0.625rem;
+  transform: translateX(-100%) rotate(-90deg) translateY(calc((var(--label-2-font-size) * -1) + (0.125rem* 2)));
   transform-origin: top right;
   color: #ffffff;
   white-space: nowrap;
@@ -386,20 +396,25 @@ input, button, textarea, select {
   display: flex;
 }
 
+.selection--inner {
+  --content-inner-pad-x: 10rem!important;
+}
+
 .selection--body {
   height: 70%;
   display: flex;
   flex-direction: row;
-  gap: var(--selection-col-gap);
+  justify-content: space-between;
 }
 
 .selection--col {
-  width: 33.33333%;
-  --column-width: 4;
+  width: 8.33333%;
+  --column-width: 1;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
   cursor: pointer;
+  align-items: center;
 }
 
 .selection--head {
@@ -494,7 +509,9 @@ input, button, textarea, select {
 }
 
 .selection--modal {
-  padding: 1.6rem 1.75rem 1.9rem 1.75rem;
+  --viewer-modal-pad-top: 1.85rem;
+  --viewer-modal-pad-bottom: 2.15rem;
+  padding: var(--viewer-modal-pad-top) 2rem var(--viewer-modal-pad-bottom) 2rem;
   background-color: #1a1918;
   background-color: rgba(255, 255, 255, 0.05);
   outline: solid 0.125rem #EC0719;
@@ -648,44 +665,79 @@ input, button, textarea, select {
 }
 
 .viewer .paper--inner {
-  --content-inner-pad-top: 2rem;
-  --content-inner-pad-bottom: 2rem;
-  --content-inner-pad-x: 2rem;
+  --content-inner-pad-top: 2.75rem;
+  --content-inner-pad-bottom: 2.75rem;
+  --content-inner-pad-x: 2.75rem;
+  --viewer-modal-margin-top: 1rem;
   display: flex;
   flex-direction: row;
   gap: 3rem;
 }
 
 .viewer .paper--body {
-  width: 66.66667%;
-  --column-width: 8;
+  width: 58.33333%;
+  --column-width: 7;
   display: flex;
   flex-direction: column;
 }
 
 .viewer .paper--visual {
-  width: 33.33333%;
-  --column-width: 4;
+  width: 41.66667%;
+  --column-width: 5;
 }
 
 .viewer .paper--modal {
-  margin-top: 1rem;
-  padding: 1.6rem 1.75rem 1.9rem 1.75rem;
+  --viewer-modal-pad-top: 1.85rem;
+  --viewer-modal-pad-bottom: 2.15rem;
+  padding: var(--viewer-modal-pad-top) 2rem var(--viewer-modal-pad-bottom) 2rem;
   background-color: #1a1918;
   background-color: rgba(255, 255, 255, 0.05);
   outline: solid 0.125rem #EC0719;
+  --viewer-modal-columns: 2;
+  --viewer-modal-rows: 3;
+  --viewer-modal-gap: 3rem;
+  --viewer-modal-row-gaps: calc((var(--viewer-modal-rows) - 1) * var(--viewer-modal-gap));
+  --viewer-modal-pad-bottom:3.25rem;
+  margin-top: var(--viewer-modal-margin-top);
+  padding-bottom: var(--viewer-modal-pad-bottom);
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 1.75rem;
-  height: 100%;
+  grid-template-columns: repeat(var(--viewer-modal-columns), 1fr);
+  grid-template-rows: repeat(var(--viewer-modal-rows), calc( (100% - var(--viewer-modal-row-gaps)) / 3));
+  gap: var(--viewer-modal-gap);
+  --h: calc(100% - var(--viewer-modal-pad-top) - var(--viewer-modal-pad-bottom) - var(--h3-size)  - var(--viewer-modal-margin-top));
+  height: var(--h);
+  max-height: var(--h);
 }
 
 .viewer .paper--h2 {
   color: #EC0719;
 }
 
+.viewer .paper--stat-row__bar {
+  margin-top: -1.65rem !important;
+}
+
+.viewer .paper--stat-row__after-bar {
+  margin-top: -0.85rem !important;
+}
+
 .viewer .paper--description {
   margin-top: 0.25rem;
+}
+
+.viewer .paper--visual {
+  padding-top: calc(var(--h3-size) + var(--viewer-modal-margin-top));
+  display: flex;
+  flex-direction: column;
+}
+
+.viewer .paper--graphic {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  --size: 90%;
+  width: 90%;
+  height: 90%;
+  margin: auto;
 }
 /*# sourceMappingURL=style.css.map */

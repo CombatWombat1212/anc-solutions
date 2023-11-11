@@ -1,6 +1,13 @@
+
+:root{
+    --dock-height: 14rem;
+    
+}
+
+
 .dock {
-  --dock-height: 14rem;
-//   --dock-hover-transition: 0.1s;
+    //   --dock-hover-transition: 0.1s;
+    // --dock-height: 14rem;
   --dock-hover-transition: 0s;
 
   width: 100%;

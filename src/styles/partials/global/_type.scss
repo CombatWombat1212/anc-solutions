@@ -6,6 +6,12 @@ $font-body: acumin-variable, sans-serif;
   --label-2-font-size:1rem;
 
 
+
+  --h3-font-size: 1.6875rem;
+  --h3-line-height:2.125rem;
+  --h3-size: Max(var(--h3-font-size), var(--h3-line-height));
+
+
   &--h1 {
     font-family: $font-title;
     // font-size: 3.4375rem;
@@ -26,7 +32,8 @@ $font-body: acumin-variable, sans-serif;
 
   &--h3 {
     font-family: $font-body;
-    font-size: 1.6875rem;
+    font-size: var(--h3-font-size);
+    line-height: var(--h3-line-height);
     color: $col-light;
     font-stretch: condensed;
   }
