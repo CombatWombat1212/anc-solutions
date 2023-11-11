@@ -596,4 +596,46 @@ input, button, textarea, select {
   left: calc((var(--background-pad) * -1) - var(--background-label-pad) - 0.125rem - 0.25rem);
   transform: rotate(-90deg) translateY(-50%);
 }
+
+.viewer .paper--inner {
+  --content-inner-pad-top: 2rem;
+  --content-inner-pad-bottom: 2rem;
+  --content-inner-pad-x: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+
+.viewer .paper--body {
+  width: 66.66667%;
+  --column-width: 8;
+  display: flex;
+  flex-direction: column;
+}
+
+.viewer .paper--visual {
+  width: 33.33333%;
+  --column-width: 4;
+}
+
+.viewer .paper--modal {
+  margin-top: 1rem;
+  padding: 1.85rem 2rem 2.15rem 2rem;
+  background-color: #1a1918;
+  background-color: rgba(255, 255, 255, 0.05);
+  outline: solid 0.125rem #EC0719;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1.75rem;
+  height: 100%;
+}
+
+.viewer .paper--h2 {
+  color: #EC0719;
+}
+
+.viewer .paper--description {
+  margin-top: 0.25rem;
+}
 /*# sourceMappingURL=style.css.map */

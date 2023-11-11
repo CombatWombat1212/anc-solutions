@@ -21,6 +21,15 @@ $viewer-border-radius: 0rem $viewer-border-radius_val $viewer-border-radius_val 
 
 
 
+@mixin viewer-modal{
+  padding: 1.85rem 2rem 2.15rem 2rem;
+  background-color: rgba($col-background, 1);
+  background-color: rgba(#ffffff, 0.05);
+  outline: solid 0.125rem $col-primary;
+}
+
+
+
 .viewer {
   @include mx-auto;
   @include flex-row;

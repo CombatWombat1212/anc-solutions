@@ -1,2 +1,43 @@
+.viewer .paper {
+  &--inner {
+    $pad: 2rem;
+    --content-inner-pad-top: #{$pad};
+    --content-inner-pad-bottom: #{$pad};
+    --content-inner-pad-x: #{$pad};
 
+    @include flex-row;
+    gap: 3rem;
+  }
 
+  &--body {
+    @include col-width(8);
+    @include flex-col;
+  }
+
+  &--visual {
+    @include col-width(4);
+  }
+
+  &--modal {
+    margin-top: 1rem;
+    @include viewer-modal;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1.75rem;
+
+    height: 100%;
+  }
+
+  &--h2 {
+    color: $col-primary;
+  }
+
+  &--stat {
+  }
+
+  &--description {
+    margin-top:0.25rem;
+  }
+}
