@@ -1,0 +1,52 @@
+.bar {
+  &--wrapper {
+    --bar-margin-top: 0.35rem;
+    --bar-border-width: #{$b-width};
+    --bar-notch-height: 0.5rem;
+    --bar-label-margin-top: 0.55rem;
+  }
+
+  @include viewer-border;
+  height: 1.75rem;
+  margin-top: var(--bar-margin-top);
+
+  &--value {
+    background-color: $col-primary;
+    height: 100%;
+
+    width: var(--bar-value_percent);
+  }
+
+  &--x {
+    @include flex-row-between;
+  }
+
+  &--label {
+    // width: col-width_calc(var(--bar-label-count));
+    width: $b-width;
+  }
+
+  &--notch {
+    width: $b-width;
+    height: var(--bar-notch-height);
+    background-color: $col-light;
+    position: relative;
+    display: flex;
+  }
+
+  &--text {
+
+    --label-2-font-size:0.625rem;
+
+
+    // transform: translateX(-100%) rotate(-90deg) translateY(calc(-50% - #{$b-width} - (#{$b-width} / 2) ));
+    // transform: translateX(-100%) rotate(-90deg) translateY(calc(-50% + #{$b-width}  ));
+    transform: translateX(-100%) rotate(-90deg) translateY(calc( (var(--label-2-font-size) * -1) + (#{$b-width}*2) ));
+    transform-origin: top right;
+    color: $col-light;
+    white-space: nowrap;
+    padding-right: calc(var(--bar-notch-height) + var(--bar-label-margin-top));
+
+
+  }
+}

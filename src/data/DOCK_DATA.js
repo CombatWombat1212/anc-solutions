@@ -1,3 +1,4 @@
+import BAR_TYPES from "./BAR_TYPES";
 import { PAPER_DOCK_IMGS } from "./PAPER_IMGS";
 
 const DOCK_DATA = {
@@ -23,21 +24,21 @@ const DOCK_DATA = {
         {
           title: "Burn Rate",
           bar: {
-            type: "speed",
+            type: BAR_TYPES.speed,
             value: 40,
           },
         },
         {
           title: "Porosity",
           bar: {
-            type: "level",
+            type: BAR_TYPES.level,
             value: 55,
           },
         },
         {
           title: "Thickness",
           bar: {
-            type: "width",
+            type: BAR_TYPES.width,
             value: 35,
           },
         },
@@ -65,21 +66,21 @@ const DOCK_DATA = {
         {
           title: "Other stat 3",
           bar: {
-            type: "speed",
+            type: BAR_TYPES.speed,
             value: 67,
           },
         },
         {
           title: "Other stat 4",
           bar: {
-            type: "level",
+            type: BAR_TYPES.level,
             value: 20,
           },
         },
         {
           title: "Other stat 5",
           bar: {
-            type: "width",
+            type: BAR_TYPES.width,
             value: 85,
           },
         },
