@@ -5,20 +5,26 @@ import Graphic from "./Graphic";
 import useInOut from "../scripts/hooks/useInOut";
 import Mask from "./Mask";
 import createUpdateConditions from "../scripts/createUpdateConditions";
+import DOCK_DATA from "../data/DOCK_DATA";
 
 // data is the array of dock elements
 // view.dock is the id of the active dock element
 
 function Dock({ view }) {
   const { page, type } = view;
-  const [data, setData] = useState(PRODUCT_DATA[view.type].pages.subpages[view.page].dock);
 
   useEffect(() => {
     const dock = PRODUCT_DATA[view.type].pages.subpages[view.page].dock;
     if (!dock) return;
-    setData(dock);
     view.setDock(dock[0].id);
+    view.setDockStats(dock);
   }, [view.page, view.type]);
+
+  useEffect(() => {
+    const dock = PRODUCT_DATA[view.type].pages.subpages[view.page].dock;
+    view.setDockActiveObj(dock.find((item) => item.id === view.dock));
+  }, [view.dock]);
+  
 
   const [active, setActive] = useState(false);
 
@@ -28,7 +34,7 @@ function Dock({ view }) {
 
   const dockMaxItems = 6;
   const dockMinItems = 4;
-  const dockItemCount = data.length;
+  const dockItemCount = view.dockStats.length;
   const dockIsFull = dockItemCount >= dockMinItems && dockItemCount <= dockMaxItems ? 1 : 0;
 
   return (
@@ -40,9 +46,7 @@ function Dock({ view }) {
         "--dock-min-items": dockMinItems,
         "--dock-is-full": dockIsFull,
       }}>
-      {data.map((item, index) => (
-        <Item item={item} index={index} key={index} view={view} active={active} />
-      ))}
+      {view.dockStats && view.dockStats.map((item, index) => <Item item={item} index={index} key={index} view={view} active={active} />)}
     </div>
   );
 }

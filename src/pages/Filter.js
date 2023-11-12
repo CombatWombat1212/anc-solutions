@@ -7,23 +7,13 @@ import PRODUCT_DATA from "../data/PRODUCT_DATA";
 
 
 function Filter({ view }) {
-  const title = view.dock.title;
-  const stats = view.dock.stats;
 
-  const [data, setData] = useState(false);
-
-  useEffect(() => {
-    const dock = PRODUCT_DATA[view.type]?.pages?.subpages?.[view.page]?.dock?.find((item) => item.id === view.dock);
-
-    if (!dock) return;
-    setData(dock);
-  }, [view.dock]);
 
   return (
     <>
-      {data && (
+      {view.dockData && (
         <>
-          <ContentModal title={title} pref={"filter"}>
+          <ContentModal title={view.dockData.title} pref={"filter"}>
             <div>Enter</div>
           </ContentModal>
           <div className="filter--visual"> </div>

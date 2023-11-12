@@ -15,14 +15,14 @@ function Paper({ view }) {
 function Wrapper({ view }) {
   const img = PAPER_IMGS[view.type];
 
-  const [data, setData] = useState(false);
+  // const [data, setData] = useState(false);
 
-  useEffect(() => {
-    const dock = PRODUCT_DATA[view.type]?.pages?.subpages?.[view.page]?.dock?.find((item) => item.id === view.dock);
+  // useEffect(() => {
+  //   const dock = PRODUCT_DATA[view.type]?.pages?.subpages?.[view.page]?.dock?.find((item) => item.id === view.dock);
 
-    if (!dock) return;
-    setData(dock);
-  }, [view.dock]);
+  //   if (!dock) return;
+  //   setData(dock);
+  // }, [view.dock]);
 
   const [rows, setRows] = useState(0);
   const [columns, setColumns] = useState(0);
@@ -30,6 +30,14 @@ function Wrapper({ view }) {
   const modal = useRef(null);
   const rowCount = useElementStyle(modal, "--viewer-modal-rows");
   const colCount = useElementStyle(modal, "--viewer-modal-columns");
+
+
+
+  useEffect(() => {
+    console.log(view.dockActiveObj);
+  }, [view.dockActiveObj]);
+
+
 
   useEffect(() => {
     if (rowCount && !isNaN(Number(rowCount))) {
@@ -51,10 +59,10 @@ function Wrapper({ view }) {
   const checkRowType = (rowIndex) => {
     const startIndex = rowIndex * columns;
     const endIndex = startIndex + columns;
-    const rowStats = data.stats.slice(startIndex, endIndex);
+    const rowStats = view.dockActiveObj.stats.slice(startIndex, endIndex);
 
     const isAllBar = rowStats.every((stat) => stat.type === "bar");
-    const isPrevAllBar = rowIndex > 0 && data.stats.slice((rowIndex - 1) * columns, startIndex).every((stat) => stat.type === "bar");
+    const isPrevAllBar = rowIndex > 0 && view.dockActiveObj.stats.slice((rowIndex - 1) * columns, startIndex).every((stat) => stat.type === "bar");
     const isPrevRowMixed = rowIndex > 0 && !isPrevAllBar; // Check if previous row is not all bar
 
     return {
@@ -66,10 +74,10 @@ function Wrapper({ view }) {
 
   return (
     <>
-      {data && (
+      {view.dockActiveObj && (
         <>
-          <ContentModal pref={"paper"} title={data.title} reference={modal}>
-            {data.stats.map((stat, index) => {
+          <ContentModal pref={"paper"} title={view.dockActiveObj.title} reference={modal}>
+            {view.dockActiveObj.stats.map((stat, index) => {
               const rowIndex = Math.floor(index / columns);
               const rowType = checkRowType(rowIndex);
               let className = "";
