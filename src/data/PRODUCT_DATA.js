@@ -56,6 +56,14 @@ const PRODUCT_DATA = {
           title: "Filter Type",
           // options: ["i. Spiral", "ii. Zig Zag"],
           link: { page: "filter", type: "traditional" },
+          dock:[
+            DOCK_DATA.filter.wood_w,
+            DOCK_DATA.filter.bamboo_w,
+            DOCK_DATA.filter.wood_spiral,
+            DOCK_DATA.filter.glass,
+            DOCK_DATA.filter.aluminum,
+            DOCK_DATA.filter.ceramic,
+          ]
         },
         compaction: {
           index: 4,

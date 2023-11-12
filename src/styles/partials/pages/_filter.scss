@@ -1,0 +1,26 @@
+
+
+
+
+.viewer .filter {
+  // &--inner{
+  //     @include content-pad_thin;
+  // }
+
+  &--body {
+    @include col-width(7);
+  }
+
+  &--visual {
+    @include col-width(5);
+  }
+
+
+  &--modal {
+    --viewer-modal-columns: 1;
+    // --viewer-modal-rows: unset;
+  }
+
+
+
+}

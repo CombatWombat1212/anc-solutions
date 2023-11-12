@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import PRODUCT_DATA, { PAGE_DATA } from "../data/PRODUCT_DATA";
+import PRODUCT_DATA from "../data/PRODUCT_DATA";
 import { H1, H2 } from "./Text";
 import useHoverAndFocus from "../scripts/hooks/useHoverAndFocus";
 
@@ -8,7 +8,7 @@ function Sidebar({ view }) {
 
   const optionArray = view.type ? Object.values(PRODUCT_DATA[view.type].pages.subpages) : Object.values(PRODUCT_DATA).map((x) => x.pages.selection);
 
-  console.log(view.type);
+  // console.log(view.type);
 
   useEffect(() => {
     if (!panels.length > 0) return;
@@ -65,9 +65,24 @@ function Panel({ view, option, setPanels }) {
   const handleClick = () => {
     const page = view.type && option[view.type] ? option[view.type].link.page : option.link.page;
     const type = view.type && option[view.type] ? option[view.type].link.type : option.link.type;
+
     view.setPage(page);
     view.setType(type);
   };
+
+
+  useEffect(() => {
+    const dock = PRODUCT_DATA[view.type]?.pages?.subpages?.[view.page]?.dock;
+    if(dock && dock.length > 0) {
+      view.setDock(dock[0].id);
+    }
+  }, [view.page, view.type]);
+
+  // useEffect(() => {
+  //   console.log(view.dock);
+  // }, [view.dock]);
+
+
 
   const title = option.title.long || option.title.short || option.title;
   const ind = String(option.index).padStart(2, "0");

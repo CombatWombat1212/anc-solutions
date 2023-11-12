@@ -235,6 +235,41 @@ input, button, textarea, select {
   max-height: calc(var(--content-inner-max-height_dock) * var(--content-has-dock) + var(--content-inner-max-height) * (1 - var(--content-has-dock)));
 }
 
+.viewer .content-modal--inner {
+  --content-inner-pad-top: 2.75rem;
+  --content-inner-pad-bottom: 2.75rem;
+  --content-inner-pad-x: 2.75rem;
+  --viewer-modal-margin-top: 1rem;
+}
+
+.viewer .content-modal--body {
+  display: flex;
+  flex-direction: column;
+}
+
+.viewer .content-modal--modal {
+  --viewer-modal-pad-top: 1.85rem;
+  --viewer-modal-pad-bottom: 2.15rem;
+  padding: var(--viewer-modal-pad-top) 2rem var(--viewer-modal-pad-bottom) 2rem;
+  background-color: #1a1918;
+  background-color: rgba(255, 255, 255, 0.05);
+  outline: solid 0.125rem #EC0719;
+  --viewer-modal-columns: 2;
+  --viewer-modal-rows: 2;
+  --viewer-modal-gap: 3rem;
+  --viewer-modal-row-gaps: calc((var(--viewer-modal-rows) - 1) * var(--viewer-modal-gap));
+  --viewer-modal-pad-bottom: 3.25rem;
+  margin-top: var(--viewer-modal-margin-top);
+  padding-bottom: var(--viewer-modal-pad-bottom);
+  display: grid;
+  grid-template-columns: repeat(var(--viewer-modal-columns), 1fr);
+  grid-template-rows: repeat(var(--viewer-modal-rows), calc((100% - var(--viewer-modal-row-gaps)) / 3));
+  gap: var(--viewer-modal-gap);
+  --h: calc(100% - var(--viewer-modal-pad-top) - var(--viewer-modal-pad-bottom) - var(--h3-size) - var(--viewer-modal-margin-top));
+  height: var(--h);
+  max-height: var(--h);
+}
+
 .viewer .graphic {
   display: flex;
   position: relative;
@@ -665,10 +700,6 @@ input, button, textarea, select {
 }
 
 .viewer .paper--inner {
-  --content-inner-pad-top: 2.75rem;
-  --content-inner-pad-bottom: 2.75rem;
-  --content-inner-pad-x: 2.75rem;
-  --viewer-modal-margin-top: 1rem;
   display: flex;
   flex-direction: row;
   gap: 3rem;
@@ -677,8 +708,6 @@ input, button, textarea, select {
 .viewer .paper--body {
   width: 58.33333%;
   --column-width: 7;
-  display: flex;
-  flex-direction: column;
 }
 
 .viewer .paper--visual {
@@ -687,26 +716,8 @@ input, button, textarea, select {
 }
 
 .viewer .paper--modal {
-  --viewer-modal-pad-top: 1.85rem;
-  --viewer-modal-pad-bottom: 2.15rem;
-  padding: var(--viewer-modal-pad-top) 2rem var(--viewer-modal-pad-bottom) 2rem;
-  background-color: #1a1918;
-  background-color: rgba(255, 255, 255, 0.05);
-  outline: solid 0.125rem #EC0719;
   --viewer-modal-columns: 2;
   --viewer-modal-rows: 3;
-  --viewer-modal-gap: 3rem;
-  --viewer-modal-row-gaps: calc((var(--viewer-modal-rows) - 1) * var(--viewer-modal-gap));
-  --viewer-modal-pad-bottom:3.25rem;
-  margin-top: var(--viewer-modal-margin-top);
-  padding-bottom: var(--viewer-modal-pad-bottom);
-  display: grid;
-  grid-template-columns: repeat(var(--viewer-modal-columns), 1fr);
-  grid-template-rows: repeat(var(--viewer-modal-rows), calc( (100% - var(--viewer-modal-row-gaps)) / 3));
-  gap: var(--viewer-modal-gap);
-  --h: calc(100% - var(--viewer-modal-pad-top) - var(--viewer-modal-pad-bottom) - var(--h3-size)  - var(--viewer-modal-margin-top));
-  height: var(--h);
-  max-height: var(--h);
 }
 
 .viewer .paper--h2 {
@@ -739,5 +750,19 @@ input, button, textarea, select {
   width: 90%;
   height: 90%;
   margin: auto;
+}
+
+.viewer .filter--body {
+  width: 58.33333%;
+  --column-width: 7;
+}
+
+.viewer .filter--visual {
+  width: 41.66667%;
+  --column-width: 5;
+}
+
+.viewer .filter--modal {
+  --viewer-modal-columns: 1;
 }
 /*# sourceMappingURL=style.css.map */

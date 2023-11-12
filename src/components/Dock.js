@@ -1,17 +1,30 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import PRODUCT_DATA from "../data/PRODUCT_DATA";
 import { Body, H2, Label1, Label2 } from "./Text";
 import Graphic from "./Graphic";
 import useInOut from "../scripts/hooks/useInOut";
 import Mask from "./Mask";
+import createUpdateConditions from "../scripts/createUpdateConditions";
+
+// data is the array of dock elements
+// view.dock is the id of the active dock element
 
 function Dock({ view }) {
   const { page, type } = view;
   const [data, setData] = useState(PRODUCT_DATA[view.type].pages.subpages[view.page].dock);
 
   useEffect(() => {
-    view.setDock(data[0]);
-  }, []);
+    const dock = PRODUCT_DATA[view.type].pages.subpages[view.page].dock;
+    if (!dock) return;
+    setData(dock);
+    view.setDock(dock[0].id);
+  }, [view.page, view.type]);
+
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    setActive(view.dock);
+  }, [view.dock]);
 
   const dockMaxItems = 6;
   const dockMinItems = 4;
@@ -28,15 +41,15 @@ function Dock({ view }) {
         "--dock-is-full": dockIsFull,
       }}>
       {data.map((item, index) => (
-        <Item item={item} index={index} key={index} view={view} />
+        <Item item={item} index={index} key={index} view={view} active={active} />
       ))}
     </div>
   );
 }
 
-function Item({ item, index, view }) {
+function Item({ item, index, view, active }) {
   const [hovered, setHovered] = useState(false);
-  const [state, setState] = useState("inactive");
+  const [state, setState] = useState(view.dock == item.id ? "active" : "inactive");
 
   const handleHover = () => {
     setHovered(true);
@@ -47,24 +60,16 @@ function Item({ item, index, view }) {
   };
 
   const handleClick = () => {
-    view.setDock(item);
+    view.setDock(item.id);
   };
 
   useEffect(() => {
-    if (hovered || view.dock.id === item.id) {
-      setState("active");
-    } else {
-      setState("inactive");
-    }
-  }, [view.dock, hovered]);
+    setState(view.dock == item.id || hovered ? "active" : "inactive");
+  }, [active, hovered]);
 
   return (
     <>
-      <a
-        className={`dock--item dock--item__${state} dock--item__${state}`}
-        onMouseEnter={handleHover}
-        onMouseLeave={handleLeave}
-        onClick={handleClick}>
+      <a className={`dock--item dock--item__${state}`} onMouseEnter={handleHover} onMouseLeave={handleLeave} onClick={handleClick}>
         <H2 className={`dock--h2 dock--h2__${state}`}>{item.title}</H2>
         <Mask className={`dock--graphic dock--graphic__${state}`} img={item.img} />
       </a>

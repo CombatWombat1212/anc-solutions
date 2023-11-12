@@ -1,5 +1,10 @@
 import BAR_LABELS from "./BAR_LABELS";
+import { FILTER_DOCK_IMGS } from "./FILTER_IMGS";
 import { PAPER_DOCK_IMGS } from "./PAPER_IMGS";
+
+
+
+
 
 const DOCK_DATA = {
   paper: {
@@ -115,6 +120,100 @@ const DOCK_DATA = {
       link: { dock: "cellulose" },
     },
   },
+
+
+
+  filter:{
+
+    wood_w: {
+      id: "wood_w",
+      title: "Wood W",
+      img: FILTER_DOCK_IMGS.wood_w,
+      link: { dock: "wood_w" },
+
+
+
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description: "Crafted from bleached wood pulp paper, this filter boasts a zigzag ‘Z’ pattern or a ‘W’ pattern.",
+        },
+        {
+          title: "Benefits",
+          type: "description",
+          description: "The zigzag design provides more surface area than a straight ‘I’ design, allowing for improved cooling and filtration. The bleached wood pulp paper ensures durability.",
+        },
+      ],
+
+
+    },
+
+    bamboo_w: {
+      id: "bamboo_w",
+      title: "Bamboo W",
+      img: FILTER_DOCK_IMGS.bamboo_w,
+      link: { dock: "bamboo_w" },
+
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description: "Different data.",
+        },
+        {
+          title: "Benefits",
+          type: "description",
+          description: "Also different data.",
+        },
+      ],
+
+
+    },
+
+    wood_spiral: {
+      id: "wood_spiral",
+      title: "Wood Spiral",
+      img: FILTER_DOCK_IMGS.wood_spiral,
+      link: { dock: "wood_spiral" },
+    },
+
+    glass: {
+      id: "glass",
+      title: "Glass",
+      img: FILTER_DOCK_IMGS.glass,
+      link: { dock: "glass" },
+    },
+
+    aluminum: {
+      id: "aluminum",
+      title: "Aluminum",
+      img: FILTER_DOCK_IMGS.aluminum,
+      link: { dock: "aluminum" },
+    },
+
+    ceramic: {
+      id: "ceramic",
+      title: "Ceramic",
+      img: FILTER_DOCK_IMGS.ceramic,
+      link: { dock: "ceramic" },
+    },
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
 };
 
 export default DOCK_DATA;

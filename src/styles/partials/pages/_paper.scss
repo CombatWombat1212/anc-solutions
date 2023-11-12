@@ -1,18 +1,15 @@
+
+
+
 .viewer .paper {
   &--inner {
-    $pad: 2.75rem;
-    --content-inner-pad-top: #{$pad};
-    --content-inner-pad-bottom: #{$pad};
-    --content-inner-pad-x: #{$pad};
-    --viewer-modal-margin-top: 1rem;
-
     @include flex-row;
     gap: 3rem;
   }
 
   &--body {
     @include col-width(7);
-    @include flex-col;
+    // @include flex-col;
   }
 
   &--visual {
@@ -20,31 +17,8 @@
   }
 
   &--modal {
-      @include viewer-modal;
     --viewer-modal-columns: 2;
     --viewer-modal-rows: 3;
-    --viewer-modal-gap: 3rem;
-    --viewer-modal-row-gaps: calc((var(--viewer-modal-rows) - 1) * var(--viewer-modal-gap));
-    // --viewer-modal-pad-bottom:3.25rem;
-    --viewer-modal-pad-bottom:3.25rem;
-    margin-top: var(--viewer-modal-margin-top);
-
-    padding-bottom: var(--viewer-modal-pad-bottom);
-
-    display: grid;
-    grid-template-columns: repeat(var(--viewer-modal-columns), 1fr);
-    // grid-template-rows: repeat(var(--viewer-modal-rows), 1fr);
-    grid-template-rows: repeat(var(--viewer-modal-rows), calc( (100% - var(--viewer-modal-row-gaps)) / 3 ));
-    gap: var(--viewer-modal-gap);
-
-    // height: calc(100% - var(--viewer-modal-pad-top) - var(--viewer-modal-pad-bottom) - var(--viewer-modal-row-gaps));
-    // max-height: calc(100% - var(--viewer-modal-pad-top) - var(--viewer-modal-pad-bottom) - var(--viewer-modal-row-gaps));
-
-
-
-    --h: calc(100% - var(--viewer-modal-pad-top) - var(--viewer-modal-pad-bottom) - var(--h3-size)  - var(--viewer-modal-margin-top));
-    height: var(--h);
-    max-height: var(--h);
   }
 
   &--h2 {
@@ -53,33 +27,29 @@
 
   &--stat-row {
     &__bar {
-      margin-top: -1.65rem!important;
+      margin-top: -1.65rem !important;
     }
     &__after-bar {
-      margin-top: -0.85rem!important;
+      margin-top: -0.85rem !important;
     }
   }
 
-//   &--stat {
-//     margin-top: -0.25rem;
-//   }
+  //   &--stat {
+  //     margin-top: -0.25rem;
+  //   }
 
   &--description {
     margin-top: 0.25rem;
   }
 
-
-
-  &--visual{
+  &--visual {
     padding-top: calc(var(--h3-size) + var(--viewer-modal-margin-top));
     @include flex-col;
   }
 
-
-  &--graphic{
-
+  &--graphic {
     @include img-contain;
     @include s(90%);
-    margin:auto;
+    margin: auto;
   }
 }
