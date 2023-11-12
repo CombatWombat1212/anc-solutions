@@ -301,6 +301,7 @@ input, button, textarea, select {
   --item-width: calc((((12 / var(--dock-items) )) / 12)  * 100%);
   position: relative;
   border-top: 0.125rem solid #ffffff;
+  margin-top: -0.125rem;
 }
 
 .dock--item {
