@@ -96,7 +96,7 @@ function Wrapper({ view }) {
             <SVG
               className="paper--graphic"
               src={img.src}
-              width={img.width} // Fixed attribute order, it should be width then height
+              width={img.width}
               height={img.height}
             />
           </div>

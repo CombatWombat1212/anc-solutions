@@ -2,10 +2,8 @@
 
 
 .viewer .paper {
-  &--inner {
-    @include flex-row;
-    gap: 3rem;
-  }
+//   &--inner {
+//   }
 
   &--body {
     @include col-width(7);

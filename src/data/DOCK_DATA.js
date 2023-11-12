@@ -1,4 +1,5 @@
 import BAR_LABELS from "./BAR_LABELS";
+import { END_DOCK_IMGS } from "./END_IMGS";
 import { FILTER_DOCK_IMGS } from "./FILTER_IMGS";
 import { PAPER_DOCK_IMGS } from "./PAPER_IMGS";
 
@@ -198,6 +199,93 @@ const DOCK_DATA = {
       img: FILTER_DOCK_IMGS.ceramic,
       link: { dock: "ceramic" },
     },
+
+
+
+  },
+
+
+
+
+
+
+  end:{
+
+    open: {
+      id: "open",
+      title: "Open",
+      img: END_DOCK_IMGS.open,
+      link: { dock: "open" },
+
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description: "As the name suggests, the end is left open, exposing the cannabis inside. It’s similar to the end of a traditional cigarette.",
+        },
+        {
+          title: "Benefits",
+          type: "description",
+          description: "Allows for easy and immediate lighting. The open end can also provide assurance to users about the quality and consistency of the cannabis inside, as they can see it directly.",
+        },
+      ],
+
+
+    },
+
+
+    punched: {
+      id: "punched",
+      title: "Punched",
+      img: END_DOCK_IMGS.punched,
+      link: { dock: "punched" },
+
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description: "Different data.",
+        },
+        {
+          title: "Benefits",
+          type: "description",
+          description: "Also different data.",
+        },
+      ],
+
+
+    },
+
+
+
+    twisted: {
+      id: "twisted",
+      title: "Twisted",
+      img: END_DOCK_IMGS.twisted,
+      link: { dock: "twisted" },
+
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description: "ALLLLL different data.",
+        },
+        {
+          title: "Benefits",
+          type: "description",
+          description: "Totally different data.",
+        },
+      ],
+
+
+    },
+
+
+
+
+
+
+
 
 
 

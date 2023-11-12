@@ -1,3 +1,61 @@
+
+
+
+
+
+
+const FILTER_IMGS = {
+
+
+
+
+
+  blunt: {
+    name: "blunt",
+    src: "/assets/images/filter/blunt.svg",
+    alt: "",
+    width: 650,
+    height: 470,
+  },
+  cigarette: {
+    name: "cigarette",
+    src: "/assets/images/filter/cigarette.svg",
+    alt: "",
+    width: 650,
+    height: 470,
+  },
+  infused: {
+    name: "infused",
+    src: "/assets/images/filter/infused.svg",
+    alt: "",
+    width: 650,
+    height: 470,
+  },
+  traditional: {
+    name: "traditional",
+    src: "/assets/images/filter/traditional.svg",
+    alt: "",
+    width: 592,
+    height: 468,
+  },
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const FILTER_DOCK_IMGS = {
   aluminum: {
     name: "dock_aluminum",
@@ -46,3 +104,4 @@ const FILTER_DOCK_IMGS = {
 
 
 export { FILTER_DOCK_IMGS };
+export default FILTER_IMGS;

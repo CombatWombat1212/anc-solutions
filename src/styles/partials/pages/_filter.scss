@@ -3,9 +3,9 @@
 
 
 .viewer .filter {
-  // &--inner{
-  //     @include content-pad_thin;
-  // }
+  &--inner{
+      @include flex-row;
+  }
 
   &--body {
     @include col-width(7);
@@ -18,8 +18,11 @@
 
   &--modal {
     --viewer-modal-columns: 1;
-    // --viewer-modal-rows: unset;
-  }
+    --viewer-modal-rows: 2;
+    // grid-template-rows: repeat(var(--viewer-modal-rows), 1fr);
+    @include flex-col;
+    // min-height: var(--h);
+}
 
 
 

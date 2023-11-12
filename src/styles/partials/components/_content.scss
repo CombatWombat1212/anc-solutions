@@ -60,6 +60,9 @@
   &--inner {
     @include content-pad_thin;
     --viewer-modal-margin-top: 1rem;
+    @include flex-row;
+    gap: 3rem;
+
   }
 
   &--body {

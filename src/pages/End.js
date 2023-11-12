@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
 import { ContentModal, Stat } from "../components/Content";
-import PRODUCT_DATA from "../data/PRODUCT_DATA";
 import SVG from "react-inlinesvg";
 import FILTER_IMGS from "../data/FILTER_IMGS";
+import END_IMGS from "../data/END_IMGS";
 
-function Filter({ view }) {
+function End({ view }) {
     
-  const img = FILTER_IMGS[view.type];
+  const img = END_IMGS[view.type];
 
   return (
     <>
@@ -31,4 +30,4 @@ function Filter({ view }) {
   );
 }
 
-export default Filter;
+export default End;

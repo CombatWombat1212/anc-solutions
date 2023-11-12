@@ -21,6 +21,7 @@
   --dock-items: Max(Min(var(--dock-item-count), var(--dock-max-items)), var(--dock-min-items));
   --item-width: #{col-width_calc(var(--dock-items))};
   position: relative;
+  border-top: #{$b-width} solid $col-light;
 
   &--item {
     @include flex-col;
@@ -36,9 +37,7 @@
     @include no-select;
     cursor: pointer;
 
-    // outline: 0.125rem solid $col-light;
-    // outline-offset: -0.125rem;
-  }
+}
 
   &--item-background {
     --dock-item-background-width: calc(var(--item-width) - #{$b-width});

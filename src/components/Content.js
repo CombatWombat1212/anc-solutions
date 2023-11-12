@@ -9,6 +9,7 @@ import DOCK_DATA from "../data/DOCK_DATA";
 import { Body, H2, H3, Label2 } from "./Text";
 import Filter from "../pages/Filter";
 import LAYOUT_DATA from "../data/LAYOUT_DATA";
+import End from "../pages/End";
 
 
 
@@ -77,6 +78,7 @@ function Page({ view }) {
       {view.page == "sizes" && <Sizes view={view} />}
       {view.page == "paper" && <Paper view={view} />}
       {view.page == "filter" && <Filter view={view} />}
+      {view.page == "end" && <End view={view} />}
     </>
   );
 }

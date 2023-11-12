@@ -77,6 +77,11 @@ const PRODUCT_DATA = {
           title: "End Type",
           // options: ["i. Twisted", "ii. Punched", "iii. Crown"],
           link: { page: "end", type: "traditional" },
+          dock:[
+            DOCK_DATA.end.open,
+            DOCK_DATA.end.punched,
+            DOCK_DATA.end.twisted,
+          ]
         },
       },
     },
