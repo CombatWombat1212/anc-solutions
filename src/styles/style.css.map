@@ -26,7 +26,8 @@
         "partials/pages/_schematic.scss",
         "partials/pages/_sizes.scss",
         "partials/pages/_paper.scss",
-        "partials/pages/_filter.scss"
+        "partials/pages/_filter.scss",
+        "partials/pages/_compaction.scss"
     ],
     "names": [],
     "file": "style.css"

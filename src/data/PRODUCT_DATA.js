@@ -8,7 +8,9 @@ const PRODUCT_DATA = {
     id: "traditional",
 
     pages: {
+
       selection: {
+        level:"top",
         id: "traditional",
         index: 1,
         title: {
@@ -22,13 +24,19 @@ const PRODUCT_DATA = {
         description:
           "A traditional cannabis pre-roll is a ready-made joint, eliminating the need for manual rolling and grinding. For consumers, it promises immediate convenience and a consistent smoking experience. For growers, it represents an efficient use of product and a profitable avenue with strong branding potential.",
         link: { page: "schematic", type: "traditional" },
+        
       },
 
       schematic: {
+        level: "top",
         images: {
           vector: SCHEMATIC_IMGS.traditional,
         },
+
+
+        
       },
+
 
       subpages: {
         sizes: {

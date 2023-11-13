@@ -10,6 +10,7 @@ import { Body, H2, H3, Label2 } from "./Text";
 import Filter from "../pages/Filter";
 import LAYOUT_DATA from "../data/LAYOUT_DATA";
 import End from "../pages/End";
+import Compaction from "../pages/Compaction";
 
 
 
@@ -79,6 +80,7 @@ function Page({ view }) {
       {view.page == "paper" && <Paper view={view} />}
       {view.page == "filter" && <Filter view={view} />}
       {view.page == "end" && <End view={view} />}
+      {view.page == "compaction" && <Compaction view={view} />}
     </>
   );
 }
