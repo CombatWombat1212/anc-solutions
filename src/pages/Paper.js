@@ -31,14 +31,6 @@ function Wrapper({ view }) {
   const rowCount = useElementStyle(modal, "--viewer-modal-rows");
   const colCount = useElementStyle(modal, "--viewer-modal-columns");
 
-
-
-  useEffect(() => {
-    console.log(view.dockActiveObj);
-  }, [view.dockActiveObj]);
-
-
-
   useEffect(() => {
     if (rowCount && !isNaN(Number(rowCount))) {
       setRows(Number(rowCount));

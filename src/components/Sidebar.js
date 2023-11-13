@@ -74,8 +74,6 @@ function Panel({ view, option, setPanels }) {
     const page = view.type && option[view.type] ? option[view.type].link.page : option.link.page;
     const type = view.type && option[view.type] ? option[view.type].link.type : option.link.type;
 
-    console.log(option);
-
     view.setPage(page);
     view.setType(type);
   };
@@ -88,14 +86,8 @@ function Panel({ view, option, setPanels }) {
     }
   }, [view.page, view.type]);
 
-  // useEffect(() => {
-  //   console.log(view.dock);
-  // }, [view.dock]);
-
-
-
   const title = option.title.long || option.title.short || option.title;
-  const ind = String(option.index).padStart(2, "0");
+  const ind = String(option.index + 1).padStart(2, "0");
 
   return (
     <a className="sidebar--panel sidebar--button" ref={panelRef} onClick={handleClick}>

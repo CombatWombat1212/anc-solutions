@@ -1,8 +1,59 @@
+.viewer .compaction {
+  --compaction-brace-width: 3rem;
 
+  &--inner {
+    --content-inner-pad-x: 3rem;
+    --content-inner-pad-top: 4rem;
 
+    --modal-top-margin: 3rem;
+  }
 
-.viewer .compaction{
+  &--body {
+    @include flex-row;
+    height: 100%;
+    column-gap: 3rem;
+  }
 
+  &--col {
+    @include flex-col;
+  }
 
+  &--visual {
+    @include flex-row-center;
+    // margin-top: auto;
+    height: calc(100% - var(--modal-top-margin) - var(--compaction-modal-height));
+  }
 
+  &--graphic {
+    display: flex;
+  }
+
+  &--svg {
+    @include img-contain;
+  }
+
+  &--brace {
+    width: var(--compaction-brace-width);
+    border: #{$b-width} solid $col-primary;
+    border-left-width: 0rem;
+  }
+
+  &--modal-wrapper {
+    margin-top: var(--modal-top-margin);
+    height: var(--height);
+  }
+
+  &--modal {
+    @include viewer-modal;
+
+    --viewer-modal-pad-top: 1.15rem;
+    --viewer-modal-pad-bottom: 1.65rem;
+    padding: var(--viewer-modal-pad-top) 1.5rem var(--viewer-modal-pad-bottom) 1.5rem;
+    // @include flex-col;
+    height: calc(100% - var(--viewer-modal-pad-top) - var(--viewer-modal-pad-bottom));
+
+    .viewer--body {
+      margin-top: 0.75rem;
+    }
+  }
 }

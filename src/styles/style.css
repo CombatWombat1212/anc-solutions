@@ -772,4 +772,71 @@ input, button, textarea, select {
   display: flex;
   flex-direction: column;
 }
+
+.viewer .compaction {
+  --compaction-brace-width: 3rem;
+}
+
+.viewer .compaction--inner {
+  --content-inner-pad-x: 3rem;
+  --content-inner-pad-top: 4rem;
+  --modal-top-margin: 3rem;
+}
+
+.viewer .compaction--body {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  column-gap: 3rem;
+}
+
+.viewer .compaction--col {
+  display: flex;
+  flex-direction: column;
+}
+
+.viewer .compaction--visual {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: calc(100% - var(--modal-top-margin) - var(--compaction-modal-height));
+}
+
+.viewer .compaction--graphic {
+  display: flex;
+}
+
+.viewer .compaction--svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.viewer .compaction--brace {
+  width: var(--compaction-brace-width);
+  border: 0.125rem solid #EC0719;
+  border-left-width: 0rem;
+}
+
+.viewer .compaction--modal-wrapper {
+  margin-top: var(--modal-top-margin);
+  height: var(--height);
+}
+
+.viewer .compaction--modal {
+  --viewer-modal-pad-top: 1.85rem;
+  --viewer-modal-pad-bottom: 2.15rem;
+  padding: var(--viewer-modal-pad-top) 2rem var(--viewer-modal-pad-bottom) 2rem;
+  background-color: #1a1918;
+  background-color: rgba(255, 255, 255, 0.05);
+  outline: solid 0.125rem #EC0719;
+  --viewer-modal-pad-top: 1.15rem;
+  --viewer-modal-pad-bottom: 1.65rem;
+  padding: var(--viewer-modal-pad-top) 1.5rem var(--viewer-modal-pad-bottom) 1.5rem;
+  height: calc(100% - var(--viewer-modal-pad-top) - var(--viewer-modal-pad-bottom));
+}
+
+.viewer .compaction--modal .viewer--body {
+  margin-top: 0.75rem;
+}
 /*# sourceMappingURL=style.css.map */

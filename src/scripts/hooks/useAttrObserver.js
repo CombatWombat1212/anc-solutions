@@ -6,7 +6,6 @@ const useAttrObserver = (ref, propertyName, options = {}) => {
 
   const handlePropertyValue = (propertyValue) => {
     if (bool) {
-      // console.log(propertyValue);
       setState(propertyValue === "true");
     } else {
       setState(propertyValue);
