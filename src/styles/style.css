@@ -820,7 +820,6 @@ input, button, textarea, select {
 
 .viewer .compaction--modal-wrapper {
   margin-top: var(--modal-top-margin);
-  height: var(--height);
 }
 
 .viewer .compaction--modal {
@@ -834,6 +833,7 @@ input, button, textarea, select {
   --viewer-modal-pad-bottom: 1.65rem;
   padding: var(--viewer-modal-pad-top) 1.5rem var(--viewer-modal-pad-bottom) 1.5rem;
   height: calc(100% - var(--viewer-modal-pad-top) - var(--viewer-modal-pad-bottom));
+  min-height: calc(var(--height) - var(--viewer-modal-pad-top) - var(--viewer-modal-pad-bottom));
 }
 
 .viewer .compaction--modal .viewer--body {

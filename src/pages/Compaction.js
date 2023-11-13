@@ -10,13 +10,13 @@ function Compaction({ view }) {
   const [compactionItems, setCompactionItems] = useState(data.map(() => ({ visual: null, modal: null })));
   const [tallestModal, setTallestModal] = useState(0);
 
-  const updateCompactionItem = (index, type, ref, height) => {
+  const updateCompactionItem = (index, type, ref, height, loaded=null) => {
     setCompactionItems((prevItems) => {
       const newItems = [...prevItems];
       newItems[index] = {
         ...newItems[index],
-        [type]: { ref, height },
-      };
+        [type]: { ref, height, loaded },
+    };
       return newItems;
     });
   };
@@ -56,7 +56,13 @@ function CompactionVisual({ comp, index, updateCompactionItem }) {
   return (
     <div className="compaction--visual" ref={reference}>
       <div className="compaction--graphic">
-        <SVG className="compaction--svg" src={comp.image.src} width={comp.image.width} height={comp.image.height} alt={comp.image.alt} />
+        <SVG
+          className="compaction--svg"
+          src={comp.image.src}
+          width={comp.image.width}
+          height={comp.image.height}
+          alt={comp.image.alt}
+        />
       </div>
       <div className="compaction--brace"></div>
     </div>
