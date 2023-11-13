@@ -8,7 +8,11 @@ import { PAPER_DOCK_IMGS } from "./PAPER_IMGS";
 
 
 const DOCK_DATA = {
+
+
+
   paper: {
+    
     wood_white: {
       id: "wood_white",
       title: "Wood (white)",

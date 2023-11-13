@@ -14,17 +14,16 @@ function Dock({ view }) {
   const { page, type } = view;
 
   useEffect(() => {
-    const dock = PRODUCT_DATA[view.type].pages.subpages[view.page].dock;
+    const dock = PRODUCT_DATA[view.type].pages[view.page].dock;
     if (!dock) return;
     view.setDock(dock[0].id);
     view.setDockStats(dock);
   }, [view.page, view.type]);
 
   useEffect(() => {
-    const dock = PRODUCT_DATA[view.type].pages.subpages[view.page].dock;
+    const dock = PRODUCT_DATA[view.type].pages[view.page].dock;
     view.setDockActiveObj(dock.find((item) => item.id === view.dock));
   }, [view.dock]);
-
 
   const [active, setActive] = useState(false);
 
@@ -36,8 +35,6 @@ function Dock({ view }) {
   const dockMinItems = 4;
   const dockItemCount = view.dockStats.length;
   const dockIsFull = dockItemCount >= dockMinItems && dockItemCount <= dockMaxItems ? 1 : 0;
-
-console.log(view.dockStats);
 
   return (
     <div

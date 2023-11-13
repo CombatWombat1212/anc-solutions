@@ -6,7 +6,7 @@ import PRODUCT_DATA from "../data/PRODUCT_DATA";
 
 function Schematic({ view }) {
   const img = SCHEMATIC_IMGS[view.type];
-  const options = PRODUCT_DATA[view.type].pages.subpages;
+  const options = Object.values(PRODUCT_DATA[view.type].pages).filter((x) => x.level == "sub");
 
   const [components, setComponents] = useState(false);
   const [ready, setReady] = useState(false);
@@ -63,8 +63,10 @@ function Schematic({ view }) {
     if (!components || view.hoveredSideBtn === undefined || !ready) return;
 
     Object.keys(components).forEach((key) => {
-      const componentId = options[key].id;
+      const page = options.find((x) => x.id === key);
+      const componentId = page.id;
       const query = Array.from(graphic.current.querySelectorAll(`[id*='${componentId}']`));
+
       query.forEach((element) => {
         if (view.hoveredSideBtn === false) {
           element.classList.add("schematic--vector__idle");

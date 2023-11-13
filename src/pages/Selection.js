@@ -62,11 +62,12 @@ function Selection({ view }) {
   };
 
   const handleClick = (e) => {
-    const type = PRODUCT_DATA[e.currentTarget.dataset.rollType];
-    const page = type.pages["selection"].link.page;
-    const link = type.pages["selection"].link.type;
-    view.setPage(page);
-    view.setType(link);
+    const elemType = PRODUCT_DATA[e.currentTarget.dataset.rollType];
+    const page = elemType.pages["selection"].link.page;
+    const type = elemType.pages["selection"].link.type;
+    console.log(page);
+    view.setPage("schematic");
+    view.setType(type);
   };
 
 

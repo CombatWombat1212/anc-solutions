@@ -1,6 +1,8 @@
 const SIZES_IMGS = {
+
+  
   traditional: {
-    traditional_01: {
+    "0.25g": {
       name: "traditional_0.25",
       src: "/assets/images/sizes/traditional_0.25.svg",
       alt: "",
@@ -8,7 +10,7 @@ const SIZES_IMGS = {
       height: 524,
       label: "0.25g",
     },
-    traditional_02: {
+    "0.3g": {
       name: "traditional_0.3",
       src: "/assets/images/sizes/traditional_0.3.svg",
       alt: "",
@@ -16,7 +18,7 @@ const SIZES_IMGS = {
       height: 524,
       label: "0.3g",
     },
-    traditional_03: {
+    "0.35g": {
       name: "traditional_0.35",
       src: "/assets/images/sizes/traditional_0.35.svg",
       alt: "",
@@ -24,7 +26,7 @@ const SIZES_IMGS = {
       height: 524,
       label: "0.35g",
     },
-    traditional_04: {
+    "0.5g": {
       name: "traditional_0.5",
       src: "/assets/images/sizes/traditional_0.5.svg",
       alt: "",
@@ -32,7 +34,7 @@ const SIZES_IMGS = {
       height: 524,
       label: "0.5g",
     },
-    traditional_05: {
+    "0.7g": {
       name: "traditional_0.7",
       src: "/assets/images/sizes/traditional_0.7.svg",
       alt: "",
@@ -40,7 +42,7 @@ const SIZES_IMGS = {
       height: 524,
       label: "0.7g",
     },
-    traditional_06: {
+    "1.0g": {
       name: "traditional_1.0",
       src: "/assets/images/sizes/traditional_1.0.svg",
       alt: "",

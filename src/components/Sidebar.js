@@ -6,9 +6,14 @@ import useHoverAndFocus from "../scripts/hooks/useHoverAndFocus";
 function Sidebar({ view }) {
   const [panels, setPanels] = useState([]);
 
-  const optionArray = view.type ? Object.values(PRODUCT_DATA[view.type].pages.subpages) : Object.values(PRODUCT_DATA).map((x) => x.pages.selection);
+  let optionArray = [];
 
-  // console.log(view.type);
+  if(view.type){
+    optionArray = Object.values(PRODUCT_DATA[view.type].pages).filter((x) => x.level == "sub");
+  } else {
+    optionArray = Object.values(PRODUCT_DATA).map((x) => x.pages.selection);
+  }
+
 
   useEffect(() => {
     if (!panels.length > 0) return;
@@ -28,6 +33,9 @@ function Sidebar({ view }) {
         ))}
     </div>
   );
+
+
+
 }
 
 function Title({ view }) {
