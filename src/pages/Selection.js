@@ -65,8 +65,7 @@ function Selection({ view }) {
     const elemType = PRODUCT_DATA[e.currentTarget.dataset.rollType];
     const page = elemType.pages["selection"].link.page;
     const type = elemType.pages["selection"].link.type;
-    console.log(page);
-    view.setPage("schematic");
+    view.setPage(page);
     view.setType(type);
   };
 
@@ -109,11 +108,12 @@ function Head({ type, active }) {
   }, [active, type.id]);
 
   const title = type.pages["selection"].title.short;
+  const index = String(type.index + 1).padStart(2, "0");
 
   return (
     <div className={`selection--head selection--head__${style}`}>
       <H2 className={"selection--label__main"}>{title}</H2>
-      <H2 className={"selection--label__sub"}>Figure {String(type.index).padStart(2, "0")}</H2>
+      <H2 className={"selection--label__sub"}>Figure {index}</H2>
     </div>
   );
 }

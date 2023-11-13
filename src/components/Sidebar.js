@@ -74,6 +74,8 @@ function Panel({ view, option, setPanels }) {
     const page = view.type && option[view.type] ? option[view.type].link.page : option.link.page;
     const type = view.type && option[view.type] ? option[view.type].link.type : option.link.type;
 
+    console.log(option);
+
     view.setPage(page);
     view.setType(type);
   };
