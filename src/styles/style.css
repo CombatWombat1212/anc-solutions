@@ -668,9 +668,9 @@ input, button, textarea, select {
   width: 0.625rem;
   height: 0.625rem;
   background-color: #EC0719;
+  margin-top: calc(0.625rem / -2);
   margin-right: auto;
   margin-left: auto;
-  margin-top: calc(0.625rem / -2);
 }
 
 .viewer .sizes--brace-label {
@@ -686,6 +686,7 @@ input, button, textarea, select {
   position: absolute;
   border: solid 0.125rem #EC0719;
   border-width: 0 0 0.125rem 0.125rem;
+  pointer-events: none;
 }
 
 .viewer .sizes--background-label {
@@ -774,7 +775,9 @@ input, button, textarea, select {
 }
 
 .viewer .compaction {
-  --compaction-brace-width: 3rem;
+  --compaction-brace-width: 2.75rem;
+  --compaction-line-width: 2rem;
+  --compaction-label-margin: 0.5rem;
 }
 
 .viewer .compaction--inner {
@@ -812,12 +815,6 @@ input, button, textarea, select {
   object-fit: contain;
 }
 
-.viewer .compaction--brace {
-  width: var(--compaction-brace-width);
-  border: 0.125rem solid #EC0719;
-  border-left-width: 0rem;
-}
-
 .viewer .compaction--modal-wrapper {
   margin-top: var(--modal-top-margin);
 }
@@ -838,5 +835,56 @@ input, button, textarea, select {
 
 .viewer .compaction--modal .viewer--body {
   margin-top: 0.75rem;
+}
+
+.viewer .compaction--brace-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: calc((0.125rem * 2) * -1);
+  transform: translateY(calc((0.125rem * 2) * -1));
+}
+
+.viewer .compaction--brace-inner {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin-top: auto;
+  height: var(--roll-height);
+}
+
+.viewer .compaction--brace {
+  width: var(--compaction-brace-width);
+  border: 0.125rem solid #EC0719;
+  border-left-width: 0rem;
+  height: var(--roll-height);
+  margin-top: auto;
+}
+
+.viewer .compaction--line {
+  width: var(--compaction-line-width);
+  height: 0.125rem;
+  background-color: #EC0719;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.viewer .compaction--dot {
+  --size: 0.625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  background-color: #EC0719;
+  margin-top: calc(0.625rem / -2.5);
+}
+
+.viewer .compaction--label {
+  position: absolute;
+  top: 0;
+  transform: translateY(-50%);
+  left: calc(var(--compaction-line-width) + var(--compaction-label-margin));
 }
 /*# sourceMappingURL=style.css.map */

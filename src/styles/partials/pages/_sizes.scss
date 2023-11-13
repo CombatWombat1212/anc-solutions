@@ -53,10 +53,9 @@
   }
 
   &--brace-dot {
-    @include s($dot-width);
-    background-color: $col-primary;
-    @include mx-auto;
+    @include viewer-dot;
     margin-top: calc(#{$dot-width} / -2);
+    @include mx-auto;
   }
 
   &--brace-label {
@@ -74,6 +73,7 @@
     position: absolute;
     border: solid $b-width $col-primary;
     border-width: 0 0 $b-width $b-width;
+    pointer-events: none;
   }
 
   &--background-label {

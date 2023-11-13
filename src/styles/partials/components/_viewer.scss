@@ -34,6 +34,13 @@ $viewer-border-radius: 0rem $viewer-border-radius_val $viewer-border-radius_val 
 }
 
 
+@mixin viewer-dot{
+  @include s($dot-width);
+  background-color: $col-primary;
+
+}
+
+
 
 .viewer {
   @include mx-auto;
