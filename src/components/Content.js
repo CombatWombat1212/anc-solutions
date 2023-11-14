@@ -73,6 +73,7 @@ function Page({ view }) {
 
 
   const split = LAYOUT_DATA.split.includes(view.page);
+  const type = LAYOUT_DATA.specialty.includes(view.page) ? "specialty" : "default";
 
   return (
     <>
@@ -81,21 +82,23 @@ function Page({ view }) {
       {view.page == "sizes" && <Sizes view={view} />}
       {view.page == "compaction" && <Compaction view={view} />}
 
-      {/* 
-      {view.page == "paper" && <Paper view={view} />}
-      {view.page == "filter" && <Filter view={view} />}
-      {view.page == "end" && <End view={view} />}
-      */}
-
-      {split && <Split view={view} />}
+      {split && <Split view={view} type={type} />}
 
     </>
   );
 }
 
 function ContentModal({ pref = false, title, children, className, reference = null, type = "default" }) {
+
   let split = false;
+  let specialty = false;
+  
   if (type == "split") split = true;
+  if (type == "specialty") specialty = true;
+  if (typeof type == "object") {
+    split = type.split || false;
+    specialty = type.specialty || false;
+  }
 
   const lists = {
     body: ["content--body"],
@@ -107,6 +110,7 @@ function ContentModal({ pref = false, title, children, className, reference = nu
     const list = lists[key];
     if (pref) list.push(`${pref}--${key}`);
     if (split) list.push(`${list[0]}__split`);
+    if (specialty) list.push(`${list[0]}__specialty`);
     acc[key] = list.join(" ");
     return acc;
   }, {});

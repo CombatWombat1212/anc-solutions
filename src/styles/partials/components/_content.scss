@@ -39,9 +39,6 @@
 
 
 .viewer .content {
-
-
-
   &--inner__split {
     @include content-pad_thin;
     --viewer-modal-margin-top: 1rem;
@@ -54,7 +51,7 @@
     @include col-width(7);
   }
 
-  &--visual__split{
+  &--visual__split {
     @include col-width(5);
     @include flex-col;
   }
@@ -63,9 +60,7 @@
     @include img-contain;
     @include s(90%);
     margin: auto;
-  }  
-
-
+  }
 
   &--modal__split {
     @include viewer-modal;
@@ -88,20 +83,21 @@
     --h: calc(100% - var(--viewer-modal-pad-top) - var(--viewer-modal-pad-bottom) - var(--h3-size) - var(--viewer-modal-margin-top));
     height: var(--h);
     max-height: var(--h);
-  
+  }
+}
+
+
+
+
+
+
+.viewer .content {
+  &--body__specialty {
+    @include flex-col-center;
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+  &--modal__specialty {
+    height: unset;
+    max-height: unset;
+  }
 }

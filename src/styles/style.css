@@ -296,6 +296,17 @@ input, button, textarea, select {
   max-height: var(--h);
 }
 
+.viewer .content--body__specialty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.viewer .content--modal__specialty {
+  height: unset;
+  max-height: unset;
+}
+
 .viewer .graphic {
   display: flex;
   position: relative;
@@ -371,6 +382,7 @@ input, button, textarea, select {
 }
 
 .dock--h2 {
+  margin-top: -0.25rem;
   transition: var(--dock-hover-transition);
 }
 

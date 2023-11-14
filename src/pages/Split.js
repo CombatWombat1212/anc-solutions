@@ -18,11 +18,9 @@ const DATABASE = {
   terpenes: TERPENES_IMGS,
 };
 
-function Split({ view }) {
+function Split({ view, type }) {
   const modal = useRef(null);
   const pref = view.page;
-
-  //   TODO: Add support for images that have a variation per dock item
 
   let img;
 
@@ -34,21 +32,25 @@ function Split({ view }) {
   }
 
 
-  console.log(img);
-
+  const specialty = type == "specialty" ? true : false;
+  const typeProp = {
+    split: true,
+    specialty: specialty,
+  }
+  
   const { columns } = usePaper(view, modal);
 
   return (
     <>
       {view.dockActiveObj && (
         <>
-          <ContentModal title={view.dockActiveObj.title} pref={pref} type="split" reference={modal}>
+          <ContentModal title={view.dockActiveObj.title} pref={pref} type={typeProp} reference={modal}>
             {view.dockActiveObj.stats.map((stat, index) => {
               const className = getPaperClassNames(columns, view, index);
               return <Stat stat={stat} key={index} className={className} />;
             })}
           </ContentModal>
-          <ContentVisual className={`${pref}--visual`} type="split">
+          <ContentVisual className={`${pref}--visual`} type={typeProp}>
             <SVG className={`${pref}--graphic content--graphic__split`} src={img.src} width={img.width} height={img.height} />
           </ContentVisual>
         </>

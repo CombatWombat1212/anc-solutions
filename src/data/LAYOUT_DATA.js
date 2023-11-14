@@ -13,6 +13,13 @@ const LAYOUT_DATA = {
         "solid",
         "fluid",
         "terpenes",
+    ],
+
+
+    specialty:[
+        "solid",
+        "fluid",
+        "terpenes",
     ]
 
 
