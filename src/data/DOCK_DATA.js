@@ -16,6 +16,152 @@ const DOCK_DATA = {
         {
           title: "Made From",
           type: "description",
+          description: "Wood pulp that has been processed and bleached.",
+        },
+        {
+          title: "Appearance",
+          type: "description",
+          description: "Bright white due to the bleaching process.",
+        },
+        {
+          title: "Burn Rate",
+          type: "bar",
+          bar: {
+            labels: BAR_LABELS.speed,
+            value: 80, // Fast
+          },
+        },
+        {
+          title: "Porosity",
+          type: "bar",
+          bar: {
+            labels: BAR_LABELS.level,
+            value: 50, // Medium
+          },
+        },
+        {
+          title: "Thickness",
+          type: "bar",
+          bar: {
+            labels: BAR_LABELS.width,
+            value: 80, // Thick
+          },
+        },
+        {
+          title: "Flavour Effect",
+          type: "description",
+          description: "Mild aftertaste due to the chemicals used in the bleaching process.",
+        },
+      ],
+    },
+
+    wood_brown: {
+      id: "wood_brown",
+      title: "Wood (brown)",
+      img: PAPER_DOCK_IMGS.wood_brown,
+      link: { dock: "wood_brown" },
+
+      stats: [
+        {
+          title: "Made From",
+          type: "description",
+          description: "Wood pulp without undergoing a bleaching process.",
+        },
+        {
+          title: "Appearance",
+          type: "description",
+          description: "Natural brown or tan.",
+        },
+        {
+          title: "Burn Rate",
+          type: "bar",
+          bar: {
+            labels: BAR_LABELS.speed,
+            value: 60, // Medium
+          },
+        },
+        {
+          title: "Porosity",
+          type: "bar",
+          bar: {
+            labels: BAR_LABELS.level,
+            value: 50, // Similar to bleached
+          },
+        },
+        {
+          title: "Thickness",
+          type: "bar",
+          bar: {
+            labels: BAR_LABELS.width,
+            value: 80, // Thick
+          },
+        },
+        {
+          title: "Flavour Effect",
+          type: "description",
+          description: "Faint wood or paper taste, subtly affecting the cannabis flavor.",
+        },
+      ],
+    },
+
+    hemp: {
+      id: "hemp",
+      title: "Hemp (organic)",
+      img: PAPER_DOCK_IMGS.hemp,
+      link: { dock: "hemp" },
+
+      stats: [
+        {
+          title: "Made From",
+          type: "description",
+          description: "Fibers from the hemp plant, grown without synthetic chemicals or pesticides.",
+        },
+        {
+          title: "Appearance",
+          type: "description",
+          description: "Natural, slightly speckled, ranging from light tan to darker brown.",
+        },
+        {
+          title: "Burn Rate",
+          type: "bar",
+          bar: {
+            labels: BAR_LABELS.speed,
+            value: 30, // Slower
+          },
+        },
+        {
+          title: "Porosity",
+          type: "bar",
+          bar: {
+            labels: BAR_LABELS.level,
+            value: 40, // Lower
+          },
+        },
+        {
+          title: "Thickness",
+          type: "bar",
+          bar: {
+            labels: BAR_LABELS.width,
+            value: 60, // Moderate
+          },
+        },
+        {
+          title: "Flavour Effect",
+          type: "description",
+          description: "Minimal interference, preserving the cannabis's natural flavor.",
+        },
+      ],
+    },
+
+    bamboo: {
+      id: "bamboo",
+      title: "Bamboo (organic)",
+      img: PAPER_DOCK_IMGS.bamboo,
+      link: { dock: "bamboo" },
+      stats: [
+        {
+          title: "Made From",
+          type: "description",
           description: "Fibers from the bamboo plant, refined to make rolling papers.",
         },
         {
@@ -28,7 +174,7 @@ const DOCK_DATA = {
           type: "bar",
           bar: {
             labels: BAR_LABELS.speed,
-            value: 40,
+            value: 35, // Assuming Slow to Medium is a bit below medium
           },
         },
         {
@@ -36,7 +182,7 @@ const DOCK_DATA = {
           type: "bar",
           bar: {
             labels: BAR_LABELS.level,
-            value: 55,
+            value: 45, // Medium to Low
           },
         },
         {
@@ -44,71 +190,15 @@ const DOCK_DATA = {
           type: "bar",
           bar: {
             labels: BAR_LABELS.width,
-            value: 35,
+            value: 30, // Thin
           },
         },
         {
           title: "Flavour Effect",
           type: "description",
-          description: "Light tan to pale yellow.",
+          description: "Neutral, allowing the natural flavors of the cannabis to shine.",
         },
       ],
-    },
-    wood_brown: {
-      id: "wood_brown",
-      title: "Wood (brown)",
-      img: PAPER_DOCK_IMGS.wood_brown,
-      link: { dock: "wood_brown" },
-
-      stats: [
-        {
-          title: "Other stat 1",
-          type: "description",
-          description: "Blah blah blah.",
-        },
-        {
-          title: "Other stat 2",
-          type: "description",
-          description: "So much text.",
-        },
-        {
-          title: "Other stat 3",
-          type: "bar",
-          bar: {
-            labels: BAR_LABELS.speed,
-            value: 67,
-          },
-        },
-        {
-          title: "Other stat 4",
-          type: "bar",
-          bar: {
-            labels: BAR_LABELS.level,
-            value: 20,
-          },
-        },
-        {
-          title: "Other stat 5",
-          type: "bar",
-          bar: {
-            labels: BAR_LABELS.width,
-            value: 85,
-          },
-        },
-      ],
-    },
-    hemp: {
-      id: "hemp",
-      title: "Hemp (organic)",
-      img: PAPER_DOCK_IMGS.hemp,
-      link: { dock: "hemp" },
-    },
-
-    bamboo: {
-      id: "bamboo",
-      title: "Bamboo (organic)",
-      img: PAPER_DOCK_IMGS.bamboo,
-      link: { dock: "bamboo" },
     },
 
     cellulose: {
@@ -116,16 +206,76 @@ const DOCK_DATA = {
       title: "Cellulose",
       img: PAPER_DOCK_IMGS.cellulose,
       link: { dock: "cellulose" },
+      stats: [
+        {
+          title: "Made From",
+          type: "description",
+          description: "Derived from plant cellulose, often clear and transparent, unlike traditional rolling papers.",
+        },
+        {
+          title: "Appearance",
+          type: "description",
+          description: "Transparent or semi-transparent, allowing users to see the cannabis inside.",
+        },
+        {
+          title: "Burn Rate",
+          type: "bar",
+          bar: {
+            labels: BAR_LABELS.speed,
+            value: 30, // Slow
+          },
+        },
+        {
+          title: "Porosity",
+          type: "bar",
+          bar: {
+            labels: BAR_LABELS.level,
+            value: 25, // Low
+          },
+        },
+        {
+          title: "Thickness",
+          type: "bar",
+          bar: {
+            labels: BAR_LABELS.width,
+            value: 20, // Very Thin
+          },
+        },
+        {
+          title: "Flavour Effect",
+          type: "description",
+          description:
+            "Neutral to minimal, allowing for a pure cannabis flavor experience, though some users might detect a slight difference in taste or feel due to its unique texture.",
+        },
+      ],
     },
   },
 
   filter: {
+    wood_spiral: {
+      id: "wood_spiral",
+      title: "Wood Spiral",
+      img: FILTER_DOCK_IMGS.wood_spiral,
+      link: { dock: "wood_spiral" },
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description: "This filter is crafted from bleached wood pulp paper and features a spiral pattern rolled into its design.",
+        },
+        {
+          title: "Benefits",
+          type: "description",
+          description:
+            "The spiral design creates more surface area within the filter, allowing for better cooling of the smoke and a smoother draw. The bleached wood pulp paper is typically sturdy, ensuring the filter maintains its shape.",
+        },
+      ],
+    },
     wood_w: {
       id: "wood_w",
       title: "Wood W",
       img: FILTER_DOCK_IMGS.wood_w,
       link: { dock: "wood_w" },
-
       stats: [
         {
           title: "Description",
@@ -140,131 +290,163 @@ const DOCK_DATA = {
         },
       ],
     },
-
     bamboo_w: {
       id: "bamboo_w",
       title: "Bamboo W",
       img: FILTER_DOCK_IMGS.bamboo_w,
       link: { dock: "bamboo_w" },
-
       stats: [
         {
           title: "Description",
           type: "description",
-          description: "Different data.",
+          description: "This filter is made from unbleached bamboo fibers and features the zigzag pattern.",
         },
         {
           title: "Benefits",
           type: "description",
-          description: "Also different data.",
+          description:
+            "The natural bamboo offers a cleaner, eco-friendly aesthetic and might provide a purer flavor. The zigzag design enhances smoke cooling and consistent draw.",
         },
       ],
     },
-
-    wood_spiral: {
-      id: "wood_spiral",
-      title: "Wood Spiral",
-      img: FILTER_DOCK_IMGS.wood_spiral,
-      link: { dock: "wood_spiral" },
-    },
-
     glass: {
       id: "glass",
       title: "Glass",
       img: FILTER_DOCK_IMGS.glass,
       link: { dock: "glass" },
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description: "A filter made of glass, typically clear or slightly tinted, designed for one-time use.",
+        },
+        {
+          title: "Benefits",
+          type: "description",
+          description:
+            "Glass filters can provide a very clean and pure draw, without any flavor alteration. The transparent nature offers a unique aesthetic, allowing users to see the smoke as it passes through.",
+        },
+      ],
     },
-
     aluminum: {
       id: "aluminum",
       title: "Aluminum",
       img: FILTER_DOCK_IMGS.aluminum,
       link: { dock: "aluminum" },
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description: "Consists of an aluminum casing filled with activated carbon particles.",
+        },
+        {
+          title: "Benefits",
+          type: "description",
+          description:
+            "Activated carbon is known to filter out many impurities and can significantly reduce the intake of harmful substances. This filter can provide a smoother, cleaner smoke and potentially reduce the harshness or coughing associated with smoking.",
+        },
+      ],
     },
-
     ceramic: {
       id: "ceramic",
       title: "Ceramic",
       img: FILTER_DOCK_IMGS.ceramic,
       link: { dock: "ceramic" },
-    },
-  },
-
-  end: {
-    open: {
-      id: "open",
-      title: "Open",
-      img: END_DOCK_IMGS.open,
-      link: { dock: "open" },
-
       stats: [
         {
           title: "Description",
           type: "description",
-          description:
-            "As the name suggests, the end is left open, exposing the cannabis inside. It’s similar to the end of a traditional cigarette.",
+          description: "Made from ceramic material, often with small channels or pores allowing smoke to pass through.",
         },
         {
           title: "Benefits",
           type: "description",
           description:
-            "Allows for easy and immediate lighting. The open end can also provide assurance to users about the quality and consistency of the cannabis inside, as they can see it directly.",
+            "Ceramic filters can effectively cool down the smoke, providing a smoother experience. They're also reusable and can be a long-lasting choice for those looking for durability.",
         },
       ],
     },
+  },
 
+
+
+
+
+  end: {
+    crown: {
+      id: "crown",
+      title: "Crown",
+      img: END_DOCK_IMGS.crown, 
+      link: { dock: "crown" },
+  
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description: "This end style features a series of small folds or pleats that come together in a pattern resembling a crown."
+        },
+        {
+          title: "Benefits",
+          type: "description",
+          description: "The Dutch Crown provides a sophisticated and elegant appearance, making it a distinctive choice for premium pre-rolls. Its design can also offer a secure seal, helping to preserve the freshness of the cannabis inside."
+        }
+      ]
+    },
+  
     punched: {
       id: "punched",
       title: "Punched",
-      img: END_DOCK_IMGS.punched,
+      img: END_DOCK_IMGS.punched, 
       link: { dock: "punched" },
-
+  
       stats: [
         {
           title: "Description",
           type: "description",
-          description: "Different data.",
+          description: "The end is sealed by pressing or 'punching' it closed. This creates a flat, sealed end."
         },
         {
           title: "Benefits",
           type: "description",
-          description: "Also different data.",
-        },
-      ],
+          description: "Offers a clean and neat appearance, potentially protecting the cannabis inside from external contaminants and preserving freshness for a longer time."
+        }
+      ]
     },
-
+  
     twisted: {
       id: "twisted",
       title: "Twisted",
-      img: END_DOCK_IMGS.twisted,
+      img: END_DOCK_IMGS.twisted, 
       link: { dock: "twisted" },
-
+  
       stats: [
         {
           title: "Description",
           type: "description",
-          description: "ALLLLL different data.",
+          description: "The end is twisted to a close, often resembling the tip of a traditional pre-roll."
         },
         {
           title: "Benefits",
           type: "description",
-          description: "Totally different data.",
-        },
-      ],
-    },
+          description: "This method provides a distinct, artisanal appearance, which can be seen as a sign of hand craftsmanship. The twist can be untwisted by users if they wish to inspect the contents before smoking."
+        }
+      ]
+    }
   },
+  
 
 
 
 
-  solid:{
 
+
+  solid: {
     shatter: {
       id: "shatter",
       title: "Shatter",
       img: SOLID_DOCK_IMGS.shatter,
       link: { dock: "shatter" },
-    
+
       stats: [
         {
           title: "Description",
@@ -273,13 +455,13 @@ const DOCK_DATA = {
         },
       ],
     },
-    
+
     hash: {
       id: "hash",
       title: "Hash",
       img: SOLID_DOCK_IMGS.hash,
       link: { dock: "hash" },
-    
+
       stats: [
         {
           title: "Description",
@@ -294,7 +476,7 @@ const DOCK_DATA = {
       title: "Kief",
       img: SOLID_DOCK_IMGS.kief,
       link: { dock: "kief" },
-    
+
       stats: [
         {
           title: "Description",
@@ -303,13 +485,13 @@ const DOCK_DATA = {
         },
       ],
     },
-    
+
     diamonds: {
       id: "diamonds",
       title: "Diamonds",
       img: SOLID_DOCK_IMGS.diamonds,
       link: { dock: "diamonds" },
-    
+
       stats: [
         {
           title: "Description",
@@ -324,7 +506,7 @@ const DOCK_DATA = {
       title: "Isolate",
       img: SOLID_DOCK_IMGS.isolate,
       link: { dock: "isolate" },
-    
+
       stats: [
         {
           title: "Description",
@@ -333,15 +515,7 @@ const DOCK_DATA = {
         },
       ],
     },
-    
-
-
-
-
-  }
-
-
-
+  },
 };
 
 export default DOCK_DATA;

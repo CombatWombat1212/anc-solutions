@@ -9,13 +9,39 @@ const END_IMGS = {
         width: 770,
         height: 480,
       },
+
+
+
+
       traditional: {
-        name: "traditional",
-        src: "/assets/images/end/traditional.svg",
-        alt: "",
-        width: 770,
-        height: 480,
+
+        crown: {
+          name: "traditional_crown",
+          src: "/assets/images/end/traditional_crown.svg",
+          alt: "",
+          width: 650,
+          height: 450,
+        },
+        punched: {
+          name: "traditional_punched",
+          src: "/assets/images/end/traditional_punched.svg",
+          alt: "",
+          width: 650,
+          height: 450,
+        },
+        twisted: {
+          name: "traditional_twisted",
+          src: "/assets/images/end/traditional_twisted.svg",
+          alt: "",
+          width: 650,
+          height: 450,
+        },
+      
+
       },
+
+
+
     
 }
 
@@ -23,28 +49,27 @@ const END_IMGS = {
 
 const END_DOCK_IMGS = {
 
-      open: {
-        name: "dock_open",
-        src: "/assets/images/end/dock_open.svg",
-        alt: "",
-        width: 81,
-        height: 81,
-      },
-      punched: {
-        name: "dock_punched",
-        src: "/assets/images/end/dock_punched.svg",
-        alt: "",
-        width: 81,
-        height: 81,
-      },
-      twisted: {
-        name: "dock_twisted",
-        src: "/assets/images/end/dock_twisted.svg",
-        alt: "",
-        width: 81,
-        height: 81,
-      },
-    
+  crown: {
+    name: "dock_crown",
+    src: "/assets/images/end/dock_crown.svg",
+    alt: "",
+    width: 80,
+    height: 80,
+  },
+  punched: {
+    name: "dock_punched",
+    src: "/assets/images/end/dock_punched.svg",
+    alt: "",
+    width: 80,
+    height: 80,
+  },
+  twisted: {
+    name: "dock_twisted",
+    src: "/assets/images/end/dock_twisted.svg",
+    alt: "",
+    width: 80,
+    height: 80,
+  },    
 
 
 }

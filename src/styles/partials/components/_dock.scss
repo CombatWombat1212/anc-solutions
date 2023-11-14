@@ -84,7 +84,8 @@
   &--graphic {
     margin-top: 1rem;
     object-fit: contain;
-    @include s(6rem);
+    --size: 5rem;
+    @include s;
     transition: var(--dock-hover-transition);
 
     background-color: $col-light;

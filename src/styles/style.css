@@ -385,9 +385,9 @@ input, button, textarea, select {
 .dock--graphic {
   margin-top: 1rem;
   object-fit: contain;
-  --size: 6rem;
-  width: 6rem;
-  height: 6rem;
+  --size: 5rem;
+  width: var(--size);
+  height: var(--size);
   transition: var(--dock-hover-transition);
   background-color: #ffffff;
 }

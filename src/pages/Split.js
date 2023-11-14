@@ -9,8 +9,6 @@ import SOLID_IMGS from "../data/SOLID_IMGS";
 import FLUID_IMGS from "../data/FLUID_IMGS";
 import TERPENES_IMGS from "../data/TERPENES_IMGS";
 
-
-
 const DATABASE = {
   filter: FILTER_IMGS,
   end: END_IMGS,
@@ -20,16 +18,25 @@ const DATABASE = {
   terpenes: TERPENES_IMGS,
 };
 
-
-
 function Split({ view }) {
   const modal = useRef(null);
   const pref = view.page;
 
-//   TODO: Add support for images that have a variation per dock item
-  const img = DATABASE[view.page][view.type];
+  //   TODO: Add support for images that have a variation per dock item
 
-  const {columns} = usePaper(view, modal);
+  let img;
+
+  if (DATABASE[view.page][view.type]?.src) {
+    img = DATABASE[view.page][view.type];
+    console.log("option 1");
+  } else {
+    img = DATABASE[view.page][view.type][view.dock] || DATABASE[view.page][view.type];
+  }
+
+
+  console.log(img);
+
+  const { columns } = usePaper(view, modal);
 
   return (
     <>
@@ -50,24 +57,21 @@ function Split({ view }) {
   );
 }
 
-
-
 const checkPaperRowType = (view, rowIndex, columns) => {
-    const startIndex = rowIndex * columns;
-    const endIndex = startIndex + columns;
-    const rowStats = view.dockActiveObj.stats.slice(startIndex, endIndex);
+  const startIndex = rowIndex * columns;
+  const endIndex = startIndex + columns;
+  const rowStats = view.dockActiveObj.stats.slice(startIndex, endIndex);
 
-    const isAllBar = rowStats.every((stat) => stat.type === "bar");
-    const isPrevAllBar = rowIndex > 0 && view.dockActiveObj.stats.slice((rowIndex - 1) * columns, startIndex).every((stat) => stat.type === "bar");
-    const isPrevRowMixed = rowIndex > 0 && !isPrevAllBar; // Check if previous row is not all bar
+  const isAllBar = rowStats.every((stat) => stat.type === "bar");
+  const isPrevAllBar = rowIndex > 0 && view.dockActiveObj.stats.slice((rowIndex - 1) * columns, startIndex).every((stat) => stat.type === "bar");
+  const isPrevRowMixed = rowIndex > 0 && !isPrevAllBar; // Check if previous row is not all bar
 
-    return {
-      isAllBar: isAllBar,
-      isPrevAllBar: isPrevAllBar,
-      isPrevRowMixed: isPrevRowMixed,
-    };
+  return {
+    isAllBar: isAllBar,
+    isPrevAllBar: isPrevAllBar,
+    isPrevRowMixed: isPrevRowMixed,
   };
-
+};
 
 function getPaperClassNames(columns, view, index) {
   if (view.page != "paper") return "";
@@ -86,23 +90,23 @@ function getPaperClassNames(columns, view, index) {
 }
 
 function usePaper(view, modal) {
-//   const [rows, setRows] = useState(0);
+  //   const [rows, setRows] = useState(0);
   const [columns, setColumns] = useState(0);
 
-//   const rowCount = useElementStyle(modal, "--viewer-modal-rows");
+  //   const rowCount = useElementStyle(modal, "--viewer-modal-rows");
   const colCount = useElementStyle(modal, "--viewer-modal-columns");
 
-//   useEffect(() => {
-//     if(view.page != "paper") return;
-//     if (rowCount && !isNaN(Number(rowCount))) {
-//       setRows(Number(rowCount));
-//     } else {
-//       setRows(0);
-//     }
-//   }, [rowCount]);
+  //   useEffect(() => {
+  //     if(view.page != "paper") return;
+  //     if (rowCount && !isNaN(Number(rowCount))) {
+  //       setRows(Number(rowCount));
+  //     } else {
+  //       setRows(0);
+  //     }
+  //   }, [rowCount]);
 
   useEffect(() => {
-    if(view.page != "paper") return;
+    if (view.page != "paper") return;
     if (colCount && !isNaN(Number(colCount))) {
       setColumns(Number(colCount));
     } else {
@@ -110,8 +114,7 @@ function usePaper(view, modal) {
     }
   }, [colCount]);
 
-
-//   return { modal, rows, columns };
+  //   return { modal, rows, columns };
   return { modal, columns };
 }
 
