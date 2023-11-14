@@ -31,6 +31,8 @@ function Sidebar({ view }) {
       {optionArray.map((option, i) => (
         <Panel key={i} option={option} view={view} panels={panels} setPanels={setPanels} />
         ))}
+
+        {/* <a>Back</a> */}
     </div>
   );
 
@@ -53,6 +55,8 @@ function Title({ view }) {
     </div>
   );
 }
+
+
 
 function Panel({ view, option, setPanels }) {
   const panelRef = useRef(null);

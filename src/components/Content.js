@@ -70,8 +70,6 @@ function Inner({ view }) {
 }
 
 function Page({ view }) {
-
-
   const split = LAYOUT_DATA.split.includes(view.page);
   const type = LAYOUT_DATA.specialty.includes(view.page) ? "specialty" : "default";
 
@@ -83,22 +81,30 @@ function Page({ view }) {
       {view.page == "compaction" && <Compaction view={view} />}
 
       {split && <Split view={view} type={type} />}
-
     </>
   );
 }
 
-function ContentModal({ pref = false, title, children, className, reference = null, type = "default" }) {
-
+function getType(type) {
   let split = false;
   let specialty = false;
-  
+
   if (type == "split") split = true;
   if (type == "specialty") specialty = true;
   if (typeof type == "object") {
     split = type.split || false;
     specialty = type.specialty || false;
   }
+
+  return {
+    split,
+    specialty,
+  };
+}
+
+
+function ContentModal({ pref = false, title, children, className, reference = null, type = "default" }) {
+  const { split, specialty } = getType(type);
 
   const lists = {
     body: ["content--body"],
@@ -128,11 +134,12 @@ function ContentModal({ pref = false, title, children, className, reference = nu
 }
 
 function ContentVisual({ children, className, type = "default" }) {
-  let split = false;
-  if (type == "split") split = true;
+  const { split, specialty } = getType(type);
+
   const list = ["content--visual"];
   if (className) list.push(className);
   if (split) list.push("content--visual__split");
+  if (specialty) list.push("content--visual__specialty");
   const classes = list.join(" ");
 
   return (
