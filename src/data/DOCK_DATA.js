@@ -2,17 +2,10 @@ import BAR_LABELS from "./BAR_LABELS";
 import { END_DOCK_IMGS } from "./END_IMGS";
 import { FILTER_DOCK_IMGS } from "./FILTER_IMGS";
 import { PAPER_DOCK_IMGS } from "./PAPER_IMGS";
-
-
-
-
+import { SOLID_DOCK_IMGS } from "./SOLID_IMGS";
 
 const DOCK_DATA = {
-
-
-
   paper: {
-    
     wood_white: {
       id: "wood_white",
       title: "Wood (white)",
@@ -70,17 +63,17 @@ const DOCK_DATA = {
       stats: [
         {
           title: "Other stat 1",
-          type:"description",
+          type: "description",
           description: "Blah blah blah.",
         },
         {
           title: "Other stat 2",
-          type:"description",
+          type: "description",
           description: "So much text.",
         },
         {
           title: "Other stat 3",
-          type:"bar",
+          type: "bar",
           bar: {
             labels: BAR_LABELS.speed,
             value: 67,
@@ -88,7 +81,7 @@ const DOCK_DATA = {
         },
         {
           title: "Other stat 4",
-          type:"bar",
+          type: "bar",
           bar: {
             labels: BAR_LABELS.level,
             value: 20,
@@ -96,7 +89,7 @@ const DOCK_DATA = {
         },
         {
           title: "Other stat 5",
-          type:"bar",
+          type: "bar",
           bar: {
             labels: BAR_LABELS.width,
             value: 85,
@@ -126,17 +119,12 @@ const DOCK_DATA = {
     },
   },
 
-
-
-  filter:{
-
+  filter: {
     wood_w: {
       id: "wood_w",
       title: "Wood W",
       img: FILTER_DOCK_IMGS.wood_w,
       link: { dock: "wood_w" },
-
-
 
       stats: [
         {
@@ -147,11 +135,10 @@ const DOCK_DATA = {
         {
           title: "Benefits",
           type: "description",
-          description: "The zigzag design provides more surface area than a straight ‘I’ design, allowing for improved cooling and filtration. The bleached wood pulp paper ensures durability.",
+          description:
+            "The zigzag design provides more surface area than a straight ‘I’ design, allowing for improved cooling and filtration. The bleached wood pulp paper ensures durability.",
         },
       ],
-
-
     },
 
     bamboo_w: {
@@ -172,8 +159,6 @@ const DOCK_DATA = {
           description: "Also different data.",
         },
       ],
-
-
     },
 
     wood_spiral: {
@@ -203,18 +188,9 @@ const DOCK_DATA = {
       img: FILTER_DOCK_IMGS.ceramic,
       link: { dock: "ceramic" },
     },
-
-
-
   },
 
-
-
-
-
-
-  end:{
-
+  end: {
     open: {
       id: "open",
       title: "Open",
@@ -225,18 +201,17 @@ const DOCK_DATA = {
         {
           title: "Description",
           type: "description",
-          description: "As the name suggests, the end is left open, exposing the cannabis inside. It’s similar to the end of a traditional cigarette.",
+          description:
+            "As the name suggests, the end is left open, exposing the cannabis inside. It’s similar to the end of a traditional cigarette.",
         },
         {
           title: "Benefits",
           type: "description",
-          description: "Allows for easy and immediate lighting. The open end can also provide assurance to users about the quality and consistency of the cannabis inside, as they can see it directly.",
+          description:
+            "Allows for easy and immediate lighting. The open end can also provide assurance to users about the quality and consistency of the cannabis inside, as they can see it directly.",
         },
       ],
-
-
     },
-
 
     punched: {
       id: "punched",
@@ -256,11 +231,7 @@ const DOCK_DATA = {
           description: "Also different data.",
         },
       ],
-
-
     },
-
-
 
     twisted: {
       id: "twisted",
@@ -280,29 +251,94 @@ const DOCK_DATA = {
           description: "Totally different data.",
         },
       ],
+    },
+  },
 
 
+
+
+  solid:{
+
+    shatter: {
+      id: "shatter",
+      title: "Shatter",
+      img: SOLID_DOCK_IMGS.shatter,
+      link: { dock: "shatter" },
+    
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description: "Shattery shatter shatter.",
+        },
+      ],
+    },
+    
+    hash: {
+      id: "hash",
+      title: "Hash",
+      img: SOLID_DOCK_IMGS.hash,
+      link: { dock: "hash" },
+    
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description: "Hashy hash hash.",
+        },
+      ],
     },
 
+    kief: {
+      id: "kief",
+      title: "Kief",
+      img: SOLID_DOCK_IMGS.kief,
+      link: { dock: "kief" },
+    
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description: "Kiefy kief kief.",
+        },
+      ],
+    },
+    
+    diamonds: {
+      id: "diamonds",
+      title: "Diamonds",
+      img: SOLID_DOCK_IMGS.diamonds,
+      link: { dock: "diamonds" },
+    
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description: "Diamondy diamonds diamonds.",
+        },
+      ],
+    },
 
-
-
-
-
+    isolate: {
+      id: "isolate",
+      title: "Isolate",
+      img: SOLID_DOCK_IMGS.isolate,
+      link: { dock: "isolate" },
+    
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description: "Isolate isolate isolate.",
+        },
+      ],
+    },
+    
 
 
 
 
   }
-
-
-
-
-
-
-
-
-
 
 
 

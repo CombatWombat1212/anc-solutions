@@ -7,6 +7,9 @@ import PAPER_DATA from "./PAPER_DATA";
 import FILTER_DATA from "./FILTER_DATA";
 import COMPACTION_DATA from "./COMPACTION_DATA";
 import END_DATA from "./END_DATA";
+import SOLID_DATA from "./SOLID_DATA";
+import FLUID_DATA from "./FLUID_DATA";
+import TERPENES_DATA from "./TERPENES_DATA";
 
 
 const PAGE_DATA = {
@@ -52,6 +55,24 @@ const PAGE_DATA = {
     index: 4,
     id: "end",
     title: "End Type",
+  },
+  solid: {
+    level: "sub",
+    index: 5,
+    id: "solid",
+    title: "Solid Concentrates",
+  },
+  fluid: {
+    level: "sub",
+    index: 6,
+    id: "fluid",
+    title: "Fluid Concentrates",
+  },
+  terpenes: {
+    level: "sub",
+    index: 7,
+    id: "terpenes",
+    title: "Terpenes",
   },
 };
 
@@ -225,6 +246,9 @@ const DATABASE = {
   filter: FILTER_DATA,
   compaction: COMPACTION_DATA,
   end: END_DATA,
+  solid: SOLID_DATA,
+  fluid: FLUID_DATA,
+  terpenes: TERPENES_DATA,
 };
 
 

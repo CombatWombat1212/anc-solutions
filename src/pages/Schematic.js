@@ -93,14 +93,14 @@ function Schematic({ view }) {
 
   return (
     <>
-      <SVG
+      {img && <SVG
         className={`schematic--graphic schematic--graphic__${ready ? "ready" : "loading"}`}
         src={img.src}
         width={img.height}
         height={img.width}
         innerRef={graphic}
         onLoad={handleSvgLoad}
-      />
+      />}
     </>
   );
 }

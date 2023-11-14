@@ -11,6 +11,7 @@ import Filter from "../pages/Filter";
 import LAYOUT_DATA from "../data/LAYOUT_DATA";
 import End from "../pages/End";
 import Compaction from "../pages/Compaction";
+import Specialty from "../pages/Specialty";
 
 function Content({ view }) {
   const { page, pageRef } = view;
@@ -78,6 +79,7 @@ function Page({ view }) {
       {view.page == "filter" && <Filter view={view} />}
       {view.page == "end" && <End view={view} />}
       {view.page == "compaction" && <Compaction view={view} />}
+      {view.page == "specialty" && <Specialty view={view} />}
     </>
   );
 }
