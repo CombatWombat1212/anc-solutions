@@ -39,14 +39,14 @@
 
   &--visual {
     @include col-width(5);
-    @include flex-col;
+    // @include flex-col;
   }
 
-  &--graphic {
-    @include img-contain;
-    @include s(90%);
-    margin: auto;
-  }
+  // &--graphic {
+  //   @include img-contain;
+  //   @include s(90%);
+  //   margin: auto;
+  // }
 
 
   

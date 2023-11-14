@@ -6,10 +6,13 @@
 
 const LAYOUT_DATA = {
 
-    modal:[
+    split:[
         "filter",
         "paper",
         "end",
+        "solid",
+        "fluid",
+        "terpenes",
     ]
 
 

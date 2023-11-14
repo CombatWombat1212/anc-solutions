@@ -56,7 +56,14 @@
 
   &--visual__split{
     @include col-width(5);
+    @include flex-col;
   }
+
+  &--graphic__split {
+    @include img-contain;
+    @include s(90%);
+    margin: auto;
+  }  
 
 
 

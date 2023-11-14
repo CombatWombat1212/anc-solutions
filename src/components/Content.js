@@ -3,15 +3,15 @@ import PRODUCT_DATA from "../data/PRODUCT_DATA";
 import Selection from "../pages/Selection";
 import Schematic from "../pages/Schematic";
 import Sizes from "../pages/Sizes";
-import Paper from "../pages/Paper";
+// import Paper from "../pages/Paper";
 import Dock from "./Dock";
 import DOCK_DATA from "../data/DOCK_DATA";
 import { Body, H2, H3, Label2 } from "./Text";
-import Filter from "../pages/Filter";
+// import Filter from "../pages/Filter";
 import LAYOUT_DATA from "../data/LAYOUT_DATA";
-import End from "../pages/End";
+// import End from "../pages/End";
 import Compaction from "../pages/Compaction";
-import Specialty from "../pages/Specialty";
+import Split from "../pages/Split";
 
 function Content({ view }) {
   const { page, pageRef } = view;
@@ -45,7 +45,7 @@ function Inner({ view }) {
   // const one = useRef(null);
   // const two = useRef(null);
 
-  const isModal = LAYOUT_DATA.modal.includes(page);
+  const isSplit = LAYOUT_DATA.split.includes(page);
 
   return (
     <>
@@ -62,7 +62,7 @@ function Inner({ view }) {
         <br /><br /><p ref={two}>asdiojasidojhasiuhdiuashd</p>
       </div> */}
 
-      <div className={`content--inner ${page}--inner ${isModal ? "content--inner__split" : ""}`}>
+      <div className={`content--inner ${page}--inner ${isSplit ? "content--inner__split" : ""}`}>
         <Page view={view} />
       </div>
     </>
@@ -70,24 +70,30 @@ function Inner({ view }) {
 }
 
 function Page({ view }) {
+
+
+  const split = LAYOUT_DATA.split.includes(view.page);
+
   return (
     <>
       {view.page == "selection" && <Selection view={view} />}
       {view.page == "schematic" && <Schematic view={view} />}
       {view.page == "sizes" && <Sizes view={view} />}
+      {view.page == "compaction" && <Compaction view={view} />}
+
+      {/* 
       {view.page == "paper" && <Paper view={view} />}
       {view.page == "filter" && <Filter view={view} />}
       {view.page == "end" && <End view={view} />}
-      {view.page == "compaction" && <Compaction view={view} />}
-      {view.page == "specialty" && <Specialty view={view} />}
+      */}
+
+      {split && <Split view={view} />}
+
     </>
   );
 }
 
 function ContentModal({ pref = false, title, children, className, reference = null, type = "default" }) {
-
-  
-
   let split = false;
   if (type == "split") split = true;
 
@@ -95,16 +101,15 @@ function ContentModal({ pref = false, title, children, className, reference = nu
     body: ["content--body"],
     title: ["content--title"],
     modal: ["content--modal"],
-  }
+  };
 
   const classes = Object.keys(lists).reduce((acc, key) => {
     const list = lists[key];
-    if(pref) list.push(`${pref}--${key}`);
-    if(split) list.push(`${list[0]}__split`);
+    if (pref) list.push(`${pref}--${key}`);
+    if (split) list.push(`${list[0]}__split`);
     acc[key] = list.join(" ");
     return acc;
   }, {});
-
 
   return (
     <div className={classes.body}>
@@ -119,16 +124,13 @@ function ContentModal({ pref = false, title, children, className, reference = nu
 }
 
 function ContentVisual({ children, className, type = "default" }) {
-  
-  
   let split = false;
   if (type == "split") split = true;
   const list = ["content--visual"];
-  if(className) list.push(className);
-  if(split) list.push("content--visual__split");
+  if (className) list.push(className);
+  if (split) list.push("content--visual__split");
   const classes = list.join(" ");
 
-  
   return (
     <>
       <div className={classes}>{children}</div>
