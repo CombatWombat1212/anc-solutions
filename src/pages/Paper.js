@@ -5,7 +5,7 @@ import useAttrObserver from "../scripts/hooks/useAttrObserver";
 import useElementStyle from "../scripts/hooks/useElementStyle";
 import PAPER_IMGS from "../data/PAPER_IMGS";
 import SVG from "react-inlinesvg";
-import { ContentModal, Stat } from "../components/Content";
+import { ContentModal, ContentVisual, Stat } from "../components/Content";
 import PRODUCT_DATA from "../data/PRODUCT_DATA";
 
 function Paper({ view }) {
@@ -68,7 +68,7 @@ function Wrapper({ view }) {
     <>
       {view.dockActiveObj && (
         <>
-          <ContentModal pref={"paper"} title={view.dockActiveObj.title} reference={modal}>
+          <ContentModal pref={"paper"} title={view.dockActiveObj.title} reference={modal} type="split">
             {view.dockActiveObj.stats.map((stat, index) => {
               const rowIndex = Math.floor(index / columns);
               const rowType = checkRowType(rowIndex);
@@ -84,14 +84,14 @@ function Wrapper({ view }) {
             })}
           </ContentModal>
 
-          <div className="paper--visual">
+          <ContentVisual className="paper--visual" type="split">
             <SVG
               className="paper--graphic"
               src={img.src}
               width={img.width}
               height={img.height}
             />
-          </div>
+          </ContentVisual>
         </>
       )}
     </>

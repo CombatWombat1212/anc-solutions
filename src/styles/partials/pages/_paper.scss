@@ -7,12 +7,8 @@
 
   &--body {
     @include col-width(7);
-    // @include flex-col;
   }
 
-  &--visual {
-    @include col-width(5);
-  }
 
   &--modal {
     --viewer-modal-columns: 2;
@@ -40,8 +36,9 @@
     margin-top: 0.25rem;
   }
 
+
   &--visual {
-    padding-top: calc(var(--h3-size) + var(--viewer-modal-margin-top));
+    @include col-width(5);
     @include flex-col;
   }
 
@@ -50,4 +47,7 @@
     @include s(90%);
     margin: auto;
   }
+
+
+  
 }

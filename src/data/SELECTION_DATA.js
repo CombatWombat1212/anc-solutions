@@ -68,10 +68,8 @@ function processSelectionData(SELECTION_DATA_RAW) {
     if (SELECTION_DATA_RAW.hasOwnProperty(key)) {
       data[key] = { ...SELECTION_DATA_RAW[key] };
       data[key].id = key;
-      // const typeIndex = PREORLL_TYPES.indexOf(key);
-      // data[key].index = typeIndex > 0 ? typeIndex : PREROLL_TYPES.length + 1;
       data[key].index = PREROLL_TYPES.indexOf(key);
-      
+
     }
   }
 

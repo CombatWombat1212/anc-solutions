@@ -1,10 +1,7 @@
-.viewer .filter {
-  // &--inner {
-  //   @include flex-row;
-  // }
-
-
-
+.viewer .end {
+//   &--inner {
+//     @include flex-row;
+//   }
 
   &--body {
     @include col-width(7);
@@ -20,6 +17,11 @@
     @include flex-col;
   }
 
+  &--graphic {
+    @include img-contain;
+    @include s(90%);
+    margin: auto;
+  }
 
 
 }

@@ -12,8 +12,6 @@ import LAYOUT_DATA from "../data/LAYOUT_DATA";
 import End from "../pages/End";
 import Compaction from "../pages/Compaction";
 
-
-
 function Content({ view }) {
   const { page, pageRef } = view;
 
@@ -23,7 +21,6 @@ function Content({ view }) {
   useEffect(() => {
     setShow(DOCK_PAGES.includes(page));
   }, [page]);
-
 
   return (
     <>
@@ -64,7 +61,7 @@ function Inner({ view }) {
         <br /><br /><p ref={two}>asdiojasidojhasiuhdiuashd</p>
       </div> */}
 
-      <div className={`content--inner ${page}--inner ${isModal ? 'content-modal--inner' : ''}`}>
+      <div className={`content--inner ${page}--inner ${isModal ? "content--inner__split" : ""}`}>
         <Page view={view} />
       </div>
     </>
@@ -85,22 +82,57 @@ function Page({ view }) {
   );
 }
 
+function ContentModal({ pref = false, title, children, className, reference = null, type = "default" }) {
+
+  
+
+  let split = false;
+  if (type == "split") split = true;
+
+  const lists = {
+    body: ["content--body"],
+    title: ["content--title"],
+    modal: ["content--modal"],
+  }
+
+  const classes = Object.keys(lists).reduce((acc, key) => {
+    const list = lists[key];
+    if(pref) list.push(`${pref}--${key}`);
+    if(split) list.push(`${list[0]}__split`);
+    acc[key] = list.join(" ");
+    return acc;
+  }, {});
 
 
-function ContentModal({ pref = false, title, children, reference = null }) {
   return (
-    <div className={`content-modal--body ${pref ? `${pref}--body` : ""}`}>
-      <div className={`content-modal--title ${pref ? `${pref}--title` : ""}`}>
+    <div className={classes.body}>
+      <div className={classes.title}>
         <H3>{title}</H3>
       </div>
-      <div className={`content-modal--modal ${pref ? `${pref}--modal` : ""}`} ref={reference}>
+      <div className={classes.modal} ref={reference}>
         {children}
       </div>
     </div>
   );
 }
 
+function ContentVisual({ children, className, type = "default" }) {
+  
+  
+  let split = false;
+  if (type == "split") split = true;
+  const list = ["content--visual"];
+  if(className) list.push(className);
+  if(split) list.push("content--visual__split");
+  const classes = list.join(" ");
 
+  
+  return (
+    <>
+      <div className={classes}>{children}</div>
+    </>
+  );
+}
 
 function Stat({ stat, className }) {
   return (
@@ -141,7 +173,6 @@ function Bar({ stat }) {
   );
 }
 
-
-export { ContentModal, Stat, Description, Bar };
+export { ContentVisual, ContentModal, Stat, Description, Bar };
 
 export default Content;

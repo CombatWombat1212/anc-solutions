@@ -1,16 +1,6 @@
-
-
-
-
-
-
 .viewer .content {
-
-
-  &--wrapper{
-
+  &--wrapper {
   }
-
 
   &--inner {
     --content-inner-pad-top: 6rem;
@@ -21,33 +11,21 @@
     height: calc(100% - var(--content-inner-pad-y));
     @include flex-col-between;
 
-
-
     --content-inner-max-height: calc(100% - var(--content-inner-pad-y));
     --content-inner-max-height_dock: calc(100% - var(--dock-height) - var(--content-inner-pad-y));
 
-    max-height: weighted-average( var(--content-inner-max-height_dock), var(--content-inner-max-height), var(--content-has-dock) );
-
-
+    max-height: weighted-average(var(--content-inner-max-height_dock), var(--content-inner-max-height), var(--content-has-dock));
   }
-
 
   @include flex-col;
 
   &--col {
   }
 
-
-
-
-
-
-
+  &--visual {
+    padding-top: calc(var(--h3-size) + var(--viewer-modal-margin-top));
+  }
 }
-
-
-
-
 
 @mixin content-pad_thin {
   $pad: 2.75rem;
@@ -56,20 +34,33 @@
   --content-inner-pad-x: #{$pad};
 }
 
-.viewer .content-modal {
-  &--inner {
+
+
+
+
+.viewer .content {
+
+
+
+  &--inner__split {
     @include content-pad_thin;
     --viewer-modal-margin-top: 1rem;
     @include flex-row;
     gap: 3rem;
-
   }
 
-  &--body {
+  &--body__split {
     @include flex-col;
+    @include col-width(7);
   }
 
-  &--modal {
+  &--visual__split{
+    @include col-width(5);
+  }
+
+
+
+  &--modal__split {
     @include viewer-modal;
 
     --viewer-modal-columns: 2;
@@ -90,6 +81,20 @@
     --h: calc(100% - var(--viewer-modal-pad-top) - var(--viewer-modal-pad-bottom) - var(--h3-size) - var(--viewer-modal-margin-top));
     height: var(--h);
     max-height: var(--h);
+  
   }
-}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
