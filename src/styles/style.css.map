@@ -28,7 +28,10 @@
         "partials/pages/_paper.scss",
         "partials/pages/_filter.scss",
         "partials/pages/_compaction.scss",
-        "partials/pages/_end.scss"
+        "partials/pages/_end.scss",
+        "partials/pages/_solid.scss",
+        "partials/pages/_fluid.scss",
+        "partials/pages/_terpenes.scss"
     ],
     "names": [],
     "file": "style.css"

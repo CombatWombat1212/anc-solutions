@@ -280,8 +280,8 @@ input, button, textarea, select {
   background-color: #1a1918;
   background-color: rgba(255, 255, 255, 0.05);
   outline: solid 0.125rem #EC0719;
-  --viewer-modal-columns: 2;
-  --viewer-modal-rows: 2;
+  --viewer-modal-columns: 1;
+  --viewer-modal-rows: 0;
   --viewer-modal-gap: 3rem;
   --viewer-modal-row-gaps: calc((var(--viewer-modal-rows) - 1) * var(--viewer-modal-gap));
   --viewer-modal-pad-bottom: 3.25rem;

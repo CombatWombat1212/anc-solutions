@@ -1,21 +1,33 @@
 import { ContentModal, ContentVisual, Stat } from "../components/Content";
 import SVG from "react-inlinesvg";
+import { useEffect, useRef, useState } from "react";
+import useElementStyle from "../scripts/hooks/useElementStyle";
 import FILTER_IMGS from "../data/FILTER_IMGS";
 import END_IMGS from "../data/END_IMGS";
 import PAPER_IMGS from "../data/PAPER_IMGS";
-import { useEffect, useRef, useState } from "react";
-import useElementStyle from "../scripts/hooks/useElementStyle";
+import SOLID_IMGS from "../data/SOLID_IMGS";
+import FLUID_IMGS from "../data/FLUID_IMGS";
+import TERPENES_IMGS from "../data/TERPENES_IMGS";
+
+
 
 const DATABASE = {
   filter: FILTER_IMGS,
   end: END_IMGS,
   paper: PAPER_IMGS,
+  solid: SOLID_IMGS,
+  fluid: FLUID_IMGS,
+  terpenes: TERPENES_IMGS,
 };
+
+
 
 function Split({ view }) {
   const modal = useRef(null);
-  const img = DATABASE[view.page][view.type];
   const pref = view.page;
+
+//   TODO: Add support for images that have a variation per dock item
+  const img = DATABASE[view.page][view.type];
 
   const {columns} = usePaper(view, modal);
 

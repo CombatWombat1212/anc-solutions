@@ -70,8 +70,8 @@
   &--modal__split {
     @include viewer-modal;
 
-    --viewer-modal-columns: 2;
-    --viewer-modal-rows: 2;
+    --viewer-modal-columns: 1;
+    --viewer-modal-rows: 0;
     --viewer-modal-gap: 3rem;
     --viewer-modal-row-gaps: calc((var(--viewer-modal-rows) - 1) * var(--viewer-modal-gap));
 
