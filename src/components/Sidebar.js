@@ -3,6 +3,7 @@ import PRODUCT_DATA, { PAGE_DATA } from "../data/PRODUCT_DATA";
 import { H1, H2 } from "./Text";
 import useHoverAndFocus from "../scripts/hooks/useHoverAndFocus";
 import { HARDCODED_PAGES } from "../data/LAYOUT_DATA";
+import useAttrObserver from "../scripts/hooks/useAttrObserver";
 
 function Sidebar({ view }) {
   const [panels, setPanels] = useState([]);
@@ -18,7 +19,22 @@ function Sidebar({ view }) {
   if (!view.type) {
     optionArray = Object.values(PRODUCT_DATA).map((x) => x.pages.selection);
   } else {
-    optionArray = Object.values(PAGE_DATA).filter((page) => HARDCODED_PAGES[view.type].includes(page.id));
+    const options = Object.values(PAGE_DATA).filter((page) => HARDCODED_PAGES[view.type].includes(page.id));
+    optionArray = (() => {
+      const options = Object.values(PAGE_DATA).filter((page) => HARDCODED_PAGES[view.type].includes(page.id));
+
+      // harded coded name change for blunt, should be done a better way but good for launch
+      if (view.type === "blunt") {
+        return options.map((option) => {
+          if (option.id === "paper") {
+            return { ...option, title: "Wrap Type" };
+          }
+          return option;
+        });
+      }
+
+      return options;
+    })();
   }
 
   useEffect(() => {
@@ -33,11 +49,52 @@ function Sidebar({ view }) {
 
   const schematic = view.page == "schematic";
 
+
+
+
+
+
+
+  // const sidebar = useRef(null);
+  // const mousePosition = useMousePosition();
+  // const [isHovered, setIsHovered] = useState(false);
+
+  // useEffect(() => {
+  //   if (!panels || panels.length === 0) return;
+  
+  //   const checkIfPanelsAreHovered = () => {
+  //     const hoveredPanel = panels.find(panel => {
+  //       if (!panel.ref.current) return false;
+  //       const rect = panel.ref.current.getBoundingClientRect();
+  //       return mousePosition.x >= rect.left &&
+  //              mousePosition.x <= rect.right &&
+  //              mousePosition.y >= rect.top &&
+  //              mousePosition.y <= rect.bottom;
+  //     });
+  
+  //     if (hoveredPanel) {
+  //       console.log(`Hovered Panel:`, hoveredPanel);
+  //       setIsHovered(true);
+  //     } else {
+  //       setIsHovered(false);
+  //     }
+  //   };
+  
+  //   checkIfPanelsAreHovered();
+  // }, [mousePosition, panels, view.page, view.type]);
+    
+  // useEffect(() => {
+  //   console.log(`isHovered: ${isHovered}`);
+  // }, [isHovered]);
+
+
+
   return (
-    <div className="viewer--sidebar sidebar">
+    <div className="viewer--sidebar sidebar"
+    //  ref={sidebar}
+     >
       <Title view={view} />
       {optionArray.map((option, i) => {
-        console.log(option);
         return <Panel key={i} option={option} view={view} panels={panels} setPanels={setPanels} />;
       })}
 
@@ -62,9 +119,31 @@ function Title({ view }) {
   );
 }
 
+
+// const useMousePosition = () => {
+//   const [mousePosition, setMousePosition] = useState({ x: null, y: null });
+
+//   useEffect(() => {
+//     const updateMousePosition = (ev) => {
+//       setMousePosition({ x: ev.clientX, y: ev.clientY });
+//     };
+
+//     window.addEventListener('mousemove', updateMousePosition);
+
+//     return () => {
+//       window.removeEventListener('mousemove', updateMousePosition);
+//     };
+//   }, []);
+
+//   return mousePosition;
+// };
+
+
+
 function Panel({ view, option, setPanels }) {
   const panelRef = useRef(null);
   const hovered = useHoverAndFocus(panelRef);
+  const optionId = useAttrObserver(panelRef, 'data-option-id', {bool:false});
 
   useEffect(() => {
     const panel = {
@@ -76,7 +155,7 @@ function Panel({ view, option, setPanels }) {
       const otherPanels = prevPanels.filter((p) => p.ref.current !== panelRef.current);
       return [...otherPanels, panel];
     });
-  }, [hovered]);
+  }, [hovered,optionId]);
 
   const schematic = view.page == "schematic" ? "schematic" : "other";
 
@@ -100,8 +179,14 @@ function Panel({ view, option, setPanels }) {
   const title = option.title.long || option.title.short || option.title;
   const ind = String(option.index + 1).padStart(2, "0");
 
+
+
+
+
   return (
-    <a className={`sidebar--panel sidebar--button sidebar--button__${schematic}`} ref={panelRef} onClick={handleClick}>
+    <a className={`sidebar--panel sidebar--button sidebar--button__${schematic}`} ref={panelRef} onClick={handleClick} 
+    data-option-id={option.id}
+    >
       <H2 className="sidebar--index">{ind}</H2>
       <H2 className="sidebar--name">{title}</H2>
     </a>

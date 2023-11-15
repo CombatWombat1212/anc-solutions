@@ -10,15 +10,16 @@ function Schematic({ view }) {
   // const options = Object.values(PRODUCT_DATA[view.type].pages).filter((x) => x.level == "sub");
   const options = Object.values(PAGE_DATA).filter(page => HARDCODED_PAGES[view.type].includes(page.id));
 
+
   const [components, setComponents] = useState(false);
   const [ready, setReady] = useState(false);
+
   const graphic = useRef(null);
 
   const handleSvgLoad = () => {
     const svg = graphic.current;
 
     let elements = {};
-    console.log(options);
 
     Object.keys(options).forEach((key) => {
       const componentId = options[key].id;
@@ -64,25 +65,41 @@ function Schematic({ view }) {
     setReady(true);
   }, [components]);
 
+
+  
+
+
+  useEffect(() => {
+    if (!components || !ready) return;
+  
+    Object.keys(components).forEach((key) => {
+      const query = Array.from(graphic.current.querySelectorAll(`[id*='${key}']`));
+  
+      query.forEach((element) => {
+        element.classList.add("schematic--vector__idle");
+        element.classList.remove("schematic--vector__hidden");
+        element.classList.remove("schematic--vector__active");
+      });
+    });
+  }, [ready, components]);
+  
+
+
   useEffect(() => {
     if (!components || view.hoveredSideBtn === undefined || !ready) return;
-
+  
     Object.keys(components).forEach((key) => {
       const page = options.find((x) => x.id === key);
       const componentId = page.id;
       const query = Array.from(graphic.current.querySelectorAll(`[id*='${componentId}']`));
-
+  
       query.forEach((element) => {
         if (view.hoveredSideBtn === false) {
           element.classList.add("schematic--vector__idle");
           element.classList.remove("schematic--vector__hidden");
           element.classList.remove("schematic--vector__active");
         } else {
-          if (!components[view.hoveredSideBtn]) {
-            return;
-          }
-
-          if (components[view.hoveredSideBtn].includes(element)) {
+          if (components[view.hoveredSideBtn] && components[view.hoveredSideBtn].includes(element)) {
             element.classList.add("schematic--vector__active");
             element.classList.remove("schematic--vector__hidden");
             element.classList.remove("schematic--vector__idle");
@@ -94,7 +111,50 @@ function Schematic({ view }) {
         }
       });
     });
-  }, [ready, components, view.hoveredSideBtn]);
+  }, [view.hoveredSideBtn, components, ready]);
+  
+
+
+  // useEffect(() => {
+
+  //   // if (!components || view.hoveredSideBtn === undefined || !ready) return;
+  //   if (!components || view.hoveredSideBtn === undefined || !ready) return;
+
+  //   console.log(view.hoveredSideBtn);
+
+  //   Object.keys(components).forEach((key) => {
+  //     const page = options.find((x) => x.id === key);
+  //     const componentId = page.id;
+  //     const query = Array.from(graphic.current.querySelectorAll(`[id*='${componentId}']`));
+
+  //     query.forEach((element) => {
+  //       if (view.hoveredSideBtn === false) {
+  //         element.classList.add("schematic--vector__idle");
+  //         element.classList.remove("schematic--vector__hidden");
+  //         element.classList.remove("schematic--vector__active");
+  //       } else {
+  //         if (!components[view.hoveredSideBtn]) {
+  //           return;
+  //         }
+
+  //         if (components[view.hoveredSideBtn].includes(element)) {
+  //           element.classList.add("schematic--vector__active");
+  //           element.classList.remove("schematic--vector__hidden");
+  //           element.classList.remove("schematic--vector__idle");
+  //         } else {
+  //           element.classList.add("schematic--vector__hidden");
+  //           element.classList.remove("schematic--vector__active");
+  //           element.classList.remove("schematic--vector__idle");
+  //         }
+  //       }
+  //     });
+  //   });
+
+    
+  // }, [ready, components, view.hoveredSideBtn]);
+
+
+
 
   return (
     <>

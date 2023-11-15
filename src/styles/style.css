@@ -686,7 +686,7 @@ input, button, textarea, select {
 }
 
 .schematic--vector__idle {
-  opacity: 1;
+  opacity: 0;
 }
 
 .viewer .sizes {
