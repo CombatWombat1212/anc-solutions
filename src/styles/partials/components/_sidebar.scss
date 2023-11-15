@@ -6,10 +6,12 @@
     @include col-width($width);
     max-width: col-width($width);
     min-width: col-width($width);
+    @include flex-col;
   
     &--panel {
       // padding: calc(var(--viewer-inner-pad) * 0.725) var(--viewer-inner-pad);
-      padding: calc(var(--viewer-inner-pad) * 0.6) var(--viewer-inner-pad);
+      padding: calc(var(--viewer-inner-pad) * 0.5) var(--viewer-inner-pad);
+      // padding: calc(var(--viewer-inner-pad) * 0.1) var(--viewer-inner-pad);
       @include viewer-border(bottom);
     }
   
@@ -20,6 +22,21 @@
         background-color: $col-primary;
         cursor: pointer;
       }
+
+
+      &__schematic{
+        cursor: default!important;
+      }
+    }
+
+    &--back {
+      margin-top:auto;
+      border:none;
+      padding-bottom: calc(var(--viewer-inner-pad) * 0.75);
+      height:100%;
+      @include flex-col-end;
+
+
     }
   
     &--index {

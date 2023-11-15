@@ -31,15 +31,20 @@ input, button, textarea, select {
 
 @use "sass:math";
 .viewer {
-  --label-2-font-size:1rem;
+  --h1-font-size: 3.25rem;
+  --h2-font-size: 2.125rem;
   --h3-font-size: 1.6875rem;
-  --h3-line-height:2.125rem;
+  --h4-font-size: 0.6875rem;
+  --body-font-size: 1rem;
+  --label-1-font-size: 1.5rem;
+  --label-2-font-size: 1rem;
+  --h3-line-height: 2.125rem;
   --h3-size: Max(var(--h3-font-size), var(--h3-line-height));
 }
 
 .viewer--h1 {
   font-family: urbane, sans-serif;
-  font-size: 3.25rem;
+  font-size: var(--h1-font-size);
   font-weight: 600;
   line-height: 4.65rem;
   letter-spacing: 0.016em;
@@ -48,7 +53,7 @@ input, button, textarea, select {
 
 .viewer--h2 {
   font-family: acumin-variable, sans-serif;
-  font-size: 2.125rem;
+  font-size: var(--h2-font-size);
   color: #BABABA;
   font-stretch: extra-condensed;
   font-weight: 365;
@@ -70,14 +75,14 @@ input, button, textarea, select {
 
 .viewer--body {
   font-family: acumin-variable, sans-serif;
-  font-size: 1rem;
+  font-size: var(--body-font-size);
   font-weight: 500;
   color: #ffffff;
 }
 
 .viewer--label-1 {
   font-family: acumin-variable, sans-serif;
-  font-size: 1.5rem;
+  font-size: var(--label-1-font-size);
   font-weight: 500;
   color: #EC0719;
   text-transform: uppercase;
@@ -161,10 +166,12 @@ input, button, textarea, select {
   --column-width: 3.5;
   max-width: 29.16667%;
   min-width: 29.16667%;
+  display: flex;
+  flex-direction: column;
 }
 
 .viewer .sidebar--panel {
-  padding: calc(var(--viewer-inner-pad) * 0.6) var(--viewer-inner-pad);
+  padding: calc(var(--viewer-inner-pad) * 0.5) var(--viewer-inner-pad);
   border-bottom: 0.125rem solid #ffffff;
 }
 
@@ -181,6 +188,20 @@ input, button, textarea, select {
 .viewer .sidebar--button:hover, .viewer .sidebar--button:focus, .viewer .sidebar--button.focus, .viewer .sidebar--button.hover {
   background-color: #EC0719;
   cursor: pointer;
+}
+
+.viewer .sidebar--button__schematic {
+  cursor: default !important;
+}
+
+.viewer .sidebar--back {
+  margin-top: auto;
+  border: none;
+  padding-bottom: calc(var(--viewer-inner-pad) * 0.75);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .viewer .sidebar--index {

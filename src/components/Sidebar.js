@@ -15,10 +15,10 @@ function Sidebar({ view }) {
   //   optionArray = Object.values(PRODUCT_DATA).map((x) => x.pages.selection);
   // }
 
-  if(!view.type){
+  if (!view.type) {
     optionArray = Object.values(PRODUCT_DATA).map((x) => x.pages.selection);
   } else {
-    optionArray = Object.values(PAGE_DATA).filter(page => HARDCODED_PAGES[view.type].includes(page.id));
+    optionArray = Object.values(PAGE_DATA).filter((page) => HARDCODED_PAGES[view.type].includes(page.id));
   }
 
   useEffect(() => {
@@ -31,19 +31,19 @@ function Sidebar({ view }) {
     }
   }, [panels]);
 
+  const schematic = view.page == "schematic";
+
   return (
     <div className="viewer--sidebar sidebar">
       <Title view={view} />
-      {optionArray.map((option, i) => (
-        <Panel key={i} option={option} view={view} panels={panels} setPanels={setPanels} />
-        ))}
+      {optionArray.map((option, i) => {
+        console.log(option);
+        return <Panel key={i} option={option} view={view} panels={panels} setPanels={setPanels} />;
+      })}
 
-        {/* <a>Back</a> */}
+      {schematic && <Back view={view} />}
     </div>
   );
-
-
-
 }
 
 function Title({ view }) {
@@ -62,8 +62,6 @@ function Title({ view }) {
   );
 }
 
-
-
 function Panel({ view, option, setPanels }) {
   const panelRef = useRef(null);
   const hovered = useHoverAndFocus(panelRef);
@@ -80,7 +78,11 @@ function Panel({ view, option, setPanels }) {
     });
   }, [hovered]);
 
+  const schematic = view.page == "schematic" ? "schematic" : "other";
+
   const handleClick = () => {
+    if (view.page == "schematic") return;
+
     const page = view.type && option[view.type] ? option[view.type].link.page : option.link.page;
     const type = view.type && option[view.type] ? option[view.type].link.type : option.link.type;
 
@@ -88,10 +90,9 @@ function Panel({ view, option, setPanels }) {
     view.setType(type);
   };
 
-
   useEffect(() => {
     const dock = PRODUCT_DATA[view.type]?.pages?.subpages?.[view.page]?.dock;
-    if(dock && dock.length > 0) {
+    if (dock && dock.length > 0) {
       view.setDock(dock[0].id);
     }
   }, [view.page, view.type]);
@@ -100,17 +101,24 @@ function Panel({ view, option, setPanels }) {
   const ind = String(option.index + 1).padStart(2, "0");
 
   return (
-    <a className="sidebar--panel sidebar--button" ref={panelRef} onClick={handleClick}>
+    <a className={`sidebar--panel sidebar--button sidebar--button__${schematic}`} ref={panelRef} onClick={handleClick}>
       <H2 className="sidebar--index">{ind}</H2>
       <H2 className="sidebar--name">{title}</H2>
     </a>
   );
 }
 
+function Back({ view }) {
+  const handleClick = () => {
+    view.setPage("selection");
+    view.setType(false);
+  };
 
-
-
-
-
+  return (
+    <a className={`sidebar--panel sidebar--button sidebar--back`} onClick={handleClick}>
+      <H2 className="sidebar--name">Back</H2>
+    </a>
+  );
+}
 
 export default Sidebar;

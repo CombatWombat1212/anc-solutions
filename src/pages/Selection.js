@@ -15,6 +15,7 @@ function Selection({ view }) {
   const setActiveByTypeRef = useRef();
 
   const setActiveByType = (input) => {
+
     let rollType = false;
     if (input === false || input === null) {
       rollType = false;
@@ -103,8 +104,8 @@ function Selection({ view }) {
       <div className="selection--description">
         <Modal description={description} state={modalState} />
 
-        {selectionArray.map((type) => {
-          return <HiddenModal description={type.pages["selection"].description} state="hidden" modals={modals} setModals={setModals} />;
+        {selectionArray.map((type, i) => {
+          return <HiddenModal description={type.pages["selection"].description} state="hidden" modals={modals} setModals={setModals} key={i} />;
         })}
       </div>
     </>

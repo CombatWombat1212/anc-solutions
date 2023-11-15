@@ -2,11 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import Graphic from "../components/Graphic";
 import SCHEMATIC_IMGS from "../data/SCHEMATIC_IMGS";
 import SVG from "react-inlinesvg";
-import PRODUCT_DATA from "../data/PRODUCT_DATA";
+import PRODUCT_DATA, { PAGE_DATA } from "../data/PRODUCT_DATA";
+import { HARDCODED_PAGES } from "../data/LAYOUT_DATA";
 
 function Schematic({ view }) {
   const img = SCHEMATIC_IMGS[view.type];
-  const options = Object.values(PRODUCT_DATA[view.type].pages).filter((x) => x.level == "sub");
+  // const options = Object.values(PRODUCT_DATA[view.type].pages).filter((x) => x.level == "sub");
+  const options = Object.values(PAGE_DATA).filter(page => HARDCODED_PAGES[view.type].includes(page.id));
 
   const [components, setComponents] = useState(false);
   const [ready, setReady] = useState(false);
@@ -16,6 +18,7 @@ function Schematic({ view }) {
     const svg = graphic.current;
 
     let elements = {};
+    console.log(options);
 
     Object.keys(options).forEach((key) => {
       const componentId = options[key].id;
@@ -23,7 +26,9 @@ function Schematic({ view }) {
       elements[componentId] = query;
     });
 
+
     setComponents(elements);
+
   };
 
   useEffect(() => {
