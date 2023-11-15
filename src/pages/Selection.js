@@ -5,70 +5,37 @@ import useInOut from "../scripts/hooks/useInOut";
 import { Body, H2 } from "../components/Text";
 import Graphic from "../components/Graphic";
 import useElementHeight from "../scripts/hooks/useElementHeight";
+import Link from "../components/Link";
 
 function Selection({ view }) {
   const selectionArray = Object.values(PRODUCT_DATA);
 
-  const [active, setActive] = useState(false);
+
   const [description, setDescription] = useState(false);
+  const [delayedActive, setDelayedActive] = useState(view.side.active);
 
-  const setActiveByTypeRef = useRef();
-
-  const setActiveByType = (input) => {
-    let rollType = false;
-    if (input === false || input === null) {
-      rollType = false;
-    } else if (typeof input === "string") {
-      rollType = PRODUCT_DATA[input] ? PRODUCT_DATA[input] : false;
-    } else if (input && input.currentTarget.dataset.rollType) {
-      rollType = PRODUCT_DATA[input.currentTarget.dataset.rollType] ? PRODUCT_DATA[input.currentTarget.dataset.rollType] : false;
-    }
-
-    const timeoutDur = view.pageRef.current ? getComputedStyle(view.pageRef.current).getPropertyValue("--selection-mouse-leave-timeout") : "200ms";
-    const timeout = splitS(timeoutDur);
-
-    clearTimeout(setActiveByTypeRef.current); // Clear any existing timeouts
-    if (rollType) {
-      setActive(rollType);
+  useEffect(() => {
+    let timer;
+    if (view.side.active) {
+      setDelayedActive(view.side.active); 
     } else {
-      setActiveByTypeRef.current = setTimeout(() => {
-        setActive(rollType); // Only set to false if not interrupted by a new roll
-      }, timeout);
+      timer = setTimeout(() => {
+        setDelayedActive(view.side.active);
+      }, 200);
     }
-  };
-
-  useEffect(() => {
     return () => {
-      clearTimeout(setActiveByTypeRef.current);
+      clearTimeout(timer);
     };
-  }, []);
-
-  useEffect(() => {
-    setActiveByType(view.side.active);
   }, [view.side.active]);
 
+
+
   useEffect(() => {
-    if (!active) return;
-    setDescription(active.pages["selection"].description);
-  }, [active]);
+    if (!delayedActive || !PRODUCT_DATA[delayedActive]) return;
+    setDescription(PRODUCT_DATA[delayedActive].pages["selection"].description);
+  }, [delayedActive]);
 
-  const modalState = useInOut(active);
-
-  const handleMouseEnter = (e) => {
-    setActiveByType(e);
-  };
-
-  const handleMouseLeave = () => {
-    setActiveByType(false);
-  };
-
-  const handleClick = (e) => {
-    const elemType = PRODUCT_DATA[e.currentTarget.dataset.rollType];
-    const page = elemType.pages["selection"].link.page;
-    const type = elemType.pages["selection"].link.type;
-    view.setPage(page);
-    view.setType(type);
-  };
+  const modalState = useInOut(delayedActive);
 
   const [modals, setModals] = useState([]);
   const [tallestModal, setTallestModal] = useState(0);
@@ -80,11 +47,9 @@ function Selection({ view }) {
     setTallestModal(tallest);
   }, [modals]);
 
-
-
   const [graphics, setGraphics] = useState([]);
   const [loaded, setLoaded] = useState(false);
-  
+
   useEffect(() => {
     if (graphics.length === selectionArray.length) {
       const allLoaded = graphics.reduce((allLoaded, graphic) => {
@@ -95,30 +60,23 @@ function Selection({ view }) {
       setLoaded(false);
     }
   }, [graphics, selectionArray.length]);
-  
-
-
-  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     if (loaded && tallestModal !== 0) {
-      setReady(true);
-    } else {
-      setReady(false);
+      view.setPageLoading(false);
     }
   }, [loaded, tallestModal]);
-  
-
 
   return (
     <>
+      {/* <div className={`selection--body selection--body__${ready ? "loaded" : "loading"}`} */}
       <div
-        className={`selection--body selection--body__${ready ? "loaded" : "loading"}`}
+        className={`selection--body`}
         style={{
           "--selection-modal-height": `${tallestModal}px`,
         }}>
-        {selectionArray.map((type) => (
-          <Column type={type} active={active} handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} handleClick={handleClick} graphics={graphics} setGraphics={setGraphics} />
+        {selectionArray.map((type, i) => (
+          <Column type={type} graphics={graphics} setGraphics={setGraphics} active={delayedActive} view={view} key={i} />
         ))}
       </div>
       <div className="selection--description">
@@ -132,9 +90,17 @@ function Selection({ view }) {
   );
 }
 
-function Column({ type, active, handleMouseEnter, handleMouseLeave, handleClick, graphics, setGraphics }) {
+function Column({ view, type, graphics, setGraphics, active }) {
+  const handleMouseEnter = () => view.side.setActive(type.id);
+  const handleMouseLeave = () => view.side.setActive(false);
+
+  const handleClick = (e) => {
+    view.setPage(type.pages.selection.link.page);
+    view.setType(type.id);
+  };
+
   return (
-    <a
+    <Link
       className={`content--col selection--col`}
       key={type.id}
       onMouseEnter={handleMouseEnter}
@@ -142,9 +108,8 @@ function Column({ type, active, handleMouseEnter, handleMouseLeave, handleClick,
       data-roll-type={type.id}
       onClick={handleClick}>
       <Head type={type} active={active} />
-      <Visual type={type} active={active} graphics={graphics}
-setGraphics={setGraphics} />
-    </a>
+      <Visual type={type} active={active} graphics={graphics} setGraphics={setGraphics} />
+    </Link>
   );
 }
 
@@ -179,7 +144,7 @@ function Head({ type, active }) {
 
   useEffect(() => {
     if (active) {
-      setStyle(type.id === active.id ? "active" : "inactive");
+      setStyle(type.id === active ? "active" : "inactive");
     } else {
       setStyle("idle");
     }
@@ -196,25 +161,18 @@ function Head({ type, active }) {
   );
 }
 
-
-
-
 function Visual({ type, active, graphics, setGraphics }) {
-
-
   const [style, setStyle] = useState("idle");
 
   const imgs = type.pages["selection"].images;
 
   useEffect(() => {
     if (active) {
-      setStyle(type.id === active.id ? "active" : "inactive");
+      setStyle(type.id === active ? "active" : "inactive");
     } else {
       setStyle("idle");
     }
   }, [active, type.id]);
-
-
 
   const [vecLoaded, setVecLoaded] = useState(false);
   const [photoLoaded, setPhotoLoaded] = useState(false);
@@ -232,10 +190,9 @@ function Visual({ type, active, graphics, setGraphics }) {
   };
 
   useEffect(() => {
-    if(!vecLoaded || !photoLoaded) return;
+    if (!vecLoaded || !photoLoaded) return;
     setGraphicsLoaded(true);
   }, [vecLoaded, photoLoaded]);
-
 
   useEffect(() => {
     const graphic = {
@@ -248,7 +205,6 @@ function Visual({ type, active, graphics, setGraphics }) {
       return [...otherGraphics, graphic];
     });
   }, [graphicsLoaded]);
-
 
   return (
     <div className="selection--visual">
@@ -267,11 +223,5 @@ function Visual({ type, active, graphics, setGraphics }) {
     </div>
   );
 }
-
-
-
-
-
-
 
 export default Selection;

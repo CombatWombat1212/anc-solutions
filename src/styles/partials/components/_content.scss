@@ -15,6 +15,19 @@
     --content-inner-max-height_dock: calc(100% - var(--dock-height) - var(--content-inner-pad-y));
 
     max-height: weighted-average(var(--content-inner-max-height_dock), var(--content-inner-max-height), var(--content-has-dock));
+
+
+
+    transition:  500ms;
+    &__loading{
+      opacity:0;
+    }
+
+    &__loaded{
+      opacity:1;
+    }
+
+
   }
 
   @include flex-col;

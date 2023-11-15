@@ -4,6 +4,7 @@ import { H1, H2 } from "./Text";
 import useHoverAndFocus from "../scripts/hooks/useHoverAndFocus";
 import { HARDCODED_PAGES } from "../data/LAYOUT_DATA";
 import useAttrObserver from "../scripts/hooks/useAttrObserver";
+import Link from "./Link";
 
 function Sidebar({ view }) {
   const [panels, setPanels] = useState([]);
@@ -127,12 +128,12 @@ function Panel({ view, option, setPanels }) {
 
 
   return (
-    <a className={`sidebar--panel sidebar--button sidebar--button__${schematic}`} ref={panelRef} onClick={handleClick} 
+    <Link className={`sidebar--panel sidebar--button sidebar--button__${schematic}`} reference={panelRef} onClick={handleClick} 
     data-option-id={option.id}
     >
       <H2 className="sidebar--index">{ind}</H2>
       <H2 className="sidebar--name">{title}</H2>
-    </a>
+    </Link>
   );
 }
 
@@ -143,9 +144,9 @@ function Back({ view }) {
   };
 
   return (
-    <a className={`sidebar--panel sidebar--button sidebar--back`} onClick={handleClick}>
+    <Link className={`sidebar--panel sidebar--button sidebar--back`} onClick={handleClick}>
       <H2 className="sidebar--name">Back</H2>
-    </a>
+    </Link>
   );
 }
 

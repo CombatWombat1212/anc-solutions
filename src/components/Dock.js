@@ -6,6 +6,7 @@ import useInOut from "../scripts/hooks/useInOut";
 import Mask from "./Mask";
 import createUpdateConditions from "../scripts/createUpdateConditions";
 import DOCK_DATA from "../data/DOCK_DATA";
+import Link from "./Link";
 
 // data is the array of dock elements
 // view.dock is the id of the active dock element
@@ -72,10 +73,10 @@ function Item({ item, index, view, active }) {
 
   return (
     <>
-      <a className={`dock--item dock--item__${state}`} onMouseEnter={handleHover} onMouseLeave={handleLeave} onClick={handleClick}>
+      <Link className={`dock--item dock--item__${state}`} onMouseEnter={handleHover} onMouseLeave={handleLeave} onClick={handleClick}>
         <H2 className={`dock--h2 dock--h2__${state}`}>{item.title}</H2>
         <Mask className={`dock--graphic dock--graphic__${state}`} img={item.img} />
-      </a>
+      </Link>
       <div
         className={`dock--item-background dock--item-background__${state}`}
         style={{

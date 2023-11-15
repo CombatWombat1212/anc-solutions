@@ -62,17 +62,15 @@ function Schematic({ view }) {
     setLoaded(true);
   }, [components]);
 
-
-
-  const [svgLoaded, setSvgLoaded] = useState(false);
+  // const [svgLoaded, setSvgLoaded] = useState(false);
 
   useEffect(() => {
     if (!components || !loaded) return;
-  
+
     const processComponents = new Promise((resolve) => {
       Object.keys(components).forEach((key) => {
         const query = Array.from(graphic.current.querySelectorAll(`[id*='${key}']`));
-  
+
         query.forEach((element) => {
           element.classList.add("schematic--vector__idle");
           element.classList.remove("schematic--vector__hidden");
@@ -81,17 +79,15 @@ function Schematic({ view }) {
       });
       resolve();
     });
-  
+
     processComponents.then(() => {
       // TODO: this could be better, i think if you made the transition time 0 and then only made it 200ms after the svg loaded, it would work
       setTimeout(() => {
-      setSvgLoaded(true);
-      }, 0);
+        // setSvgLoaded(true);
+        view.setPageLoading(false);
+      }, 50);
     });
-  
   }, [loaded, components]);
-
-  
 
   useEffect(() => {
     if (!components || view.hoveredSideBtn === undefined || !loaded) return;
@@ -121,46 +117,36 @@ function Schematic({ view }) {
     });
   }, [view.hoveredSideBtn, components, loaded]);
 
+  // const [transitionStyle, setTransitionStyle] = useState({
+  //   '--transition': '0ms',
+  //   'opacity': '0'
+  // });
 
+  // useEffect(() => {
+  //   // First, set the transition style based on svgLoaded
+  //   setTransitionStyle({
+  //     '--transition': svgLoaded ? '200ms' : '0ms',
+  //     'opacity': '0'
+  //   });
 
+  //   // Then, after a brief timeout, update the opacity
+  //   const timeoutId = setTimeout(() => {
+  //     setTransitionStyle((prevStyle) => ({
+  //       ...prevStyle,
+  //       'opacity': svgLoaded ? '1' : '0'
+  //     }));
+  //   }, 10);
 
-
-
-
-  const [transitionStyle, setTransitionStyle] = useState({
-    '--transition': '0ms',
-    'opacity': '0'
-  });
-
-  useEffect(() => {
-    // First, set the transition style based on svgLoaded
-    setTransitionStyle({
-      '--transition': svgLoaded ? '200ms' : '0ms',
-      'opacity': '0'
-    });
-
-    // Then, after a brief timeout, update the opacity
-    const timeoutId = setTimeout(() => {
-      setTransitionStyle((prevStyle) => ({
-        ...prevStyle,
-        'opacity': svgLoaded ? '1' : '0'
-      }));
-    }, 10);
-
-    // Cleanup the timeout if the component unmounts
-    return () => clearTimeout(timeoutId);
-  }, [svgLoaded]);
-
-
-
-
+  //   // Cleanup the timeout if the component unmounts
+  //   return () => clearTimeout(timeoutId);
+  // }, [svgLoaded]);
 
   return (
     <>
       {img && (
         <SVG
-          className={`schematic--graphic schematic--graphic__${"none"}`}
-          style={transitionStyle}
+          className={`schematic--graphic schematic--graphic__${loaded ? "loaded" : "loading"}`}
+          // style={transitionStyle}
           src={img.src}
           width={img.height}
           height={img.width}

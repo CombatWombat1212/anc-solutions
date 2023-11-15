@@ -24,6 +24,7 @@ function Content({ view }) {
     setShow(DOCK_PAGES.includes(page));
   }, [page]);
 
+
   return (
     <>
       <div
@@ -40,14 +41,29 @@ function Content({ view }) {
   );
 }
 
-function Inner({ view }) {
-  const { page } = view;
 
+function Inner({ view }) {
+  const { page, pageLoading } = view;
   const isSplit = LAYOUT_DATA.split.includes(page);
+
+
+
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+    setLoaded(pageLoading);
+    }, 50);
+  }, [pageLoading]);
+
+
 
   return (
     <>
-      <div className={`content--inner ${page}--inner ${isSplit ? "content--inner__split" : ""}`}>
+      <div className={`content--inner ${page}--inner ${isSplit ? "content--inner__split" : ""}
+      
+      content--inner__${pageLoading ? "loading" : "loaded"}
+      `}>
         <Page view={view} />
       </div>
     </>

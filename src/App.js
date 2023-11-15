@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import FontFaceObserver from 'fontfaceobserver';
 import Viewer from './components/Viewer';
+import ViewProvider from './scripts/contexts/viewProvider';
+
 
 function App() {
   const [fontsLoaded, setFontsLoaded] = useState(false);
@@ -31,12 +33,12 @@ function App() {
   }, []);
 
   return (
-    <>
+    <ViewProvider>
       <link rel="stylesheet" href="https://use.typekit.net/non3ahr.css" />
       <div className={`sandbox ${!fontsLoaded ? 'hidden-until-fonts-loaded' : ''}`}>
         <Viewer />
       </div>
-    </>
+    </ViewProvider>
   );
 }
 

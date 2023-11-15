@@ -1,5 +1,5 @@
 .schematic {
-  // --schematic-transition: 0.2s;
+  --schematic-transition: 0.1s;
 
   &--wrapper {
   }
@@ -24,14 +24,13 @@
     }
 
 
-    transition: var(--transition);
-    &__loading {
-      opacity: 0;
-    }
+    // &__loading {
+    //   --schematic-transition: 0s;
+    // }
 
-    &__loaded {
-      opacity: 1;
-    }
+    // &__loaded {
+    //   --schematic-transition: 0.1s;
+    // }
   }
 
   &--vector {

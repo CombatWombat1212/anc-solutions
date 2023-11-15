@@ -26,7 +26,6 @@ function Split({ view, type }) {
 
   if (DATABASE[view.page][view.type]?.src) {
     img = DATABASE[view.page][view.type];
-    console.log("option 1");
   } else {
     img = DATABASE[view.page][view.type][view.dock] || DATABASE[view.page][view.type];
   }
