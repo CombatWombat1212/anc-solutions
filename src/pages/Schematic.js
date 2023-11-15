@@ -8,11 +8,10 @@ import { HARDCODED_PAGES } from "../data/LAYOUT_DATA";
 function Schematic({ view }) {
   const img = SCHEMATIC_IMGS[view.type];
   // const options = Object.values(PRODUCT_DATA[view.type].pages).filter((x) => x.level == "sub");
-  const options = Object.values(PAGE_DATA).filter(page => HARDCODED_PAGES[view.type].includes(page.id));
-
+  const options = Object.values(PAGE_DATA).filter((page) => HARDCODED_PAGES[view.type].includes(page.id));
 
   const [components, setComponents] = useState(false);
-  const [ready, setReady] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   const graphic = useRef(null);
 
@@ -27,9 +26,7 @@ function Schematic({ view }) {
       elements[componentId] = query;
     });
 
-
     setComponents(elements);
-
   };
 
   useEffect(() => {
@@ -62,37 +59,48 @@ function Schematic({ view }) {
       body.classList.add("viewer--body");
     });
 
-    setReady(true);
+    setLoaded(true);
   }, [components]);
 
 
-  
 
+  const [svgLoaded, setSvgLoaded] = useState(false);
 
   useEffect(() => {
-    if (!components || !ready) return;
+    if (!components || !loaded) return;
   
-    Object.keys(components).forEach((key) => {
-      const query = Array.from(graphic.current.querySelectorAll(`[id*='${key}']`));
+    const processComponents = new Promise((resolve) => {
+      Object.keys(components).forEach((key) => {
+        const query = Array.from(graphic.current.querySelectorAll(`[id*='${key}']`));
   
-      query.forEach((element) => {
-        element.classList.add("schematic--vector__idle");
-        element.classList.remove("schematic--vector__hidden");
-        element.classList.remove("schematic--vector__active");
+        query.forEach((element) => {
+          element.classList.add("schematic--vector__idle");
+          element.classList.remove("schematic--vector__hidden");
+          element.classList.remove("schematic--vector__active");
+        });
       });
+      resolve();
     });
-  }, [ready, components]);
   
+    processComponents.then(() => {
+      // TODO: this could be better, i think if you made the transition time 0 and then only made it 200ms after the svg loaded, it would work
+      setTimeout(() => {
+      setSvgLoaded(true);
+      }, 0);
+    });
+  
+  }, [loaded, components]);
 
+  
 
   useEffect(() => {
-    if (!components || view.hoveredSideBtn === undefined || !ready) return;
-  
+    if (!components || view.hoveredSideBtn === undefined || !loaded) return;
+
     Object.keys(components).forEach((key) => {
       const page = options.find((x) => x.id === key);
       const componentId = page.id;
       const query = Array.from(graphic.current.querySelectorAll(`[id*='${componentId}']`));
-  
+
       query.forEach((element) => {
         if (view.hoveredSideBtn === false) {
           element.classList.add("schematic--vector__idle");
@@ -111,61 +119,55 @@ function Schematic({ view }) {
         }
       });
     });
-  }, [view.hoveredSideBtn, components, ready]);
-  
+  }, [view.hoveredSideBtn, components, loaded]);
 
 
-  // useEffect(() => {
 
-  //   // if (!components || view.hoveredSideBtn === undefined || !ready) return;
-  //   if (!components || view.hoveredSideBtn === undefined || !ready) return;
 
-  //   console.log(view.hoveredSideBtn);
 
-  //   Object.keys(components).forEach((key) => {
-  //     const page = options.find((x) => x.id === key);
-  //     const componentId = page.id;
-  //     const query = Array.from(graphic.current.querySelectorAll(`[id*='${componentId}']`));
 
-  //     query.forEach((element) => {
-  //       if (view.hoveredSideBtn === false) {
-  //         element.classList.add("schematic--vector__idle");
-  //         element.classList.remove("schematic--vector__hidden");
-  //         element.classList.remove("schematic--vector__active");
-  //       } else {
-  //         if (!components[view.hoveredSideBtn]) {
-  //           return;
-  //         }
 
-  //         if (components[view.hoveredSideBtn].includes(element)) {
-  //           element.classList.add("schematic--vector__active");
-  //           element.classList.remove("schematic--vector__hidden");
-  //           element.classList.remove("schematic--vector__idle");
-  //         } else {
-  //           element.classList.add("schematic--vector__hidden");
-  //           element.classList.remove("schematic--vector__active");
-  //           element.classList.remove("schematic--vector__idle");
-  //         }
-  //       }
-  //     });
-  //   });
+  const [transitionStyle, setTransitionStyle] = useState({
+    '--transition': '0ms',
+    'opacity': '0'
+  });
 
-    
-  // }, [ready, components, view.hoveredSideBtn]);
+  useEffect(() => {
+    // First, set the transition style based on svgLoaded
+    setTransitionStyle({
+      '--transition': svgLoaded ? '200ms' : '0ms',
+      'opacity': '0'
+    });
+
+    // Then, after a brief timeout, update the opacity
+    const timeoutId = setTimeout(() => {
+      setTransitionStyle((prevStyle) => ({
+        ...prevStyle,
+        'opacity': svgLoaded ? '1' : '0'
+      }));
+    }, 10);
+
+    // Cleanup the timeout if the component unmounts
+    return () => clearTimeout(timeoutId);
+  }, [svgLoaded]);
+
 
 
 
 
   return (
     <>
-      {img && <SVG
-        className={`schematic--graphic schematic--graphic__${ready ? "ready" : "loading"}`}
-        src={img.src}
-        width={img.height}
-        height={img.width}
-        innerRef={graphic}
-        onLoad={handleSvgLoad}
-      />}
+      {img && (
+        <SVG
+          className={`schematic--graphic schematic--graphic__${"none"}`}
+          style={transitionStyle}
+          src={img.src}
+          width={img.height}
+          height={img.width}
+          innerRef={graphic}
+          onLoad={handleSvgLoad}
+        />
+      )}
     </>
   );
 }

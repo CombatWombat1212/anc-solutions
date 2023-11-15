@@ -21,6 +21,15 @@
     height: calc(100% - var(--modal-top-margin) - var(--selection-modal-height));
     @include flex-row-between;
     // gap: var(--selection-col-gap);
+
+    transition: opacity 0.5s;
+    &__loaded {
+      opacity: 1;
+    }
+    &__loading {
+      opacity: 0;
+    }
+    
   }
 
   &--col {

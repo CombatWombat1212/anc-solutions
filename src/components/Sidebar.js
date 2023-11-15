@@ -51,44 +51,6 @@ function Sidebar({ view }) {
 
 
 
-
-
-
-
-  // const sidebar = useRef(null);
-  // const mousePosition = useMousePosition();
-  // const [isHovered, setIsHovered] = useState(false);
-
-  // useEffect(() => {
-  //   if (!panels || panels.length === 0) return;
-  
-  //   const checkIfPanelsAreHovered = () => {
-  //     const hoveredPanel = panels.find(panel => {
-  //       if (!panel.ref.current) return false;
-  //       const rect = panel.ref.current.getBoundingClientRect();
-  //       return mousePosition.x >= rect.left &&
-  //              mousePosition.x <= rect.right &&
-  //              mousePosition.y >= rect.top &&
-  //              mousePosition.y <= rect.bottom;
-  //     });
-  
-  //     if (hoveredPanel) {
-  //       console.log(`Hovered Panel:`, hoveredPanel);
-  //       setIsHovered(true);
-  //     } else {
-  //       setIsHovered(false);
-  //     }
-  //   };
-  
-  //   checkIfPanelsAreHovered();
-  // }, [mousePosition, panels, view.page, view.type]);
-    
-  // useEffect(() => {
-  //   console.log(`isHovered: ${isHovered}`);
-  // }, [isHovered]);
-
-
-
   return (
     <div className="viewer--sidebar sidebar"
     //  ref={sidebar}
@@ -118,25 +80,6 @@ function Title({ view }) {
     </div>
   );
 }
-
-
-// const useMousePosition = () => {
-//   const [mousePosition, setMousePosition] = useState({ x: null, y: null });
-
-//   useEffect(() => {
-//     const updateMousePosition = (ev) => {
-//       setMousePosition({ x: ev.clientX, y: ev.clientY });
-//     };
-
-//     window.addEventListener('mousemove', updateMousePosition);
-
-//     return () => {
-//       window.removeEventListener('mousemove', updateMousePosition);
-//     };
-//   }, []);
-
-//   return mousePosition;
-// };
 
 
 

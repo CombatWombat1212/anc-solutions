@@ -485,6 +485,10 @@ input, button, textarea, select {
   margin-top: 5rem;
 }
 
+.hidden-until-fonts-loaded {
+  visibility: hidden;
+}
+
 .selection {
   --selection-col-gap: 8rem;
   --selection-mouse-leave-timeout: 0.35s;
@@ -514,6 +518,15 @@ input, button, textarea, select {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  transition: opacity 0.5s;
+}
+
+.selection--body__loaded {
+  opacity: 1;
+}
+
+.selection--body__loading {
+  opacity: 0;
 }
 
 .selection--col {
@@ -659,6 +672,7 @@ input, button, textarea, select {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  transition: var(--transition);
 }
 
 .schematic--graphic__active {
@@ -673,8 +687,16 @@ input, button, textarea, select {
   opacity: 1;
 }
 
+.schematic--graphic__loading {
+  opacity: 0;
+}
+
+.schematic--graphic__loaded {
+  opacity: 1;
+}
+
 .schematic--vector {
-  transition: 0.2s;
+  transition: var(--schematic-transition);
 }
 
 .schematic--vector__active {

@@ -13,6 +13,7 @@ import LAYOUT_DATA from "../data/LAYOUT_DATA";
 import Compaction from "../pages/Compaction";
 import Split from "../pages/Split";
 
+
 function Content({ view }) {
   const { page, pageRef } = view;
 
@@ -42,32 +43,19 @@ function Content({ view }) {
 function Inner({ view }) {
   const { page } = view;
 
-  // const one = useRef(null);
-  // const two = useRef(null);
-
   const isSplit = LAYOUT_DATA.split.includes(page);
 
   return (
     <>
-      {/* <BoundingBox startRef={one} endRef={two}/>
-
-      <div>
-        <p ref={one}>rtest</p>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br /><br /><p ref={two}>asdiojasidojhasiuhdiuashd</p>
-      </div> */}
-
       <div className={`content--inner ${page}--inner ${isSplit ? "content--inner__split" : ""}`}>
         <Page view={view} />
       </div>
     </>
   );
 }
+
+
+
 
 function Page({ view }) {
   const split = LAYOUT_DATA.split.includes(view.page);
@@ -85,6 +73,9 @@ function Page({ view }) {
   );
 }
 
+
+
+
 function getType(type) {
   let split = false;
   let specialty = false;
@@ -101,7 +92,6 @@ function getType(type) {
     specialty,
   };
 }
-
 
 function ContentModal({ pref = false, title, children, className, reference = null, type = "default" }) {
   const { split, specialty } = getType(type);

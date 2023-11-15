@@ -1,42 +1,50 @@
 .schematic {
-
+  // --schematic-transition: 0.2s;
 
   &--wrapper {
   }
 
-//   &--inner {
-//     padding: 6rem 8rem 4.5rem 8rem;
-//     width: 100%;
-//     @include flex-col-between;
-//   }
+  //   &--inner {
+  //     padding: 6rem 8rem 4.5rem 8rem;
+  //     width: 100%;
+  //     @include flex-col-between;
+  //   }
 
   &--graphic {
     @include img-contain;
 
-    &__active{
-        opacity:1;
+    &__active {
+      opacity: 1;
     }
-    &__hidden{
-        opacity:0;
+    &__hidden {
+      opacity: 0;
     }
-    &__idle{
-        opacity:1;
+    &__idle {
+      opacity: 1;
+    }
+
+
+    transition: var(--transition);
+    &__loading {
+      opacity: 0;
+    }
+
+    &__loaded {
+      opacity: 1;
     }
   }
 
-
   &--vector {
+    transition: var(--schematic-transition);
 
-    transition:0.2s;
-
-    &__active{
-        opacity:1;
+    &__active {
+      opacity: 1;
     }
-    &__hidden{
-        opacity:0;
+    &__hidden {
+      opacity: 0;
     }
-    &__idle{
-        opacity:0;
+    &__idle {
+      opacity: 0;
     }
   }
 }
