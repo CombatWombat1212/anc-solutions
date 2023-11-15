@@ -8,7 +8,8 @@
     min-width: col-width($width);
   
     &--panel {
-      padding: calc(var(--viewer-inner-pad) * 0.725) var(--viewer-inner-pad);
+      // padding: calc(var(--viewer-inner-pad) * 0.725) var(--viewer-inner-pad);
+      padding: calc(var(--viewer-inner-pad) * 0.6) var(--viewer-inner-pad);
       @include viewer-border(bottom);
     }
   

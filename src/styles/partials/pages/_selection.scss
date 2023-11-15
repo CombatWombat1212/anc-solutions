@@ -2,22 +2,31 @@
   --selection-col-gap: 8rem;
   --selection-mouse-leave-timeout: 0.35s;
   --selection-transition: 0.35s;
+  --modal-top-margin: 3.5rem;
 
   display: flex;
 
   &--inner {
-    --content-inner-pad-x: 10rem!important;
+    --content-inner-pad-x: 8rem !important;
+
+    @include xxl-down {
+      --content-inner-pad-x: 6rem !important;
     }
+    @include xl-down {
+      --content-inner-pad-x: 4rem !important;
+    }
+  }
 
   &--body {
-    height: 70%;
+    height: calc(100% - var(--modal-top-margin) - var(--selection-modal-height));
     @include flex-row-between;
     // gap: var(--selection-col-gap);
   }
 
   &--col {
     // @include col-width(4);
-    @include col-width(1);
+    // @include col-width(1);
+    @include col-width(2.25);
     @include flex-col;
     gap: 2.5rem;
     cursor: pointer;
@@ -43,9 +52,11 @@
     &__main {
       color: $col-light;
       font-size: 1.85rem;
+      white-space: nowrap;
     }
     &__sub {
       font-size: 1.15rem;
+      white-space: nowrap;
     }
   }
 
@@ -89,7 +100,7 @@
 
   &--graphic-photo {
     &__active {
-      opacity: 0.5;
+      opacity: 0;
     }
     &__inactive {
       opacity: 0.15;
@@ -104,13 +115,21 @@
     @include mx-auto;
     position: relative;
     margin-bottom: auto;
-    transform: translateY(3.15rem);
+    transform: translateY(var(--modal-top-margin));
   }
 
   &--modal {
     @include viewer-modal;
     pointer-events: none;
     top: 0;
+    position: absolute;
+
+    opacity: 1;
+
+    &__hidden {
+      pointer-events: none;
+      opacity: 0;
+    }
 
     @include in-out(
       (

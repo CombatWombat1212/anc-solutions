@@ -294,4 +294,5 @@ const PRODUCT_DATA = constructProductData();
 
 
 
+export {PAGE_DATA};
 export default PRODUCT_DATA;

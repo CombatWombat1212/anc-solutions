@@ -3,6 +3,21 @@
 
 
 
+const HARDCODED_PAGES = {
+
+
+    traditional:["sizes","paper","filter","compaction","end"],
+    cigarette:["sizes","paper","filter","compaction","end"],
+    blunt:["sizes","paper","filter","solid","fluid","terpenes"],
+    infused:["sizes","paper","filter","solid","fluid","terpenes"],
+
+
+}
+
+
+
+
+
 
 const LAYOUT_DATA = {
 
@@ -15,16 +30,17 @@ const LAYOUT_DATA = {
         "terpenes",
     ],
 
-
     specialty:[
         "solid",
         "fluid",
         "terpenes",
-    ]
+    ],
 
 
 
 }
 
 
+
+export {HARDCODED_PAGES};
 export default LAYOUT_DATA;

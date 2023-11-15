@@ -1,19 +1,25 @@
 import { useEffect, useRef, useState } from "react";
-import PRODUCT_DATA from "../data/PRODUCT_DATA";
+import PRODUCT_DATA, { PAGE_DATA } from "../data/PRODUCT_DATA";
 import { H1, H2 } from "./Text";
 import useHoverAndFocus from "../scripts/hooks/useHoverAndFocus";
+import { HARDCODED_PAGES } from "../data/LAYOUT_DATA";
 
 function Sidebar({ view }) {
   const [panels, setPanels] = useState([]);
 
   let optionArray = [];
 
-  if(view.type){
-    optionArray = Object.values(PRODUCT_DATA[view.type].pages).filter((x) => x.level == "sub");
-  } else {
-    optionArray = Object.values(PRODUCT_DATA).map((x) => x.pages.selection);
-  }
+  // if(view.type){
+  //   optionArray = Object.values(PRODUCT_DATA[view.type].pages).filter((x) => x.level == "sub");
+  // } else {
+  //   optionArray = Object.values(PRODUCT_DATA).map((x) => x.pages.selection);
+  // }
 
+  if(!view.type){
+    optionArray = Object.values(PRODUCT_DATA).map((x) => x.pages.selection);
+  } else {
+    optionArray = Object.values(PAGE_DATA).filter(page => HARDCODED_PAGES[view.type].includes(page.id));
+  }
 
   useEffect(() => {
     if (!panels.length > 0) return;

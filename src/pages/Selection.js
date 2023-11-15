@@ -4,6 +4,7 @@ import { splitS } from "../scripts/Split";
 import useInOut from "../scripts/hooks/useInOut";
 import { Body, H2 } from "../components/Text";
 import Graphic from "../components/Graphic";
+import useElementHeight from "../scripts/hooks/useElementHeight";
 
 function Selection({ view }) {
   const selectionArray = Object.values(PRODUCT_DATA);
@@ -11,7 +12,7 @@ function Selection({ view }) {
   const [active, setActive] = useState(false);
   const [description, setDescription] = useState(false);
 
-  const setActiveByTypeRef = useRef(); // Create a ref to store the timeout ID
+  const setActiveByTypeRef = useRef();
 
   const setActiveByType = (input) => {
     let rollType = false;
@@ -69,11 +70,23 @@ function Selection({ view }) {
     view.setType(type);
   };
 
+  const [modals, setModals] = useState([]);
+  const [tallestModal, setTallestModal] = useState(0);
 
+  useEffect(() => {
+    const tallest = modals.reduce((maxHeight, modal) => {
+      return modal.height > maxHeight ? modal.height : maxHeight;
+    }, 0);
+    setTallestModal(tallest);
+  }, [modals]);
 
   return (
     <>
-      <div className="selection--body">
+      <div
+        className="selection--body"
+        style={{
+          "--selection-modal-height": `${tallestModal}px`,
+        }}>
         {selectionArray.map((type) => (
           <a
             className={`content--col selection--col`}
@@ -88,11 +101,39 @@ function Selection({ view }) {
         ))}
       </div>
       <div className="selection--description">
-        <div className={`selection--modal selection--modal__${modalState}`}>
-          <Body>{description}</Body>
-        </div>
+        <Modal description={description} state={modalState} />
+
+        {selectionArray.map((type) => {
+          return <HiddenModal description={type.pages["selection"].description} state="hidden" modals={modals} setModals={setModals} />;
+        })}
       </div>
     </>
+  );
+}
+
+function HiddenModal({ description, state, modals, setModals }) {
+  const referece = useRef(null);
+  const height = useElementHeight(referece);
+
+  useEffect(() => {
+    const modal = {
+      ref: referece,
+      height: height,
+    };
+    setModals((prevModals) => {
+      const otherModals = prevModals.filter((m) => m.ref.current !== referece.current);
+      return [...otherModals, modal];
+    });
+  }, [height]);
+
+  return <Modal description={description} state={state} reference={referece} />;
+}
+
+function Modal({ description, state, reference = null }) {
+  return (
+    <div className={`selection--modal selection--modal__${state}`} ref={reference}>
+      <Body>{description}</Body>
+    </div>
   );
 }
 
