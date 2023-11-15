@@ -603,7 +603,7 @@ input, button, textarea, select {
 }
 
 .selection--graphic-photo__inactive {
-  opacity: 0.15;
+  opacity: 0.25;
 }
 
 .selection--graphic-photo__idle {
