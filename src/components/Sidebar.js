@@ -5,6 +5,7 @@ import useHoverAndFocus from "../scripts/hooks/useHoverAndFocus";
 import { HARDCODED_PAGES } from "../data/LAYOUT_DATA";
 import useAttrObserver from "../scripts/hooks/useAttrObserver";
 import Link from "./Link";
+import { useSpring, animated } from '@react-spring/web';
 
 function Sidebar({ view }) {
   const [panels, setPanels] = useState([]);
@@ -51,7 +52,6 @@ function Sidebar({ view }) {
   const schematic = view.page == "schematic";
 
 
-
   return (
     <div className="viewer--sidebar sidebar"
     //  ref={sidebar}
@@ -66,6 +66,44 @@ function Sidebar({ view }) {
   );
 }
 
+
+// const AnimatedH1 = animated(YourCustomH1);
+
+// function Title({ view }) {
+//   const [copy, setCopy] = useState("Pre-Rolls");
+//   const fade = useSpring({ opacity: 1, from: { opacity: 0 } });
+
+//   useEffect(() => {
+//     let newCopy = "Pre-Rolls"; // Default value
+//     if (view.type && typeof view.type === "string") {
+//       newCopy = view.type
+//         .split(" ")
+//         .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+//         .join(" ");
+//     }
+
+//     setCopy(newCopy);
+//   }, [view.type]);
+
+//   // Apply fade-out and fade-in effect when 'copy' changes
+//   useEffect(() => {
+//     const fadeOutIn = async () => {
+//       await new Promise(resolve => {
+//         fade.opacity.start({ to: 0, reset: true, onRest: resolve });
+//       });
+
+//       fade.opacity.start({ to: 1 });
+//     };
+
+//     fadeOutIn();
+//   }, [copy, fade.opacity]);
+
+//   return (
+//     <div className="sidebar--title sidebar--panel">
+//       <AnimatedH1 style={fade}>{copy}</AnimatedH1>
+//     </div>
+//   );
+// }
 function Title({ view }) {
   const copy =
     view.type && typeof view.type === "string"
@@ -81,6 +119,7 @@ function Title({ view }) {
     </div>
   );
 }
+
 
 
 
@@ -123,8 +162,7 @@ function Panel({ view, option, setPanels }) {
   const title = option.title.long || option.title.short || option.title;
   const ind = String(option.index + 1).padStart(2, "0");
 
-
-
+  
 
 
   return (

@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { ViewContext } from "../scripts/contexts/viewContext";
 
-function Link({ children, onClick,reference=null, ...props }) {
+function Link({ children, onClick,reference=null, click=true, ...props }) {
   const view = useContext(ViewContext);
 
 
@@ -9,6 +9,7 @@ function Link({ children, onClick,reference=null, ...props }) {
 
 
   const handleClick = (event) => {
+    if (!click) return;
 
     view.setPageLoading(true);
 

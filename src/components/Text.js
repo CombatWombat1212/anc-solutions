@@ -3,12 +3,12 @@
 
 
 
-function H1({children, className}) {
-    return (
-        <h1 className={`viewer--h1 ${className || ""}`}>
-            {children}
-        </h1>
-    );
+function H1({ children, className, style = {} }) {
+  return (
+    <h1 className={`viewer--h1 ${className || ""}`} style={style}>
+      {children}
+    </h1>
+  );
 }
 
 
