@@ -9,7 +9,7 @@ const HARDCODED_PAGES = {
     traditional:["sizes","paper","filter","compaction","end"],
     cigarette:["sizes","paper","filter","compaction","end"],
     blunt:["sizes","paper","filter","solid","fluid","terpenes"],
-    infused:["sizes","paper","filter","solid","fluid","terpenes"],
+    infused:["sizes","paper","filter","compaction","solid","fluid","terpenes"],
 
 
 }

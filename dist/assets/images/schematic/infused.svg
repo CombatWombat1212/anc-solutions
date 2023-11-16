@@ -7,33 +7,33 @@
       <path id="Path_5586" data-name="Path 5586" d="M205.88,275.67a42.374,42.374,0,0,0-4.769-80.981Z" transform="translate(-201.111 -194.689)" fill="none"/>
     </clipPath>
   </defs>
-  <g id="infused" transform="translate(-9955.313 -15794)">
-    <g id="solid_box" transform="translate(9955.313 16066.75)" fill="rgba(255,255,255,0.05)" stroke="#ec0719" stroke-width="1">
+  <g id="infused" transform="translate(-303.313 -237)">
+    <g id="solid_box" transform="translate(303.313 509.75)" fill="rgba(255,255,255,0.05)" stroke="#ec0719" stroke-width="1">
       <rect width="291.75" height="250.659" stroke="none"/>
       <rect x="0.5" y="0.5" width="290.75" height="249.659" fill="none"/>
     </g>
-    <g id="fluid_box" transform="translate(9955.313 16334.079)" fill="rgba(255,255,255,0.05)" stroke="#ec0719" stroke-width="1">
+    <g id="fluid_box" transform="translate(303.313 777.079)" fill="rgba(255,255,255,0.05)" stroke="#ec0719" stroke-width="1">
       <rect width="291.75" height="203" stroke="none"/>
       <rect x="0.5" y="0.5" width="290.75" height="202" fill="none"/>
     </g>
-    <g id="paper_box" transform="translate(9958.688 15794)" fill="rgba(255,255,255,0.05)" stroke="#ec0719" stroke-width="1">
+    <g id="paper_box" transform="translate(306.688 237)" fill="rgba(255,255,255,0.05)" stroke="#ec0719" stroke-width="1">
       <rect width="255" height="256" stroke="none"/>
       <rect x="0.5" y="0.5" width="254" height="255" fill="none"/>
     </g>
-    <text id="solid_body" transform="translate(10014.313 16142.75)" fill="#fff" font-size="16" font-family="Acumin VF" font-weight="500"><tspan x="0" y="17">i. Shatter</tspan><tspan x="0" y="43">ii. Hash</tspan><tspan x="0" y="69">iii. Kief</tspan><tspan x="0" y="95">iv. Diamonds</tspan><tspan x="0" y="121">v. Isolate</tspan><tspan x="0" y="147"></tspan></text>
-    <text id="fluid_body" transform="translate(10014.313 16410.078)" fill="#fff" font-size="16" font-family="Acumin VF" font-weight="500"><tspan x="0" y="17">i. Distillate</tspan><tspan x="0" y="43">ii. HTSFE</tspan><tspan x="0" y="69">iii. Live Rosin</tspan><tspan x="0" y="95">iv. FSO</tspan></text>
-    <text id="solid_title" transform="translate(10014.313 16125.75)" fill="#ec0719" font-size="34" font-family="Acumin VF"><tspan x="0" y="0">Solid Concentrates</tspan></text>
-    <text id="fluid_title" transform="translate(10014.313 16393.078)" fill="#ec0719" font-size="34" font-family="Acumin VF"><tspan x="0" y="0">Fluid Concentrates</tspan></text>
-    <line id="solid_line" x2="143.438" transform="translate(10247.063 16098.75)" fill="none" stroke="#ec0719" stroke-width="1"/>
-    <g id="sizes_box" transform="translate(10612.688 15835.5)" fill="rgba(255,255,255,0.05)" stroke="#ec0719" stroke-width="1">
+    <text id="solid_body" transform="translate(362.313 585.75)" fill="#fff" font-size="16" font-family="Acumin VF" font-weight="500"><tspan x="0" y="17">i. Shatter</tspan><tspan x="0" y="43">ii. Hash</tspan><tspan x="0" y="69">iii. Kief</tspan><tspan x="0" y="95">iv. Diamonds</tspan><tspan x="0" y="121">v. Isolate</tspan><tspan x="0" y="147"></tspan></text>
+    <text id="fluid_body" transform="translate(362.313 853.079)" fill="#fff" font-size="16" font-family="Acumin VF" font-weight="500"><tspan x="0" y="17">i. Distillate</tspan><tspan x="0" y="43">ii. HTSFE</tspan><tspan x="0" y="69">iii. Live Rosin</tspan><tspan x="0" y="95">iv. FSO</tspan></text>
+    <text id="solid_title" transform="translate(362.313 568.75)" fill="#ec0719" font-size="34" font-family="Acumin VF"><tspan x="0" y="0">Solid Concentrates</tspan></text>
+    <text id="fluid_title" transform="translate(362.313 836.079)" fill="#ec0719" font-size="34" font-family="Acumin VF"><tspan x="0" y="0">Fluid Concentrates</tspan></text>
+    <line id="solid_line" x2="143.438" transform="translate(595.063 541.75)" fill="none" stroke="#ec0719" stroke-width="1"/>
+    <g id="sizes_box" transform="translate(960.688 278.5)" fill="rgba(255,255,255,0.05)" stroke="#ec0719" stroke-width="1">
       <rect width="255" height="135" stroke="none"/>
       <rect x="0.5" y="0.5" width="254" height="134" fill="none"/>
     </g>
-    <text id="sizes_body" transform="translate(10671.688 15907.5)" fill="#fff" font-size="16" font-family="Acumin VF" font-weight="500"><tspan x="0" y="17">0.35g - 1.5g</tspan></text>
-    <text id="sizes_title" transform="translate(10671.688 15890.5)" fill="#ec0719" font-size="34" font-family="Acumin VF"><tspan x="0" y="0">Sizes</tspan></text>
-    <line id="sizes_line" x2="62.313" transform="translate(10550.875 15900.5)" fill="none" stroke="#ec0719" stroke-width="1"/>
-    <path id="sizes_brace" d="M1827.348-3593.5h64.839v543.172h-64.839" transform="translate(8658.688 19399.328)" fill="none" stroke="#ec0719" stroke-width="1"/>
-    <g id="roll" transform="translate(10202.531 15813.774)">
+    <text id="sizes_body" transform="translate(1019.688 350.5)" fill="#fff" font-size="16" font-family="Acumin VF" font-weight="500"><tspan x="0" y="17">0.35g - 1.5g</tspan></text>
+    <text id="sizes_title" transform="translate(1019.688 333.5)" fill="#ec0719" font-size="34" font-family="Acumin VF"><tspan x="0" y="0">Sizes</tspan></text>
+    <line id="sizes_line" x2="62.313" transform="translate(898.875 343.5)" fill="none" stroke="#ec0719" stroke-width="1"/>
+    <path id="compaction_brace" d="M1827.348-3593.5h64.839v543.172h-64.839" transform="translate(-993.313 3842.328)" fill="none" stroke="#ec0719" stroke-width="1"/>
+    <g id="roll" transform="translate(550.531 256.774)">
       <g id="Group_535" data-name="Group 535">
         <g id="Group_534" data-name="Group 534" clip-path="url(#clip-path)">
           <circle id="Ellipse_28" data-name="Ellipse 28" cx="42.358" cy="42.358" r="42.358" transform="matrix(0.978, -0.208, 0.208, 0.978, 179.091, 240.384)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1" stroke-dasharray="12.416 12.416"/>
@@ -356,28 +356,36 @@
         </g>
       </g>
     </g>
-    <text id="paper_title" transform="translate(10015.688 15855)" fill="#ec0719" font-size="34" font-family="Acumin VF"><tspan x="0" y="0">Paper Type</tspan></text>
-    <text id="paper_body" transform="translate(10015.688 15876)" fill="#fff" font-size="16" font-family="Acumin VF" font-weight="500"><tspan x="0" y="17">i. Wood (white)</tspan><tspan x="0" y="43">ii. Wood (brown)</tspan><tspan x="0" y="69">iii. Hemp (organic)</tspan><tspan x="0" y="95">iv. Bamboo (organic)</tspan><tspan x="0" y="121">v. Cellulose</tspan></text>
-    <rect id="paper_dot" width="10" height="10" transform="translate(10448.688 15903)" fill="#ec0719"/>
-    <g id="filter_box" transform="translate(10657.688 16202)" fill="rgba(255,255,255,0.05)" stroke="#ec0719" stroke-width="1">
+    <text id="paper_title" transform="translate(363.688 298)" fill="#ec0719" font-size="34" font-family="Acumin VF"><tspan x="0" y="0">Paper Type</tspan></text>
+    <text id="paper_body" transform="translate(363.688 319)" fill="#fff" font-size="16" font-family="Acumin VF" font-weight="500"><tspan x="0" y="17">i. Wood (white)</tspan><tspan x="0" y="43">ii. Wood (brown)</tspan><tspan x="0" y="69">iii. Hemp (organic)</tspan><tspan x="0" y="95">iv. Bamboo (organic)</tspan><tspan x="0" y="121">v. Cellulose</tspan></text>
+    <rect id="paper_dot" width="10" height="10" transform="translate(796.688 346)" fill="#ec0719"/>
+    <g id="filter_box" transform="translate(1005.688 645)" fill="rgba(255,255,255,0.05)" stroke="#ec0719" stroke-width="1">
       <rect width="255" height="244" stroke="none"/>
       <rect x="0.5" y="0.5" width="254" height="243" fill="none"/>
     </g>
-    <text id="filter_body" transform="translate(10716.688 16277)" fill="#fff" font-size="16" font-family="Acumin VF" font-weight="500"><tspan x="0" y="17">i. Wood W</tspan><tspan x="0" y="43">ii. Bamboo W</tspan><tspan x="0" y="69">iii. Glass</tspan><tspan x="0" y="95">iv. Aluminum</tspan><tspan x="0" y="121">v. Ceramic</tspan></text>
-    <text id="filter_title" transform="translate(10716.688 16262)" fill="#ec0719" font-size="34" font-family="Acumin VF"><tspan x="0" y="0">Filter Type</tspan></text>
-    <path id="filter_line" d="M1763.927-3014v62.841h190.434" transform="translate(8703.688 19366)" fill="none" stroke="#ec0719" stroke-width="1"/>
-    <rect id="filter_dot" width="10" height="10" transform="translate(10463.688 16339)" fill="#ec0719"/>
-    <line id="paper_line" x2="239.5" y2="1" transform="translate(10214.688 15907.5)" fill="none" stroke="#ec0719" stroke-width="1"/>
-    <rect id="terpenes_dot" width="10" height="10" transform="translate(10385.188 16093.75)" fill="#ec0719"/>
-    <line id="terpenes_line" y2="329" transform="translate(10390.5 16103.5)" fill="none" stroke="#ec0719" stroke-width="1"/>
-    <g id="terpenes_box" transform="translate(10270.688 16432)" fill="rgba(255,255,255,0.05)" stroke="#ec0719" stroke-width="1">
+    <text id="filter_body" transform="translate(1064.688 720)" fill="#fff" font-size="16" font-family="Acumin VF" font-weight="500"><tspan x="0" y="17">i. Wood W</tspan><tspan x="0" y="43">ii. Bamboo W</tspan><tspan x="0" y="69">iii. Glass</tspan><tspan x="0" y="95">iv. Aluminum</tspan><tspan x="0" y="121">v. Ceramic</tspan></text>
+    <text id="filter_title" transform="translate(1064.688 705)" fill="#ec0719" font-size="34" font-family="Acumin VF"><tspan x="0" y="0">Filter Type</tspan></text>
+    <path id="filter_line" d="M1763.927-3014v62.841h190.434" transform="translate(-948.313 3809)" fill="none" stroke="#ec0719" stroke-width="1"/>
+    <rect id="filter_dot" width="10" height="10" transform="translate(811.688 782)" fill="#ec0719"/>
+    <line id="paper_line" x2="239.5" y2="1" transform="translate(562.688 350.5)" fill="none" stroke="#ec0719" stroke-width="1"/>
+    <rect id="fluid_dot" width="10" height="10" transform="translate(733.188 536.75)" fill="#ec0719"/>
+    <line id="terpenes_line" y2="334" transform="translate(738.5 541.5)" fill="none" stroke="#ec0719" stroke-width="1"/>
+    <g id="terpenes_box" transform="translate(618.688 875)" fill="rgba(255,255,255,0.05)" stroke="#ec0719" stroke-width="1">
       <rect width="255" height="212" stroke="none"/>
       <rect x="0.5" y="0.5" width="254" height="211" fill="none"/>
     </g>
-    <text id="terpenes_body" transform="translate(10329.688 16507)" fill="#fff" font-size="16" font-family="Acumin VF" font-weight="500"><tspan x="0" y="17">i. Botanical</tspan><tspan x="0" y="43">ii. Live Resin</tspan><tspan x="0" y="69">iii. Live Infusion</tspan><tspan x="0" y="95">iv. Cure Infusion</tspan></text>
-    <text id="terpenes_title" transform="translate(10329.688 16492)" fill="#ec0719" font-size="34" font-family="Acumin VF"><tspan x="0" y="0">Terpenes</tspan></text>
-    <rect id="fluid_dot" width="10" height="10" transform="translate(10385.188 16093.75)" fill="#ec0719"/>
-    <rect id="solid_dot" width="10" height="10" transform="translate(10385.188 16093.75)" fill="#ec0719"/>
-    <path id="fluid_line" d="M10247.063,16395.734H10390.5v-297.718" fill="none" stroke="#ec0719" stroke-width="1"/>
+    <text id="terpenes_body" transform="translate(677.688 950)" fill="#fff" font-size="16" font-family="Acumin VF" font-weight="500"><tspan x="0" y="17">i. Botanical</tspan><tspan x="0" y="43">ii. Live Resin</tspan><tspan x="0" y="69">iii. Live Infusion</tspan><tspan x="0" y="95">iv. Cure Infusion</tspan></text>
+    <text id="terpenes_title" transform="translate(677.688 935)" fill="#ec0719" font-size="34" font-family="Acumin VF"><tspan x="0" y="0">Terpenes</tspan></text>
+    <g id="compaction_box" transform="translate(960.687 453.25)" fill="rgba(255,255,255,0.05)" stroke="#ec0719" stroke-width="1">
+      <rect width="255" height="135" stroke="none"/>
+      <rect x="0.5" y="0.5" width="254" height="134" fill="none"/>
+    </g>
+    <text id="compaction_body" transform="translate(1019.687 525.25)" fill="#fff" font-size="16" font-family="Acumin VF" font-weight="500"><tspan x="0" y="17">Low, Medium, High</tspan></text>
+    <text id="compaction_title" transform="translate(1019.687 508.25)" fill="#ec0719" font-size="34" font-family="Acumin VF"><tspan x="0" y="0">Compaction</tspan></text>
+    <line id="compaction_line" x2="62.313" transform="translate(898.874 518.25)" fill="none" stroke="#ec0719" stroke-width="1"/>
+    <rect id="solid_dot" width="10" height="10" transform="translate(733.188 536.75)" fill="#ec0719"/>
+    <rect id="terpenes_dot" width="10" height="10" transform="translate(733.188 536.75)" fill="#ec0719"/>
+    <path id="sizes_brace" d="M1827.348-3593.5h64.839v543.172h-64.839" transform="translate(-993.313 3842.328)" fill="none" stroke="#ec0719" stroke-width="1"/>
+    <path id="fluid_line" d="M6751.769,6280h143.766V5980.764" transform="translate(-6157.035 -5440)" fill="none" stroke="#ec0719" stroke-width="1"/>
   </g>
 </svg>

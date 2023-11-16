@@ -18,6 +18,10 @@
     padding: calc(var(--viewer-inner-pad) * 0.5) var(--viewer-inner-pad);
     // padding: calc(var(--viewer-inner-pad) * 0.1) var(--viewer-inner-pad);
     @include viewer-border(bottom);
+    
+    @include xxl-down{
+      padding: calc(var(--viewer-inner-pad) * 0.35) calc(var(--viewer-inner-pad) * 0.85) ;
+    }
   }
 
   &--text{
@@ -104,6 +108,7 @@
     @include hover(".sidebar--button", ".sidebar--name") {
       color: $col-light;
     }
+    white-space: nowrap;
 
   }
 
