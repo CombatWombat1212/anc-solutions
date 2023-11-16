@@ -52,6 +52,7 @@ function Sidebar({ view }) {
   const schematic = view.page == "schematic";
 
 
+
   return (
     <div className="viewer--sidebar sidebar"
     //  ref={sidebar}
@@ -111,7 +112,7 @@ function Title({ view }) {
           .split(" ")
           .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
           .join(" ")
-      : "Pre-Rolls";
+      : "SJKNDFIJSNDFJHK";
 
   return (
     <div className="sidebar--title sidebar--panel">
@@ -166,7 +167,11 @@ function Panel({ view, option, setPanels }) {
 
 
   return (
-    <Link className={`sidebar--panel sidebar--button sidebar--button__${schematic}`} reference={panelRef} onClick={handleClick} 
+    <Link className={`sidebar--panel sidebar--button sidebar--button__${schematic}`} reference={panelRef} 
+    click={view.page != "schematic"  ? true : false}
+
+    onClick={handleClick}
+
     data-option-id={option.id}
     >
       <H2 className="sidebar--index">{ind}</H2>
