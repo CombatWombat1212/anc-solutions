@@ -16,6 +16,7 @@ function Selection({ view }) {
 
   useEffect(() => {
     let timer;
+    if(view.pageLoading) return;
     const val = PRODUCT_DATA[view.side.active] ? view.side.active : false;
     if (view.side.active) {
       setDelayedActive(val); 
@@ -27,7 +28,9 @@ function Selection({ view }) {
     return () => {
       clearTimeout(timer);
     };
-  }, [view.side.active]);
+  }, [view.side.active, view.pageLoading]);
+
+
 
 
 

@@ -175,6 +175,7 @@ input, button, textarea, select {
 .viewer .sidebar {
   --sidebar-index-width: 1.45rem;
   --sidebar-index-margin-right: 1rem;
+  --transition: 0.175s;
   border-right: 0.125rem solid #ffffff;
   width: 29.16667%;
   --column-width: 3.5;
@@ -198,7 +199,6 @@ input, button, textarea, select {
   display: flex;
   flex-direction: row;
   align-items: center;
-  transition: var(--transition);
 }
 
 .viewer .sidebar--button {

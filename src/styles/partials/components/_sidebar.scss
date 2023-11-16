@@ -2,6 +2,7 @@
 
   --sidebar-index-width: 1.45rem;
   --sidebar-index-margin-right: 1rem;
+  --transition: 0.175s;
 
 
   @include viewer-border(right);
@@ -27,12 +28,11 @@
   &--button {
     @include flex-row;
     align-items: center;
-    @include trans;
     @include hover {
       background-color: $col-primary;
       cursor: pointer;
     }
-
+    
     &__schematic {
       cursor: default !important;
     }
@@ -94,6 +94,7 @@
     @include hover(".sidebar--button", ".sidebar--index") {
       color: $col-background;
     }
+
   }
   &--name {
     color: $col-dim;
@@ -102,6 +103,7 @@
     @include hover(".sidebar--button", ".sidebar--name") {
       color: $col-light;
     }
+
   }
 
   &--title {
