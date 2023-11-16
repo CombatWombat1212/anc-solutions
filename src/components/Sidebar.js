@@ -112,7 +112,7 @@ function Title({ view }) {
           .split(" ")
           .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
           .join(" ")
-      : "SJKNDFIJSNDFJHK";
+      : "Pre-Rolls";
 
   return (
     <div className="sidebar--title sidebar--panel">
