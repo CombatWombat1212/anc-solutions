@@ -4,6 +4,7 @@ import SCHEMATIC_IMGS from "../data/SCHEMATIC_IMGS";
 import SVG from "react-inlinesvg";
 import PRODUCT_DATA, { PAGE_DATA } from "../data/PRODUCT_DATA";
 import { HARDCODED_PAGES } from "../data/LAYOUT_DATA";
+import { SelectionHead } from "./Selection";
 
 function Schematic({ view }) {
   const img = SCHEMATIC_IMGS[view.type];
@@ -90,7 +91,9 @@ function Schematic({ view }) {
   }, [loaded, components]);
 
   useEffect(() => {
-    if (!components || view.hoveredSideBtn === undefined || !loaded) return;
+    if (!components || view.side.active === undefined || !loaded) return;
+
+    console.log(view.side.active);
 
     Object.keys(components).forEach((key) => {
       const page = options.find((x) => x.id === key);
@@ -98,12 +101,12 @@ function Schematic({ view }) {
       const query = Array.from(graphic.current.querySelectorAll(`[id*='${componentId}']`));
 
       query.forEach((element) => {
-        if (view.hoveredSideBtn === false) {
+        if (view.side.active === false) {
           element.classList.add("schematic--vector__idle");
           element.classList.remove("schematic--vector__hidden");
           element.classList.remove("schematic--vector__active");
         } else {
-          if (components[view.hoveredSideBtn] && components[view.hoveredSideBtn].includes(element)) {
+          if (components[view.side.active] && components[view.side.active].includes(element)) {
             element.classList.add("schematic--vector__active");
             element.classList.remove("schematic--vector__hidden");
             element.classList.remove("schematic--vector__idle");
@@ -115,7 +118,7 @@ function Schematic({ view }) {
         }
       });
     });
-  }, [view.hoveredSideBtn, components, loaded]);
+  }, [view.side.active, components, loaded]);
 
   // const [transitionStyle, setTransitionStyle] = useState({
   //   '--transition': '0ms',
@@ -141,8 +144,11 @@ function Schematic({ view }) {
   //   return () => clearTimeout(timeoutId);
   // }, [svgLoaded]);
 
+
+
   return (
     <>
+    <SelectionHead type={PRODUCT_DATA[view.type]} active={view.type} className="schematic--head"/>
       {img && (
         <SVG
           className={`schematic--graphic schematic--graphic__${loaded ? "loaded" : "loading"}`}

@@ -17,8 +17,16 @@
     max-height: weighted-average(var(--content-inner-max-height_dock), var(--content-inner-max-height), var(--content-has-dock));
 
 
+    @include xxl-down{
+      --content-inner-pad-top: 6rem;
+      --content-inner-pad-bottom: 4.5rem;
+      --content-inner-pad-x: 4rem;
+  
+    }
 
-    transition:  500ms;
+
+
+    transition:  0.5s;
     &__loading{
       opacity:0;
     }

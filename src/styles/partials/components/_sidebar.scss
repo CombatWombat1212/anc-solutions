@@ -42,7 +42,7 @@
   &--icon{
     margin-left:auto;
     @include img-contain;
-    @include s(1.25rem);
+    @include s(1.15rem);
     margin-right: -0.5rem;
     background-color: $col-light;
 

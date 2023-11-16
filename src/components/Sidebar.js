@@ -24,7 +24,7 @@ function Sidebar({ view }) {
   if (!view.type) {
     optionArray = Object.values(PRODUCT_DATA).map((x) => x.pages.selection);
   } else {
-    const options = Object.values(PAGE_DATA).filter((page) => HARDCODED_PAGES[view.type].includes(page.id));
+    // const options = Object.values(PAGE_DATA).filter((page) => HARDCODED_PAGES[view.type].includes(page.id));
     optionArray = (() => {
       const options = Object.values(PAGE_DATA).filter((page) => HARDCODED_PAGES[view.type].includes(page.id));
 
@@ -126,7 +126,7 @@ function Panel({ view, option, setPanels }) {
   const panelRef = useRef(null);
   const hovered = useHoverAndFocus(panelRef);
   const optionId = useAttrObserver(panelRef, "data-option-id", { bool: false });
-
+  
   useEffect(() => {
     const panel = {
       ref: panelRef,
@@ -134,7 +134,7 @@ function Panel({ view, option, setPanels }) {
       option: option,
     };
     setPanels((prevPanels) => {
-      const otherPanels = prevPanels.filter((p) => p.ref.current !== panelRef.current);
+      const otherPanels = prevPanels.filter((p) => p.ref.current !== panelRef.current && p.option.id !== option.id);
       return [...otherPanels, panel];
     });
   }, [hovered, optionId]);

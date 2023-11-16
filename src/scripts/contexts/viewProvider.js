@@ -30,7 +30,7 @@ const ViewProvider = ({ children }) => {
         pageLoading: pageLoading,
         setPageLoading: setPageLoading,
 
-        hoveredSideBtn: hoveredSideBtn,
+        // hoveredSideBtn: hoveredSideBtn,
         pageRef: pageRef,
         
         side:{

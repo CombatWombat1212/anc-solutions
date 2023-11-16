@@ -60,11 +60,14 @@
   &--label {
     &__main {
       color: $col-light;
-      font-size: 1.85rem;
+      // font-size: 1.85rem;
+      font-size: calc(var(--h2-font-size) * 0.875);
       white-space: nowrap;
     }
     &__sub {
-      font-size: 1.15rem;
+      margin-top:0.15rem;
+      // font-size: 1.15rem;
+      font-size: calc(var(--body-font-size) * 1.15);
       white-space: nowrap;
     }
   }

@@ -16,11 +16,12 @@ function Selection({ view }) {
 
   useEffect(() => {
     let timer;
+    const val = PRODUCT_DATA[view.side.active] ? view.side.active : false;
     if (view.side.active) {
-      setDelayedActive(view.side.active); 
+      setDelayedActive(val); 
     } else {
       timer = setTimeout(() => {
-        setDelayedActive(view.side.active);
+        setDelayedActive(val);
       }, 200);
     }
     return () => {
@@ -67,6 +68,7 @@ function Selection({ view }) {
     }
   }, [loaded, tallestModal]);
 
+
   return (
     <>
       {/* <div className={`selection--body selection--body__${ready ? "loaded" : "loading"}`} */}
@@ -107,7 +109,7 @@ function Column({ view, type, graphics, setGraphics, active }) {
       onMouseLeave={handleMouseLeave}
       data-roll-type={type.id}
       onClick={handleClick}>
-      <Head type={type} active={active} />
+      <SelectionHead type={type} active={active} />
       <Visual type={type} active={active} graphics={graphics} setGraphics={setGraphics} />
     </Link>
   );
@@ -139,7 +141,7 @@ function Modal({ description, state, reference = null }) {
   );
 }
 
-function Head({ type, active }) {
+function SelectionHead({ type, active, className="" }) {
   const [style, setStyle] = useState("idle");
 
   useEffect(() => {
@@ -154,7 +156,7 @@ function Head({ type, active }) {
   const index = String(type.index + 1).padStart(2, "0");
 
   return (
-    <div className={`selection--head selection--head__${style}`}>
+    <div className={`selection--head selection--head__${style} ${className || ""}`}>
       <H2 className={"selection--label__main"}>{title}</H2>
       <H2 className={"selection--label__sub"}>Figure {index}</H2>
     </div>
@@ -224,4 +226,7 @@ function Visual({ type, active, graphics, setGraphics }) {
   );
 }
 
+
+
+export {SelectionHead};
 export default Selection;
