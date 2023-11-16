@@ -1,63 +1,110 @@
-
 .viewer .sidebar {
-    @include viewer-border(right);
 
-    $width: 3.5;
-    @include col-width($width);
-    max-width: col-width($width);
-    min-width: col-width($width);
-    @include flex-col;
-  
-    &--panel {
-      // padding: calc(var(--viewer-inner-pad) * 0.725) var(--viewer-inner-pad);
-      padding: calc(var(--viewer-inner-pad) * 0.5) var(--viewer-inner-pad);
-      // padding: calc(var(--viewer-inner-pad) * 0.1) var(--viewer-inner-pad);
-      @include viewer-border(bottom);
+  --sidebar-index-width: 1.45rem;
+  --sidebar-index-margin-right: 1rem;
+
+
+  @include viewer-border(right);
+
+  $width: 3.5;
+  @include col-width($width);
+  max-width: col-width($width);
+  min-width: col-width($width);
+  @include flex-col;
+
+  &--panel {
+    // padding: calc(var(--viewer-inner-pad) * 0.725) var(--viewer-inner-pad);
+    padding: calc(var(--viewer-inner-pad) * 0.5) var(--viewer-inner-pad);
+    // padding: calc(var(--viewer-inner-pad) * 0.1) var(--viewer-inner-pad);
+    @include viewer-border(bottom);
+  }
+
+  &--text{
+    @include flex-row;
+  }
+
+
+  &--button {
+    @include flex-row;
+    align-items: center;
+    @include trans;
+    @include hover {
+      background-color: $col-primary;
+      cursor: pointer;
     }
-  
-    &--button {
-      @include flex-row;
-      @include trans;
-      @include hover {
-        background-color: $col-primary;
-        cursor: pointer;
-      }
 
-
-      &__schematic{
-        cursor: default!important;
-      }
-    }
-
-    &--back {
-      margin-top:auto;
-      border:none;
-      padding-bottom: calc(var(--viewer-inner-pad) * 0.75);
-      height:100%;
-      @include flex-col-end;
-
-
-    }
-  
-    &--index {
-      color: $col-primary;
-      margin-right: 1rem;
-      @include trans;
-      @include hover(".sidebar--button", ".sidebar--index") {
-        color: $col-background;
-      }
-    }
-    &--name {
-      color: $col-dim;
-      margin-right: 1rem;
-      @include trans;
-      @include hover(".sidebar--button", ".sidebar--name") {
-        color: $col-light;
-      }
-    }
-  
-    &--title {
-      padding: calc(var(--viewer-inner-pad) * 0.65) var(--viewer-inner-pad);
+    &__schematic {
+      cursor: default !important;
     }
   }
+
+
+  &--icon{
+    margin-left:auto;
+    @include img-contain;
+    @include s(1.25rem);
+    margin-right: -0.5rem;
+    background-color: $col-light;
+
+    @include hover(".sidebar--button", ".sidebar--icon") {
+      transform: rotate(-90deg);
+      background-color: $col-background;
+    }
+
+  }
+
+
+
+  &--back {
+    margin-top: auto;
+    border: none;
+    padding-bottom: calc(var(--viewer-inner-pad) * 0.75);
+    height: 100%;
+    @include flex-col-end;
+    align-items: start;
+  }
+
+  &--back-inner{
+    @include flex-row;
+    align-items:center;
+  }
+
+  &--back-icon-wrapper {
+    width: var(--sidebar-index-width);
+    @include flex-row-center;
+    margin-right: var(--sidebar-index-margin-right);
+  }
   
+  &--back-icon {
+    margin: unset;
+    background-color: $col-primary;
+
+    @include hover(".sidebar--button", ".sidebar--back-icon") {
+      transform: translate(-8%);
+    }
+
+  }
+  
+
+  &--index {
+    color: $col-primary;
+    margin-right: var(--sidebar-index-margin-right);
+    width: var(--sidebar-index-width);
+    @include trans;
+    @include hover(".sidebar--button", ".sidebar--index") {
+      color: $col-background;
+    }
+  }
+  &--name {
+    color: $col-dim;
+    margin-right: 1rem;
+    @include trans;
+    @include hover(".sidebar--button", ".sidebar--name") {
+      color: $col-light;
+    }
+  }
+
+  &--title {
+    padding: calc(var(--viewer-inner-pad) * 0.65) var(--viewer-inner-pad);
+  }
+}

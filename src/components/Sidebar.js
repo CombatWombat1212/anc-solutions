@@ -5,7 +5,10 @@ import useHoverAndFocus from "../scripts/hooks/useHoverAndFocus";
 import { HARDCODED_PAGES } from "../data/LAYOUT_DATA";
 import useAttrObserver from "../scripts/hooks/useAttrObserver";
 import Link from "./Link";
-import { useSpring, animated } from '@react-spring/web';
+import { useSpring, animated } from "@react-spring/web";
+import Graphic from "./Graphic";
+import ICON_IMGS from "../data/ICON_IMGS";
+import Mask from "./Mask";
 
 function Sidebar({ view }) {
   const [panels, setPanels] = useState([]);
@@ -51,12 +54,11 @@ function Sidebar({ view }) {
 
   const schematic = view.page == "schematic";
 
-
-
   return (
-    <div className="viewer--sidebar sidebar"
-    //  ref={sidebar}
-     >
+    <div
+      className="viewer--sidebar sidebar"
+      //  ref={sidebar}
+    >
       <Title view={view} />
       {optionArray.map((option, i) => {
         return <Panel key={i} option={option} view={view} panels={panels} setPanels={setPanels} />;
@@ -66,7 +68,6 @@ function Sidebar({ view }) {
     </div>
   );
 }
-
 
 // const AnimatedH1 = animated(YourCustomH1);
 
@@ -121,13 +122,10 @@ function Title({ view }) {
   );
 }
 
-
-
-
 function Panel({ view, option, setPanels }) {
   const panelRef = useRef(null);
   const hovered = useHoverAndFocus(panelRef);
-  const optionId = useAttrObserver(panelRef, 'data-option-id', {bool:false});
+  const optionId = useAttrObserver(panelRef, "data-option-id", { bool: false });
 
   useEffect(() => {
     const panel = {
@@ -139,9 +137,10 @@ function Panel({ view, option, setPanels }) {
       const otherPanels = prevPanels.filter((p) => p.ref.current !== panelRef.current);
       return [...otherPanels, panel];
     });
-  }, [hovered,optionId]);
+  }, [hovered, optionId]);
 
   const schematic = view.page == "schematic" ? "schematic" : "other";
+  const isSchematic = view.page == "schematic" ? true : false;
 
   const handleClick = () => {
     if (view.page == "schematic") return;
@@ -163,19 +162,18 @@ function Panel({ view, option, setPanels }) {
   const title = option.title.long || option.title.short || option.title;
   const ind = String(option.index + 1).padStart(2, "0");
 
-  
-
-
   return (
-    <Link className={`sidebar--panel sidebar--button sidebar--button__${schematic}`} reference={panelRef} 
-    click={view.page != "schematic"  ? true : false}
-
-    onClick={handleClick}
-
-    data-option-id={option.id}
-    >
-      <H2 className="sidebar--index">{ind}</H2>
-      <H2 className="sidebar--name">{title}</H2>
+    <Link
+      className={`sidebar--panel sidebar--button sidebar--button__${schematic}`}
+      reference={panelRef}
+      click={!isSchematic ? true : false}
+      onClick={handleClick}
+      data-option-id={option.id}>
+      <div className="sidebar--text">
+        <H2 className="sidebar--index">{ind}</H2>
+        <H2 className="sidebar--name">{title}</H2>
+      </div>
+      {!isSchematic && <Mask className={"sidebar--icon"} img={ICON_IMGS.next}></Mask>}
     </Link>
   );
 }
@@ -188,7 +186,12 @@ function Back({ view }) {
 
   return (
     <Link className={`sidebar--panel sidebar--button sidebar--back`} onClick={handleClick}>
-      <H2 className="sidebar--name">Back</H2>
+      <div className="sidebar--back-inner">
+        <div className="sidebar--back-icon-wrapper">
+          <Mask className={"sidebar--icon sidebar--back-icon"} img={ICON_IMGS.back}></Mask>
+        </div>
+        <H2 className="sidebar--name">Back</H2>
+      </div>
     </Link>
   );
 }
