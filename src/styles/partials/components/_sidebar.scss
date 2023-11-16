@@ -15,8 +15,9 @@
 
   &--panel {
     // padding: calc(var(--viewer-inner-pad) * 0.725) var(--viewer-inner-pad);
-    padding: calc(var(--viewer-inner-pad) * 0.5) var(--viewer-inner-pad);
     // padding: calc(var(--viewer-inner-pad) * 0.1) var(--viewer-inner-pad);
+    // padding: calc(var(--viewer-inner-pad) * 0.5) var(--viewer-inner-pad);
+    padding: calc(var(--viewer-inner-pad) * 0.4) calc(var(--viewer-inner-pad) * 0.95);
     @include viewer-border(bottom);
     
     @include xxl-down{
@@ -47,7 +48,7 @@
     margin-left:auto;
     @include img-contain;
     @include s(1.15rem);
-    margin-right: -0.5rem;
+    margin-right: -0.25rem;
     background-color: $col-light;
 
     @include hover(".sidebar--button", ".sidebar--icon") {

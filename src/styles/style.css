@@ -198,7 +198,7 @@ input, button, textarea, select {
 }
 
 .viewer .sidebar--panel {
-  padding: calc(var(--viewer-inner-pad) * 0.5) var(--viewer-inner-pad);
+  padding: calc(var(--viewer-inner-pad) * 0.4) calc(var(--viewer-inner-pad) * 0.95);
   border-bottom: 0.125rem solid #ffffff;
 }
 
@@ -240,7 +240,7 @@ input, button, textarea, select {
   --size: 1.15rem;
   width: 1.15rem;
   height: 1.15rem;
-  margin-right: -0.5rem;
+  margin-right: -0.25rem;
   background-color: #ffffff;
 }
 
@@ -597,7 +597,7 @@ input, button, textarea, select {
 }
 
 .selection--inner {
-  --content-inner-pad-x: 8rem !important;
+  --content-inner-pad-x: 6rem !important;
 }
 
 @media screen and (max-width: 91.9375em) {

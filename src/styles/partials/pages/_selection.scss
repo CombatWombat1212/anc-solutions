@@ -7,7 +7,7 @@
   display: flex;
 
   &--inner {
-    --content-inner-pad-x: 8rem !important;
+    --content-inner-pad-x: 6rem !important;
 
     @include xxl-down {
       --content-inner-pad-x: 6rem !important;
