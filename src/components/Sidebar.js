@@ -10,16 +10,25 @@ import Graphic from "./Graphic";
 import ICON_IMGS from "../data/ICON_IMGS";
 import Mask from "./Mask";
 
-
 function Sidebar({ view }) {
   const [panels, setPanels] = useState([]);
+
   let optionArray = [];
+
+  // if(view.type){
+  //   optionArray = Object.values(PRODUCT_DATA[view.type].pages).filter((x) => x.level == "sub");
+  // } else {
+  //   optionArray = Object.values(PRODUCT_DATA).map((x) => x.pages.selection);
+  // }
 
   if (!view.type) {
     optionArray = Object.values(PRODUCT_DATA).map((x) => x.pages.selection);
   } else {
+    // const options = Object.values(PAGE_DATA).filter((page) => HARDCODED_PAGES[view.type].includes(page.id));
     optionArray = (() => {
       const options = Object.values(PAGE_DATA).filter((page) => HARDCODED_PAGES[view.type].includes(page.id));
+
+      // harded coded name change for blunt, should be done a better way but good for launch
       if (view.type === "blunt") {
         return options.map((option) => {
           if (option.id === "paper") {
@@ -28,6 +37,7 @@ function Sidebar({ view }) {
           return option;
         });
       }
+
       return options;
     })();
   }
@@ -42,26 +52,20 @@ function Sidebar({ view }) {
     }
   }, [panels]);
 
-  const sidebarAnimation = useSpring({
-    from: { transform: 'translateX(100%)' },
-    to: { transform: 'translateX(0)' },
-    reset: true,
-    reverse: optionArray.length > 0,
-  });
-
   const schematic = view.page == "schematic";
 
   return (
-    <animated.div
+    <div
       className="viewer--sidebar sidebar"
-      style={sidebarAnimation}
+      //  ref={sidebar}
     >
       <Title view={view} />
-      {optionArray.map((option, i) => (
-        <Panel key={i} option={option} view={view} panels={panels} setPanels={setPanels} index={i} />
-      ))}
+      {optionArray.map((option, i) => {
+        return <Panel key={i} option={option} view={view} panels={panels} setPanels={setPanels} index={i} />;
+      })}
+
       {schematic && <Back view={view} />}
-    </animated.div>
+    </div>
   );
 }
 
