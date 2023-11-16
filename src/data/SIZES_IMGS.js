@@ -1,10 +1,12 @@
+import URL_PREFIX from "./WEBSITE_DATA";
+
 const SIZES_IMGS = {
 
   
   traditional: {
     "0.25g": {
       name: "traditional_0.25",
-      src: "/assets/images/sizes/traditional_0.25.svg",
+      src: URL_PREFIX + "/assets/images/sizes/traditional_0.25.svg",
       alt: "",
       width: 46,
       height: 524,
@@ -12,7 +14,7 @@ const SIZES_IMGS = {
     },
     "0.3g": {
       name: "traditional_0.3",
-      src: "/assets/images/sizes/traditional_0.3.svg",
+      src: URL_PREFIX + "/assets/images/sizes/traditional_0.3.svg",
       alt: "",
       width: 49,
       height: 524,
@@ -20,7 +22,7 @@ const SIZES_IMGS = {
     },
     "0.35g": {
       name: "traditional_0.35",
-      src: "/assets/images/sizes/traditional_0.35.svg",
+      src: URL_PREFIX + "/assets/images/sizes/traditional_0.35.svg",
       alt: "",
       width: 55,
       height: 524,
@@ -28,7 +30,7 @@ const SIZES_IMGS = {
     },
     "0.5g": {
       name: "traditional_0.5",
-      src: "/assets/images/sizes/traditional_0.5.svg",
+      src: URL_PREFIX + "/assets/images/sizes/traditional_0.5.svg",
       alt: "",
       width: 55,
       height: 524,
@@ -36,7 +38,7 @@ const SIZES_IMGS = {
     },
     "0.7g": {
       name: "traditional_0.7",
-      src: "/assets/images/sizes/traditional_0.7.svg",
+      src: URL_PREFIX + "/assets/images/sizes/traditional_0.7.svg",
       alt: "",
       width: 55,
       height: 524,
@@ -44,7 +46,7 @@ const SIZES_IMGS = {
     },
     "1.0g": {
       name: "traditional_1.0",
-      src: "/assets/images/sizes/traditional_1.0.svg",
+      src: URL_PREFIX + "/assets/images/sizes/traditional_1.0.svg",
       alt: "",
       width: 55,
       height: 524,

@@ -93,8 +93,6 @@ function Schematic({ view }) {
   useEffect(() => {
     if (!components || view.side.active === undefined || !loaded) return;
 
-    console.log(view.side.active);
-
     Object.keys(components).forEach((key) => {
       const page = options.find((x) => x.id === key);
       const componentId = page.id;

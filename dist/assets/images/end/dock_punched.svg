@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 80 80">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-width: 2px;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill: none;
+      }
+
+      .cls-1, .cls-3 {
+        stroke: #fff;
+        stroke-linecap: square;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-4 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-5 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-3 {
+        stroke-width: 5px;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-2" x="-.07" y="-.07" width="80.14" height="80.14"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <path class="cls-2" d="m2.43,40c0,20.75,16.82,37.57,37.57,37.57,20.75,0,37.57-16.82,37.57-37.57,0-20.75-16.82-37.57-37.57-37.57,0,0,0,0,0,0C19.25,2.43,2.43,19.25,2.43,40"/>
+    </clipPath>
+  </defs>
+  <g id="Group_400" data-name="Group 400">
+    <g id="Group_397" data-name="Group 397">
+      <g class="cls-5">
+        <g id="Group_396" data-name="Group 396">
+          <circle id="Ellipse_23" data-name="Ellipse 23" class="cls-3" cx="40" cy="40" r="37.57"/>
+        </g>
+      </g>
+    </g>
+    <g id="Group_399" data-name="Group 399">
+      <g class="cls-4">
+        <g id="Group_398" data-name="Group 398">
+          <path id="Path_3178" data-name="Path 3178" class="cls-1" d="m47.96,40h-15.1L23.5,2.43h34.46l-10.01,37.57Z"/>
+          <path id="Path_3179" data-name="Path 3179" class="cls-1" d="m32.83,40h15.1l9.35,35.95H22.81l10.01-35.95Z"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -72,6 +72,11 @@ function Selection({ view }) {
   }, [loaded, tallestModal]);
 
 
+  // useEffect(() => {
+  //   console.log(tallestModal);
+  // }, [tallestModal]);
+
+
   return (
     <>
       {/* <div className={`selection--body selection--body__${ready ? "loaded" : "loading"}`} */}
@@ -120,7 +125,7 @@ function Column({ view, type, graphics, setGraphics, active }) {
 
 function HiddenModal({ description, state, modals, setModals }) {
   const referece = useRef(null);
-  const height = useElementHeight(referece);
+  const height = useElementHeight(referece, {padding:false});
 
   useEffect(() => {
     const modal = {

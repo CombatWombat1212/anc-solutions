@@ -6,15 +6,17 @@
     --content-inner-pad-top: 6rem;
     --content-inner-pad-bottom: 4.5rem;
     --content-inner-pad-y: calc(var(--content-inner-pad-top) + var(--content-inner-pad-bottom));
-    --content-inner-pad-x: 8rem;
+    // --content-inner-pad-x: 8rem;
+    --content-inner-pad-x: 6rem;
     padding: var(--content-inner-pad-top) var(--content-inner-pad-x) var(--content-inner-pad-bottom) var(--content-inner-pad-x);
-    height: calc(100% - var(--content-inner-pad-y));
+    // height: calc(100% - var(--content-inner-pad-y));
+    height:100%;
     @include flex-col-between;
 
     --content-inner-max-height: calc(100% - var(--content-inner-pad-y));
     --content-inner-max-height_dock: calc(100% - var(--dock-height) - var(--content-inner-pad-y));
 
-    max-height: weighted-average(var(--content-inner-max-height_dock), var(--content-inner-max-height), var(--content-has-dock));
+    // max-height: weighted-average(var(--content-inner-max-height_dock), var(--content-inner-max-height), var(--content-has-dock));
 
 
     @include xxl-down{

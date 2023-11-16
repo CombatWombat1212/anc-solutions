@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="893" height="772" viewBox="0 0 893 772">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_1016" data-name="Rectangle 1016" width="64.954" height="566.5" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="traditional" transform="translate(8687 -12874)">
+    <g id="end_box" transform="translate(-8687 12874)" fill="rgba(255,255,255,0.05)" stroke="#ec0719" stroke-width="1">
+      <rect width="255" height="191" stroke="none"/>
+      <rect x="0.5" y="0.5" width="254" height="190" fill="none"/>
+    </g>
+    <g id="paper_box" transform="translate(-8687 13261)" fill="rgba(255,255,255,0.05)" stroke="#ec0719" stroke-width="1">
+      <rect width="255" height="256" stroke="none"/>
+      <rect x="0.5" y="0.5" width="254" height="255" fill="none"/>
+    </g>
+    <g id="filter_box" transform="translate(-8049 13387)" fill="rgba(255,255,255,0.05)" stroke="#ec0719" stroke-width="1">
+      <rect width="255" height="259" stroke="none"/>
+      <rect x="0.5" y="0.5" width="254" height="258" fill="none"/>
+    </g>
+    <g id="compaction_box" transform="translate(-8049 13184)" fill="rgba(255,255,255,0.05)" stroke="#ec0719" stroke-width="1">
+      <rect width="255" height="135" stroke="none"/>
+      <rect x="0.5" y="0.5" width="254" height="134" fill="none"/>
+    </g>
+    <g id="sizes_box" transform="translate(-8049 12983.5)" fill="rgba(255,255,255,0.05)" stroke="#ec0719" stroke-width="1">
+      <rect width="255" height="135" stroke="none"/>
+      <rect x="0.5" y="0.5" width="254" height="134" fill="none"/>
+    </g>
+    <text id="end_body" transform="translate(-8628 12950)" fill="#fff" font-size="16" font-family="Acumin VF" font-weight="500"><tspan x="0" y="17">i. Twisted</tspan><tspan x="0" y="43">Ii. Punched</tspan><tspan x="0" y="69">Iii. Crown</tspan></text>
+    <text id="paper_body" transform="translate(-8628 13336)" fill="#fff" font-size="16" font-family="Acumin VF" font-weight="500"><tspan x="0" y="17">i. Wood (white)</tspan><tspan x="0" y="43">ii. Wood (brown)</tspan><tspan x="0" y="69">iii. Hemp (organic)</tspan><tspan x="0" y="95">iv. Bamboo (organic)</tspan><tspan x="0" y="121">v. Cellulose</tspan></text>
+    <text id="filter_body" transform="translate(-7990 13462)" fill="#fff" font-size="16" font-family="Acumin VF" font-weight="500"><tspan x="0" y="17">i. Wood W</tspan><tspan x="0" y="43">ii. Bamboo W </tspan><tspan x="0" y="69">iii. Wood Spiral</tspan><tspan x="0" y="95">iv. Glass</tspan><tspan x="0" y="121">v. Aluminum</tspan><tspan x="0" y="147">vi. Ceramic</tspan></text>
+    <text id="compaction_body" transform="translate(-7990 13256)" fill="#fff" font-size="16" font-family="Acumin VF" font-weight="500"><tspan x="0" y="17">Low, Medium, High</tspan></text>
+    <text id="sizes_body" transform="translate(-7990 13055.5)" fill="#fff" font-size="16" font-family="Acumin VF" font-weight="500"><tspan x="0" y="17">0.25g - 1.0g</tspan></text>
+    <text id="end_title" transform="translate(-8628 12933)" fill="#ec0719" font-size="34" font-family="Acumin VF"><tspan x="0" y="0">End Type</tspan></text>
+    <text id="paper_title" transform="translate(-8628 13319)" fill="#ec0719" font-size="34" font-family="Acumin VF"><tspan x="0" y="0">Paper Type</tspan></text>
+    <text id="compaction_title" transform="translate(-7990 13239)" fill="#ec0719" font-size="34" font-family="Acumin VF"><tspan x="0" y="0">Compaction</tspan></text>
+    <text id="sizes_title" transform="translate(-7990 13038.5)" fill="#ec0719" font-size="34" font-family="Acumin VF"><tspan x="0" y="0">Sizes</tspan></text>
+    <text id="filter_title" transform="translate(-7990 13447)" fill="#ec0719" font-size="34" font-family="Acumin VF"><tspan x="0" y="0">Filter Type</tspan></text>
+    <line id="compaction_line" x2="62.313" transform="translate(-8110.813 13249)" fill="none" stroke="#ec0719" stroke-width="1"/>
+    <line id="sizes_line" x2="62.313" transform="translate(-8110.813 13048.5)" fill="none" stroke="#ec0719" stroke-width="1"/>
+    <path id="sizes_brace" d="M1827.348-3593.5h64.839V-3017h-64.839" transform="translate(-10003 16531)" fill="none" stroke="#ec0719" stroke-width="1"/>
+    <path id="filter_line" d="M1763.927-3014v62.841h190.434" transform="translate(-10003 16531)" fill="none" stroke="#ec0719" stroke-width="1"/>
+    <rect id="filter_dot" width="10" height="10" transform="translate(-8244 13512)" fill="#ec0719"/>
+    <g id="roll" transform="translate(-8268.477 12932)">
+      <g id="Group_806" data-name="Group 806" clip-path="url(#clip-path)">
+        <path id="Path_14072" data-name="Path 14072" d="M64.951,63.215v-.007h0c-.014-.138-.031-.276-.037-.416-.024-.521-.018-1.036,0-1.549,0-.127,0-.256,0-.383-.139-.6-.27-1.2-.36-1.81-.006.018-.014.033-.021.05a15.075,15.075,0,0,0-.819-2.472c-.368-.9-.773-1.78-1.186-2.662-.521-.625-1.035-1.253-1.574-1.866a24.715,24.715,0,0,0-3.987-3.571,2.614,2.614,0,0,1-.977-2.028c0-.067.015-.13.018-.2-4.683-3.985-9.621-7.931-14.726-12.127l.093-.225-11.581-9.4L25.966,3.138,24.713,0H23.056V13.567L22.046,32.66c-2.092,3.317-5.076,6.463-7.862,9.623-3.036,3.444-8.289,6.38-7.536,10.578.038.212-.3.462-.571.654A14.785,14.785,0,0,0,.615,60.144q-.256.918-.591,1.807c0,.047-.006.09-.007.134A.616.616,0,0,0,0,62.179v.038l0,.008,10.036,345.7a.131.131,0,0,1-.019-.026c0,.028,0,.055,0,.084V408h0L14.2,556.039h0c.037,5.881,8.1,10.461,18.4,10.461h.13a27.183,27.183,0,0,0,12.909-3.019c3.517-1.963,5.474-4.6,5.539-7.428H51.2l3.687-146,10.064-346.8.007-.009,0-.027M49.795,555.889h-.009c.009,2.363-1.7,4.623-4.824,6.365a25.767,25.767,0,0,1-12.231,2.84h-.12c-9.367,0-16.985-4.06-17-9.079l-.7,0,.7-.02L11.562,413.047c3.268,5.185,11.368,8.858,20.827,8.858h.137a30.593,30.593,0,0,0,15.736-4.057,15.527,15.527,0,0,0,5.142-4.881ZM53.72,409.466c-.119.184-.228.375-.349.558a5.182,5.182,0,0,1-1.082,2.014c-.006.008-.009.017-.015.024a13.781,13.781,0,0,1-4.748,4.59,29.188,29.188,0,0,1-15,3.848c-9.775.029-17.948-3.94-20.335-9.331a5.083,5.083,0,0,1-.592-1.058c-.112-.151-.217-.308-.328-.459L1.254,64.705a5.107,5.107,0,0,1,.369.719,42.2,42.2,0,0,1,2.841,3.722A28.658,28.658,0,0,0,15.176,75.23c.512-.1,1.012-.266,1.516-.406a3.421,3.421,0,0,1,1.05-.1c-.414-.449-.838-.89-1.217-1.371-.27-.342-.544-.694-.79-1.06-1.144-.4-2.284-.831-3.423-1.322a25.007,25.007,0,0,1-7.261-4.956,10.327,10.327,0,0,1-1.356-1.6A12.927,12.927,0,0,1,2.1,62.429c.312-1.17.848-2.284,1.135-3.459a2.169,2.169,0,0,1,.477-.907,2.74,2.74,0,0,1,1.359-1.925A3.319,3.319,0,0,1,6.869,55.5c.021-.06.045-.118.065-.178l.328.154a3.653,3.653,0,0,1,1.638.376,3.951,3.951,0,0,1,1.226.619c.093.072.186.141.281.21.258.149.515.3.782.442.555.295,1.134.56,1.715.817,1.127.5,2.268.975,3.372,1.514.581.283,1.183.547,1.757.841.129.053.189.079.213.092l.211.072c.334.108.671.209,1.01.305.551.154,1.109.29,1.667.424-3.77-2.607-7.469-5.033-9.794-7.762-3.689-4.33,3.94-7.31,7.148-11.539L30.009,58.334l1.732-.289c-2.474-6.516-11.07-12.28-10.517-19.99l16.214,11.1C34.818,43.7,23.982,40.023,24.6,33.318L44.111,47.588C39.686,41.245,29.054,36.289,28,28.9a104.173,104.173,0,0,1,32.349,27.06,2.689,2.689,0,0,1,.578,1.536,3.046,3.046,0,0,1,.449,1.236,6.078,6.078,0,0,1,.192.61c.084.393.149.79.2,1.19.071.2.15.4.209.6a8.622,8.622,0,0,1,.35,1.847c-.024.027-.044.057-.067.085a9.254,9.254,0,0,1-.851,2.793,2.794,2.794,0,0,1-1.258,1.2,2.655,2.655,0,0,1-.459.33c-.453.38-.877.792-1.322,1.181A13.386,13.386,0,0,1,56.9,69.7a9.767,9.767,0,0,1-1.776.836,3.361,3.361,0,0,1-1.349.057,32.76,32.76,0,0,1-5.348,2.042c-1.383.406-2.765.731-4.147,1.027-.034.044-.058.094-.1.136a2.491,2.491,0,0,1-.551.584,3.836,3.836,0,0,0-.341.351,36.526,36.526,0,0,1,3.645,1.29c1.511-.411,3.022-.891,4.527-1.453A26.319,26.319,0,0,0,60.634,69a5.816,5.816,0,0,1,.878-1.1,18.01,18.01,0,0,0,1.908-2.265c0-.028,0-.057.007-.085l.031-.035,0,.07c.092-.129.165-.27.256-.4Z" fill="#fff"/>
+        <path id="Path_14073" data-name="Path 14073" d="M27.769,63.7c-1.315-.008-2.627-.08-3.937-.19a2.557,2.557,0,0,1-.311.262,2.524,2.524,0,0,1-.976.536,3.8,3.8,0,0,1,0,1.882c1.114.117,2.226.218,3.337.27a2.82,2.82,0,0,1,.272-.192,17.232,17.232,0,0,1,2.031-.824c.274-.094.546-.2.818-.3.029-.014.059-.032.088-.047.051-.205.083-.414.114-.624-.341-.136-.676-.285-1-.446a3.332,3.332,0,0,1-.43-.331" transform="translate(4.034 11.367)" fill="#fff"/>
+      </g>
+    </g>
+    <rect id="paper_dot" width="10" height="10" transform="translate(-8247 13319)" fill="#ec0719"/>
+    <line id="paper_line" x2="189" transform="translate(-8430.5 13323.5)" fill="none" stroke="#ec0719" stroke-width="1"/>
+    <line id="end_line" x2="169" transform="translate(-8430.5 12937.5)" fill="none" stroke="#ec0719" stroke-width="1"/>
+    <rect id="end_dot" width="10" height="10" transform="translate(-8262 12933)" fill="#ec0719"/>
+    <path id="compaction_brace" d="M1827.348-3593.5h64.839V-3017h-64.839" transform="translate(-10003 16531)" fill="none" stroke="#ec0719" stroke-width="1"/>
+  </g>
+</svg>

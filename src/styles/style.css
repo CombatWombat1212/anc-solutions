@@ -141,14 +141,14 @@ input, button, textarea, select {
 }
 
 .viewer {
+  --viewer-height: 50rem;
   margin-right: auto;
   margin-left: auto;
   display: flex;
   flex-direction: row;
   border: 0.125rem solid #ffffff;
   border-radius: 0rem 4rem 4rem 0rem;
-  width: 85%;
-  height: 50rem;
+  height: var(--viewer-height);
   --viewer-inner-pad: 3rem;
 }
 
@@ -177,10 +177,10 @@ input, button, textarea, select {
   --sidebar-index-margin-right: 1rem;
   --transition: 0.175s;
   border-right: 0.125rem solid #ffffff;
-  width: 29.16667%;
-  --column-width: 3.5;
-  max-width: 29.16667%;
-  min-width: 29.16667%;
+  width: 31.25%;
+  --column-width: 3.75;
+  max-width: 31.25%;
+  min-width: 31.25%;
   display: flex;
   flex-direction: column;
 }
@@ -243,7 +243,7 @@ input, button, textarea, select {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: start;
+  align-items: flex-start;
 }
 
 .viewer .sidebar--back-inner {
@@ -315,15 +315,14 @@ input, button, textarea, select {
   --content-inner-pad-top: 6rem;
   --content-inner-pad-bottom: 4.5rem;
   --content-inner-pad-y: calc(var(--content-inner-pad-top) + var(--content-inner-pad-bottom));
-  --content-inner-pad-x: 8rem;
+  --content-inner-pad-x: 6rem;
   padding: var(--content-inner-pad-top) var(--content-inner-pad-x) var(--content-inner-pad-bottom) var(--content-inner-pad-x);
-  height: calc(100% - var(--content-inner-pad-y));
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   --content-inner-max-height: calc(100% - var(--content-inner-pad-y));
   --content-inner-max-height_dock: calc(100% - var(--dock-height) - var(--content-inner-pad-y));
-  max-height: calc(var(--content-inner-max-height_dock) * var(--content-has-dock) + var(--content-inner-max-height) * (1 - var(--content-has-dock)));
   transition: 0.5s;
 }
 
@@ -564,12 +563,6 @@ input, button, textarea, select {
   color: #ffffff;
   white-space: nowrap;
   padding-right: calc(var(--bar-notch-height) + var(--bar-label-margin-top));
-}
-
-.sandbox {
-  width: 100%;
-  height: 100%;
-  margin-top: 5rem;
 }
 
 .hidden-until-fonts-loaded {

@@ -43,14 +43,17 @@ $viewer-border-radius: 0rem $viewer-border-radius_val $viewer-border-radius_val 
 
 
 .viewer {
+
+  --viewer-height: 50rem;
+
   @include mx-auto;
   @include flex-row;
   @include viewer-border;
   border-radius: $viewer-border-radius;
   // overflow: hidden;
   
-  width: 85%; //TODO: this is temporary
-  height: 50rem; //TODO: this is temporary
+  // width: 85%; //TODO: this is temporary
+  height: var(--viewer-height); //TODO: this is temporary
   
   --viewer-inner-pad: 3rem;
   

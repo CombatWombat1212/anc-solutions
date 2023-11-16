@@ -19,6 +19,7 @@
 
   &--body {
     height: calc(100% - var(--modal-top-margin) - var(--selection-modal-height));
+    // height: calc(var(--viewer-height) - var(--content-inner-pad-top) - var(--modal-top-margin) - var(--selection-modal-height));
     @include flex-row-between;
     // gap: var(--selection-col-gap);
 

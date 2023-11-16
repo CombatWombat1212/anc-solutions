@@ -7,7 +7,7 @@
 
   @include viewer-border(right);
 
-  $width: 3.5;
+  $width: 3.75;
   @include col-width($width);
   max-width: col-width($width);
   min-width: col-width($width);
@@ -61,14 +61,15 @@
     padding-bottom: calc(var(--viewer-inner-pad) * 0.75);
     height: 100%;
     @include flex-col-end;
-    align-items: start;
+    align-items: flex-start;
   }
 
   &--back-inner{
     @include flex-row;
     align-items:center;
   }
-
+  
+  
   &--back-icon-wrapper {
     width: var(--sidebar-index-width);
     @include flex-row-center;
