@@ -61,7 +61,7 @@ function Sidebar({ view }) {
     >
       <Title view={view} />
       {optionArray.map((option, i) => {
-        return <Panel key={i} option={option} view={view} panels={panels} setPanels={setPanels} />;
+        return <Panel key={i} option={option} view={view} panels={panels} setPanels={setPanels} index={i} />;
       })}
 
       {schematic && <Back view={view} />}
@@ -122,7 +122,7 @@ function Title({ view }) {
   );
 }
 
-function Panel({ view, option, setPanels }) {
+function Panel({ view, option, setPanels, index }) {
   const panelRef = useRef(null);
   const hovered = useHoverAndFocus(panelRef);
   const optionId = useAttrObserver(panelRef, "data-option-id", { bool: false });
@@ -160,7 +160,9 @@ function Panel({ view, option, setPanels }) {
   }, [view.page, view.type]);
 
   const title = option.title.long || option.title.short || option.title;
-  const ind = String(option.index + 1).padStart(2, "0");
+  // const ind = String(option.index + 1).padStart(2, "0");
+  const ind = String(index + 1).padStart(2, "0");
+
 
   return (
     <Link
