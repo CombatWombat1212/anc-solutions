@@ -22,6 +22,7 @@ function Dock({ view }) {
   }, [view.page, view.type]);
 
   useEffect(() => {
+    // if(!view.dock) return;
     const dock = PRODUCT_DATA[view.type].pages[view.page].dock;
     view.setDockActiveObj(dock.find((item) => item.id === view.dock));
   }, [view.dock]);
@@ -86,6 +87,8 @@ function Item({ item, index, view, active }) {
         }}></div>
     </>
   );
+
+
 }
 
 export default Dock;

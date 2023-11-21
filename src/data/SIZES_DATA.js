@@ -12,6 +12,9 @@ const SIZES_DATA = {
   cigarette: {
     images: SIZES_IMGS.cigarette,
   },
+  blunt: {
+    images: SIZES_IMGS.blunt,
+  },
 
 
 };

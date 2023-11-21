@@ -23,7 +23,6 @@ const FILTER_IMGS = {
   //   height: 470,
   // },
 
-
   traditional: {
     bamboo_w: {
       name: "traditional_bamboo_w",
@@ -69,7 +68,7 @@ const FILTER_IMGS = {
     },
   },
 
-  cigarette:{
+  cigarette: {
     cardboard: {
       name: "cigarette_cardboard",
       src: URL_PREFIX + "/assets/images/filter/cigarette_cardboard.svg",
@@ -98,7 +97,31 @@ const FILTER_IMGS = {
       width: 650,
       height: 470,
     },
-  }
+  },
+
+  blunt: {
+    ceramic: {
+      name: "blunt_ceramic",
+      src: URL_PREFIX + "/assets/images/filter/blunt_ceramic.svg",
+      alt: "",
+      width: 680,
+      height: 468,
+    },
+    glass: {
+      name: "blunt_glass",
+      src: URL_PREFIX + "/assets/images/filter/blunt_glass.svg",
+      alt: "",
+      width: 680,
+      height: 468,
+    },
+    wood_w: {
+      name: "blunt_wood_w",
+      src: URL_PREFIX + "/assets/images/filter/blunt_wood_w.svg",
+      alt: "",
+      width: 680,
+      height: 468,
+    },
+  },
 };
 
 const FILTER_DOCK_IMGS = {
@@ -172,8 +195,6 @@ const FILTER_DOCK_IMGS = {
     width: 80,
     height: 80,
   },
-
-
 };
 
 export { FILTER_DOCK_IMGS };

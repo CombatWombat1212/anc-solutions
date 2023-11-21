@@ -1,8 +1,6 @@
 import URL_PREFIX from "./WEBSITE_DATA";
 
 const SIZES_IMGS = {
-
-  
   traditional: {
     "0.25g": {
       name: "traditional_0.25",
@@ -54,9 +52,7 @@ const SIZES_IMGS = {
     },
   },
 
-
-
-  cigarette:{
+  cigarette: {
     "0.3g": {
       name: "cigarette_0.3",
       src: URL_PREFIX + "/assets/images/sizes/cigarette_0.3.svg",
@@ -97,12 +93,34 @@ const SIZES_IMGS = {
       height: 508,
       label: "1.0g",
     },
-  
-  
-  
   },
 
-
+  blunt: {
+    "0.5g": {
+      name: "blunt_0.5",
+      src: URL_PREFIX + "/assets/images/sizes/blunt_0.5.svg",
+      alt: "",
+      width: 57,
+      height: 506,
+            label: "0.5g",
+    },
+    "1.0g": {
+      name: "blunt_1.0",
+      src: URL_PREFIX + "/assets/images/sizes/blunt_1.0.svg",
+      alt: "",
+      width: 61,
+      height: 506,
+            label: "1.0g",
+    },
+    "1.5g": {
+      name: "blunt_1.5",
+      src: URL_PREFIX + "/assets/images/sizes/blunt_1.5.svg",
+      alt: "",
+      width: 63,
+      height: 506,
+            label: "1.5g",
+    },
+  },
 };
 
 export default SIZES_IMGS;

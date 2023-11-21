@@ -105,11 +105,11 @@ const DOCK_DATA = {
       ],
     },
 
-    hemp: {
-      id: "hemp",
+    hemp_organic: {
+      id: "hemp_organic",
       title: "Hemp (organic)",
-      img: PAPER_DOCK_IMGS.hemp,
-      link: { dock: "hemp" },
+      img: PAPER_DOCK_IMGS.hemp_organic,
+      link: { dock: "hemp_organic" },
 
       stats: [
         {
@@ -247,6 +247,196 @@ const DOCK_DATA = {
           type: "description",
           description:
             "Neutral to minimal, allowing for a pure cannabis flavor experience, though some users might detect a slight difference in taste or feel due to its unique texture.",
+        },
+      ],
+    },
+
+    hemp_wrap: {
+      id: "hemp_wrap",
+      title: "Hemp",
+      img: PAPER_DOCK_IMGS.hemp_wrap,
+      link: { dock: "hemp_wrap" },
+
+      stats: [
+        {
+          title: "Material Origin",
+          type: "description",
+          description: "Derived from the industrial hemp plant, a relative of the cannabis plant.",
+        },
+        {
+          title: "Texture & Thickness",
+          type: "description",
+          description: "Smooth and consistent, with a medium thickness, which makes it durable enough for easy rolling without tearing.",
+        },
+        {
+          title: "Taste & Smell",
+          type: "description",
+          description: "Neutral with slight earthy undertones.",
+        },
+        {
+          title: "Color",
+          type: "description",
+          description: "Natural light to dark green or brown, depending on processing.",
+        },
+        {
+          title: "Burn Rate",
+          type: "bar",
+          bar: {
+            labels: BAR_LABELS.speed,
+            value: 45,
+          },
+        },
+      ],
+    },
+
+    hybrid_wrap: {
+      id: "hybrid_wrap",
+      title: "Hybrid",
+      img: PAPER_DOCK_IMGS.hybrid_wrap,
+      link: { dock: "hybrid_wrap" },
+
+      stats: [
+        {
+          title: "Material Origin",
+          type: "description",
+          description: "A combination of natural hemp wraps and high-quality paper.",
+        },
+        {
+          title: "Texture & Thickness",
+          type: "description",
+          description: "Balanced texture due to the blend of hemp and paper. Medium thickness offering a consistent roll.",
+        },
+        {
+          title: "Taste & Smell",
+          type: "description",
+          description: "Neutral from the paper with a hint of earthiness from the hemp.",
+        },
+        {
+          title: "Color",
+          type: "description",
+          description: "Light tan to pale green, depending on the blend and processing.",
+        },
+        {
+          title: "Burn Rate",
+          type: "bar",
+          bar: {
+            labels: BAR_LABELS.speed,
+            value: 50,
+          },
+        },
+      ],
+    },
+
+    rose_petal: {
+      id: "rose_petal",
+      title: "Rose Petal",
+      img: PAPER_DOCK_IMGS.rose_petal, // Replace with actual image reference
+      link: { dock: "rose_petal" },
+
+      stats: [
+        {
+          title: "Material Origin",
+          type: "description",
+          description: "Derived from dried rose petals, often layered together to achieve the necessary thickness.",
+        },
+        {
+          title: "Texture & Thickness",
+          type: "description",
+          description: "Delicate with a naturally floral texture. Thin and requires careful handling.",
+        },
+        {
+          title: "Taste & Smell",
+          type: "description",
+          description: "Distinct floral notes, imparting a gentle rose aroma when smoked.",
+        },
+        {
+          title: "Color",
+          type: "description",
+          description: "Naturally reddish to dark brown or maroon, depending on the rose type and curing process.",
+        },
+        {
+          title: "Burn Rate",
+          type: "bar",
+          bar: {
+            labels: BAR_LABELS.speed,
+            value: 35, // Slow to medium
+          },
+        },
+      ],
+    },
+
+    chamomile: {
+      id: "chamomile",
+      title: "Chamomile",
+      img: PAPER_DOCK_IMGS.chamomile,
+      link: { dock: "chamomile" },
+
+      stats: [
+        {
+          title: "Material Origin",
+          type: "description",
+          description: "Made from dried chamomile flowers.",
+        },
+        {
+          title: "Texture & Thickness",
+          type: "description",
+          description: "Somewhat delicate with a thin profile, requiring gentle handling.",
+        },
+        {
+          title: "Taste & Smell",
+          type: "description",
+          description: "Herbal and calming, reminiscent of chamomile tea.",
+        },
+        {
+          title: "Color",
+          type: "description",
+          description: "Light brown to golden yellow.",
+        },
+        {
+          title: "Burn Rate",
+          type: "bar",
+          bar: {
+            labels: BAR_LABELS.speed,
+            value: 30, // Slow
+          },
+        },
+      ],
+    },
+
+    goji: {
+      id: "goji",
+      title: "Goji Wraps",
+      img: PAPER_DOCK_IMGS.goji,
+      link: { dock: "goji" },
+
+      stats: [
+        {
+          title: "Material Origin",
+          type: "description",
+          description: "Derived from dried goji berries or sometimes the leaves of the goji plant.",
+        },
+        {
+          title: "Texture & Thickness",
+          type: "description",
+          description: "Slightly rugged with a thin to medium profile.",
+        },
+        {
+          title: "Taste & Smell",
+          type: "description",
+          description: "Sweet and tangy, with the distinctive goji berry aroma.",
+        },
+        {
+          title: "Color",
+          type: "description",
+          description: "Reddish-brown to dark brown.",
+        },
+        {
+          title: "Burn Rate",
+          type: "bar",
+          bar: {
+            labels: BAR_LABELS.speed,
+            value: 50, // Medium
+          },
         },
       ],
     },
@@ -449,7 +639,6 @@ const DOCK_DATA = {
   },
 
   end: {
-
     open: {
       id: "open",
       title: "Open",
@@ -460,7 +649,8 @@ const DOCK_DATA = {
         {
           title: "Description",
           type: "description",
-          description: "As the name suggests, the end is left open, exposing the cannabis inside. It's similar to the end of a traditional cigarette.",
+          description:
+            "As the name suggests, the end is left open, exposing the cannabis inside. It's similar to the end of a traditional cigarette.",
         },
         {
           title: "Benefits",
@@ -546,7 +736,7 @@ const DOCK_DATA = {
         {
           title: "Description",
           type: "description",
-          description: "Shattery shatter shatter.",
+          description: "A stable, glass-like concentrate that can be fragmented and dispersed within pre-rolls to elevate THC levels and provide a consistent burn.",
         },
       ],
     },
@@ -561,7 +751,7 @@ const DOCK_DATA = {
         {
           title: "Description",
           type: "description",
-          description: "Hashy hash hash.",
+          description: "Compressed trichomes forming a pliable concentrate, introducing a traditional and robust flavor to pre-rolls and enhancing the overall potency.",
         },
       ],
     },
@@ -576,7 +766,7 @@ const DOCK_DATA = {
         {
           title: "Description",
           type: "description",
-          description: "Kiefy kief kief.",
+          description: "Trichome-rich granules that, when sprinkled into pre-rolls, can enhance potency and flavor due to their concentrated cannabinoid and terpene content.",
         },
       ],
     },
@@ -591,7 +781,7 @@ const DOCK_DATA = {
         {
           title: "Description",
           type: "description",
-          description: "Diamondy diamonds diamonds.",
+          description: "Ultra-pure THC or CBD crystals, offering a potent addition to pre-rolls and the potential for controlled dosing due to their consistent concentration.",
         },
       ],
     },
@@ -606,7 +796,7 @@ const DOCK_DATA = {
         {
           title: "Description",
           type: "description",
-          description: "Isolate isolate isolate.",
+          description: "Nearly 100% pure CBD or THC in crystalline form, elevating the potency of pre-rolls without altering the flavor profile.",
         },
       ],
     },

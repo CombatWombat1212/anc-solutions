@@ -23,6 +23,13 @@ const FILTER_DATA = {
       DOCK_DATA.filter.foam_full,
     ],
   },
+  blunt: {
+    dock: [
+      DOCK_DATA.filter.wood_w,
+      DOCK_DATA.filter.glass,
+      DOCK_DATA.filter.ceramic,
+    ],
+  },
 };
 
 export default FILTER_DATA;
