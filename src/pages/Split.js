@@ -56,6 +56,8 @@ function Split({ view, type }) {
       )}
     </>
   );
+
+
 }
 
 const checkPaperRowType = (view, rowIndex, columns) => {

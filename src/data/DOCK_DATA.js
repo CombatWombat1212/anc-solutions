@@ -3,6 +3,7 @@ import { END_DOCK_IMGS } from "./END_IMGS";
 import { FILTER_DOCK_IMGS } from "./FILTER_IMGS";
 import { PAPER_DOCK_IMGS } from "./PAPER_IMGS";
 import { SOLID_DOCK_IMGS } from "./SOLID_IMGS";
+import URL_PREFIX from "./WEBSITE_DATA";
 
 const DOCK_DATA = {
   paper: {
@@ -366,79 +367,173 @@ const DOCK_DATA = {
         },
       ],
     },
+
+    cardboard: {
+      id: "cardboard",
+      title: "Cardboard",
+      img: FILTER_DOCK_IMGS.cardboard,
+      link: { dock: "cardboard" },
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description: "Comprises multiple layers of cardboard compressed together, creating channels for air and smoke to pass through.",
+        },
+        {
+          title: "Benefits",
+          type: "description",
+          description:
+            "Provides a robust structure and good durability due to the compressed nature. Effective at filtering larger particles and ensuring a consistent draw.",
+        },
+      ],
+    },
+    cardboard_w: {
+      id: "cardboard_w",
+      title: "Cardboard W",
+      img: FILTER_DOCK_IMGS.cardboard_w,
+      link: { dock: "cardboard_w" },
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description:
+            "Cardboard folded into a ‘W’ or 'Z' shape inside the cylindrical filter. This design is meant to increase the surface area inside the filter.",
+        },
+        {
+          title: "Benefits",
+          type: "description",
+          description:
+            "Better at cooling the smoke than the 'I' type due to increased surface area, and offers improved filtration of fine particles. Can also create a more consistent airflow.",
+        },
+      ],
+    },
+
+    foam_hallow: {
+      id: "foam_hallow",
+      title: "Foam Hallow",
+      img: FILTER_DOCK_IMGS.foam_hallow,
+      link: { dock: "foam_hallow" },
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description: "Made from a foam material, typically with a hollow tip or opening for improved airflow.",
+        },
+        {
+          title: "Benefits",
+          type: "description",
+          description:
+            "Lightweight and can provide a cooler and smoother smoking experience due to the foam's insulating properties. The hollow tip can also offer a more consistent draw.",
+        },
+      ],
+    },
+
+    foam_full: {
+      id: "foam_full",
+      title: "Foam Full",
+      img: FILTER_DOCK_IMGS.foam_full,
+      link: { dock: "foam_full" },
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description: "A solid foam filter without a hollow tip.",
+        },
+        {
+          title: "Benefits",
+          type: "description",
+          description: "Offers a good balance between filtration and cooling of the smoke. The foam's consistency can also provide an even draw.",
+        },
+      ],
+    },
   },
 
-
-
-
-
   end: {
+
+    open: {
+      id: "open",
+      title: "Open",
+      img: END_DOCK_IMGS.open,
+      link: { dock: "open" },
+
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description: "As the name suggests, the end is left open, exposing the cannabis inside. It's similar to the end of a traditional cigarette.",
+        },
+        {
+          title: "Benefits",
+          type: "description",
+          description:
+            "Allows for easy and immediate lighting. The open end can also provide assurance to users about the quality and consistency of the cannabis inside, as they can see it directly.",
+        },
+      ],
+    },
+
     crown: {
       id: "crown",
       title: "Crown",
-      img: END_DOCK_IMGS.crown, 
+      img: END_DOCK_IMGS.crown,
       link: { dock: "crown" },
-  
+
       stats: [
         {
           title: "Description",
           type: "description",
-          description: "This end style features a series of small folds or pleats that come together in a pattern resembling a crown."
+          description: "This end style features a series of small folds or pleats that come together in a pattern resembling a crown.",
         },
         {
           title: "Benefits",
           type: "description",
-          description: "The Dutch Crown provides a sophisticated and elegant appearance, making it a distinctive choice for premium pre-rolls. Its design can also offer a secure seal, helping to preserve the freshness of the cannabis inside."
-        }
-      ]
+          description:
+            "The Dutch Crown provides a sophisticated and elegant appearance, making it a distinctive choice for premium pre-rolls. Its design can also offer a secure seal, helping to preserve the freshness of the cannabis inside.",
+        },
+      ],
     },
-  
+
     punched: {
       id: "punched",
       title: "Punched",
-      img: END_DOCK_IMGS.punched, 
+      img: END_DOCK_IMGS.punched,
       link: { dock: "punched" },
-  
+
       stats: [
         {
           title: "Description",
           type: "description",
-          description: "The end is sealed by pressing or 'punching' it closed. This creates a flat, sealed end."
+          description: "The end is sealed by pressing or 'punching' it closed. This creates a flat, sealed end.",
         },
         {
           title: "Benefits",
           type: "description",
-          description: "Offers a clean and neat appearance, potentially protecting the cannabis inside from external contaminants and preserving freshness for a longer time."
-        }
-      ]
+          description:
+            "Offers a clean and neat appearance, potentially protecting the cannabis inside from external contaminants and preserving freshness for a longer time.",
+        },
+      ],
     },
-  
+
     twisted: {
       id: "twisted",
       title: "Twisted",
-      img: END_DOCK_IMGS.twisted, 
+      img: END_DOCK_IMGS.twisted,
       link: { dock: "twisted" },
-  
+
       stats: [
         {
           title: "Description",
           type: "description",
-          description: "The end is twisted to a close, often resembling the tip of a traditional pre-roll."
+          description: "The end is twisted to a close, often resembling the tip of a traditional pre-roll.",
         },
         {
           title: "Benefits",
           type: "description",
-          description: "This method provides a distinct, artisanal appearance, which can be seen as a sign of hand craftsmanship. The twist can be untwisted by users if they wish to inspect the contents before smoking."
-        }
-      ]
-    }
+          description:
+            "This method provides a distinct, artisanal appearance, which can be seen as a sign of hand craftsmanship. The twist can be untwisted by users if they wish to inspect the contents before smoking.",
+        },
+      ],
+    },
   },
-  
-
-
-
-
-
 
   solid: {
     shatter: {

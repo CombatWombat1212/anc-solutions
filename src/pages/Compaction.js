@@ -74,7 +74,7 @@ function CompactionVisual({ comp, index, updateCompactionItem, resizing }) {
     const visual = reference.current;
 
     setTimeout(() => {
-      const roll = visual.querySelector("#Roll");
+      const roll = visual.querySelector("#Roll") || visual.querySelector("#roll");
       const rollHeight = roll.getBoundingClientRect().height;
 
       setRollHeight(rollHeight);

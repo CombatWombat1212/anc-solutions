@@ -68,6 +68,37 @@ const FILTER_IMGS = {
       height: 525,
     },
   },
+
+  cigarette:{
+    cardboard: {
+      name: "cigarette_cardboard",
+      src: URL_PREFIX + "/assets/images/filter/cigarette_cardboard.svg",
+      alt: "",
+      width: 650,
+      height: 470,
+    },
+    cardboard_w: {
+      name: "cigarette_cardboard_w",
+      src: URL_PREFIX + "/assets/images/filter/cigarette_cardboard_w.svg",
+      alt: "",
+      width: 650,
+      height: 470,
+    },
+    foam_full: {
+      name: "cigarette_foam_full",
+      src: URL_PREFIX + "/assets/images/filter/cigarette_foam_full.svg",
+      alt: "",
+      width: 650,
+      height: 470,
+    },
+    foam_hallow: {
+      name: "cigarette_foam_hallow",
+      src: URL_PREFIX + "/assets/images/filter/cigarette_foam_hallow.svg",
+      alt: "",
+      width: 650,
+      height: 470,
+    },
+  }
 };
 
 const FILTER_DOCK_IMGS = {
@@ -113,6 +144,36 @@ const FILTER_DOCK_IMGS = {
     width: 82,
     height: 82,
   },
+  cardboard: {
+    name: "dock_cardboard",
+    src: URL_PREFIX + "/assets/images/filter/dock_cardboard.svg",
+    alt: "",
+    width: 80,
+    height: 80,
+  },
+  cardboard_w: {
+    name: "dock_cardboard_w",
+    src: URL_PREFIX + "/assets/images/filter/dock_cardboard_w.svg",
+    alt: "",
+    width: 80,
+    height: 80,
+  },
+  foam_full: {
+    name: "dock_foam_full",
+    src: URL_PREFIX + "/assets/images/filter/dock_foam_full.svg",
+    alt: "",
+    width: 80,
+    height: 80,
+  },
+  foam_hallow: {
+    name: "dock_foam_hallow",
+    src: URL_PREFIX + "/assets/images/filter/dock_foam_hallow.svg",
+    alt: "",
+    width: 80,
+    height: 80,
+  },
+
+
 };
 
 export { FILTER_DOCK_IMGS };

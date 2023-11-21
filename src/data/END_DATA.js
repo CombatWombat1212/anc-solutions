@@ -8,6 +8,9 @@ const END_DATA = {
   traditional: {
     dock: [DOCK_DATA.end.twisted, DOCK_DATA.end.punched, DOCK_DATA.end.crown],
   },
+  cigarette: {
+    dock: [DOCK_DATA.end.open, DOCK_DATA.end.punched, DOCK_DATA.end.twisted],
+  },
 };
 
 export default END_DATA;

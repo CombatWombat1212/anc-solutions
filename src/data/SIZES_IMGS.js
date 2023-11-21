@@ -53,6 +53,56 @@ const SIZES_IMGS = {
       label: "1.0g",
     },
   },
+
+
+
+  cigarette:{
+    "0.3g": {
+      name: "cigarette_0.3",
+      src: URL_PREFIX + "/assets/images/sizes/cigarette_0.3.svg",
+      alt: "",
+      width: 42,
+      height: 508,
+      label: "0.3g",
+    },
+    "0.35g": {
+      name: "cigarette_0.35",
+      src: URL_PREFIX + "/assets/images/sizes/cigarette_0.35.svg",
+      alt: "",
+      width: 42,
+      height: 508,
+      label: "0.35g",
+    },
+    "0.5g": {
+      name: "cigarette_0.5",
+      src: URL_PREFIX + "/assets/images/sizes/cigarette_0.5.svg",
+      alt: "",
+      width: 42,
+      height: 508,
+      label: "0.5g",
+    },
+    "0.7g": {
+      name: "cigarette_0.7",
+      src: URL_PREFIX + "/assets/images/sizes/cigarette_0.7.svg",
+      alt: "",
+      width: 42,
+      height: 508,
+      label: "0.7g",
+    },
+    "1.0g": {
+      name: "cigarette_1.0",
+      src: URL_PREFIX + "/assets/images/sizes/cigarette_1.0.svg",
+      alt: "",
+      width: 42,
+      height: 508,
+      label: "1.0g",
+    },
+  
+  
+  
+  },
+
+
 };
 
 export default SIZES_IMGS;
