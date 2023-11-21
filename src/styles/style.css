@@ -125,6 +125,8 @@ input, button, textarea, select {
   background-color: #1A1918;
   color: #FFFFFF;
   --transition:0.115s;
+  --viewer-modal-pad-top: 1.85rem;
+  --viewer-modal-pad-bottom: 2.15rem;
 }
 
 :root {
@@ -161,7 +163,7 @@ input, button, textarea, select {
   border: 0.125rem solid #ffffff;
   border-radius: 0rem 4rem 4rem 0rem;
   height: var(--viewer-height);
-  --viewer-inner-pad: 3rem;
+  --viewer-inner-pad: 2.85rem;
 }
 
 .viewer--content {
@@ -226,10 +228,6 @@ input, button, textarea, select {
 .viewer .sidebar--button:hover, .viewer .sidebar--button:focus, .viewer .sidebar--button.focus, .viewer .sidebar--button.hover {
   background-color: #EC0719;
   cursor: pointer;
-}
-
-.viewer .sidebar--button__schematic {
-  cursor: default !important;
 }
 
 .viewer .sidebar--icon {
@@ -336,12 +334,13 @@ input, button, textarea, select {
   --content-inner-pad-y: calc(var(--content-inner-pad-top) + var(--content-inner-pad-bottom));
   --content-inner-pad-x: 6rem;
   padding: var(--content-inner-pad-top) var(--content-inner-pad-x) var(--content-inner-pad-bottom) var(--content-inner-pad-x);
-  height: 100%;
+  height: calc(100% - var(--content-inner-pad-y));
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   --content-inner-max-height: calc(100% - var(--content-inner-pad-y));
   --content-inner-max-height_dock: calc(100% - var(--dock-height) - var(--content-inner-pad-y));
+  max-height: calc(var(--content-inner-max-height_dock) * var(--content-has-dock) + var(--content-inner-max-height) * (1 - var(--content-has-dock)));
   transition: 0.5s;
 }
 
@@ -400,8 +399,6 @@ input, button, textarea, select {
 }
 
 .viewer .content--modal__split {
-  --viewer-modal-pad-top: 1.85rem;
-  --viewer-modal-pad-bottom: 2.15rem;
   padding: var(--viewer-modal-pad-top) 2rem var(--viewer-modal-pad-bottom) 2rem;
   background-color: #1a1918;
   background-color: rgba(255, 255, 255, 0.05);
@@ -584,6 +581,14 @@ input, button, textarea, select {
   padding-right: calc(var(--bar-notch-height) + var(--bar-label-margin-top));
 }
 
+.sandbox {
+  width: 90%;
+  height: 100%;
+  margin-top: 5rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .hidden-until-fonts-loaded {
   visibility: hidden;
 }
@@ -613,7 +618,7 @@ input, button, textarea, select {
 }
 
 .selection--body {
-  height: calc(100% - var(--modal-top-margin) - var(--selection-modal-height));
+  height: calc(100% - var(--modal-top-margin) - var(--selection-modal-height) - var(--viewer-modal-pad-top) - var(--viewer-modal-pad-bottom));
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -733,8 +738,6 @@ input, button, textarea, select {
 }
 
 .selection--modal {
-  --viewer-modal-pad-top: 1.85rem;
-  --viewer-modal-pad-bottom: 2.15rem;
   padding: var(--viewer-modal-pad-top) 2rem var(--viewer-modal-pad-bottom) 2rem;
   background-color: #1a1918;
   background-color: rgba(255, 255, 255, 0.05);
@@ -998,8 +1001,6 @@ input, button, textarea, select {
 }
 
 .viewer .compaction--modal {
-  --viewer-modal-pad-top: 1.85rem;
-  --viewer-modal-pad-bottom: 2.15rem;
   padding: var(--viewer-modal-pad-top) 2rem var(--viewer-modal-pad-bottom) 2rem;
   background-color: #1a1918;
   background-color: rgba(255, 255, 255, 0.05);

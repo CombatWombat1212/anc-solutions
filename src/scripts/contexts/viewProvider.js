@@ -12,6 +12,7 @@ const ViewProvider = ({ children }) => {
     const [dockActiveObj, setDockActiveObj] = useState(false);
     const pageRef = useRef(null);
     const [pageLoading, setPageLoading] = useState(true);
+    const [previousPage, setPreviousPage] = useState({page: "selection", type: false});
 
 
     const view = {

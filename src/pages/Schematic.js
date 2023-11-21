@@ -3,13 +3,13 @@ import Graphic from "../components/Graphic";
 import SCHEMATIC_IMGS from "../data/SCHEMATIC_IMGS";
 import SVG from "react-inlinesvg";
 import PRODUCT_DATA, { PAGE_DATA } from "../data/PRODUCT_DATA";
-import { HARDCODED_PAGES } from "../data/LAYOUT_DATA";
+// import { HARDCODED_PAGES } from "../data/LAYOUT_DATA";
 import { SelectionHead } from "./Selection";
 
 function Schematic({ view }) {
   const img = SCHEMATIC_IMGS[view.type];
-  // const options = Object.values(PRODUCT_DATA[view.type].pages).filter((x) => x.level == "sub");
-  const options = Object.values(PAGE_DATA).filter((page) => HARDCODED_PAGES[view.type].includes(page.id));
+  const options = Object.values(PRODUCT_DATA[view.type].pages).filter((x) => x.level == "sub");
+  // const options = Object.values(PAGE_DATA).filter((page) => HARDCODED_PAGES[view.type].includes(page.id));
 
   const [components, setComponents] = useState(false);
   const [loaded, setLoaded] = useState(false);

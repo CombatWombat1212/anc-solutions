@@ -23,8 +23,8 @@ $viewer-border-radius: 0rem $viewer-border-radius_val $viewer-border-radius_val 
 
 @mixin viewer-modal{
 
-  --viewer-modal-pad-top: 1.85rem;
-  --viewer-modal-pad-bottom: 2.15rem;
+  // --viewer-modal-pad-top: 1.85rem;
+  // --viewer-modal-pad-bottom: 2.15rem;
 
   padding: var(--viewer-modal-pad-top) 2rem var(--viewer-modal-pad-bottom) 2rem;
   // padding: 1.6rem 1.75rem 1.9rem 1.75rem;
@@ -55,7 +55,8 @@ $viewer-border-radius: 0rem $viewer-border-radius_val $viewer-border-radius_val 
   // width: 85%; //TODO: this is temporary
   height: var(--viewer-height); //TODO: this is temporary
   
-  --viewer-inner-pad: 3rem;
+  // --viewer-inner-pad: 3rem;
+  --viewer-inner-pad: 2.85rem;
   
   &--content {
     border-radius: $viewer-border-radius;

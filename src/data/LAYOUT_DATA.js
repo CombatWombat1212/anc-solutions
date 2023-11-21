@@ -3,16 +3,16 @@
 
 
 
-const HARDCODED_PAGES = {
+// const HARDCODED_PAGES = {
 
 
-    traditional:["sizes","paper","filter","compaction","end"],
-    cigarette:["sizes","paper","filter","compaction","end"],
-    blunt:["sizes","paper","filter","solid","fluid","terpenes"],
-    infused:["sizes","paper","filter","compaction","solid","fluid","terpenes"],
+//     traditional:["sizes","paper","filter","compaction","end"],
+//     cigarette:["sizes","paper","filter","compaction","end"],
+//     blunt:["sizes","paper","filter","solid","fluid","terpenes"],
+//     infused:["sizes","paper","filter","compaction","solid","fluid","terpenes"],
 
 
-}
+// }
 
 
 
@@ -42,5 +42,5 @@ const LAYOUT_DATA = {
 
 
 
-export {HARDCODED_PAGES};
+// export {HARDCODED_PAGES};
 export default LAYOUT_DATA;

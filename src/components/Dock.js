@@ -15,7 +15,7 @@ function Dock({ view }) {
   const { page, type } = view;
 
   useEffect(() => {
-    const dock = PRODUCT_DATA[view.type].pages[view.page].dock;
+    const dock = PRODUCT_DATA[view.type]?.pages[view.page].dock;
     if (!dock) return;
     view.setDock(dock[0].id);
     view.setDockStats(dock);
@@ -49,6 +49,8 @@ function Dock({ view }) {
       {view.dockStats && view.dockStats.map((item, index) => <Item item={item} index={index} key={index} view={view} active={active} />)}
     </div>
   );
+
+
 }
 
 function Item({ item, index, view, active }) {

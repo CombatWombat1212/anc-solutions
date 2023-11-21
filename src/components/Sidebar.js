@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import PRODUCT_DATA, { PAGE_DATA } from "../data/PRODUCT_DATA";
 import { H1, H2 } from "./Text";
 import useHoverAndFocus from "../scripts/hooks/useHoverAndFocus";
-import { HARDCODED_PAGES } from "../data/LAYOUT_DATA";
+// import { HARDCODED_PAGES } from "../data/LAYOUT_DATA";
 import useAttrObserver from "../scripts/hooks/useAttrObserver";
 import Link from "./Link";
 import { useSpring, animated } from "@react-spring/web";
@@ -26,9 +26,8 @@ function Sidebar({ view }) {
   } else {
     // const options = Object.values(PAGE_DATA).filter((page) => HARDCODED_PAGES[view.type].includes(page.id));
     optionArray = (() => {
-      const options = Object.values(PAGE_DATA).filter((page) => HARDCODED_PAGES[view.type].includes(page.id));
+      const options = Object.values(PRODUCT_DATA[view.type].pages).filter((x) => x.level == "sub");
 
-      // harded coded name change for blunt, should be done a better way but good for launch
       if (view.type === "blunt") {
         return options.map((option) => {
           if (option.id === "paper") {
@@ -40,6 +39,7 @@ function Sidebar({ view }) {
 
       return options;
     })();
+
   }
 
   useEffect(() => {
@@ -52,7 +52,7 @@ function Sidebar({ view }) {
     }
   }, [panels]);
 
-  const schematic = view.page == "schematic";
+  const subpage = view.page != "selection";
 
   return (
     <div
@@ -64,48 +64,13 @@ function Sidebar({ view }) {
         return <Panel key={i} option={option} view={view} panels={panels} setPanels={setPanels} index={i} />;
       })}
 
-      {schematic && <Back view={view} />}
+      {subpage && <Back view={view} />}
     </div>
   );
 }
 
-// const AnimatedH1 = animated(YourCustomH1);
 
-// function Title({ view }) {
-//   const [copy, setCopy] = useState("Pre-Rolls");
-//   const fade = useSpring({ opacity: 1, from: { opacity: 0 } });
 
-//   useEffect(() => {
-//     let newCopy = "Pre-Rolls"; // Default value
-//     if (view.type && typeof view.type === "string") {
-//       newCopy = view.type
-//         .split(" ")
-//         .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-//         .join(" ");
-//     }
-
-//     setCopy(newCopy);
-//   }, [view.type]);
-
-//   // Apply fade-out and fade-in effect when 'copy' changes
-//   useEffect(() => {
-//     const fadeOutIn = async () => {
-//       await new Promise(resolve => {
-//         fade.opacity.start({ to: 0, reset: true, onRest: resolve });
-//       });
-
-//       fade.opacity.start({ to: 1 });
-//     };
-
-//     fadeOutIn();
-//   }, [copy, fade.opacity]);
-
-//   return (
-//     <div className="sidebar--title sidebar--panel">
-//       <AnimatedH1 style={fade}>{copy}</AnimatedH1>
-//     </div>
-//   );
-// }
 function Title({ view }) {
   const copy =
     view.type && typeof view.type === "string"
@@ -143,7 +108,7 @@ function Panel({ view, option, setPanels, index }) {
   const isSchematic = view.page == "schematic" ? true : false;
 
   const handleClick = () => {
-    if (view.page == "schematic") return;
+    // if (view.page == "schematic") return;
 
     const page = view.type && option[view.type] ? option[view.type].link.page : option.link.page;
     const type = view.type && option[view.type] ? option[view.type].link.type : option.link.type;
@@ -168,7 +133,7 @@ function Panel({ view, option, setPanels, index }) {
     <Link
       className={`sidebar--panel sidebar--button sidebar--button__${schematic}`}
       reference={panelRef}
-      click={!isSchematic ? true : false}
+      // click={!isSchematic ? true : false}
       onClick={handleClick}
       data-option-id={option.id}>
       <div className="sidebar--text">

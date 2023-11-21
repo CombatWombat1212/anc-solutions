@@ -25,8 +25,8 @@ function Mask({ className, src, alt, width, height, img, style}) {
             "--mask-aspect-width": width,
             "--mask-aspect-height": height,
             "--mask-img": `url('${src}')`,
-            "mask-image": `url('${src}')`,
-            "-webkit-mask-image": `url('${src}')`,
+            maskImage: `url('${src}')`,
+            WebkitMaskImage: `url('${src}')`,
             ...style,
           }}
           alt={alt}></div>
