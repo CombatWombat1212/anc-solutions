@@ -33,7 +33,11 @@
   &--button {
     @include flex-row;
     align-items: center;
-    @include hover {
+    @include hover(".sidebar--panel-wrapper", ".sidebar--button") {
+      background-color: $col-primary;
+      cursor: pointer;
+    }
+    @include hover(".sidebar--back") {
       background-color: $col-primary;
       cursor: pointer;
     }
@@ -48,7 +52,11 @@
     margin-right: -0.25rem;
     background-color: $col-light;
 
-    @include hover(".sidebar--button", ".sidebar--icon") {
+    @include hover(".sidebar--panel-wrapper", ".sidebar--icon") {
+      transform: rotate(-90deg);
+      background-color: $col-background;
+    }
+    @include hover(".sidebar--back", ".sidebar--icon") {
       transform: rotate(-90deg);
       background-color: $col-background;
     }
@@ -56,6 +64,15 @@
   }
 
 
+
+  // &--back-wrapper {
+  //   // margin-top: auto;
+  //   // border: none;
+  //   // padding-bottom: calc(var(--viewer-inner-pad) * 0.75);
+  //   height: 100%;
+  //   @include flex-col-end;
+  //   align-items: flex-start;
+  // }
 
   &--back {
     margin-top: auto;
@@ -82,7 +99,10 @@
     margin: unset;
     background-color: $col-primary;
 
-    @include hover(".sidebar--button", ".sidebar--back-icon") {
+    @include hover(".sidebar--panel-wrapper", ".sidebar--back-icon") {
+      transform: translate(-8%);
+    }
+    @include hover(".sidebar--back", ".sidebar--back-icon") {
       transform: translate(-8%);
     }
 
@@ -94,7 +114,10 @@
     margin-right: var(--sidebar-index-margin-right);
     width: var(--sidebar-index-width);
     @include trans;
-    @include hover(".sidebar--button", ".sidebar--index") {
+    @include hover(".sidebar--panel-wrapper", ".sidebar--index") {
+      color: $col-background;
+    }
+    @include hover(".sidebar--back", ".sidebar--index") {
       color: $col-background;
     }
 
@@ -103,7 +126,10 @@
     color: $col-dim;
     margin-right: 1rem;
     @include trans;
-    @include hover(".sidebar--button", ".sidebar--name") {
+    @include hover(".sidebar--panel-wrapper", ".sidebar--name") {
+      color: $col-light;
+    }
+    @include hover(".sidebar--back", ".sidebar--name") {
       color: $col-light;
     }
     white-space: nowrap;

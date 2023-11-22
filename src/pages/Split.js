@@ -41,7 +41,13 @@ function Split({ view, type }) {
 
   
   const { graphicContainerProps } = useGraphicLoadManager(view, { count: 1 });
-  const { graphicElementProps } = useGraphicLoadTracker(graphicContainerProps);
+  const { graphicElementProps } = useGraphicLoadTracker(graphicContainerProps, {key: img.src});
+
+
+
+  
+
+
 
   return (
     <>

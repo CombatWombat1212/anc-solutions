@@ -221,11 +221,23 @@ input, button, textarea, select {
   align-items: center;
 }
 
-.viewer .sidebar--button {
+.sidebar--panel-wrapper:hover .sidebar--button, .sidebar--panel-wrapper:focus .sidebar--button, .sidebar--panel-wrapper.focus .sidebar--button, .sidebar--panel-wrapper.hover .sidebar--button {
+  background-color: #EC0719;
+  cursor: pointer;
+}
+
+.sidebar--panel-wrapper .sidebar--button {
   transition: var(--transition);
 }
 
-.viewer .sidebar--button:hover, .viewer .sidebar--button:focus, .viewer .sidebar--button.focus, .viewer .sidebar--button.hover {
+.sidebar--back {
+  transition: var(--transition);
+}
+
+.sidebar--back:hover,
+.sidebar--back:focus,
+.sidebar--back.focus,
+.sidebar--back.hover {
   background-color: #EC0719;
   cursor: pointer;
 }
@@ -242,12 +254,21 @@ input, button, textarea, select {
   background-color: #ffffff;
 }
 
-.sidebar--button:hover .sidebar--icon, .sidebar--button:focus .sidebar--icon, .sidebar--button.focus .sidebar--icon, .sidebar--button.hover .sidebar--icon {
+.sidebar--panel-wrapper:hover .sidebar--icon, .sidebar--panel-wrapper:focus .sidebar--icon, .sidebar--panel-wrapper.focus .sidebar--icon, .sidebar--panel-wrapper.hover .sidebar--icon {
   transform: rotate(-90deg);
   background-color: #1A1918;
 }
 
-.sidebar--button .sidebar--icon {
+.sidebar--panel-wrapper .sidebar--icon {
+  transition: var(--transition);
+}
+
+.sidebar--back:hover .sidebar--icon, .sidebar--back:focus .sidebar--icon, .sidebar--back.focus .sidebar--icon, .sidebar--back.hover .sidebar--icon {
+  transform: rotate(-90deg);
+  background-color: #1A1918;
+}
+
+.sidebar--back .sidebar--icon {
   transition: var(--transition);
 }
 
@@ -281,11 +302,19 @@ input, button, textarea, select {
   background-color: #EC0719;
 }
 
-.sidebar--button:hover .sidebar--back-icon, .sidebar--button:focus .sidebar--back-icon, .sidebar--button.focus .sidebar--back-icon, .sidebar--button.hover .sidebar--back-icon {
+.sidebar--panel-wrapper:hover .sidebar--back-icon, .sidebar--panel-wrapper:focus .sidebar--back-icon, .sidebar--panel-wrapper.focus .sidebar--back-icon, .sidebar--panel-wrapper.hover .sidebar--back-icon {
   transform: translate(-8%);
 }
 
-.sidebar--button .sidebar--back-icon {
+.sidebar--panel-wrapper .sidebar--back-icon {
+  transition: var(--transition);
+}
+
+.sidebar--back:hover .sidebar--back-icon, .sidebar--back:focus .sidebar--back-icon, .sidebar--back.focus .sidebar--back-icon, .sidebar--back.hover .sidebar--back-icon {
+  transform: translate(-8%);
+}
+
+.sidebar--back .sidebar--back-icon {
   transition: var(--transition);
 }
 
@@ -296,11 +325,19 @@ input, button, textarea, select {
   transition: var(--transition);
 }
 
-.sidebar--button:hover .sidebar--index, .sidebar--button:focus .sidebar--index, .sidebar--button.focus .sidebar--index, .sidebar--button.hover .sidebar--index {
+.sidebar--panel-wrapper:hover .sidebar--index, .sidebar--panel-wrapper:focus .sidebar--index, .sidebar--panel-wrapper.focus .sidebar--index, .sidebar--panel-wrapper.hover .sidebar--index {
   color: #1A1918;
 }
 
-.sidebar--button .sidebar--index {
+.sidebar--panel-wrapper .sidebar--index {
+  transition: var(--transition);
+}
+
+.sidebar--back:hover .sidebar--index, .sidebar--back:focus .sidebar--index, .sidebar--back.focus .sidebar--index, .sidebar--back.hover .sidebar--index {
+  color: #1A1918;
+}
+
+.sidebar--back .sidebar--index {
   transition: var(--transition);
 }
 
@@ -311,11 +348,19 @@ input, button, textarea, select {
   white-space: nowrap;
 }
 
-.sidebar--button:hover .sidebar--name, .sidebar--button:focus .sidebar--name, .sidebar--button.focus .sidebar--name, .sidebar--button.hover .sidebar--name {
+.sidebar--panel-wrapper:hover .sidebar--name, .sidebar--panel-wrapper:focus .sidebar--name, .sidebar--panel-wrapper.focus .sidebar--name, .sidebar--panel-wrapper.hover .sidebar--name {
   color: #ffffff;
 }
 
-.sidebar--button .sidebar--name {
+.sidebar--panel-wrapper .sidebar--name {
+  transition: var(--transition);
+}
+
+.sidebar--back:hover .sidebar--name, .sidebar--back:focus .sidebar--name, .sidebar--back.focus .sidebar--name, .sidebar--back.hover .sidebar--name {
+  color: #ffffff;
+}
+
+.sidebar--back .sidebar--name {
   transition: var(--transition);
 }
 
@@ -462,6 +507,7 @@ input, button, textarea, select {
   min-height: var(--dock-height);
   background-color: #1A1918;
   border-top: 0.125rem solid #ffffff;
+  border-bottom-right-radius: 4rem;
   transition: 0.2s;
 }
 
@@ -592,6 +638,14 @@ input, button, textarea, select {
   color: #ffffff;
   white-space: nowrap;
   padding-right: calc(var(--bar-notch-height) + var(--bar-label-margin-top));
+}
+
+.sandbox {
+  width: 90%;
+  height: 100%;
+  margin-top: 5rem;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .hidden-until-fonts-loaded {

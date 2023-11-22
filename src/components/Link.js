@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { ViewContext } from "../scripts/contexts/viewContext";
 
-function Link({ children, onClick, reference = null, click = true, loading=true, ...props }) {
+function Link({ children, onClick, action, reference = null, click = true, loading=true, ...props }) {
   const view = useContext(ViewContext);
 
   // const handleClick = (event) => {

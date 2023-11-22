@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PRODUCT_DATA, { PAGE_DATA } from "../data/PRODUCT_DATA";
 import { H1, H2 } from "./Text";
 import useHoverAndFocus from "../scripts/hooks/useHoverAndFocus";
@@ -39,7 +39,6 @@ function Sidebar({ view }) {
 
       return options;
     })();
-
   }
 
   useEffect(() => {
@@ -69,8 +68,6 @@ function Sidebar({ view }) {
   );
 }
 
-
-
 function Title({ view }) {
   const copy =
     view.type && typeof view.type === "string"
@@ -91,7 +88,6 @@ function Panel({ view, option, setPanels, index }) {
   const panelRef = useRef(null);
   const hovered = useHoverAndFocus(panelRef);
   const optionId = useAttrObserver(panelRef, "data-option-id", { bool: false });
-  const [isClickable, setIsClickable] = useState(true); // Added state for clickable
 
   useEffect(() => {
     const panel = {
@@ -105,19 +101,17 @@ function Panel({ view, option, setPanels, index }) {
     });
   }, [hovered, optionId]);
 
+  const schematic = view.page == "schematic" ? "schematic" : "other";
+  const isSchematic = view.page == "schematic" ? true : false;
+
   const handleClick = () => {
+    // if (view.page == "schematic") return;
+
     const page = view.type && option[view.type] ? option[view.type].link.page : option.link.page;
     const type = view.type && option[view.type] ? option[view.type].link.type : option.link.type;
 
-    // Check if the destination is the same as the current view
-    if (page === view.page && type === view.type) {
-      setIsClickable(false); // Make link not clickable
-      return; // Do not proceed with page change
-    } else {
-      setIsClickable(true); // Make link clickable
-      view.setPage(page);
-      view.setType(type);
-    }
+    view.setPage(page);
+    view.setType(type);
   };
 
   useEffect(() => {
@@ -128,22 +122,30 @@ function Panel({ view, option, setPanels, index }) {
   }, [view.page, view.type]);
 
   const title = option.title.long || option.title.short || option.title;
+  // const ind = String(option.index + 1).padStart(2, "0");
   const ind = String(index + 1).padStart(2, "0");
 
+  // TODO: make it so that you can't click on it if you're already on that page
+
+  const isCurrentPage =
+    view.page === (view.type && option[view.type] ? option[view.type].link.page : option.link.page) &&
+    view.type === (view.type && option[view.type] ? option[view.type].link.type : option.link.type);
+  const Tag = isCurrentPage ? "a" : Link;
+
   return (
-    <Link
-      className={`sidebar--panel sidebar--button sidebar--button__${view.page == "schematic" ? "schematic" : "other"}`}
-      reference={panelRef}
-      onClick={handleClick}
-      data-option-id={option.id}
-      click={isClickable} // Updated based on state
-    >
-      <div className="sidebar--text">
-        <H2 className="sidebar--index">{ind}</H2>
-        <H2 className="sidebar--name">{title}</H2>
-      </div>
-      <Mask className={"sidebar--icon"} img={ICON_IMGS.next}></Mask>
-    </Link>
+    <div className="sidebar--panel-wrapper">
+      <Tag
+        className={`sidebar--panel sidebar--button sidebar--button__${schematic}`}
+        reference={panelRef}
+        onClick={handleClick}
+        data-option-id={option.id}>
+        <div className="sidebar--text">
+          <H2 className="sidebar--index">{ind}</H2>
+          <H2 className="sidebar--name">{title}</H2>
+        </div>
+        <Mask className={"sidebar--icon"} img={ICON_IMGS.next}></Mask>{" "}
+      </Tag>
+    </div>
   );
 }
 
@@ -154,14 +156,14 @@ function Back({ view }) {
   };
 
   return (
-    <Link className={`sidebar--panel sidebar--button sidebar--back`} onClick={handleClick}>
-      <div className="sidebar--back-inner">
-        <div className="sidebar--back-icon-wrapper">
-          <Mask className={"sidebar--icon sidebar--back-icon"} img={ICON_IMGS.back}></Mask>
+      <Link className={`sidebar--panel sidebar--button sidebar--back`} onClick={handleClick}>
+        <div className="sidebar--back-inner">
+          <div className="sidebar--back-icon-wrapper">
+            <Mask className={"sidebar--icon sidebar--back-icon"} img={ICON_IMGS.back}></Mask>
+          </div>
+          <H2 className="sidebar--name">Back</H2>
         </div>
-        <H2 className="sidebar--name">Back</H2>
-      </div>
-    </Link>
+      </Link>
   );
 }
 

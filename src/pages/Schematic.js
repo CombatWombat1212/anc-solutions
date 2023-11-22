@@ -118,31 +118,6 @@ function Schematic({ view }) {
     });
   }, [view.side.active, components, loaded]);
 
-  // const [transitionStyle, setTransitionStyle] = useState({
-  //   '--transition': '0ms',
-  //   'opacity': '0'
-  // });
-
-  // useEffect(() => {
-  //   // First, set the transition style based on svgLoaded
-  //   setTransitionStyle({
-  //     '--transition': svgLoaded ? '200ms' : '0ms',
-  //     'opacity': '0'
-  //   });
-
-  //   // Then, after a brief timeout, update the opacity
-  //   const timeoutId = setTimeout(() => {
-  //     setTransitionStyle((prevStyle) => ({
-  //       ...prevStyle,
-  //       'opacity': svgLoaded ? '1' : '0'
-  //     }));
-  //   }, 10);
-
-  //   // Cleanup the timeout if the component unmounts
-  //   return () => clearTimeout(timeoutId);
-  // }, [svgLoaded]);
-
-
 
   return (
     <>

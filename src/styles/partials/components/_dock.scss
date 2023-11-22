@@ -43,6 +43,7 @@
     background-color: $col-background;
 
     border-top: #{$b-width} solid $col-light;
+    border-bottom-right-radius: $viewer-border-radius_val;
 
     transition: 0.2s;
 

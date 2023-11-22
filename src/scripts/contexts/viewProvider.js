@@ -1,5 +1,5 @@
 // ViewProvider.js
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { ViewContext } from './viewContext';
 
 const ViewProvider = ({ children }) => {
@@ -13,7 +13,6 @@ const ViewProvider = ({ children }) => {
     const pageRef = useRef(null);
     const [pageLoading, setPageLoading] = useState(true);
     const [previousPage, setPreviousPage] = useState({page: "selection", type: false});
-
 
     const view = {
 

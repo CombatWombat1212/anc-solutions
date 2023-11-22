@@ -5,6 +5,7 @@ import useElementHeight from "../scripts/hooks/useElementHeight";
 import { useEffect, useRef, useState } from "react";
 import useIsResizing from "../scripts/hooks/useIsResizing";
 import useAttrObserver from "../scripts/hooks/useAttrObserver";
+import { useGraphicLoadManager, useGraphicLoadTracker } from "../scripts/hooks/useGraphicLoadManager";
 
 function Compaction({ view }) {
   // Include 'loaded' state in initial state setup for compaction items
@@ -42,6 +43,8 @@ function Compaction({ view }) {
 
   const resizing = useIsResizing();
 
+  const { graphicContainerProps } = useGraphicLoadManager(view, { count: data.length });
+
   return (
     <div
       className="compaction--body"
@@ -50,7 +53,7 @@ function Compaction({ view }) {
       }}>
       {data.map((comp, index) => (
         <div className="compaction--col" key={index}>
-          <CompactionVisual comp={comp} index={index} updateCompactionItem={updateCompactionItem} resizing={resizing} />
+          <CompactionVisual comp={comp} index={index} updateCompactionItem={updateCompactionItem} resizing={resizing} {...graphicContainerProps} />
           <CompactionModal comp={comp} index={index} updateCompactionItem={updateCompactionItem} resizing={resizing} tallestModal={tallestModal} />
         </div>
       ))}
@@ -58,7 +61,7 @@ function Compaction({ view }) {
   );
 }
 
-function CompactionVisual({ comp, index, updateCompactionItem, resizing }) {
+function CompactionVisual({ comp, index, updateCompactionItem, resizing, ...props }) {
   const reference = useRef(null);
   const height = useElementHeight(reference);
   const [rollHeight, setRollHeight] = useState(0);
@@ -85,6 +88,13 @@ function CompactionVisual({ comp, index, updateCompactionItem, resizing }) {
     setLoaded(true);
   };
 
+  const { graphicElementProps, handleTrackerLoad } = useGraphicLoadTracker(props, { key: comp.image.src, dependent: rollHeight > 0 });
+
+  graphicElementProps.onLoad = () => {
+    handleTrackerLoad();
+    handleLoad();
+  };
+
   return (
     <div
       className="compaction--visual"
@@ -99,7 +109,7 @@ function CompactionVisual({ comp, index, updateCompactionItem, resizing }) {
           width={comp.image.width}
           height={comp.image.height}
           alt={comp.image.alt}
-          onLoad={handleLoad}
+          {...graphicElementProps}
         />
       </div>
 
