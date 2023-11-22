@@ -72,14 +72,8 @@ function Selection({ view }) {
   }, [loaded, tallestModal]);
 
 
-  // useEffect(() => {
-  //   console.log(tallestModal);
-  // }, [tallestModal]);
-
-
   return (
     <>
-      {/* <div className={`selection--body selection--body__${ready ? "loaded" : "loading"}`} */}
       <div
         className={`selection--body`}
         style={{

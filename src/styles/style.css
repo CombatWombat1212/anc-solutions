@@ -329,7 +329,7 @@ input, button, textarea, select {
 }
 
 .viewer .content--inner {
-  --content-inner-pad-top: 6rem;
+  --content-inner-pad-top: 5.5rem;
   --content-inner-pad-bottom: 4.5rem;
   --content-inner-pad-y: calc(var(--content-inner-pad-top) + var(--content-inner-pad-bottom));
   --content-inner-pad-x: 6rem;
@@ -341,12 +341,12 @@ input, button, textarea, select {
   --content-inner-max-height: calc(100% - var(--content-inner-pad-y));
   --content-inner-max-height_dock: calc(100% - var(--dock-height) - var(--content-inner-pad-y));
   max-height: calc(var(--content-inner-max-height_dock) * var(--content-has-dock) + var(--content-inner-max-height) * (1 - var(--content-has-dock)));
-  transition: 0.5s;
+  transition: opacity 0.25s;
 }
 
 @media screen and (max-width: 91.9375em) {
   .viewer .content--inner {
-    --content-inner-pad-top: 6rem;
+    --content-inner-pad-top: 5.25rem;
     --content-inner-pad-bottom: 4.5rem;
     --content-inner-pad-x: 4rem;
   }

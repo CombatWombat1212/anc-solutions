@@ -3,7 +3,7 @@
   }
 
   &--inner {
-    --content-inner-pad-top: 6rem;
+    --content-inner-pad-top: 5.5rem;
     --content-inner-pad-bottom: 4.5rem;
     --content-inner-pad-y: calc(var(--content-inner-pad-top) + var(--content-inner-pad-bottom));
     // --content-inner-pad-x: 8rem;
@@ -22,7 +22,7 @@
 
 
     @include xxl-down{
-      --content-inner-pad-top: 6rem;
+      --content-inner-pad-top: 5.25rem;
       --content-inner-pad-bottom: 4.5rem;
       --content-inner-pad-x: 4rem;
   
@@ -30,7 +30,8 @@
 
 
 
-    transition:  0.5s;
+    transition:  opacity 0.25s;
+
     &__loading{
       opacity:0;
     }

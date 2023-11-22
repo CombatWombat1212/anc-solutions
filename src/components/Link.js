@@ -5,19 +5,19 @@ function Link({ children, onClick, reference = null, click = true, ...props }) {
   const view = useContext(ViewContext);
 
   const handleClick = (event) => {
-    // if (!click) return;
-
-    // view.setPageLoading(true);
-
-    // if (!onClick) return;
-
-    // setTimeout(() => {
-    // onClick(event);
-    // }, 500);
-
     if (!click) return;
+
+    view.setPageLoading(true);
+
     if (!onClick) return;
-    onClick(event);
+
+    setTimeout(() => {
+      onClick(event);
+    }, 250);
+
+    // if (!click) return;
+    // if (!onClick) return;
+    // onClick(event);
   };
 
   return (
