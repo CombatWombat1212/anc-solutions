@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80.14 80.14">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-linejoin: bevel;
+        stroke-width: 2px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #fff;
+      }
+
+      .cls-2 {
+        stroke-linecap: square;
+        stroke-miterlimit: 10;
+        stroke-width: 5px;
+      }
+    </style>
+  </defs>
+  <circle id="Ellipse_8" data-name="Ellipse 8" class="cls-2" cx="40.07" cy="40.07" r="37.57"/>
+  <path id="Path_41" data-name="Path 41" class="cls-1" d="m27.57,4.64L3.9,50.28,43.72,4.64l-11.09,72.26L60.35,8.44l1.37,62.33,15.92-30.7"/>
+</svg>
