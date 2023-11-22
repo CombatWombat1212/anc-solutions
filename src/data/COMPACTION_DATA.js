@@ -61,6 +61,32 @@ const COMPACTION_DATA = {
       },
     ],
   },
+  infused: {
+    data: [
+      {
+        title: "High Compaction",
+        label: "High",
+        index: 0,
+        image: COMPACTION_IMGS.infused.high,
+        description: COMPACTION_HIGH,
+      },
+      {
+        title: "Medium Compaction",
+        label: "Medium",
+        index: 1,
+        image: COMPACTION_IMGS.infused.medium,
+        description: COMPACTION_MEDIUM,
+      },
+      {
+        title: "Low Compaction",
+        label: "Low",
+        index: 2,
+        image: COMPACTION_IMGS.infused.low,
+        description: COMPACTION_LOW,
+      },
+    ],
+  },
+
 };
 
 export default COMPACTION_DATA;

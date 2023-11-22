@@ -122,6 +122,49 @@ const FILTER_IMGS = {
       height: 468,
     },
   },
+
+
+  infused: {
+    bamboo_w: {
+      name: "infused_bamboo_w",
+      src: URL_PREFIX + "/assets/images/filter/traditional_bamboo_w.svg",
+      alt: "",
+      width: 650,
+      height: 525,
+    },
+    ceramic: {
+      name: "infused_ceramic",
+      src: URL_PREFIX + "/assets/images/filter/traditional_ceramic.svg",
+      alt: "",
+      width: 650,
+      height: 525,
+    },
+    aluminum: {
+      name: "infused_aluminum",
+      src: URL_PREFIX + "/assets/images/filter/traditional_ceramic.svg",
+      alt: "",
+      width: 650,
+      height: 525,
+    },
+    glass: {
+      name: "infused_glass",
+      src: URL_PREFIX + "/assets/images/filter/traditional_glass.svg",
+      alt: "",
+      width: 650,
+      height: 525,
+    },
+    wood_w: {
+      name: "infused_wood_w",
+      src: URL_PREFIX + "/assets/images/filter/traditional_wood_w.svg",
+      alt: "",
+      width: 650,
+      height: 525,
+    },
+  },
+
+
+
+
 };
 
 const FILTER_DOCK_IMGS = {

@@ -15,6 +15,15 @@ const FLUID_DATA = {
           ],
         },
       
+        infused: {
+          dock: [
+            DOCK_DATA.fluid.distillate,
+            DOCK_DATA.fluid.htfse,
+            DOCK_DATA.fluid.fso,
+            DOCK_DATA.fluid.live_rosin,
+          ],
+        },
+      
     
 
 

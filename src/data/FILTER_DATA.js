@@ -30,6 +30,15 @@ const FILTER_DATA = {
       DOCK_DATA.filter.ceramic,
     ],
   },
+  infused: {
+    dock: [
+      DOCK_DATA.filter.wood_w,
+      DOCK_DATA.filter.bamboo_w,
+      DOCK_DATA.filter.glass,
+      DOCK_DATA.filter.aluminum,
+      DOCK_DATA.filter.ceramic,
+    ],
+  },
 };
 
 export default FILTER_DATA;

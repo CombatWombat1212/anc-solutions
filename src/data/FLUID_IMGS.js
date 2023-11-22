@@ -1,9 +1,7 @@
 import URL_PREFIX from "./WEBSITE_DATA";
 
 const FLUID_IMGS = {
-
-  blunt:{
-
+  blunt: {
     distillate: {
       name: "blunt_distillate",
       src: "/assets/images/fluid/blunt_distillate.svg",
@@ -32,8 +30,37 @@ const FLUID_IMGS = {
       width: 570,
       height: 562,
     },
+  },
 
-
+  infused: {
+    distillate: {
+      name: "infused_distillate",
+      src: URL_PREFIX + "/assets/images/fluid/infused_distillate.svg",
+      alt: "",
+      width: 500,
+      height: 500,
+    },
+    fso: {
+      name: "infused_fso",
+      src: URL_PREFIX + "/assets/images/fluid/infused_fso.svg",
+      alt: "",
+      width: 500,
+      height: 500,
+    },
+    htfse: {
+      name: "infused_htfse",
+      src: URL_PREFIX + "/assets/images/fluid/infused_htfse.svg",
+      alt: "",
+      width: 500,
+      height: 500,
+    },
+    live_rosin: {
+      name: "infused_live_rosin",
+      src: URL_PREFIX + "/assets/images/fluid/infused_live_rosin.svg",
+      alt: "",
+      width: 500,
+      height: 500,
+    },
   },
 };
 

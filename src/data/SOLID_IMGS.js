@@ -1,14 +1,6 @@
 import URL_PREFIX from "./WEBSITE_DATA";
 
 const SOLID_IMGS = {
-  infused: {
-    name: "infused_shatter",
-    src: URL_PREFIX + "/assets/images/solid/infused_shatter.svg",
-    alt: "",
-    width: 496,
-    height: 499,
-  },
-
   blunt: {
     diamonds: {
       name: "blunt_diamonds",
@@ -44,6 +36,44 @@ const SOLID_IMGS = {
       alt: "",
       width: 580,
       height: 561,
+    },
+  },
+
+  infused: {
+    diamonds: {
+      name: "infused_diamonds",
+      src: URL_PREFIX + "/assets/images/solid/infused_diamonds.svg",
+      alt: "",
+      width: 500,
+      height: 500,
+    },
+    hash: {
+      name: "infused_hash",
+      src: URL_PREFIX + "/assets/images/solid/infused_hash.svg",
+      alt: "",
+      width: 500,
+      height: 500,
+    },
+    isolate: {
+      name: "infused_isolate",
+      src: URL_PREFIX + "/assets/images/solid/infused_isolate.svg",
+      alt: "",
+      width: 500,
+      height: 500,
+    },
+    kief: {
+      name: "infused_kief",
+      src: URL_PREFIX + "/assets/images/solid/infused_kief.svg",
+      alt: "",
+      width: 500,
+      height: 500,
+    },
+    shatter: {
+      name: "infused_shatter",
+      src: URL_PREFIX + "/assets/images/solid/infused_shatter.svg",
+      alt: "",
+      width: 500,
+      height: 500,
     },
   },
 };

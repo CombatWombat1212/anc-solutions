@@ -16,6 +16,10 @@ const SIZES_DATA = {
     images: SIZES_IMGS.blunt,
   },
 
+  infused: {
+    images: SIZES_IMGS.infused,
+  },
+
 
 };
 

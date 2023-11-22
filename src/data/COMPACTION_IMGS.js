@@ -48,6 +48,33 @@ const COMPACTION_IMGS = {
       height: 507,
     },
   },
+
+  infused: {
+    high: {
+      name: "infused_high",
+      src: URL_PREFIX + "/assets/images/compaction/traditional_high.svg",
+      alt: "",
+      width: 58,
+      height: 490,
+    },
+    low: {
+      name: "infused_low",
+      src: URL_PREFIX + "/assets/images/compaction/traditional_low.svg",
+      alt: "",
+      width: 58,
+      height: 490,
+    },
+    medium: {
+      name: "infused_medium",
+      src: URL_PREFIX + "/assets/images/compaction/traditional_medium.svg",
+      alt: "",
+      width: 58,
+      height: 490,
+    },
+  },
+
+
+
 };
 
 export default COMPACTION_IMGS;

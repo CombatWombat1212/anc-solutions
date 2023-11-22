@@ -9,12 +9,20 @@ const TERPENES_DATA = {
 
     blunt: {
         dock: [
-          DOCK_DATA.terpenes.botanical,
-          DOCK_DATA.terpenes.live_resin,
-          DOCK_DATA.terpenes.live_infusion,
-        DOCK_DATA.terpenes.cured_infusion,
+                DOCK_DATA.terpenes.botanical,
+                DOCK_DATA.terpenes.live_resin,
+                DOCK_DATA.terpenes.live_infusion,
+                DOCK_DATA.terpenes.cured_infusion,
+            ],
+        },
+    infused: {
+        dock: [
+            DOCK_DATA.terpenes.botanical,
+            DOCK_DATA.terpenes.live_resin,
+            DOCK_DATA.terpenes.live_infusion,
+            DOCK_DATA.terpenes.cured_infusion,
         ],
-      },
+    },
     
 
 };

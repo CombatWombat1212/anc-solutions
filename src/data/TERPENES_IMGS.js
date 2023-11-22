@@ -31,6 +31,37 @@ const TERPENES_IMGS = {
       height: 561,
     },
   },
+
+  infused: {
+    botanical: {
+      name: "infused_botanical",
+      src: URL_PREFIX + "/assets/images/terpenes/infused_botanical.svg",
+      alt: "",
+      width: 500,
+      height: 500,
+    },
+    cured_infusion: {
+      name: "infused_cured_infusion",
+      src: URL_PREFIX + "/assets/images/terpenes/infused_cured_infusion.svg",
+      alt: "",
+      width: 500,
+      height: 500,
+    },
+    live_infusion: {
+      name: "infused_live_infusion",
+      src: URL_PREFIX + "/assets/images/terpenes/infused_live_infusion.svg",
+      alt: "",
+      width: 500,
+      height: 500,
+    },
+    live_resin: {
+      name: "infused_live_resin",
+      src: URL_PREFIX + "/assets/images/terpenes/infused_live_resin.svg",
+      alt: "",
+      width: 500,
+      height: 500,
+    },
+  },
 };
 
 const TERPENES_DOCK_IMGS = {
