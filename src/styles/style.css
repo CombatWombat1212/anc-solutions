@@ -640,14 +640,6 @@ input, button, textarea, select {
   padding-right: calc(var(--bar-notch-height) + var(--bar-label-margin-top));
 }
 
-.sandbox {
-  width: 90%;
-  height: 100%;
-  margin-top: 5rem;
-  margin-right: auto;
-  margin-left: auto;
-}
-
 .hidden-until-fonts-loaded {
   visibility: hidden;
 }

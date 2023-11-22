@@ -143,7 +143,7 @@ function Panel({ view, option, setPanels, index }) {
           <H2 className="sidebar--index">{ind}</H2>
           <H2 className="sidebar--name">{title}</H2>
         </div>
-        <Mask className={"sidebar--icon"} img={ICON_IMGS.next}></Mask>{" "}
+        <Mask className={"sidebar--icon"} img={ICON_IMGS.next}></Mask>
       </Tag>
     </div>
   );
