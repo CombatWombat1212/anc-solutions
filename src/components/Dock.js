@@ -7,6 +7,8 @@ import Mask from "./Mask";
 import createUpdateConditions from "../scripts/createUpdateConditions";
 import DOCK_DATA from "../data/DOCK_DATA";
 import Link from "./Link";
+import useKeyToggle from "../scripts/hooks/useKeyToggle";
+import useDelayedProps from "../scripts/hooks/useDelayedProps";
 
 // data is the array of dock elements
 // view.dock is the id of the active dock element
@@ -38,18 +40,27 @@ function Dock({ view }) {
   const dockItemCount = view.dockStats.length;
   const dockIsFull = dockItemCount >= dockMinItems && dockItemCount <= dockMaxItems ? 1 : 0;
 
+
+
+
+  const on = useKeyToggle();
+  // const delayedOn = useDelayedProps(on, 210)
+  
+
   return (
     <div
-      className="dock"
+      className={`dock`
+      // + `dock__${delayedOn ? 'active' : 'inactive'}`
+    }
       style={{
         "--dock-item-count": dockItemCount,
         "--dock-max-items": dockMaxItems,
         "--dock-min-items": dockMinItems,
         "--dock-is-full": dockIsFull,
       }}>
-      {/* <div className="dock--inner"> */}
+      <div className={`dock--inner dock--inner__${!view.pageLoading ? 'active' : 'inactive'}`}>
         {view.dockStats && view.dockStats.map((item, index) => <Item item={item} index={index} key={index} view={view} active={active} />)}
-      {/* </div> */}
+      </div>
     </div>
   );
 }

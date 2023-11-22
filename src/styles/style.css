@@ -447,18 +447,30 @@ input, button, textarea, select {
 
 .dock {
   --dock-hover-transition: 0s;
+  border-bottom-right-radius: 4rem;
+  --dock-items: Max(Min(var(--dock-item-count), var(--dock-max-items)), var(--dock-min-items));
+  --item-width: calc((((12 / var(--dock-items) )) / 12)  * 100%);
+  margin-top: -0.125rem;
+}
+
+.dock--inner {
+  display: flex;
+  flex-direction: row;
+  position: relative;
   width: 100%;
   height: var(--dock-height);
   min-height: var(--dock-height);
   background-color: #1A1918;
-  border-bottom-right-radius: 4rem;
-  display: flex;
-  flex-direction: row;
-  --dock-items: Max(Min(var(--dock-item-count), var(--dock-max-items)), var(--dock-min-items));
-  --item-width: calc((((12 / var(--dock-items) )) / 12)  * 100%);
-  position: relative;
   border-top: 0.125rem solid #ffffff;
-  margin-top: -0.125rem;
+  transition: 0.2s;
+}
+
+.dock--inner__active {
+  opacity: 1;
+}
+
+.dock--inner__inactive {
+  opacity: 0;
 }
 
 .dock--item {
@@ -580,14 +592,6 @@ input, button, textarea, select {
   color: #ffffff;
   white-space: nowrap;
   padding-right: calc(var(--bar-notch-height) + var(--bar-label-margin-top));
-}
-
-.sandbox {
-  width: 90%;
-  height: 100%;
-  margin-top: 5rem;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 .hidden-until-fonts-loaded {

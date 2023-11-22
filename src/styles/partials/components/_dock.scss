@@ -7,30 +7,64 @@
   // --dock-height: 14rem;
   --dock-hover-transition: 0s;
 
-  width: 100%;
-  height: var(--dock-height);
-  min-height: var(--dock-height);
+  // width: 100%;
+  // height: var(--dock-height);
+  // min-height: var(--dock-height);
 
-  background-color: $col-background;
+  // background-color: $col-background;
   border-bottom-right-radius: $viewer-border-radius_val;
-  @include flex-row;
+  // @include flex-row;
 
   --dock-items: Max(Min(var(--dock-item-count), var(--dock-max-items)), var(--dock-min-items));
   --item-width: #{col-width_calc(var(--dock-items))};
-  position: relative;
-  border-top: #{$b-width} solid $col-light;
+  // position: relative;
+  // border-top: #{$b-width} solid $col-light;
   margin-top: -$b-width;
 
+  // overflow: hidden;
 
-  // &--inner{
-  //   @include flex-row;
-  //   position: relative;
 
-  //   width: 100%;
-  //   height: var(--dock-height);
-  //   min-height: var(--dock-height);
-  
+  // &__active {
+  //   overflow: visible;
   // }
+  
+  // &__inactive {
+  //   overflow: hidden;
+  // }
+
+
+  &--inner{
+    @include flex-row;
+    position: relative;
+
+    width: 100%;
+    height: var(--dock-height);
+    min-height: var(--dock-height);
+    background-color: $col-background;
+
+    border-top: #{$b-width} solid $col-light;
+
+    transition: 0.2s;
+
+    // &__active {
+    //   transform: translateY( 0rem );
+    // }
+    
+    // &__inactive {
+    //   transform: translateY( calc(var(--dock-height) + #{$b-width}));
+    // }
+
+    &__active {
+      opacity: 1;
+    }
+    
+    &__inactive {
+      opacity: 0;
+    }
+
+
+
+  }
 
 
 

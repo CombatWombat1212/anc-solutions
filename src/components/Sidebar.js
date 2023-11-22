@@ -91,7 +91,8 @@ function Panel({ view, option, setPanels, index }) {
   const panelRef = useRef(null);
   const hovered = useHoverAndFocus(panelRef);
   const optionId = useAttrObserver(panelRef, "data-option-id", { bool: false });
-  
+  const [isClickable, setIsClickable] = useState(true); // Added state for clickable
+
   useEffect(() => {
     const panel = {
       ref: panelRef,
@@ -104,17 +105,19 @@ function Panel({ view, option, setPanels, index }) {
     });
   }, [hovered, optionId]);
 
-  const schematic = view.page == "schematic" ? "schematic" : "other";
-  const isSchematic = view.page == "schematic" ? true : false;
-
   const handleClick = () => {
-    // if (view.page == "schematic") return;
-
     const page = view.type && option[view.type] ? option[view.type].link.page : option.link.page;
     const type = view.type && option[view.type] ? option[view.type].link.type : option.link.type;
 
-    view.setPage(page);
-    view.setType(type);
+    // Check if the destination is the same as the current view
+    if (page === view.page && type === view.type) {
+      setIsClickable(false); // Make link not clickable
+      return; // Do not proceed with page change
+    } else {
+      setIsClickable(true); // Make link clickable
+      view.setPage(page);
+      view.setType(type);
+    }
   };
 
   useEffect(() => {
@@ -125,17 +128,16 @@ function Panel({ view, option, setPanels, index }) {
   }, [view.page, view.type]);
 
   const title = option.title.long || option.title.short || option.title;
-  // const ind = String(option.index + 1).padStart(2, "0");
   const ind = String(index + 1).padStart(2, "0");
-
 
   return (
     <Link
-      className={`sidebar--panel sidebar--button sidebar--button__${schematic}`}
+      className={`sidebar--panel sidebar--button sidebar--button__${view.page == "schematic" ? "schematic" : "other"}`}
       reference={panelRef}
-      // click={!isSchematic ? true : false}
       onClick={handleClick}
-      data-option-id={option.id}>
+      data-option-id={option.id}
+      click={isClickable} // Updated based on state
+    >
       <div className="sidebar--text">
         <H2 className="sidebar--index">{ind}</H2>
         <H2 className="sidebar--name">{title}</H2>
