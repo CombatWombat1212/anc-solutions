@@ -1,13 +1,10 @@
-
-:root{
-    --dock-height: 14rem;
-    
+:root {
+  --dock-height: 14rem;
 }
 
-
 .dock {
-    //   --dock-hover-transition: 0.1s;
-    // --dock-height: 14rem;
+  //   --dock-hover-transition: 0.1s;
+  // --dock-height: 14rem;
   --dock-hover-transition: 0s;
 
   width: 100%;
@@ -24,6 +21,19 @@
   border-top: #{$b-width} solid $col-light;
   margin-top: -$b-width;
 
+
+  // &--inner{
+  //   @include flex-row;
+  //   position: relative;
+
+  //   width: 100%;
+  //   height: var(--dock-height);
+  //   min-height: var(--dock-height);
+  
+  // }
+
+
+
   &--item {
     @include flex-col;
     text-align: center;
@@ -37,8 +47,7 @@
 
     @include no-select;
     cursor: pointer;
-
-}
+  }
 
   &--item-background {
     --dock-item-background-width: calc(var(--item-width) - #{$b-width});
@@ -60,7 +69,7 @@
     }
 
     &__active {
-        z-index: 100;
+      z-index: 100;
       border-color: $col-primary;
     }
 
@@ -72,6 +81,7 @@
   &--h2 {
     margin-top: -0.25rem;
     transition: var(--dock-hover-transition);
+    will-change: opacity;
 
     &__active {
       color: $col-primary;
@@ -99,3 +109,6 @@
     }
   }
 }
+
+
+// TODO: you could probably make the transition work if you took the dock items before and after the active one and made the sides that they share with the active one red when the active one is hovered, if you do that you might not be able to notice the z index change

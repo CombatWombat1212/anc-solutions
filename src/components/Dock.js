@@ -47,11 +47,11 @@ function Dock({ view }) {
         "--dock-min-items": dockMinItems,
         "--dock-is-full": dockIsFull,
       }}>
-      {view.dockStats && view.dockStats.map((item, index) => <Item item={item} index={index} key={index} view={view} active={active} />)}
+      {/* <div className="dock--inner"> */}
+        {view.dockStats && view.dockStats.map((item, index) => <Item item={item} index={index} key={index} view={view} active={active} />)}
+      {/* </div> */}
     </div>
   );
-
-
 }
 
 function Item({ item, index, view, active }) {
@@ -76,7 +76,7 @@ function Item({ item, index, view, active }) {
 
   return (
     <>
-      <Link className={`dock--item dock--item__${state}`} onMouseEnter={handleHover} onMouseLeave={handleLeave} onClick={handleClick}>
+      <Link className={`dock--item dock--item__${state}`} onMouseEnter={handleHover} onMouseLeave={handleLeave} onClick={handleClick} loading={false}>
         <H2 className={`dock--h2 dock--h2__${state}`}>{item.title}</H2>
         <Mask className={`dock--graphic dock--graphic__${state}`} img={item.img} />
       </Link>
@@ -87,8 +87,6 @@ function Item({ item, index, view, active }) {
         }}></div>
     </>
   );
-
-
 }
 
 export default Dock;

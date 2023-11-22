@@ -8,6 +8,7 @@ import PAPER_IMGS from "../data/PAPER_IMGS";
 import SOLID_IMGS from "../data/SOLID_IMGS";
 import FLUID_IMGS from "../data/FLUID_IMGS";
 import TERPENES_IMGS from "../data/TERPENES_IMGS";
+import { useGraphicLoadManager, useGraphicLoadTracker } from "../scripts/hooks/useGraphicLoadManager";
 
 const DATABASE = {
   filter: FILTER_IMGS,
@@ -30,14 +31,17 @@ function Split({ view, type }) {
     img = DATABASE[view.page][view.type][view.dock] || DATABASE[view.page][view.type];
   }
 
-
   const specialty = type == "specialty" ? true : false;
   const typeProp = {
     split: true,
     specialty: specialty,
-  }
-  
+  };
+
   const { columns } = usePaper(view, modal);
+
+  
+  const { graphicContainerProps } = useGraphicLoadManager(view, { count: 1 });
+  const { graphicElementProps } = useGraphicLoadTracker(graphicContainerProps);
 
   return (
     <>
@@ -50,14 +54,18 @@ function Split({ view, type }) {
             })}
           </ContentModal>
           <ContentVisual className={`${pref}--visual`} type={typeProp}>
-            <SVG className={`${pref}--graphic content--graphic__split`} src={img.src} width={img.width} height={img.height} />
+            <SVG
+              className={`${pref}--graphic content--graphic__split`}
+              src={img.src}
+              width={img.width}
+              height={img.height}
+              {...graphicElementProps}
+            />
           </ContentVisual>
         </>
       )}
     </>
   );
-
-
 }
 
 const checkPaperRowType = (view, rowIndex, columns) => {

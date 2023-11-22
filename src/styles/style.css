@@ -507,6 +507,7 @@ input, button, textarea, select {
 .dock--h2 {
   margin-top: -0.25rem;
   transition: var(--dock-hover-transition);
+  will-change: opacity;
 }
 
 .dock--h2__active {
