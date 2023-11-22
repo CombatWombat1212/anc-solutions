@@ -1,8 +1,10 @@
 import BAR_LABELS from "./BAR_LABELS";
 import { END_DOCK_IMGS } from "./END_IMGS";
 import { FILTER_DOCK_IMGS } from "./FILTER_IMGS";
+import { FLUID_DOCK_IMGS } from "./FLUID_IMGS";
 import { PAPER_DOCK_IMGS } from "./PAPER_IMGS";
 import { SOLID_DOCK_IMGS } from "./SOLID_IMGS";
+import { TERPENES_DOCK_IMGS } from "./TERPENES_IMGS";
 import URL_PREFIX from "./WEBSITE_DATA";
 
 const DOCK_DATA = {
@@ -801,6 +803,144 @@ const DOCK_DATA = {
       ],
     },
   },
+
+
+  fluid:{
+    distillate: {
+      id: "distillate",
+      title: "Distillate",
+      img: FLUID_DOCK_IMGS.distillate,
+      link: { dock: "distillate" },
+
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description: "Highly refined oil, rich in specific cannabinoids, perfect for boosting THC or CBD levels in pre-rolls without affecting the original taste.",
+        },
+      ],
+    },
+
+    htfse: {
+      id: "htfse",
+      title: "HTFSE",
+      img: FLUID_DOCK_IMGS.htfse,
+      link: { dock: "htfse" },
+
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description: "High Terpene Full Spectrum Extract (HTFSE), a concentrate preserving the full spectrum of terpenes and cannabinoids, ideal for pre-rolls seeking to provide an authentic and holistic cannabis experience.",
+        },
+      ],
+    },
+
+    fso: {
+      id: "fso",
+      title: "FSO",
+      img: FLUID_DOCK_IMGS.fso,
+      link: { dock: "fso" },
+
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description: "Full Spectrum Oil, oil retaining all beneficial compounds from the cannabis plant, adding a comprehensive cannabinoid and terpene boost to pre-rolls.",
+        },
+      ],
+    },
+
+    live_rosin: {
+      id: "live_rosin",
+      title: "Live Rosin",
+      img: FLUID_DOCK_IMGS.live_rosin,
+      link: { dock: "live_rosin" },
+
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description: "A solvent-free concentrate that, when incorporated, introduces a clean, potent, and full-spectrum cannabinoid profile to the pre-roll.",
+        },
+      ],
+    },
+
+  },
+
+
+  
+  terpenes:{
+    botanical: {
+      id: "botanical",
+      title: "Botanical",
+      img: TERPENES_DOCK_IMGS.botanical,
+      link: { dock: "botanical" },
+
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description: "Terpenes sourced from natural plants other than cannabis, such as lavender or orange peels, adding distinct and diverse flavor profiles to pre-rolls.",
+        },
+      ],
+    },
+
+
+    live_resin: {
+      id: "live_resin",
+      title: "Live Resin",
+      img: TERPENES_DOCK_IMGS.live_resin,
+      link: { dock: "live_resin" },
+
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description: "Terpenes extracted via steam distillation from Live Resin, offering an authentic representation of specific cannabis strains' aroma and taste.",
+        },
+      ],
+    },
+
+
+    live_infusion: {
+      id: "live_infusion",
+      title: "Live Infusion",
+      img: TERPENES_DOCK_IMGS.live_infusion,
+      link: { dock: "live_infusion" },
+
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description: "A harmonized mix of live resin terpenes and botanical terpenes, presenting a rich, layered flavor and aroma experience in pre-rolls.",
+        },
+      ],
+    },
+
+    cured_infusion: {
+      id: "cured_infusion",
+      title: "Cured Infusion",
+      img: TERPENES_DOCK_IMGS.cured_infusion,
+      link: { dock: "cured_infusion" },
+
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description: "A fusion of cold-extracted cannabis terpenes with botanical sources, resulting in a nuanced aroma blend with pronounced skunky undertones for pre-rolls.",
+        },
+      ],
+    },
+
+
+  },
+
+
+  
+
+
+
 };
 
 export default DOCK_DATA;
