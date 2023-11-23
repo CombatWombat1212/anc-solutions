@@ -4,7 +4,7 @@ $b-width: 0.125rem;
 $dot-width: 0.625rem;
 
 :root{
-    background-color: #1A1918;
+    background-color: $col-background;
     color: #FFFFFF;
     --transition:0.115s;
 
