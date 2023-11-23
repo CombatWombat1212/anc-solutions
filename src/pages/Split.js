@@ -10,6 +10,12 @@ import FLUID_IMGS from "../data/FLUID_IMGS";
 import TERPENES_IMGS from "../data/TERPENES_IMGS";
 import { useGraphicLoadManager, useGraphicLoadTracker } from "../scripts/hooks/useGraphicLoadManager";
 
+
+function delay(duration) {
+  return new Promise((resolve) => setTimeout(resolve, duration));
+}
+
+
 const DATABASE = {
   filter: FILTER_IMGS,
   end: END_IMGS,
@@ -39,15 +45,42 @@ function Split({ view, type }) {
 
   const { columns } = usePaper(view, modal);
 
-  
   const { graphicContainerProps } = useGraphicLoadManager(view, { count: 1 });
-  const { graphicElementProps } = useGraphicLoadTracker(graphicContainerProps, {key: img.src});
+  const { graphicElementProps } = useGraphicLoadTracker(graphicContainerProps, { key: img.src });
+
+  const graphic = useRef(null);
+
+  // useEffect(() => {
+  //   if (view.pageLoading) return;
+
+  //   const parts = Array.from(graphic.current.children[1].children);
+  //   parts.push(graphic.current.children[1]);
+
+  //   parts.forEach((part) => {
+  //     part.classList.add("step-1");
+  //   });
 
 
+  //   async function animateParts(parts) {
+  //     await delay(400);
+  //     parts.forEach((part) => {
+  //       part.classList.add("step-2");
+  //     });
 
-  
+  //     await delay(0);
+  //     parts.forEach((part) => {
+  //       part.classList.add("step-3");
+  //     });
 
+  //     await delay(200);
+  //     parts.forEach((part) => {
+  //       part.classList.add("step-4");
+  //     });
 
+  //   }
+
+  //   animateParts(parts);
+  // }, [view.pageLoading]);
 
   return (
     <>
@@ -66,6 +99,7 @@ function Split({ view, type }) {
               width={img.width}
               height={img.height}
               {...graphicElementProps}
+              innerRef={graphic}
             />
           </ContentVisual>
         </>
@@ -83,15 +117,15 @@ function checkPaperRowType(view, rowIndex, columns) {
   const rowStats = view.dockActiveObj.stats.slice(startIndex, endIndex);
 
   const hasBar = rowStats.some((stat) => stat.type === "bar");
-  const isNextRowHasBar = rowIndex < totalRows - 1 
-    && view.dockActiveObj.stats.slice(endIndex, endIndex + columns).some((stat) => stat.type === "bar");
+  const isNextRowHasBar =
+    rowIndex < totalRows - 1 && view.dockActiveObj.stats.slice(endIndex, endIndex + columns).some((stat) => stat.type === "bar");
 
   return {
     hasBar: hasBar,
     isNextRowHasBar: isNextRowHasBar,
     isLastRow: isLastRow,
   };
-};
+}
 
 function getPaperClassNames(columns, view, index) {
   if (view.page != "paper") return "";
@@ -143,7 +177,6 @@ function getPaperClassNames(columns, view, index) {
 //   return className;
 // }
 
-
 // function getPaperClassNames(columns, view, index) {
 //   if (view.page != "paper") return "";
 
@@ -167,8 +200,6 @@ function getPaperClassNames(columns, view, index) {
 
 //   return className;
 // }
-
-
 
 function usePaper(view, modal) {
   const [columns, setColumns] = useState(0);

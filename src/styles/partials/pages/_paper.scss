@@ -1,14 +1,10 @@
-
-
-
 .viewer .paper {
-//   &--inner {
-//   }
+  //   &--inner {
+  //   }
 
   &--body {
     @include col-width(7);
   }
-
 
   &--modal {
     --viewer-modal-columns: 2;
@@ -19,19 +15,14 @@
     color: $col-primary;
   }
 
-
-  &--stat{
+  &--stat {
     @include flex-col;
-
-
   }
 
   &--stat-row {
-
     --bar-margin: 0rem;
     --after-bar-margin: 0rem;
     --before-bar-margin: 0rem;
-
 
     // &__bar {
     //   --bar-margin: -1.5rem !important;
@@ -48,8 +39,6 @@
 
     &__bar {
       --bar-margin: -0.35rem;
-      
-
     }
     // &__after-bar {
     //   --after-bar-margin: -0.5rem;
@@ -62,10 +51,7 @@
     //   margin-top: -1.15rem !important;
     // }
 
-
-
     margin-top: calc(var(--bar-margin) + var(--after-bar-margin) + var(--before-bar-margin));
-
   }
 
   //   &--stat {
@@ -75,11 +61,8 @@
   &--description {
     margin-top: 0.25rem;
 
-    max-height:100%;
-
-
+    max-height: 100%;
   }
-
 
   &--visual {
     @include col-width(5);
@@ -87,11 +70,87 @@
   }
 
   &--graphic {
-    height:100%;
-    width:100%;
-    margin-top:0rem!important;
+    height: 100%;
+    width: 100%;
+    margin-top: 0rem !important;
   }
-
-
-  
 }
+
+// .paper {
+//   #roll,
+//   #filter,
+//   #dash_1,
+//   #dash_2,
+//   #paper {
+//     &.step-1 {
+//       transition: 600ms;
+//     }
+//     &.step-2 {
+//       transition: 300ms;
+//     }
+//     &.step-3 {
+//       transition: 400ms;
+//     }  
+//     &.step-4 {
+//       transition: 300ms;
+//     }  
+  
+//   }
+
+//   $distance: 1.7rem;
+
+//   #roll {
+//     transform: translateY(#{$distance});
+
+//     &.step-1 {
+//       transform: translateY(0rem);
+//     }
+//     &.step-2 {
+//     }
+//     &.step-3 {
+//     }
+//   }
+
+//   #filter {
+//     transform: translateY(#{-$distance});
+//     opacity: 0.3;
+
+//     &.step-1 {
+//       transform: translateY(0rem);
+//       // opacity: 0.3;
+//     }
+//     &.step-2 {
+//     }
+//     &.step-3 {
+//     }
+//   }
+
+//   #dash_1,
+//   #dash_2 {
+//     opacity: 0;
+//     transform: translateX(0.5rem);
+    
+//     &.step-1 {
+//     }
+//     &.step-2 {
+//     }
+//     &.step-3 {
+//       transform: translateX(0rem);
+//       opacity: 1;
+//     }
+
+//   }
+
+//   #paper {
+//     opacity: 0;
+//     &.step-1 {
+//     }
+//     &.step-2 {
+//     }
+//     &.step-3 {
+//     }
+//     &.step-4 {
+//       opacity: 1;
+//     }
+//   }
+// }

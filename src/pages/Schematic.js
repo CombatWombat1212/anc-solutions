@@ -86,7 +86,7 @@ function Schematic({ view }) {
       setTimeout(() => {
         // setSvgLoaded(true);
         view.setPageLoading(false);
-      }, 50);
+      }, 100);
     });
   }, [loaded, components]);
 
@@ -100,23 +100,24 @@ function Schematic({ view }) {
 
       query.forEach((element) => {
         if (view.side.active === false) {
-          element.classList.add("schematic--vector__idle");
           element.classList.remove("schematic--vector__hidden");
           element.classList.remove("schematic--vector__active");
+          element.classList.add("schematic--vector__idle");
         } else {
           if (components[view.side.active] && components[view.side.active].includes(element)) {
-            element.classList.add("schematic--vector__active");
             element.classList.remove("schematic--vector__hidden");
             element.classList.remove("schematic--vector__idle");
+            element.classList.add("schematic--vector__active");
           } else {
-            element.classList.add("schematic--vector__hidden");
             element.classList.remove("schematic--vector__active");
             element.classList.remove("schematic--vector__idle");
+            element.classList.add("schematic--vector__hidden");
           }
         }
       });
     });
   }, [view.side.active, components, loaded]);
+
 
 
   return (

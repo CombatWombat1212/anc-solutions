@@ -435,6 +435,30 @@ input, button, textarea, select {
   flex-direction: column;
 }
 
+.viewer .content--body__specialty {
+  width: 58.33333%;
+  --column-width: 7;
+}
+
+@media screen and (max-width: 91.9375em) {
+  .viewer .content--body__specialty {
+    width: 50%;
+    --column-width: 6;
+  }
+}
+
+.viewer .content--visual__specialty {
+  width: 41.66667%;
+  --column-width: 5;
+}
+
+@media screen and (max-width: 91.9375em) {
+  .viewer .content--visual__specialty {
+    width: 50%;
+    --column-width: 6;
+  }
+}
+
 .viewer .content--graphic__split {
   width: 100%;
   height: 100%;
@@ -537,8 +561,6 @@ input, button, textarea, select {
   -webkit-touch-callout: none;
   user-select: none;
   cursor: pointer;
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 .dock--item-background {
@@ -572,6 +594,9 @@ input, button, textarea, select {
   margin-top: -0.5rem;
   transition: var(--dock-hover-transition);
   will-change: opacity;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: calc(100% - 2rem);
 }
 
 .dock--h2__active {
@@ -645,14 +670,6 @@ input, button, textarea, select {
 .bar--text {
   color: #ffffff;
   white-space: nowrap;
-}
-
-.sandbox {
-  width: 90%;
-  height: 100%;
-  margin-top: 5rem;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 .hidden-until-fonts-loaded {

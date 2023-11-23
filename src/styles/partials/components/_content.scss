@@ -88,6 +88,22 @@
     @include flex-col;
   }
 
+  &--body__specialty {
+    @include col-width(7);
+    
+    @include xxl-down{
+      @include col-width(6);
+    }
+  }
+
+  &--visual__specialty {
+    @include col-width(5);
+    
+    @include xxl-down{
+      @include col-width(6);
+    }
+  }
+
   &--graphic__split {
     @include img-contain;
     @include s(90%);

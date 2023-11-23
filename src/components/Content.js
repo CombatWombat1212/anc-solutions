@@ -163,7 +163,6 @@ function Bar({ stat, index }) {
 
   const delay = index * 100;
 
-
   return (
     <div
       className="bar--wrapper"
@@ -179,13 +178,15 @@ function Bar({ stat, index }) {
       <div className="bar--x">
         {stat.bar.labels.map((label, index) => (
           // <div className="bar--label" key={index}>
-            <div className="bar--notch">{/* <Label2 className="bar--text">{label}</Label2> */}</div>
+          <div className="bar--notch" key={index}>
+            {/* <Label2 className="bar--text">{label}</Label2> */}
+          </div>
           // </div>
         ))}
       </div>
       <div className="bar--label">
         {[stat.bar.labels[0], stat.bar.labels[stat.bar.labels.length - 1]].map((label, index) => (
-          <Label2 className="bar--text">{label}</Label2>
+          <Label2 className="bar--text" key={index}>{label}</Label2>
         ))}
       </div>
     </div>

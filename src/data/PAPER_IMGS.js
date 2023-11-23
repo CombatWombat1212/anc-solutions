@@ -33,7 +33,7 @@ const PAPER_IMGS = {
     src: URL_PREFIX + "/assets/images/paper/traditional.svg",
     alt: "",
     width: 325,
-    height: 528,
+    height: 525,
   },
 
 

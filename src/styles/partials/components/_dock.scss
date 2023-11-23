@@ -83,7 +83,6 @@
     @include no-select;
     cursor: pointer;
 
-    @include pad-x(1rem);
   }
 
   &--item-background {
@@ -119,6 +118,9 @@
     margin-top: -0.5rem;
     transition: var(--dock-hover-transition);
     will-change: opacity;
+    @include pad-x(1rem);
+    width: calc(100% - 2rem);
+
 
     &__active {
       color: $col-primary;
