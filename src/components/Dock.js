@@ -42,9 +42,6 @@ function Dock({ view }) {
 
 
 
-
-  const on = useKeyToggle();
-  // const delayedOn = useDelayedProps(on, 210)
   
 
   return (
@@ -65,7 +62,7 @@ function Dock({ view }) {
   );
 }
 
-function Item({ item, index, view, active }) {
+function Item({ item, index, view, active}) {
   const [hovered, setHovered] = useState(false);
   const [state, setState] = useState(view.dock == item.id ? "active" : "inactive");
 
@@ -88,7 +85,8 @@ function Item({ item, index, view, active }) {
   return (
     <>
       <Link className={`dock--item dock--item__${state}`} onMouseEnter={handleHover} onMouseLeave={handleLeave} onClick={handleClick} loading={false}>
-        <H2 className={`dock--h2 dock--h2__${state}`}>{item.title}</H2>
+        <H2 className={`dock--h2 dock--h2__${state}`}
+        >{item.title}</H2>
         <Mask className={`dock--graphic dock--graphic__${state}`} img={item.img} />
       </Link>
       <div

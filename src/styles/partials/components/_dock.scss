@@ -82,6 +82,8 @@
 
     @include no-select;
     cursor: pointer;
+
+    @include pad-x(1rem);
   }
 
   &--item-background {
@@ -114,7 +116,7 @@
   }
 
   &--h2 {
-    margin-top: -0.25rem;
+    margin-top: -0.5rem;
     transition: var(--dock-hover-transition);
     will-change: opacity;
 

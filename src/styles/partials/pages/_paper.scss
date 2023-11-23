@@ -6,7 +6,7 @@
 //   }
 
   &--body {
-    @include col-width(7);
+    @include col-width(8);
   }
 
 
@@ -19,13 +19,53 @@
     color: $col-primary;
   }
 
+
+  &--stat{
+    @include flex-col;
+
+
+  }
+
   &--stat-row {
+
+    --bar-margin: 0rem;
+    --after-bar-margin: 0rem;
+    --before-bar-margin: 0rem;
+
+
+    // &__bar {
+    //   --bar-margin: -1.5rem !important;
+    // }
+    // &__after-bar {
+    //   --after-bar-margin: -0.95rem !important;
+    // }
+    // &__before-bar {
+    //   --before-bar-margin: -0.25rem !important;
+    // }
+    // // &__bar-last {
+    // //   margin-top: -1rem !important;
+    // // }
+
     &__bar {
-      margin-top: -1.65rem !important;
+      --bar-margin: -1.5rem;
+      
+
     }
     &__after-bar {
-      margin-top: -0.85rem !important;
+      --after-bar-margin: -0.5rem;
     }
+    &__before-bar {
+      --before-bar-margin: -0.4rem;
+    }
+
+    &__bar-last {
+      margin-top: -1.15rem !important;
+    }
+
+
+
+    margin-top: calc(var(--bar-margin) + var(--after-bar-margin) + var(--before-bar-margin));
+
   }
 
   //   &--stat {
@@ -34,19 +74,23 @@
 
   &--description {
     margin-top: 0.25rem;
+
+    max-height:100%;
+
+
   }
 
 
   &--visual {
-    @include col-width(5);
+    @include col-width(4);
     // @include flex-col;
   }
 
-  // &--graphic {
-  //   @include img-contain;
-  //   @include s(90%);
-  //   margin: auto;
-  // }
+  &--graphic {
+    height:100%;
+    width:100%;
+    margin-top:0rem!important;
+  }
 
 
   

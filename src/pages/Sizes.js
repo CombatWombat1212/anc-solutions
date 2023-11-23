@@ -8,15 +8,16 @@ import { useGraphicLoadManager, useGraphicLoadTracker } from "../scripts/hooks/u
 import { useSpring, useTransition, animated } from "@react-spring/web";
 import useKeyToggle from "../scripts/hooks/useKeyToggle";
 
-const COL_DELAY = 115;
+const COL_DELAY = 125;
 
 function Sizes({ view }) {
   const imgs = Object.values(SIZES_IMGS[view.type]);
 
   const { graphicContainerProps } = useGraphicLoadManager(view, { count: imgs.length });
 
-  const backgroundDuration = 1500;
-  const backgroundDelay = (COL_DELAY * imgs.length) / 10;
+  const backgroundDuration = 1000;
+  const backgroundDelay = (COL_DELAY * imgs.length) / 2.5;
+  // const backgroundDelay = 0;
   const backgroundCombined = (backgroundDelay + backgroundDuration)/ 1.05;
 
   const background = {
@@ -36,13 +37,13 @@ function Sizes({ view }) {
         {imgs.map((img, i) => {
           return <Item imgs={imgs} index={i} key={i} view={view} {...graphicContainerProps} />;
         })}
-        <div className={`sizes--background sizes--background__${view.pageReady ? "active" : "inactive"}`}>
+        <div className={`sizes--background sizes--background__${!view.pageLoading ? "active" : "inactive"}`}>
           <Label1
-            className={`sizes--background-label sizes--background-label__x sizes--background-label__${view.pageReady ? "active" : "inactive"}`}>
+            className={`sizes--background-label sizes--background-label__x sizes--background-label__${!view.pageLoading ? "active" : "inactive"}`}>
             Grams
           </Label1>
           <Label1
-            className={`sizes--background-label sizes--background-label__y sizes--background-label__${view.pageReady ? "active" : "inactive"}`}>
+            className={`sizes--background-label sizes--background-label__y sizes--background-label__${!view.pageLoading ? "active" : "inactive"}`}>
             Length
           </Label1>
         </div>
@@ -63,8 +64,8 @@ function Item({ imgs, index, view, ...props }) {
       transform: "translateX(-1rem)",
     },
     to: {
-      opacity: view.pageReady ? 1 : 0,
-      transform: view.pageReady ? "translateX(0)" : "translateX(-1rem)",
+      opacity: !view.pageLoading ? 1 : 0,
+      transform: !view.pageLoading ? "translateX(0)" : "translateX(-1rem)",
     },
     delay: index * COL_DELAY,
   });

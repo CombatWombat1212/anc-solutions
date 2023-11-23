@@ -20,31 +20,22 @@ const ViewProvider = ({ children }) => {
     let timer;
   
     if (!pageLoading) {
-      // Set a timer to update pageReady to true after 250ms
       timer = setTimeout(() => {
         setPageReady(true);
-      }, 250);
+      }, 150);
     } else {
-      // If pageLoading is true, set pageReady to false and clear any existing timer
       setPageReady(false);
       if (timer) {
         clearTimeout(timer);
       }
     }
-  
-    // Clean up the timer when the component unmounts or if pageLoading changes
-    return () => {
+      return () => {
       if (timer) {
         clearTimeout(timer);
       }
     };
   }, [pageLoading]);
 
-
-  useEffect(() => {
-    console.log(pageLoading);
-  }, [pageLoading]);
-  
 
 
   const view = {

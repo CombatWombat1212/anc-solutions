@@ -30,7 +30,7 @@
 
 
 
-    transition:  opacity 0.25s;
+    transition:  opacity 0.15s;
 
     &__loading{
       opacity:0;
@@ -54,10 +54,15 @@
 }
 
 @mixin content-pad_thin {
-  $pad: 2.75rem;
+  // $pad: 2.75rem;
+  $pad: 3.25rem;
   --content-inner-pad-top: #{$pad};
   --content-inner-pad-bottom: #{$pad};
   --content-inner-pad-x: #{$pad};
+
+  $margin: 0.5rem;
+  margin-top: #{-$margin};
+  margin-bottom: #{$margin};
 }
 
 
@@ -69,7 +74,8 @@
     @include content-pad_thin;
     --viewer-modal-margin-top: 1rem;
     @include flex-row;
-    gap: 3rem;
+    // gap: 3rem;
+    gap: 3.25rem;
   }
 
   &--body__split {
@@ -93,8 +99,10 @@
 
     --viewer-modal-columns: 1;
     --viewer-modal-rows: 0;
-    --viewer-modal-gap: 3rem;
-    --viewer-modal-row-gaps: calc((var(--viewer-modal-rows) - 1) * var(--viewer-modal-gap));
+    // --viewer-modal-gap: 3rem;
+    --viewer-modal-row-gap: 3.25rem;
+    --viewer-modal-column-gap: 3rem;
+    --viewer-modal-row-gaps: calc((var(--viewer-modal-rows) - 1) * var(--viewer-modal-row-gap));
 
     --viewer-modal-pad-bottom: 3.25rem;
 
@@ -104,7 +112,8 @@
     display: grid;
     grid-template-columns: repeat(var(--viewer-modal-columns), 1fr);
     grid-template-rows: repeat(var(--viewer-modal-rows), calc((100% - var(--viewer-modal-row-gaps)) / 3));
-    gap: var(--viewer-modal-gap);
+    row-gap: var(--viewer-modal-row-gap);
+    column-gap: var(--viewer-modal-column-gap);
 
     --h: calc(100% - var(--viewer-modal-pad-top) - var(--viewer-modal-pad-bottom) - var(--h3-size) - var(--viewer-modal-margin-top));
     height: var(--h);

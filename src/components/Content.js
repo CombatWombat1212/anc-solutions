@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import PRODUCT_DATA from "../data/PRODUCT_DATA";
 import Selection from "../pages/Selection";
 import Schematic from "../pages/Schematic";
@@ -12,6 +12,7 @@ import LAYOUT_DATA from "../data/LAYOUT_DATA";
 // import End from "../pages/End";
 import Compaction from "../pages/Compaction";
 import Split from "../pages/Split";
+import { ViewContext } from "../scripts/contexts/viewContext";
 
 
 function Content({ view }) {
@@ -170,6 +171,12 @@ function Description({ stat }) {
 }
 
 function Bar({ stat }) {
+
+  const view = useContext(ViewContext);
+
+
+
+
   return (
     <div
       className="bar--wrapper"
@@ -185,7 +192,7 @@ function Bar({ stat }) {
         {stat.bar.labels.map((label, index) => (
           <div className="bar--label" key={index}>
             <div className="bar--notch">
-              <Label2 className="bar--text">{label}</Label2>
+              {/* <Label2 className="bar--text">{label}</Label2> */}
             </div>
           </div>
         ))}

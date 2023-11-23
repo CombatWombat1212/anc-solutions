@@ -4,12 +4,8 @@ import { RESIZE_TIMEOUT, addStyleNonDestructive } from "../GlobalUtilities";
 import { splitPx } from "../Split";
 
 
-
-
 var allMirrorstyleParents;
 var allMirrorstyleMatches;
-
-
 
 function getMirrorStyleElements() {
   allMirrorstyleParents = document.querySelectorAll('[mirrorstyle*="parent"]');

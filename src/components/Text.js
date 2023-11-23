@@ -1,3 +1,4 @@
+import { getMirrorStyleProp } from "../scripts/hooks/useMirrorStyle";
 
 
 
@@ -12,9 +13,10 @@ function H1({ children, className, style = {} }) {
 }
 
 
-function H2({children, className}) {
+function H2({children, className, ...props}) {
+
     return (
-        <h2 className={`viewer--h2 ${className || ""}`}>
+        <h2 className={`viewer--h2 ${className || ""}`} {...getMirrorStyleProp(props)}>
             {children}
         </h2>
     );

@@ -56,7 +56,7 @@ function Split({ view, type }) {
           <ContentModal title={view.dockActiveObj.title} pref={pref} type={typeProp} reference={modal}>
             {view.dockActiveObj.stats.map((stat, index) => {
               const className = getPaperClassNames(columns, view, index);
-              return <Stat stat={stat} key={index} className={className} />;
+              return <Stat stat={stat} key={index} className={`${pref}--stat-row ` + className} />;
             })}
           </ContentModal>
           <ContentVisual className={`${pref}--visual`} type={typeProp}>
@@ -74,19 +74,22 @@ function Split({ view, type }) {
   );
 }
 
-const checkPaperRowType = (view, rowIndex, columns) => {
+function checkPaperRowType(view, rowIndex, columns) {
+  const totalRows = Math.ceil(view.dockActiveObj.stats.length / columns);
+  const isLastRow = rowIndex === totalRows - 1;
+
   const startIndex = rowIndex * columns;
   const endIndex = startIndex + columns;
   const rowStats = view.dockActiveObj.stats.slice(startIndex, endIndex);
 
-  const isAllBar = rowStats.every((stat) => stat.type === "bar");
-  const isPrevAllBar = rowIndex > 0 && view.dockActiveObj.stats.slice((rowIndex - 1) * columns, startIndex).every((stat) => stat.type === "bar");
-  const isPrevRowMixed = rowIndex > 0 && !isPrevAllBar; // Check if previous row is not all bar
+  const hasBar = rowStats.some((stat) => stat.type === "bar");
+  const isNextRowHasBar = rowIndex < totalRows - 1 
+    && view.dockActiveObj.stats.slice(endIndex, endIndex + columns).some((stat) => stat.type === "bar");
 
   return {
-    isAllBar: isAllBar,
-    isPrevAllBar: isPrevAllBar,
-    isPrevRowMixed: isPrevRowMixed,
+    hasBar: hasBar,
+    isNextRowHasBar: isNextRowHasBar,
+    isLastRow: isLastRow,
   };
 };
 
@@ -97,30 +100,79 @@ function getPaperClassNames(columns, view, index) {
   const rowType = checkPaperRowType(view, rowIndex, columns);
   let className = "";
 
-  if (rowType.isAllBar && rowType.isPrevRowMixed) {
+  if (rowType.hasBar && rowType.isLastRow) {
+    className = "paper--stat-row__bar-last";
+  } else if (rowType.hasBar) {
     className = "paper--stat-row__bar";
-  } else if (rowType.isPrevAllBar) {
-    className = "paper--stat-row__after-bar";
+  } else if (rowType.isNextRowHasBar) {
+    className = "paper--stat-row__before-bar";
   }
 
   return className;
 }
 
+// const checkPaperRowType = (view, rowIndex, columns) => {
+//   const startIndex = rowIndex * columns;
+//   const endIndex = startIndex + columns;
+//   const rowStats = view.dockActiveObj.stats.slice(startIndex, endIndex);
+
+//   const isAllBar = rowStats.every((stat) => stat.type === "bar");
+//   const isPrevAllBar = rowIndex > 0 && view.dockActiveObj.stats.slice((rowIndex - 1) * columns, startIndex).every((stat) => stat.type === "bar");
+//   const isPrevRowMixed = rowIndex > 0 && !isPrevAllBar; // Check if previous row is not all bar
+
+//   return {
+//     isAllBar: isAllBar,
+//     isPrevAllBar: isPrevAllBar,
+//     isPrevRowMixed: isPrevRowMixed,
+//   };
+// };
+
+// function getPaperClassNames(columns, view, index) {
+//   if (view.page != "paper") return "";
+
+//   const rowIndex = Math.floor(index / columns);
+//   const rowType = checkPaperRowType(view, rowIndex, columns);
+//   let className = "";
+
+//   if (rowType.isAllBar && rowType.isPrevRowMixed) {
+//     className = "paper--stat-row__bar";
+//   } else if (rowType.isPrevAllBar) {
+//     className = "paper--stat-row__after-bar";
+//   }
+
+//   return className;
+// }
+
+
+// function getPaperClassNames(columns, view, index) {
+//   if (view.page != "paper") return "";
+
+//   const rowIndex = Math.floor(index / columns);
+//   const rowType = checkPaperRowType(view, rowIndex, columns);
+//   let className = "";
+
+//   // Check if the current row is the last row
+//   const isLastRow = rowIndex === Math.ceil(view.dockActiveObj.stats.length / columns) - 1;
+
+//   if (rowType.isAllBar && rowType.isPrevRowMixed) {
+//     className = "paper--stat-row__bar";
+//   } else if (rowType.isPrevAllBar) {
+//     className = "paper--stat-row__after-bar";
+//   }
+
+//   // Append 'paper--stat-row__bar-last' if it's a bar row and the last row
+//   if (rowType.isAllBar && isLastRow) {
+//     className += " paper--stat-row__bar-last";
+//   }
+
+//   return className;
+// }
+
+
+
 function usePaper(view, modal) {
-  //   const [rows, setRows] = useState(0);
   const [columns, setColumns] = useState(0);
-
-  //   const rowCount = useElementStyle(modal, "--viewer-modal-rows");
   const colCount = useElementStyle(modal, "--viewer-modal-columns");
-
-  //   useEffect(() => {
-  //     if(view.page != "paper") return;
-  //     if (rowCount && !isNaN(Number(rowCount))) {
-  //       setRows(Number(rowCount));
-  //     } else {
-  //       setRows(0);
-  //     }
-  //   }, [rowCount]);
 
   useEffect(() => {
     if (view.page != "paper") return;

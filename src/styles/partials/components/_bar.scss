@@ -44,5 +44,8 @@
     color: $col-light;
     white-space: nowrap;
     padding-right: calc(var(--bar-notch-height) + var(--bar-label-margin-top));
+
+    opacity: 0.6;
+
   }
 }

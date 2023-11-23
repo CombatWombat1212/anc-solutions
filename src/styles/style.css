@@ -32,10 +32,10 @@ input, button, textarea, select {
 @use "sass:math";
 .viewer {
   --h1-font-size: 3.25rem;
-  --h2-font-size: 2.125rem;
+  --h2-font-size: 2rem;
   --h3-font-size: 1.6875rem;
   --h4-font-size: 0.6875rem;
-  --body-font-size: 1rem;
+  --body-font-size: 0.975rem;
   --label-1-font-size: 1.5rem;
   --label-2-font-size: 1rem;
   --h3-line-height: 2.125rem;
@@ -386,7 +386,7 @@ input, button, textarea, select {
   --content-inner-max-height: calc(100% - var(--content-inner-pad-y));
   --content-inner-max-height_dock: calc(100% - var(--dock-height) - var(--content-inner-pad-y));
   max-height: calc(var(--content-inner-max-height_dock) * var(--content-has-dock) + var(--content-inner-max-height) * (1 - var(--content-has-dock)));
-  transition: opacity 0.25s;
+  transition: opacity 0.15s;
 }
 
 @media screen and (max-width: 91.9375em) {
@@ -410,13 +410,15 @@ input, button, textarea, select {
 }
 
 .viewer .content--inner__split {
-  --content-inner-pad-top: 2.75rem;
-  --content-inner-pad-bottom: 2.75rem;
-  --content-inner-pad-x: 2.75rem;
+  --content-inner-pad-top: 3.25rem;
+  --content-inner-pad-bottom: 3.25rem;
+  --content-inner-pad-x: 3.25rem;
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
   --viewer-modal-margin-top: 1rem;
   display: flex;
   flex-direction: row;
-  gap: 3rem;
+  gap: 3.25rem;
 }
 
 .viewer .content--body__split {
@@ -450,15 +452,17 @@ input, button, textarea, select {
   outline: solid 0.125rem #EC0719;
   --viewer-modal-columns: 1;
   --viewer-modal-rows: 0;
-  --viewer-modal-gap: 3rem;
-  --viewer-modal-row-gaps: calc((var(--viewer-modal-rows) - 1) * var(--viewer-modal-gap));
+  --viewer-modal-row-gap: 3.25rem;
+  --viewer-modal-column-gap: 3rem;
+  --viewer-modal-row-gaps: calc((var(--viewer-modal-rows) - 1) * var(--viewer-modal-row-gap));
   --viewer-modal-pad-bottom: 3.25rem;
   margin-top: var(--viewer-modal-margin-top);
   padding-bottom: var(--viewer-modal-pad-bottom);
   display: grid;
   grid-template-columns: repeat(var(--viewer-modal-columns), 1fr);
   grid-template-rows: repeat(var(--viewer-modal-rows), calc((100% - var(--viewer-modal-row-gaps)) / 3));
-  gap: var(--viewer-modal-gap);
+  row-gap: var(--viewer-modal-row-gap);
+  column-gap: var(--viewer-modal-column-gap);
   --h: calc(100% - var(--viewer-modal-pad-top) - var(--viewer-modal-pad-bottom) - var(--h3-size) - var(--viewer-modal-margin-top));
   height: var(--h);
   max-height: var(--h);
@@ -533,6 +537,8 @@ input, button, textarea, select {
   -webkit-touch-callout: none;
   user-select: none;
   cursor: pointer;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .dock--item-background {
@@ -563,7 +569,7 @@ input, button, textarea, select {
 }
 
 .dock--h2 {
-  margin-top: -0.25rem;
+  margin-top: -0.5rem;
   transition: var(--dock-hover-transition);
   will-change: opacity;
 }
@@ -638,6 +644,7 @@ input, button, textarea, select {
   color: #ffffff;
   white-space: nowrap;
   padding-right: calc(var(--bar-notch-height) + var(--bar-label-margin-top));
+  opacity: 0.6;
 }
 
 .sandbox {
@@ -948,7 +955,7 @@ input, button, textarea, select {
   bottom: calc((var(--background-pad) + 0.125rem) * -1);
   transition-delay: var(--transition-delay);
   transition-duration: var(--transition-duration);
-  transition-timing-function: cubic-bezier(0.85, 0.1, 0.1, 1);
+  transition-timing-function: cubic-bezier(0.45, 0.1, 0.1, 1);
 }
 
 .viewer .sizes--background__active {
@@ -992,8 +999,8 @@ input, button, textarea, select {
 }
 
 .viewer .paper--body {
-  width: 58.33333%;
-  --column-width: 7;
+  width: 66.66667%;
+  --column-width: 8;
 }
 
 .viewer .paper--modal {
@@ -1005,21 +1012,48 @@ input, button, textarea, select {
   color: #EC0719;
 }
 
+.viewer .paper--stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.viewer .paper--stat-row {
+  --bar-margin: 0rem;
+  --after-bar-margin: 0rem;
+  --before-bar-margin: 0rem;
+  margin-top: calc(var(--bar-margin) + var(--after-bar-margin) + var(--before-bar-margin));
+}
+
 .viewer .paper--stat-row__bar {
-  margin-top: -1.65rem !important;
+  --bar-margin: -1.5rem;
 }
 
 .viewer .paper--stat-row__after-bar {
-  margin-top: -0.85rem !important;
+  --after-bar-margin: -0.5rem;
+}
+
+.viewer .paper--stat-row__before-bar {
+  --before-bar-margin: -0.4rem;
+}
+
+.viewer .paper--stat-row__bar-last {
+  margin-top: -1.15rem !important;
 }
 
 .viewer .paper--description {
   margin-top: 0.25rem;
+  max-height: 100%;
 }
 
 .viewer .paper--visual {
-  width: 41.66667%;
-  --column-width: 5;
+  width: 33.33333%;
+  --column-width: 4;
+}
+
+.viewer .paper--graphic {
+  height: 100%;
+  width: 100%;
+  margin-top: 0rem !important;
 }
 
 .viewer .filter--body {

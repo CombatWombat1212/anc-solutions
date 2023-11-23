@@ -80,7 +80,7 @@
 
     transition-delay: var(--transition-delay);
     transition-duration: var(--transition-duration);
-    transition-timing-function: cubic-bezier(0.85, 0.1, 0.1, 1);
+    transition-timing-function: cubic-bezier(0.45, 0.1, 0.1, 1);
 
     &__active {
       opacity: 1;

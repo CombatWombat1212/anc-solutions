@@ -738,7 +738,8 @@ const DOCK_DATA = {
         {
           title: "Description",
           type: "description",
-          description: "A stable, glass-like concentrate that can be fragmented and dispersed within pre-rolls to elevate THC levels and provide a consistent burn.",
+          description:
+            "A stable, glass-like concentrate that can be fragmented and dispersed within pre-rolls to elevate THC levels and provide a consistent burn.",
         },
       ],
     },
@@ -753,7 +754,8 @@ const DOCK_DATA = {
         {
           title: "Description",
           type: "description",
-          description: "Compressed trichomes forming a pliable concentrate, introducing a traditional and robust flavor to pre-rolls and enhancing the overall potency.",
+          description:
+            "Compressed trichomes forming a pliable concentrate, introducing a traditional and robust flavor to pre-rolls and enhancing the overall potency.",
         },
       ],
     },
@@ -768,7 +770,8 @@ const DOCK_DATA = {
         {
           title: "Description",
           type: "description",
-          description: "Trichome-rich granules that, when sprinkled into pre-rolls, can enhance potency and flavor due to their concentrated cannabinoid and terpene content.",
+          description:
+            "Trichome-rich granules that, when sprinkled into pre-rolls, can enhance potency and flavor due to their concentrated cannabinoid and terpene content.",
         },
       ],
     },
@@ -783,7 +786,8 @@ const DOCK_DATA = {
         {
           title: "Description",
           type: "description",
-          description: "Ultra-pure THC or CBD crystals, offering a potent addition to pre-rolls and the potential for controlled dosing due to their consistent concentration.",
+          description:
+            "Ultra-pure THC or CBD crystals, offering a potent addition to pre-rolls and the potential for controlled dosing due to their consistent concentration.",
         },
       ],
     },
@@ -804,8 +808,7 @@ const DOCK_DATA = {
     },
   },
 
-
-  fluid:{
+  fluid: {
     distillate: {
       id: "distillate",
       title: "Distillate",
@@ -816,7 +819,8 @@ const DOCK_DATA = {
         {
           title: "Description",
           type: "description",
-          description: "Highly refined oil, rich in specific cannabinoids, perfect for boosting THC or CBD levels in pre-rolls without affecting the original taste.",
+          description:
+            "Highly refined oil, rich in specific cannabinoids, perfect for boosting THC or CBD levels in pre-rolls without affecting the original taste.",
         },
       ],
     },
@@ -831,7 +835,8 @@ const DOCK_DATA = {
         {
           title: "Description",
           type: "description",
-          description: "High Terpene Full Spectrum Extract (HTFSE), a concentrate preserving the full spectrum of terpenes and cannabinoids, ideal for pre-rolls seeking to provide an authentic and holistic cannabis experience.",
+          description:
+            "High Terpene Full Spectrum Extract (HTFSE), a concentrate preserving the full spectrum of terpenes and cannabinoids, ideal for pre-rolls seeking to provide an authentic and holistic cannabis experience.",
         },
       ],
     },
@@ -846,7 +851,8 @@ const DOCK_DATA = {
         {
           title: "Description",
           type: "description",
-          description: "Full Spectrum Oil, oil retaining all beneficial compounds from the cannabis plant, adding a comprehensive cannabinoid and terpene boost to pre-rolls.",
+          description:
+            "Full Spectrum Oil, oil retaining all beneficial compounds from the cannabis plant, adding a comprehensive cannabinoid and terpene boost to pre-rolls.",
         },
       ],
     },
@@ -861,16 +867,14 @@ const DOCK_DATA = {
         {
           title: "Description",
           type: "description",
-          description: "A solvent-free concentrate that, when incorporated, introduces a clean, potent, and full-spectrum cannabinoid profile to the pre-roll.",
+          description:
+            "A solvent-free concentrate that, when incorporated, introduces a clean, potent, and full-spectrum cannabinoid profile to the pre-roll.",
         },
       ],
     },
-
   },
 
-
-  
-  terpenes:{
+  terpenes: {
     botanical: {
       id: "botanical",
       title: "Botanical",
@@ -881,11 +885,11 @@ const DOCK_DATA = {
         {
           title: "Description",
           type: "description",
-          description: "Terpenes sourced from natural plants other than cannabis, such as lavender or orange peels, adding distinct and diverse flavor profiles to pre-rolls.",
+          description:
+            "Terpenes sourced from natural plants other than cannabis, such as lavender or orange peels, adding distinct and diverse flavor profiles to pre-rolls.",
         },
       ],
     },
-
 
     live_resin: {
       id: "live_resin",
@@ -897,11 +901,11 @@ const DOCK_DATA = {
         {
           title: "Description",
           type: "description",
-          description: "Terpenes extracted via steam distillation from Live Resin, offering an authentic representation of specific cannabis strains' aroma and taste.",
+          description:
+            "Terpenes extracted via steam distillation from Live Resin, offering an authentic representation of specific cannabis strains' aroma and taste.",
         },
       ],
     },
-
 
     live_infusion: {
       id: "live_infusion",
@@ -913,7 +917,8 @@ const DOCK_DATA = {
         {
           title: "Description",
           type: "description",
-          description: "A harmonized mix of live resin terpenes and botanical terpenes, presenting a rich, layered flavor and aroma experience in pre-rolls.",
+          description:
+            "A harmonized mix of live resin terpenes and botanical terpenes, presenting a rich, layered flavor and aroma experience in pre-rolls.",
         },
       ],
     },
@@ -928,19 +933,12 @@ const DOCK_DATA = {
         {
           title: "Description",
           type: "description",
-          description: "A fusion of cold-extracted cannabis terpenes with botanical sources, resulting in a nuanced aroma blend with pronounced skunky undertones for pre-rolls.",
+          description:
+            "A fusion of cold-extracted cannabis terpenes with botanical sources, resulting in a nuanced aroma blend with pronounced skunky undertones for pre-rolls.",
         },
       ],
     },
-
-
   },
-
-
-  
-
-
-
 };
 
 export default DOCK_DATA;
