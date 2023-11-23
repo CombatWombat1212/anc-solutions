@@ -263,7 +263,7 @@ const DOCK_DATA = {
         {
           title: "Material Origin",
           type: "description",
-          description: "Derived from the industrial hemp plant, a relative of the cannabis plant.",
+          description: "Derived from the industrial hemp plant.",
         },
         {
           title: "Texture",
