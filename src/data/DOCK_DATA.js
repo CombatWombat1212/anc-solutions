@@ -102,7 +102,7 @@ const DOCK_DATA = {
         {
           title: "Flavour Effect",
           type: "description",
-          description: "Faint wood or paper taste, subtly affecting the cannabis flavor.",
+          description: "Faint wood or paper taste, might subtly affect the cannabis flavor.",
         },
       ],
     },
@@ -117,12 +117,12 @@ const DOCK_DATA = {
         {
           title: "Made From",
           type: "description",
-          description: "Fibers from the hemp plant, grown without synthetic chemicals or pesticides.",
+          description: "Fibers from an organically grown hemp plant.",
         },
         {
           title: "Appearance",
           type: "description",
-          description: "Natural, slightly speckled, ranging from light tan to darker brown.",
+          description: "Natural, often slightly speckled, ranging from light tan to darker brown.",
         },
         {
           title: "Burn Rate",
@@ -213,12 +213,12 @@ const DOCK_DATA = {
         {
           title: "Made From",
           type: "description",
-          description: "Derived from plant cellulose, often clear and transparent, unlike traditional rolling papers.",
+          description: "Derived from plant cellulose.",
         },
         {
           title: "Appearance",
           type: "description",
-          description: "Transparent or semi-transparent, allowing users to see the cannabis inside.",
+          description: "Transparent or semi-transparent.",
         },
         {
           title: "Burn Rate",
@@ -248,7 +248,7 @@ const DOCK_DATA = {
           title: "Flavour Effect",
           type: "description",
           description:
-            "Neutral to minimal, allowing for a pure cannabis flavor experience, though some users might detect a slight difference in taste or feel due to its unique texture.",
+            "Neutral to minimal, allowing for a pure cannabis flavor experience.",
         },
       ],
     },
@@ -268,7 +268,7 @@ const DOCK_DATA = {
         {
           title: "Texture & Thickness",
           type: "description",
-          description: "Smooth and consistent, with a medium thickness, which makes it durable enough for easy rolling without tearing.",
+          description: "Smooth and consistent, with a medium thickness; durable enough for easy rolling without tearing.",
         },
         {
           title: "Taste & Smell",
@@ -306,7 +306,7 @@ const DOCK_DATA = {
         {
           title: "Texture & Thickness",
           type: "description",
-          description: "Balanced texture due to the blend of hemp and paper. Medium thickness offering a consistent roll.",
+          description: "Balanced texture due to the hemp and paper blend. Medium thickness.",
         },
         {
           title: "Taste & Smell",
@@ -339,7 +339,7 @@ const DOCK_DATA = {
         {
           title: "Material Origin",
           type: "description",
-          description: "Derived from dried rose petals, often layered together to achieve the necessary thickness.",
+          description: "Derived from dried rose petals, often layered together.",
         },
         {
           title: "Texture & Thickness",
@@ -354,7 +354,7 @@ const DOCK_DATA = {
         {
           title: "Color",
           type: "description",
-          description: "Naturally reddish to dark brown or maroon, depending on the rose type and curing process.",
+          description: "Reddish to dark brown or maroon, depending on the rose, and curing.",
         },
         {
           title: "Burn Rate",
