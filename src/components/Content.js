@@ -14,7 +14,6 @@ import Compaction from "../pages/Compaction";
 import Split from "../pages/Split";
 import { ViewContext } from "../scripts/contexts/viewContext";
 
-
 function Content({ view }) {
   const { page, pageRef } = view;
 
@@ -24,7 +23,6 @@ function Content({ view }) {
   useEffect(() => {
     setShow(DOCK_PAGES.includes(page));
   }, [page]);
-
 
   return (
     <>
@@ -42,26 +40,22 @@ function Content({ view }) {
   );
 }
 
-
 function Inner({ view }) {
   const { page, pageLoading } = view;
   const isSplit = LAYOUT_DATA.split.includes(page);
-
-
 
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
-    setLoaded(pageLoading);
+      setLoaded(pageLoading);
     }, 50);
   }, [pageLoading]);
 
-
-
   return (
     <>
-      <div className={`content--inner ${page}--inner ${isSplit ? "content--inner__split" : ""}
+      <div
+        className={`content--inner ${page}--inner ${isSplit ? "content--inner__split" : ""}
       
       content--inner__${pageLoading ? "loading" : "loaded"}
       `}>
@@ -70,9 +64,6 @@ function Inner({ view }) {
     </>
   );
 }
-
-
-
 
 function Page({ view }) {
   const split = LAYOUT_DATA.split.includes(view.page);
@@ -89,9 +80,6 @@ function Page({ view }) {
     </>
   );
 }
-
-
-
 
 function getType(type) {
   let split = false;
@@ -171,11 +159,7 @@ function Description({ stat }) {
 }
 
 function Bar({ stat }) {
-
   const view = useContext(ViewContext);
-
-
-
 
   return (
     <div
@@ -190,11 +174,14 @@ function Bar({ stat }) {
       </div>
       <div className="bar--x">
         {stat.bar.labels.map((label, index) => (
-          <div className="bar--label" key={index}>
-            <div className="bar--notch">
-              {/* <Label2 className="bar--text">{label}</Label2> */}
-            </div>
-          </div>
+          // <div className="bar--label" key={index}>
+            <div className="bar--notch">{/* <Label2 className="bar--text">{label}</Label2> */}</div>
+          // </div>
+        ))}
+      </div>
+      <div className="bar--label">
+        {[stat.bar.labels[0], stat.bar.labels[stat.bar.labels.length - 1]].map((label, index) => (
+          <Label2 className="bar--text">{label}</Label2>
         ))}
       </div>
     </div>

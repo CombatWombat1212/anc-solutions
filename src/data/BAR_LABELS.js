@@ -5,28 +5,53 @@ const BAR_TYPES = {
 
 
 
+    // speed:[
+    //     "Very Slow",
+    //     "Slow",
+    //     "Medium",
+    //     "Fast",
+    //     "Very Fast",
+    // ],
+
+    // level:[
+    //     "Very Low",
+    //     "Low",
+    //     "Medium",
+    //     "High",
+    //     "Very High",
+    // ],
+
+    // width:[
+    //     "Very Thin",
+    //     "Thin",
+    //     "Moderate",
+    //     "Thick",
+    //     "Very Thick",
+    // ],
+
+
     speed:[
-        "Very Slow",
+        "Slow",
         "Slow",
         "Medium",
         "Fast",
-        "Very Fast",
+        "Fast",
     ],
 
     level:[
-        "Very Low",
+        "Low",
         "Low",
         "Medium",
         "High",
-        "Very High",
+        "High",
     ],
 
     width:[
-        "Very Thin",
+        "Thin",
         "Thin",
         "Moderate",
         "Thick",
-        "Very Thick",
+        "Thick",
     ],
 
 

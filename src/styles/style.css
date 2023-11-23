@@ -626,7 +626,10 @@ input, button, textarea, select {
 }
 
 .bar--label {
-  width: 0.125rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .bar--notch {
@@ -635,16 +638,12 @@ input, button, textarea, select {
   background-color: #ffffff;
   position: relative;
   display: flex;
+  transform: translateY(-100%);
 }
 
 .bar--text {
-  --label-2-font-size: 0.625rem;
-  transform: translateX(-100%) rotate(-90deg) translateY(calc((var(--label-2-font-size) * -1) + (0.125rem* 2)));
-  transform-origin: top right;
   color: #ffffff;
   white-space: nowrap;
-  padding-right: calc(var(--bar-notch-height) + var(--bar-label-margin-top));
-  opacity: 0.6;
 }
 
 .sandbox {
