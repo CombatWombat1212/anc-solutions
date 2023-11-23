@@ -6,7 +6,7 @@
 //   }
 
   &--body {
-    @include col-width(8);
+    @include col-width(7);
   }
 
 
@@ -47,20 +47,20 @@
     // // }
 
     &__bar {
-      --bar-margin: -1.5rem;
+      --bar-margin: -0.35rem;
       
 
     }
-    &__after-bar {
-      --after-bar-margin: -0.5rem;
-    }
-    &__before-bar {
-      --before-bar-margin: -0.4rem;
-    }
+    // &__after-bar {
+    //   --after-bar-margin: -0.5rem;
+    // }
+    // &__before-bar {
+    //   --before-bar-margin: -0.4rem;
+    // }
 
-    &__bar-last {
-      margin-top: -1.15rem !important;
-    }
+    // &__bar-last {
+    //   margin-top: -1.15rem !important;
+    // }
 
 
 
@@ -82,7 +82,7 @@
 
 
   &--visual {
-    @include col-width(4);
+    @include col-width(5);
     // @include flex-col;
   }
 

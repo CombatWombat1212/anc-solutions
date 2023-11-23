@@ -617,6 +617,7 @@ input, button, textarea, select {
   background-color: #EC0719;
   height: 100%;
   width: var(--bar-value_percent);
+  transition: 0.5s var(--bar-transition-delay);
 }
 
 .bar--x {
@@ -998,8 +999,8 @@ input, button, textarea, select {
 }
 
 .viewer .paper--body {
-  width: 66.66667%;
-  --column-width: 8;
+  width: 58.33333%;
+  --column-width: 7;
 }
 
 .viewer .paper--modal {
@@ -1024,19 +1025,7 @@ input, button, textarea, select {
 }
 
 .viewer .paper--stat-row__bar {
-  --bar-margin: -1.5rem;
-}
-
-.viewer .paper--stat-row__after-bar {
-  --after-bar-margin: -0.5rem;
-}
-
-.viewer .paper--stat-row__before-bar {
-  --before-bar-margin: -0.4rem;
-}
-
-.viewer .paper--stat-row__bar-last {
-  margin-top: -1.15rem !important;
+  --bar-margin: -0.35rem;
 }
 
 .viewer .paper--description {
@@ -1045,8 +1034,8 @@ input, button, textarea, select {
 }
 
 .viewer .paper--visual {
-  width: 33.33333%;
-  --column-width: 4;
+  width: 41.66667%;
+  --column-width: 5;
 }
 
 .viewer .paper--graphic {

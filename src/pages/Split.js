@@ -56,7 +56,7 @@ function Split({ view, type }) {
           <ContentModal title={view.dockActiveObj.title} pref={pref} type={typeProp} reference={modal}>
             {view.dockActiveObj.stats.map((stat, index) => {
               const className = getPaperClassNames(columns, view, index);
-              return <Stat stat={stat} key={index} className={`${pref}--stat-row ` + className} />;
+              return <Stat stat={stat} key={index} className={`${pref}--stat-row ` + className} index={index} />;
             })}
           </ContentModal>
           <ContentVisual className={`${pref}--visual`} type={typeProp}>

@@ -144,12 +144,12 @@ function ContentVisual({ children, className, type = "default" }) {
   );
 }
 
-function Stat({ stat, className }) {
+function Stat({ stat, className, index }) {
   return (
     <div className={`paper--stat paper--stat__${stat.type} ${className}`}>
       <H2 className="paper--h2">{stat.title}</H2>
       {stat.description && <Description stat={stat} />}
-      {stat.bar && <Bar stat={stat} />}
+      {stat.bar && <Bar stat={stat} index={index} />}
     </div>
   );
 }
@@ -158,16 +158,20 @@ function Description({ stat }) {
   return <Body className={"paper--description"}>{stat.description}</Body>;
 }
 
-function Bar({ stat }) {
+function Bar({ stat, index }) {
   const view = useContext(ViewContext);
+
+  const delay = index * 100;
+
 
   return (
     <div
       className="bar--wrapper"
       style={{
         "--bar-value": stat.bar.value,
-        "--bar-value_percent": stat.bar.value + "%",
+        "--bar-value_percent": `${!view.pageLoading ? stat.bar.value : 0}%`,
         "--bar-label-count": stat.bar.labels.length,
+        "--bar-transition-delay": delay + "ms",
       }}>
       <div className="bar">
         <div className="bar--value"></div>
