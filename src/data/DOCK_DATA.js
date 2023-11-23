@@ -278,7 +278,7 @@ const DOCK_DATA = {
         {
           title: "Color",
           type: "description",
-          description: "Natural light to dark green or brown, depending on processing.",
+          description: "Natural light to dark green or brown.",
         },
         {
           title: "Burn Rate",
