@@ -61,7 +61,8 @@ $viewer-border-radius: 0rem $viewer-border-radius_val $viewer-border-radius_val 
   &--content {
     border-radius: $viewer-border-radius;
     width: 100%;
-    background-image: linear-gradient($col-darker $b-width, transparent $b-width), linear-gradient(90deg, $col-darker $b-width, transparent $b-width);
+    $col-grid: rgba($col-light, 0.0625);
+    background-image: linear-gradient($col-grid $b-width, transparent $b-width), linear-gradient(90deg, $col-grid $b-width, transparent $b-width);
     background-size: $grid-size $grid-size; /* Size of the grid */
     animation: backgroundMove 7s linear infinite; /* Adjust timing as needed */
   }
