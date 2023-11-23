@@ -5,30 +5,46 @@ import SIZES_IMGS from "../data/SIZES_IMGS";
 
 import SVG from "react-inlinesvg";
 import { useGraphicLoadManager, useGraphicLoadTracker } from "../scripts/hooks/useGraphicLoadManager";
-import { useSpring, useTransition, animated } from '@react-spring/web';
+import { useSpring, useTransition, animated } from "@react-spring/web";
+import useKeyToggle from "../scripts/hooks/useKeyToggle";
 
-
+const COL_DELAY = 115;
 
 function Sizes({ view }) {
   const imgs = Object.values(SIZES_IMGS[view.type]);
 
   const { graphicContainerProps } = useGraphicLoadManager(view, { count: imgs.length });
 
+  const backgroundDuration = 1500;
+  const backgroundDelay = (COL_DELAY * imgs.length) / 10;
+  const backgroundCombined = (backgroundDelay + backgroundDuration)/ 1.05;
 
-  useEffect(() => {
-    console.log(view.pageLoading);
-  }, [view.pageLoading]);
+  const background = {
+    duration: backgroundDuration,
+    delay: backgroundDelay,
+    combined: backgroundCombined,
+  };
 
-  
+  const backgroundStyle = Object.entries(background).reduce((acc, [key, value]) => {
+    acc[`--transition-${key}`] = `${value}ms`;
+    return acc;
+  }, {});
+
   return (
     <>
-      <div className="sizes--body">
-      {imgs.map((img, i) => {
-  return <Item imgs={imgs} index={i} key={i} view={view} {...graphicContainerProps} />;
-})}
-        <div className="sizes--background">
-          <Label1 className="sizes--background-label sizes--background-label__x">Grams</Label1>
-          <Label1 className="sizes--background-label sizes--background-label__y">Length</Label1>
+      <div className="sizes--body" style={backgroundStyle}>
+        {imgs.map((img, i) => {
+          return <Item imgs={imgs} index={i} key={i} view={view} {...graphicContainerProps} />;
+        })}
+        <div className={`sizes--background sizes--background__${view.pageReady ? "active" : "inactive"}`}>
+          <Label1
+            className={`sizes--background-label sizes--background-label__x sizes--background-label__${view.pageReady ? "active" : "inactive"}`}>
+            Grams
+          </Label1>
+          <Label1
+            className={`sizes--background-label sizes--background-label__y sizes--background-label__${view.pageReady ? "active" : "inactive"}`}>
+            Length
+          </Label1>
         </div>
       </div>
     </>
@@ -42,9 +58,15 @@ function Item({ imgs, index, view, ...props }) {
   const { graphicElementProps } = useGraphicLoadTracker(props, { index: index });
 
   const springStyle = useSpring({
-    from: { opacity: 0, transform: 'translateX(-1rem)' },
-    to: { opacity: view.pageReady ? 1 : 0, transform: view.pageReady ? 'translateX(0)' : 'translateX(-1rem)' },
-    delay: index * 100, // Delay each item slightly
+    from: {
+      opacity: 0,
+      transform: "translateX(-1rem)",
+    },
+    to: {
+      opacity: view.pageReady ? 1 : 0,
+      transform: view.pageReady ? "translateX(0)" : "translateX(-1rem)",
+    },
+    delay: index * COL_DELAY,
   });
 
   return (

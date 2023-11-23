@@ -1,6 +1,7 @@
 // ViewProvider.js
 import React, { useState, useRef, useEffect } from "react";
 import { ViewContext } from "./viewContext";
+import useDelayedProps from "../hooks/useDelayedProps";
 
 const ViewProvider = ({ children }) => {
   const [hoveredSideBtn, setHoveredSideBtn] = useState(false);
@@ -14,20 +15,36 @@ const ViewProvider = ({ children }) => {
   const [pageReady, setPageReady] = useState(false);
   const [previousPage, setPreviousPage] = useState({ page: "selection", type: false });
 
+
   useEffect(() => {
-    let timeoutId;
-
-    if (pageLoading) {
-        // Set pageReady to true after 250ms if pageLoading is true
-        timeoutId = setTimeout(() => setPageReady(true), 250);
-    } else if (!pageLoading && pageReady) {
-        // Set pageReady to false after 250ms if pageLoading is false
-        timeoutId = setTimeout(() => setPageReady(false), 250);
+    let timer;
+  
+    if (!pageLoading) {
+      // Set a timer to update pageReady to true after 250ms
+      timer = setTimeout(() => {
+        setPageReady(true);
+      }, 250);
+    } else {
+      // If pageLoading is true, set pageReady to false and clear any existing timer
+      setPageReady(false);
+      if (timer) {
+        clearTimeout(timer);
+      }
     }
+  
+    // Clean up the timer when the component unmounts or if pageLoading changes
+    return () => {
+      if (timer) {
+        clearTimeout(timer);
+      }
+    };
+  }, [pageLoading]);
 
-    return () => clearTimeout(timeoutId); // Cleanup the timeout if the component unmounts
-}, [pageLoading]); // Dependency array
 
+  useEffect(() => {
+    console.log(pageLoading);
+  }, [pageLoading]);
+  
 
 
   const view = {
@@ -46,7 +63,7 @@ const ViewProvider = ({ children }) => {
     setPageLoading: setPageLoading,
 
     pageReady: pageReady,
-    setPageReady: setPageReady,
+    // setPageReady: setPageReady,
 
     // hoveredSideBtn: hoveredSideBtn,
     pageRef: pageRef,

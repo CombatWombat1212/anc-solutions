@@ -640,6 +640,14 @@ input, button, textarea, select {
   padding-right: calc(var(--bar-notch-height) + var(--bar-label-margin-top));
 }
 
+.sandbox {
+  width: 90%;
+  height: 100%;
+  margin-top: 5rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .hidden-until-fonts-loaded {
   visibility: hidden;
 }
@@ -932,18 +940,35 @@ input, button, textarea, select {
 }
 
 .viewer .sizes--background {
-  width: calc(100% + (var(--background-pad) * 2));
-  height: calc(100% + (var(--background-pad) * 1));
-  top: 0;
-  left: calc(var(--background-pad) * -1);
   position: absolute;
   border: solid 0.125rem #EC0719;
   border-width: 0 0 0.125rem 0.125rem;
   pointer-events: none;
+  left: calc(var(--background-pad) * -1);
+  bottom: calc((var(--background-pad) + 0.125rem) * -1);
+  transition-delay: var(--transition-delay);
+  transition-duration: var(--transition-duration);
+  transition-timing-function: cubic-bezier(0.85, 0.1, 0.1, 1);
+}
+
+.viewer .sizes--background__active {
+  opacity: 1;
+  width: calc(100% + (var(--background-pad) * 2));
+  height: calc(100% + (var(--background-pad) * 1));
+}
+
+.viewer .sizes--background__inactive {
+  opacity: 0;
+  width: 0rem;
+  height: 0rem;
 }
 
 .viewer .sizes--background-label {
   position: absolute;
+  will-change: opacity;
+  transition-timing-function: ease;
+  transition-duration: 0.25s;
+  transition-delay: var(--transition-combined);
 }
 
 .viewer .sizes--background-label__x {
@@ -956,6 +981,14 @@ input, button, textarea, select {
   top: 50%;
   left: calc((var(--background-pad) * -1) - var(--background-label-pad) - 0.125rem - 0.25rem);
   transform: rotate(-90deg) translateY(-50%);
+}
+
+.viewer .sizes--background-label__active {
+  opacity: 1;
+}
+
+.viewer .sizes--background-label__inactive {
+  opacity: 0;
 }
 
 .viewer .paper--body {
