@@ -266,9 +266,9 @@ const DOCK_DATA = {
           description: "Derived from the industrial hemp plant, a relative of the cannabis plant.",
         },
         {
-          title: "Texture & Thickness",
+          title: "Texture",
           type: "description",
-          description: "Smooth and consistent, with a medium thickness; durable enough for easy rolling without tearing.",
+          description: "Smooth and consistent, with a medium thickness.",
         },
         {
           title: "Taste & Smell",
@@ -304,7 +304,7 @@ const DOCK_DATA = {
           description: "A combination of natural hemp wraps and high-quality paper.",
         },
         {
-          title: "Texture & Thickness",
+          title: "Texture",
           type: "description",
           description: "Balanced texture due to the hemp and paper blend. Medium thickness.",
         },
@@ -342,7 +342,7 @@ const DOCK_DATA = {
           description: "Derived from dried rose petals, often layered together.",
         },
         {
-          title: "Texture & Thickness",
+          title: "Texture",
           type: "description",
           description: "Delicate with a naturally floral texture. Thin and requires careful handling.",
         },
@@ -380,7 +380,7 @@ const DOCK_DATA = {
           description: "Made from dried chamomile flowers.",
         },
         {
-          title: "Texture & Thickness",
+          title: "Texture",
           type: "description",
           description: "Somewhat delicate with a thin profile, requiring gentle handling.",
         },
@@ -418,7 +418,7 @@ const DOCK_DATA = {
           description: "Derived from dried goji berries or sometimes the leaves of the goji plant.",
         },
         {
-          title: "Texture & Thickness",
+          title: "Texture",
           type: "description",
           description: "Slightly rugged with a thin to medium profile.",
         },
