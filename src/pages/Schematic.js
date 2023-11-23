@@ -120,6 +120,7 @@ function Schematic({ view }) {
 
 
 
+
   return (
     <>
     <SelectionHead type={PRODUCT_DATA[view.type]} active={view.type} className="schematic--head"/>

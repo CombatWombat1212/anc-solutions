@@ -51,6 +51,11 @@ function Sidebar({ view }) {
     }
   }, [panels]);
 
+  useEffect(() => {
+    setPanels([]);
+   
+  }, [view.page]);
+
   const subpage = view.page != "selection";
 
   return (
