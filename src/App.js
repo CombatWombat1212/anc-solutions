@@ -48,8 +48,6 @@ function App() {
   .concat(Object.values(PAPER_DOCK_IMGS))
 
 
-  console.log('test');
-
   return (
     <Providers>
       <link rel="stylesheet" href="https://use.typekit.net/non3ahr.css" />

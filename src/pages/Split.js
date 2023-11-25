@@ -10,11 +10,9 @@ import FLUID_IMGS from "../data/FLUID_IMGS";
 import TERPENES_IMGS from "../data/TERPENES_IMGS";
 import { useGraphicLoadManager, useGraphicLoadTracker } from "../scripts/hooks/useGraphicLoadManager";
 
-
 function delay(duration) {
   return new Promise((resolve) => setTimeout(resolve, duration));
 }
-
 
 const DATABASE = {
   filter: FILTER_IMGS,
@@ -50,37 +48,35 @@ function Split({ view, type }) {
 
   const graphic = useRef(null);
 
-  // useEffect(() => {
-  //   if (view.pageLoading) return;
+  useEffect(() => {
+    if (view.pageLoading) return;
 
-  //   const parts = Array.from(graphic.current.children[1].children);
-  //   parts.push(graphic.current.children[1]);
+    const parts = Array.from(graphic.current.children[1].children);
+    parts.push(graphic.current.children[1]);
 
-  //   parts.forEach((part) => {
-  //     part.classList.add("step-1");
-  //   });
+    parts.forEach((part) => {
+      part.classList.add("step-1");
+    });
 
+    async function animateParts(parts) {
+      await delay(400);
+      parts.forEach((part) => {
+        part.classList.add("step-2");
+      });
 
-  //   async function animateParts(parts) {
-  //     await delay(400);
-  //     parts.forEach((part) => {
-  //       part.classList.add("step-2");
-  //     });
+      await delay(0);
+      parts.forEach((part) => {
+        part.classList.add("step-3");
+      });
 
-  //     await delay(0);
-  //     parts.forEach((part) => {
-  //       part.classList.add("step-3");
-  //     });
+      await delay(350);
+      parts.forEach((part) => {
+        part.classList.add("step-4");
+      });
+    }
 
-  //     await delay(200);
-  //     parts.forEach((part) => {
-  //       part.classList.add("step-4");
-  //     });
-
-  //   }
-
-  //   animateParts(parts);
-  // }, [view.pageLoading]);
+    animateParts(parts);
+  }, [view.pageLoading]);
 
   return (
     <>

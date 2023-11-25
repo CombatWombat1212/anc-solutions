@@ -23,7 +23,7 @@ const PAPER_IMGS = {
   },
   infused: {
     name: "infused",
-    src: URL_PREFIX + "/assets/images/paper/infused.svg",
+    src: URL_PREFIX + "/assets/images/paper/traditional.svg",
     alt: "",
     width: 325,
     height: 528,

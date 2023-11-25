@@ -76,81 +76,84 @@
   }
 }
 
-// .paper {
-//   #roll,
-//   #filter,
-//   #dash_1,
-//   #dash_2,
-//   #paper {
-//     &.step-1 {
-//       transition: 600ms;
-//     }
-//     &.step-2 {
-//       transition: 300ms;
-//     }
-//     &.step-3 {
-//       transition: 400ms;
-//     }  
-//     &.step-4 {
-//       transition: 300ms;
-//     }  
+.paper {
+  #roll,
+  #filter,
+  #dash_1,
+  #dash_2,
+  #paper {
+    &.step-1 {
+      transition: 600ms;
+    }
+    &.step-2 {
+      transition: 300ms;
+    }
+    &.step-3 {
+      transition: 400ms;
+    }  
+    &.step-4 {
+      transition: 300ms;
+    }  
   
-//   }
+  }
 
-//   $distance: 1.7rem;
+  $distance: 1.7rem;
 
-//   #roll {
-//     transform: translateY(#{$distance});
-
-//     &.step-1 {
-//       transform: translateY(0rem);
-//     }
-//     &.step-2 {
-//     }
-//     &.step-3 {
-//     }
-//   }
-
-//   #filter {
-//     transform: translateY(#{-$distance});
-//     opacity: 0.3;
-
-//     &.step-1 {
-//       transform: translateY(0rem);
-//       // opacity: 0.3;
-//     }
-//     &.step-2 {
-//     }
-//     &.step-3 {
-//     }
-//   }
-
-//   #dash_1,
-//   #dash_2 {
-//     opacity: 0;
-//     transform: translateX(0.5rem);
+  #roll {
+    transform: translateY(#{$distance});
+    opacity: 0;
     
-//     &.step-1 {
-//     }
-//     &.step-2 {
-//     }
-//     &.step-3 {
-//       transform: translateX(0rem);
-//       opacity: 1;
-//     }
+    &.step-1 {
+      opacity: 1;
+      transform: translateY(0rem);
+    }
+    &.step-2 {
+    }
+    &.step-3 {
+    }
+  }
 
-//   }
+  #filter {
+    transform: translateY(#{-$distance});
+    opacity: 0;
+    
+    &.step-1 {
+      transform: translateY(0rem);
+      opacity: 0.3;
+    }
+    &.step-2 {
+    }
+    &.step-3 {
+    }
+  }
 
-//   #paper {
-//     opacity: 0;
-//     &.step-1 {
-//     }
-//     &.step-2 {
-//     }
-//     &.step-3 {
-//     }
-//     &.step-4 {
-//       opacity: 1;
-//     }
-//   }
-// }
+  #dash_1,
+  #dash_2 {
+    opacity: 0;
+    transform: translateX(0.5rem);
+    
+    &.step-1 {
+    }
+    &.step-2 {
+    }
+    &.step-3 {
+      transform: translateX(0rem);
+      opacity: 1;
+    }
+
+  }
+
+  #paper {
+    opacity: 0;
+    &.step-1 {
+    }
+    &.step-2 {
+    }
+    &.step-3 {
+    }
+    &.step-4 {
+      opacity: 1;
+    }
+  }
+}
+

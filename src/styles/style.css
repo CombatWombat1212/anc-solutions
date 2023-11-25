@@ -1061,6 +1061,78 @@ input, button, textarea, select {
   margin-top: 0rem !important;
 }
 
+.paper #roll.step-1,
+.paper #filter.step-1,
+.paper #dash_1.step-1,
+.paper #dash_2.step-1,
+.paper #paper.step-1 {
+  transition: 600ms;
+}
+
+.paper #roll.step-2,
+.paper #filter.step-2,
+.paper #dash_1.step-2,
+.paper #dash_2.step-2,
+.paper #paper.step-2 {
+  transition: 300ms;
+}
+
+.paper #roll.step-3,
+.paper #filter.step-3,
+.paper #dash_1.step-3,
+.paper #dash_2.step-3,
+.paper #paper.step-3 {
+  transition: 400ms;
+}
+
+.paper #roll.step-4,
+.paper #filter.step-4,
+.paper #dash_1.step-4,
+.paper #dash_2.step-4,
+.paper #paper.step-4 {
+  transition: 300ms;
+}
+
+.paper #roll {
+  transform: translateY(1.7rem);
+  opacity: 0;
+}
+
+.paper #roll.step-1 {
+  opacity: 1;
+  transform: translateY(0rem);
+}
+
+.paper #filter {
+  transform: translateY(-1.7rem);
+  opacity: 0;
+}
+
+.paper #filter.step-1 {
+  transform: translateY(0rem);
+  opacity: 0.3;
+}
+
+.paper #dash_1,
+.paper #dash_2 {
+  opacity: 0;
+  transform: translateX(0.5rem);
+}
+
+.paper #dash_1.step-3,
+.paper #dash_2.step-3 {
+  transform: translateX(0rem);
+  opacity: 1;
+}
+
+.paper #paper {
+  opacity: 0;
+}
+
+.paper #paper.step-4 {
+  opacity: 1;
+}
+
 .viewer .filter--body {
   width: 58.33333%;
   --column-width: 7;
