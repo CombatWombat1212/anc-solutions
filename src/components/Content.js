@@ -13,6 +13,7 @@ import LAYOUT_DATA from "../data/LAYOUT_DATA";
 import Compaction from "../pages/Compaction";
 import Split from "../pages/Split";
 import { ViewContext } from "../scripts/contexts/viewContext";
+import AnimPres from "./AnimPres";
 
 function Content({ view }) {
   const { page, pageRef } = view;
@@ -128,7 +129,14 @@ function ContentModal({ pref = false, title, children, className, reference = nu
   );
 }
 
+
 function ContentVisual({ children, className, type = "default" }) {
+  const { classes } = getContentVisualProps(type, className);
+  return <div className={classes}>{children}</div>;
+}
+
+
+function getContentVisualProps(type, className) {
   const { split, specialty } = getType(type);
 
   const list = ["content--visual"];
@@ -136,12 +144,7 @@ function ContentVisual({ children, className, type = "default" }) {
   if (split) list.push("content--visual__split");
   if (specialty) list.push("content--visual__specialty");
   const classes = list.join(" ");
-
-  return (
-    <>
-      <div className={classes}>{children}</div>
-    </>
-  );
+  return { classes };
 }
 
 function Stat({ stat, className, index }) {
@@ -186,13 +189,15 @@ function Bar({ stat, index }) {
       </div>
       <div className="bar--label">
         {[stat.bar.labels[0], stat.bar.labels[stat.bar.labels.length - 1]].map((label, index) => (
-          <Label2 className="bar--text" key={index}>{label}</Label2>
+          <Label2 className="bar--text" key={index}>
+            {label}
+          </Label2>
         ))}
       </div>
     </div>
   );
 }
 
-export { ContentVisual, ContentModal, Stat, Description, Bar };
+export { ContentVisual, ContentModal, Stat, Description, Bar, getContentVisualProps };
 
 export default Content;
