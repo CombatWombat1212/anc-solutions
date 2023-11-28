@@ -65,6 +65,13 @@ function Split({ view, type }) {
   const graphic = useRef(null);
 
   const delays = {
+    default:{
+      1: 400,
+      2: 0,
+      3: 450,
+      4: 300,
+    },
+
     paper: {
       1: 400,
       2: 0,
@@ -96,26 +103,28 @@ function Split({ view, type }) {
       part.classList.add("step-1");
     });
 
+    const del = delays[view.page] || delays.default;
+
     async function animateParts(parts) {
-      await delay(delays[view.page][1]);
+      await delay(del[1]);
       if (isCancelled) return;
       parts.forEach((part) => {
         part.classList.add("step-2");
       });
 
-      await delay(delays[view.page][2]);
+      await delay(del[2]);
       if (isCancelled) return;
       parts.forEach((part) => {
         part.classList.add("step-3");
       });
 
-      await delay(delays[view.page][3]);
+      await delay(del[3]);
       if (isCancelled) return;
       parts.forEach((part) => {
         part.classList.add("step-4");
       });
 
-      await delay(delays[view.page][4]);
+      await delay(del[4]);
       if (isCancelled) return;
       setAnimationComplete(true);
     }

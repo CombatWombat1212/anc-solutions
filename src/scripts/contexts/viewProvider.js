@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { ViewContext } from "./viewContext";
 import useDelayedProps from "../hooks/useDelayedProps";
+import DOCK_DATA from "../../data/DOCK_DATA";
 
 
 const PAGE_LOAD_DELAY = 175;
@@ -9,6 +10,9 @@ const PAGE_LOAD_DELAY = 175;
 
 
 const ViewProvider = ({ children }) => {
+
+  const DOCK_PAGES = Object.keys(DOCK_DATA);
+
   const [hoveredSideBtn, setHoveredSideBtn] = useState(false);
   const [page, setPage] = useState("selection");
   const [pageType, setPageType] = useState(false);
@@ -17,14 +21,19 @@ const ViewProvider = ({ children }) => {
   const [dockActiveObj, setDockActiveObj] = useState(false);
   const pageRef = useRef(null);
   const [pageLoading, setPageLoading] = useState(true);
+  const [dockLoading, setDockLoading] = useState(true);
+  const [dockShow, setDockShow] = useState(DOCK_PAGES.includes(page));
   const [pageReady, setPageReady] = useState(false);
   const [previousPage, setPreviousPage] = useState({ page: "selection", type: false });
+
+
 
 
   useEffect(() => {
     let timer;
   
-    if (!pageLoading) {
+    // Check if page is not loading, dock is shown, and dock is not loading
+    if (!pageLoading && dockShow && !dockLoading) {
       timer = setTimeout(() => {
         setPageReady(true);
       }, PAGE_LOAD_DELAY);
@@ -34,12 +43,18 @@ const ViewProvider = ({ children }) => {
         clearTimeout(timer);
       }
     }
-      return () => {
+  
+    return () => {
       if (timer) {
         clearTimeout(timer);
       }
     };
-  }, [pageLoading]);
+  }, [pageLoading, dockShow, dockLoading]); // Add dockShow and dockLoading as dependencies
+  
+
+  useEffect(() => {
+    setDockShow(DOCK_PAGES.includes(page));
+  }, [page]);
 
 
 
@@ -57,6 +72,12 @@ const ViewProvider = ({ children }) => {
 
     pageLoading: pageLoading,
     setPageLoading: setPageLoading,
+
+    dockLoading: dockLoading,
+    setDockLoading: setDockLoading,
+
+    dockShow: dockShow,
+    setDockShow: setDockShow,
 
     pageReady: pageReady,
     // setPageReady: setPageReady,

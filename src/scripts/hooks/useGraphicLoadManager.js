@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-function useGraphicLoadManager(view, { count = 0, dependent = true } = {}) {
+function useGraphicLoadManager(view, { count = 0, dependent = true, set = null } = {}) {
   const [loaded, setLoaded] = useState(false);
   const [graphics, setGraphics] = useState([]);
 
@@ -11,11 +11,12 @@ function useGraphicLoadManager(view, { count = 0, dependent = true } = {}) {
       }, true);
 
       // Set 'loaded' to true only if all graphics are loaded and 'dependent' is true
-      if (allGraphicsLoaded && dependent) {
-        setLoaded(true);
-      } else {
-        setLoaded(false);
-      }
+      // if (allGraphicsLoaded && dependent) {
+      //   setLoaded(true);
+      // } else {
+      //   setLoaded(false);
+      // }
+      setLoaded(allGraphicsLoaded && dependent);
     } else {
       setLoaded(false);
     }
@@ -23,7 +24,12 @@ function useGraphicLoadManager(view, { count = 0, dependent = true } = {}) {
 
   useEffect(() => {
     if (!loaded) return;
-    view.setPageLoading(false);
+    if (!set) view.setPageLoading(false);
+    else set(false);
+
+    return () => {
+      if (set) set(true);
+    };
   }, [loaded]);
 
   return {

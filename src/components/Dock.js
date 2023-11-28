@@ -9,6 +9,7 @@ import DOCK_DATA from "../data/DOCK_DATA";
 import Link from "./Link";
 import useKeyToggle from "../scripts/hooks/useKeyToggle";
 import useDelayedProps from "../scripts/hooks/useDelayedProps";
+import { useGraphicLoadManager, useGraphicLoadTracker } from "../scripts/hooks/useGraphicLoadManager";
 
 // data is the array of dock elements
 // view.dock is the id of the active dock element
@@ -42,6 +43,10 @@ function Dock({ view }) {
 
 
 
+  const result  = useGraphicLoadManager(view, { count: dockItemCount, set: view.setDockLoading });
+  const { graphicContainerProps, loaded } = result;
+
+
   
 
   return (
@@ -56,13 +61,13 @@ function Dock({ view }) {
         "--dock-is-full": dockIsFull,
       }}>
       <div className={`dock--inner dock--inner__${!view.pageLoading ? 'active' : 'inactive'}`}>
-        {view.dockStats && view.dockStats.map((item, index) => <Item item={item} index={index} key={index} view={view} active={active} />)}
+        {view.dockStats && view.dockStats.map((item, index) => <Item item={item} index={index} key={index} view={view} active={active} graphicContainerProps={graphicContainerProps} />)}
       </div>
     </div>
   );
 }
 
-function Item({ item, index, view, active}) {
+function Item({ item, index, view, active, graphicContainerProps}) {
   const [hovered, setHovered] = useState(false);
   const [state, setState] = useState(view.dock == item.id ? "active" : "inactive");
 
@@ -82,12 +87,18 @@ function Item({ item, index, view, active}) {
     setState(view.dock == item.id || hovered ? "active" : "inactive");
   }, [active, hovered]);
 
+
+  // const {graphicElementProps, graphicLoaded} = useGraphicLoadTracker(graphicContainerProps, { key: item.img.src });
+  const test = useGraphicLoadTracker(graphicContainerProps, { key: item.img.src });
+  const {graphicElementProps, graphicLoaded} = test;
+  
+
   return (
     <>
       <Link className={`dock--item dock--item__${state}`} onMouseEnter={handleHover} onMouseLeave={handleLeave} onClick={handleClick} loading={false}>
         <H2 className={`dock--h2 dock--h2__${state}`}
         >{item.title}</H2>
-        <Mask className={`dock--graphic dock--graphic__${state}`} img={item.img} />
+        <Mask className={`dock--graphic dock--graphic__${state}`} img={item.img} graphicElementProps={graphicElementProps} />
       </Link>
       <div
         className={`dock--item-background dock--item-background__${state}`}

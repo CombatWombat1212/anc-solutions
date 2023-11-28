@@ -18,24 +18,28 @@ import AnimPres from "./AnimPres";
 function Content({ view }) {
   const { page, pageRef } = view;
 
-  const DOCK_PAGES = Object.keys(DOCK_DATA);
-  const [show, setShow] = useState(DOCK_PAGES.includes(page));
+  // const DOCK_PAGES = Object.keys(DOCK_DATA);
+  // const [show, setShow] = useState(DOCK_PAGES.includes(page));
+  // view.setDockShow(DOCK_PAGES.includes(page));
 
-  useEffect(() => {
-    setShow(DOCK_PAGES.includes(page));
-  }, [page]);
 
+  // useEffect(() => {
+    // setShow(DOCK_PAGES.includes(page));
+    // view.setDockShow(DOCK_PAGES.includes(page));
+  // }, [page]);
+
+  
   return (
     <>
       <div
         className={`viewer--content content ${page}`}
         ref={pageRef}
         style={{
-          "--content-has-dock": show ? 1 : 0,
+          "--content-has-dock": view.dockShow ? 1 : 0,
         }}>
         <Inner view={view} />
 
-        {show && <Dock view={view} />}
+        {view.dockShow && <Dock view={view} />}
       </div>
     </>
   );
