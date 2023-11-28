@@ -1,12 +1,10 @@
 .viewer .sizes {
   &--wrapper {
-}
---background-pad: 3rem;
---background-label-pad:1rem;
+  }
+  --background-pad: 3rem;
+  --background-label-pad: 1rem;
 
-&--inner {
-    
-
+  &--inner {
     --content-inner-pad-top: calc(10rem - var(--background-pad));
     --content-inner-pad-bottom: 10rem;
     --content-inner-pad-x: 11rem;
@@ -64,7 +62,6 @@
   }
 
   &--background {
-
     // width: calc(100% + (var(--background-pad) * 2));
     // height: calc(100% + (var(--background-pad) * 1));
     // top: calc(var(--background-pad) * -1);
@@ -92,26 +89,23 @@
       width: 0rem;
       height: 0rem;
     }
-
   }
 
   &--background-label {
     position: absolute;
 
-
-    &__x{
-        top: calc(100% + var(--background-label-pad));
-        left: 50%;
-        transform: translateX(-50%);
+    &__x {
+      top: calc(100% + var(--background-label-pad));
+      left: 50%;
+      transform: translateX(-50%);
     }
 
-    &__y{
-        top: 50%;
-        // left: calc(var(--background-label-pad) * -1);
-        left: calc((var(--background-pad) * -1) - var(--background-label-pad) - #{$b-width} - 0.25rem);
-        transform: rotate(-90deg) translateY(-50%);
+    &__y {
+      top: 50%;
+      // left: calc(var(--background-label-pad) * -1);
+      left: calc((var(--background-pad) * -1) - var(--background-label-pad) - #{$b-width} - 0.25rem);
+      transform: rotate(-90deg) translateY(-50%);
     }
-
 
     will-change: opacity;
 
@@ -125,8 +119,5 @@
     &__inactive {
       opacity: 0;
     }
-
-
-
   }
 }

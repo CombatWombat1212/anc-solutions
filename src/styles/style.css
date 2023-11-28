@@ -903,7 +903,7 @@ input, button, textarea, select {
 
 .viewer .sizes {
   --background-pad: 3rem;
-  --background-label-pad:1rem;
+  --background-label-pad: 1rem;
 }
 
 .viewer .sizes--inner {
@@ -1310,8 +1310,20 @@ input, button, textarea, select {
   width: var(--compaction-brace-width);
   border: 0.125rem solid #EC0719;
   border-left-width: 0rem;
-  height: var(--roll-height);
   margin-top: auto;
+  margin-bottom: auto;
+  transition: 0.85s;
+  transition-timing-function: cubic-bezier(0.85, 0, 0, 1);
+}
+
+.compaction--col__inactive .compaction--brace {
+  opacity: 0;
+  height: 0px;
+}
+
+.compaction--col__active .compaction--brace {
+  opacity: 1;
+  height: var(--roll-height);
 }
 
 .viewer .compaction--line {
@@ -1324,6 +1336,16 @@ input, button, textarea, select {
   flex-direction: row;
   justify-content: flex-end;
   position: relative;
+  transition-duration: 0.65s;
+  transition-delay: 0.8s;
+}
+
+.compaction--col__inactive .compaction--line {
+  opacity: 0;
+}
+
+.compaction--col__active .compaction--line {
+  opacity: 1;
 }
 
 .viewer .compaction--dot {

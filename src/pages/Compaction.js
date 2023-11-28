@@ -6,6 +6,8 @@ import { useEffect, useRef, useState } from "react";
 import useIsResizing from "../scripts/hooks/useIsResizing";
 import useAttrObserver from "../scripts/hooks/useAttrObserver";
 import { useGraphicLoadManager, useGraphicLoadTracker } from "../scripts/hooks/useGraphicLoadManager";
+import { animated, useSpring } from "react-spring";
+import useKeyToggle from "../scripts/hooks/useKeyToggle";
 
 function Compaction({ view }) {
   // Include 'loaded' state in initial state setup for compaction items
@@ -13,6 +15,7 @@ function Compaction({ view }) {
   const initialCompactionItemsState = data.map(() => ({
     visual: { loaded: false }, // Set initial 'loaded' state to false
     modal: null,
+    animation: { complete: false },
   }));
 
   const [compactionItems, setCompactionItems] = useState(initialCompactionItemsState);
@@ -41,9 +44,19 @@ function Compaction({ view }) {
     setAllLoaded(allLoaded);
   }, [compactionItems]);
 
+
+  const [allColumnsAnimated, setAllColumnsAnimated] = useState(false);
+  useEffect(() => {
+    const atLeastOneTrue = compactionItems.some((item) => {
+      return item.animation.complete;
+    });
+    setAllColumnsAnimated(atLeastOneTrue);
+  }, [compactionItems]);
+
   const resizing = useIsResizing();
 
   const { graphicContainerProps } = useGraphicLoadManager(view, { count: data.length });
+
 
   return (
     <div
@@ -52,12 +65,59 @@ function Compaction({ view }) {
         "--compaction-modal-height": `${tallestModal}px`,
       }}>
       {data.map((comp, index) => (
-        <div className="compaction--col" key={index}>
-          <CompactionVisual comp={comp} index={index} updateCompactionItem={updateCompactionItem} resizing={resizing} {...graphicContainerProps} />
-          <CompactionModal comp={comp} index={index} updateCompactionItem={updateCompactionItem} resizing={resizing} tallestModal={tallestModal} />
-        </div>
+        <CompactionCol
+          key={index}
+          comp={comp}
+          index={index}
+          updateCompactionItem={updateCompactionItem}
+          resizing={resizing}
+          graphicContainerProps={graphicContainerProps}
+          tallestModal={tallestModal}
+          view={view}
+          allColumnsAnimated={allColumnsAnimated}
+        />
       ))}
     </div>
+  );
+}
+
+function CompactionCol({ comp, index, updateCompactionItem, resizing, tallestModal, view, graphicContainerProps, allColumnsAnimated }) {
+
+
+
+  const [animatedComplete, setAnimatedComplete] = useState(false);
+
+  const handleAnimationComplete = () => {
+    setAnimatedComplete(true);
+  };
+
+  const springStyle = useSpring({
+    from: {
+      opacity: 0,
+      transform: "translateX(-1rem)",
+    },
+    to: {
+      opacity: !view.pageLoading ? 1 : 0,
+      transform: !view.pageLoading ? "translateX(0)" : "translateX(-1rem)",
+    },
+    delay: index * 100,
+    onRest: handleAnimationComplete, 
+  });
+
+
+  useEffect(() => {
+    updateCompactionItem(index, "animation", { complete: animatedComplete });
+  }, [animatedComplete]);
+
+  
+  const on = useKeyToggle();
+
+
+  return (
+    <animated.div className={`compaction--col compaction--col__${allColumnsAnimated ? "active" : "inactive" }`} key={index} style={springStyle}>
+      <CompactionVisual comp={comp} index={index} updateCompactionItem={updateCompactionItem} resizing={resizing} {...graphicContainerProps} />
+      <CompactionModal comp={comp} index={index} updateCompactionItem={updateCompactionItem} resizing={resizing} tallestModal={tallestModal} />
+    </animated.div>
   );
 }
 
@@ -94,6 +154,7 @@ function CompactionVisual({ comp, index, updateCompactionItem, resizing, ...prop
     handleTrackerLoad();
     handleLoad();
   };
+
 
   return (
     <div
