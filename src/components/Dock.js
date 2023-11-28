@@ -46,6 +46,7 @@ function Dock({ view }) {
   const result  = useGraphicLoadManager(view, { count: dockItemCount, set: view.setDockLoading });
   const { graphicContainerProps, loaded } = result;
 
+  
 
   
 

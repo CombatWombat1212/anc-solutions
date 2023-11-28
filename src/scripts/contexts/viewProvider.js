@@ -32,7 +32,6 @@ const ViewProvider = ({ children }) => {
   useEffect(() => {
     let timer;
   
-    // Check if page is not loading, dock is shown, and dock is not loading
     if (!pageLoading && dockShow && !dockLoading) {
       timer = setTimeout(() => {
         setPageReady(true);
@@ -49,12 +48,13 @@ const ViewProvider = ({ children }) => {
         clearTimeout(timer);
       }
     };
-  }, [pageLoading, dockShow, dockLoading]); // Add dockShow and dockLoading as dependencies
+  }, [pageLoading, dockShow, dockLoading]);
   
 
   useEffect(() => {
     setDockShow(DOCK_PAGES.includes(page));
   }, [page]);
+
 
 
 
