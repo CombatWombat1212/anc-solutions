@@ -3,6 +3,11 @@ import React, { useState, useRef, useEffect } from "react";
 import { ViewContext } from "./viewContext";
 import useDelayedProps from "../hooks/useDelayedProps";
 
+
+const PAGE_LOAD_DELAY = 175;
+
+
+
 const ViewProvider = ({ children }) => {
   const [hoveredSideBtn, setHoveredSideBtn] = useState(false);
   const [page, setPage] = useState("selection");
@@ -22,7 +27,7 @@ const ViewProvider = ({ children }) => {
     if (!pageLoading) {
       timer = setTimeout(() => {
         setPageReady(true);
-      }, 150);
+      }, PAGE_LOAD_DELAY);
     } else {
       setPageReady(false);
       if (timer) {
@@ -67,5 +72,9 @@ const ViewProvider = ({ children }) => {
 
   return <ViewContext.Provider value={view}>{children}</ViewContext.Provider>;
 };
+
+
+
+export {PAGE_LOAD_DELAY};
 
 export default ViewProvider;

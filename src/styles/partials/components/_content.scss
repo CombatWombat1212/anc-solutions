@@ -20,6 +20,7 @@
 
     max-height: weighted-average(var(--content-inner-max-height_dock), var(--content-inner-max-height), var(--content-has-dock));
 
+    overflow:hidden;
 
     @include xxl-down{
       --content-inner-pad-top: 5.25rem;
@@ -28,9 +29,8 @@
   
     }
 
-
-
-    transition:  opacity 0.15s;
+    // PAGE_LOAD_DELAY viewProvider.js
+    transition:  opacity 0.175s;
 
     &__loading{
       opacity:0;

@@ -27,6 +27,7 @@
 
   &--text{
     @include flex-row;
+    @include no-select;
   }
 
 
@@ -81,6 +82,7 @@
     height: 100%;
     @include flex-col-end;
     align-items: flex-start;
+    @include no-select;
   }
 
   &--back-inner{

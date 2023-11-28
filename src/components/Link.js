@@ -1,5 +1,6 @@
 import { useContext, useEffect } from "react";
 import { ViewContext } from "../scripts/contexts/viewContext";
+import { PAGE_LOAD_DELAY } from "../scripts/contexts/viewProvider";
 
 function Link({ children, onClick, action, reference = null, click = true, loading=true, ...props }) {
   const view = useContext(ViewContext);
@@ -9,7 +10,7 @@ function Link({ children, onClick, action, reference = null, click = true, loadi
     if (loading) {
       if (click) {
         view.setPageLoading(true);
-        setTimeout(() => onClick?.(event), 150);
+        setTimeout(() => onClick?.(event), PAGE_LOAD_DELAY);
       }
     } else {
       onClick?.(event);

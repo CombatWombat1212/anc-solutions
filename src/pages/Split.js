@@ -10,7 +10,7 @@ import FLUID_IMGS from "../data/FLUID_IMGS";
 import TERPENES_IMGS from "../data/TERPENES_IMGS";
 import { useGraphicLoadManager, useGraphicLoadTracker } from "../scripts/hooks/useGraphicLoadManager";
 import AnimPres from "../components/AnimPres";
-import { cubicBezier } from "framer-motion"
+import { cubicBezier } from "framer-motion";
 
 function delay(duration) {
   return new Promise((resolve) => setTimeout(resolve, duration));
@@ -64,10 +64,30 @@ function Split({ view, type }) {
 
   const graphic = useRef(null);
 
+  const delays = {
+    paper: {
+      1: 400,
+      2: 0,
+      3: 450,
+      4: 300,
+    },
+    filter: {
+      1: 400,
+      2: 0,
+      3: 450,
+      4: 300,
+    },
+  };
+
+  const [animationComplete, setAnimationComplete] = useState(false);
+  const [dockItemSelected, setDockItemSelected] = useState(false);
+
   useEffect(() => {
-    if (view.pageLoading) return;
+    if (!view.pageReady) return;
 
     if (!graphic.current || !graphic.current.children[1]) return;
+
+    let isCancelled = false;
 
     const parts = Array.from(graphic.current.children[1].children);
     parts.push(graphic.current.children[1]);
@@ -77,24 +97,37 @@ function Split({ view, type }) {
     });
 
     async function animateParts(parts) {
-      await delay(400);
+      await delay(delays[view.page][1]);
+      if (isCancelled) return;
       parts.forEach((part) => {
         part.classList.add("step-2");
       });
 
-      await delay(0);
+      await delay(delays[view.page][2]);
+      if (isCancelled) return;
       parts.forEach((part) => {
         part.classList.add("step-3");
       });
 
-      await delay(350);
+      await delay(delays[view.page][3]);
+      if (isCancelled) return;
       parts.forEach((part) => {
         part.classList.add("step-4");
       });
+
+      await delay(delays[view.page][4]);
+      if (isCancelled) return;
+      setAnimationComplete(true);
     }
 
     animateParts(parts);
-  }, [view.pageLoading]);
+
+    return () => {
+      isCancelled = true;
+      setAnimationComplete(false);
+      setDockItemSelected(false);
+    };
+  }, [view.pageReady]);
 
   return (
     <>
@@ -114,6 +147,10 @@ function Split({ view, type }) {
             graphicElementProps={graphicElementProps}
             type={typeProp}
             className={`${pref}--visual`}
+            animationComplete={animationComplete}
+            setAnimationComplete={setAnimationComplete}
+            dockItemSelected={dockItemSelected}
+            setDockItemSelected={setDockItemSelected}
           />
           {/* <ContentVisual className={`${pref}--visual`} type={typeProp}><SVG
         className={`${pref}--graphic content--graphic__split`}
@@ -129,30 +166,45 @@ function Split({ view, type }) {
   );
 }
 
-function Visual({ view, img, graphic, pref, graphicElementProps, type, className }) {
+function Visual({
+  view,
+  img,
+  graphic,
+  pref,
+  graphicElementProps,
+  type,
+  className,
+  animationComplete,
+  setAnimationComplete,
+  dockItemSelected,
+  setDockItemSelected,
+}) {
   const { classes } = getContentVisualProps(type, className);
 
-
-  const dur = 0.175;
-  const easing = cubicBezier(.35,.17,.3,.86);
+  const dur = 0.125; //s
+  const dist = 1.5; //rem
+  const rot = 0.5; //deg
+  const easing = cubicBezier(0.35, 0.17, 0.3, 0.86);
   const tran = {
     duration: dur,
     ease: easing,
   };
 
-
   const slideFadeLeft = {
     hidden: {
-      translateX: "1rem",
+      translateX: `${dist}rem`,
+      rotate: `${rot}deg`,
       opacity: 0,
     },
     visible: {
       translateX: "0rem",
+      rotate: `0deg`,
       opacity: 1,
       transition: tran,
     },
     exit: {
-      translateX: "-1rem",
+      translateX: `-${dist}rem`,
+      rotate: `-${rot}deg`,
       opacity: 0,
       transition: tran,
     },
@@ -160,16 +212,19 @@ function Visual({ view, img, graphic, pref, graphicElementProps, type, className
 
   const slideFadeRight = {
     hidden: {
-      translateX: "-1rem",
+      translateX: `-${dist}rem`,
+      rotate: `-${rot}deg`,
       opacity: 0,
     },
     visible: {
       translateX: "0rem",
+      rotate: `0deg`,
       opacity: 1,
       transition: tran,
     },
     exit: {
-      translateX: "1rem",
+      translateX: `${dist}rem`,
+      rotate: `${rot}deg`,
       opacity: 0,
       transition: tran,
     },
@@ -177,21 +232,24 @@ function Visual({ view, img, graphic, pref, graphicElementProps, type, className
 
   const bounceFade = {
     in: {
-      initial: { opacity: 0, scale: 0.95 },
-      animate: { opacity: 1, scale: 1 },
+      // initial: { opacity: 0, scale: 0.95 },
+      // animate: { opacity: 1, scale: 1 },
+      initial: { opacity: 0 },
+      animate: { opacity: 1 },
       transition: tran,
     },
 
     out: {
-      animate: { opacity: 0, scale: 0.95 },
-      exit: { opacity: 0, scale: 0.95 },
-      transition: tran,
+      animate: { opacity: 0 },
+      exit: { opacity: 0 },
+      transition: { ...tran, duration: 0.3 },
     },
   };
 
   const [animation, setAnimation] = useState(bounceFade);
   const [prevIndex, setPrevIndex] = useState(0);
   const [imgState, setImgState] = useState(img);
+  const [isFirstRender, setIsFirstRender] = useState(true);
 
   useEffect(() => {
     const index = view.dockStats.findIndex((stat) => stat.id === view.dock);
@@ -203,14 +261,18 @@ function Visual({ view, img, graphic, pref, graphicElementProps, type, className
   }, [view.dockStats, view.dock, prevIndex]);
 
   useEffect(() => {
-    const index = view.dockStats.findIndex((stat) => stat.id === view.dock);
+    if (isFirstRender) {
+      setIsFirstRender(false);
+    } else {
+      const index = view.dockStats.findIndex((stat) => stat.id === view.dock);
 
-    if (index !== prevIndex) {
-      setPrevIndex((prevIndex) => index);
-      if (index > prevIndex) {
-        setAnimation(slideFadeLeft);
-      } else if (index < prevIndex) {
-        setAnimation(slideFadeRight);
+      if (index !== prevIndex) {
+        setPrevIndex((prevIndex) => index);
+        if (index > prevIndex) {
+          setAnimation(slideFadeLeft);
+        } else if (index < prevIndex) {
+          setAnimation(slideFadeRight);
+        }
       }
     }
   }, [view.dockStats, view.dock, prevIndex]);
@@ -220,15 +282,21 @@ function Visual({ view, img, graphic, pref, graphicElementProps, type, className
       setImgState(img);
     }, 0);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+    };
   }, [animation, img]);
 
-  console.log(imgState);
+  // useEffect(() => {
+  //   console.log(animationComplete || dockItemSelected ? "static" : "first-render");
+  // }, [animationComplete, dockItemSelected]);
+  useEffect(() => {
+  }, [animationComplete, dockItemSelected]);
 
   return (
     <AnimPres animation={animation} condition={true} className={classes} elemkey={imgState.src} mode="wait">
       <SVG
-        className={`${pref}--graphic content--graphic__split`}
+        className={`${pref}--graphic content--graphic__split ${animationComplete || dockItemSelected ? "static" : "first-render"}`}
         src={imgState.src}
         width={imgState.width}
         height={imgState.height}
