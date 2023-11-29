@@ -4,32 +4,33 @@ const FLUID_IMGS = {
   blunt: {
     distillate: {
       name: "blunt_distillate",
-      src: "/assets/images/fluid/blunt_distillate.svg",
+      src: URL_PREFIX + "/assets/images/fluid/blunt_distillate.svg",
       alt: "",
-      width: 570,
-      height: 562,
+      width: 580,
+      height: 561,
     },
     fso: {
       name: "blunt_fso",
-      src: "/assets/images/fluid/blunt_fso.svg",
+      src: URL_PREFIX + "/assets/images/fluid/blunt_fso.svg",
       alt: "",
-      width: 570,
-      height: 562,
+      width: 580,
+      height: 561,
     },
     htfse: {
       name: "blunt_htfse",
-      src: "/assets/images/fluid/blunt_htfse.svg",
+      src: URL_PREFIX + "/assets/images/fluid/blunt_htfse.svg",
       alt: "",
-      width: 570,
-      height: 562,
+      width: 580,
+      height: 561,
     },
     live_rosin: {
       name: "blunt_live_rosin",
-      src: "/assets/images/fluid/blunt_live_rosin.svg",
+      src: URL_PREFIX + "/assets/images/fluid/blunt_live_rosin.svg",
       alt: "",
-      width: 570,
-      height: 562,
+      width: 580,
+      height: 561,
     },
+  
   },
 
   infused: {
@@ -76,8 +77,8 @@ const FLUID_DOCK_IMGS = {
     name: "dock_fso",
     src: URL_PREFIX + "/assets/images/fluid/dock_fso.svg",
     alt: "",
-    width: 133,
-    height: 66,
+    width: 120,
+    height: 78,
   },
   htfse: {
     name: "dock_htfse",
@@ -90,8 +91,8 @@ const FLUID_DOCK_IMGS = {
     name: "dock_live_rosin",
     src: URL_PREFIX + "/assets/images/fluid/dock_live_rosin.svg",
     alt: "",
-    width: 120,
-    height: 78,
+    width: 133,
+    height: 66,
   },
 };
 

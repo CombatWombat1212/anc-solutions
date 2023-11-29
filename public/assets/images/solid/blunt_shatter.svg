@@ -95,7 +95,7 @@
       </g>
     </g>
     <g id="circle_small">
-      <circle class="cls-8" cx="491.03" cy="151.88" r="46.55" transform="translate(-10.47 264.44) rotate(-29.84)"/>
+      <path class="cls-8" d="m444.59,155.11c-1.78-25.65,17.56-47.89,43.21-49.67,25.65-1.78,47.89,17.56,49.67,43.21,1.78,25.65-17.56,47.89-43.21,49.67-25.65,1.78-47.89-17.56-49.67-43.21Z"/>
     </g>
     <g id="infusion">
       <g class="cls-11">
@@ -946,7 +946,7 @@
       </g>
     </g>
     <g id="circle_large">
-      <circle class="cls-5" cx="101.53" cy="258.46" r="91.71" transform="translate(-59.43 32.18) rotate(-13.98)"/>
+      <circle class="cls-5" cx="101.53" cy="258.46" r="91.71" transform="translate(-174.08 292.39) rotate(-75.57)"/>
     </g>
   </g>
 </svg>

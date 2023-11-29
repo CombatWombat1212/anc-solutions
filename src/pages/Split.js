@@ -64,6 +64,21 @@ function Split({ view, type }) {
 
   const graphic = useRef(null);
 
+
+
+
+
+  const specialties = {
+      1: 400,
+      2: 400,
+      3: 300,
+      4: 100,
+      5: 200,
+      6: 900,
+  };
+
+
+
   const delays = {
     default:{
       1: 400,
@@ -83,14 +98,12 @@ function Split({ view, type }) {
       6: 0,
     },
 
-    solid: {
-      1: 550,
-      2: 400,
-      3: 300,
-      4: 300,
-      5: 200,
-      6: 900,
-    },
+    solid: specialties,
+    fluid: specialties,
+    terpenes: specialties,
+
+
+
   };
 
   const [animationComplete, setAnimationComplete] = useState(false);
@@ -111,6 +124,8 @@ function Split({ view, type }) {
     });
 
     const del = delays[view.page] || delays.default;
+
+    console.log(parts);
 
     async function animateParts(parts) {
       await delay(del[1]);

@@ -6,31 +6,30 @@ const TERPENES_IMGS = {
       name: "blunt_botanical",
       src: URL_PREFIX + "/assets/images/terpenes/blunt_botanical.svg",
       alt: "",
-      width: 570,
+      width: 580,
       height: 561,
     },
     cured_infusion: {
       name: "blunt_cured_infusion",
       src: URL_PREFIX + "/assets/images/terpenes/blunt_cured_infusion.svg",
       alt: "",
-      width: 570,
+      width: 580,
       height: 561,
     },
     live_infusion: {
       name: "blunt_live_infusion",
       src: URL_PREFIX + "/assets/images/terpenes/blunt_live_infusion.svg",
       alt: "",
-      width: 570,
+      width: 580,
       height: 561,
     },
     live_resin: {
       name: "blunt_live_resin",
       src: URL_PREFIX + "/assets/images/terpenes/blunt_live_resin.svg",
       alt: "",
-      width: 570,
+      width: 580,
       height: 561,
-    },
-  },
+    },  },
 
   infused: {
     botanical: {
