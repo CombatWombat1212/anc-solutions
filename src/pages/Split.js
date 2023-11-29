@@ -70,6 +70,8 @@ function Split({ view, type }) {
       2: 0,
       3: 450,
       4: 300,
+      5: 0,
+      6: 0,
     },
 
     end: {
@@ -77,6 +79,17 @@ function Split({ view, type }) {
       2: 0,
       3: 400,
       4: 300,
+      5: 0,
+      6: 0,
+    },
+
+    solid: {
+      1: 550,
+      2: 400,
+      3: 300,
+      4: 300,
+      5: 200,
+      6: 900,
     },
   };
 
@@ -119,6 +132,19 @@ function Split({ view, type }) {
       });
 
       await delay(del[4]);
+      if (isCancelled) return;
+      parts.forEach((part) => {
+        part.classList.add("step-5");
+      });
+
+      await delay(del[5]);
+      if (isCancelled) return;
+      parts.forEach((part) => {
+        part.classList.add("step-6");
+      });
+
+
+      await delay(del[6]);
       if (isCancelled) return;
       setAnimationComplete(true);
     }

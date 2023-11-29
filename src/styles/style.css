@@ -1479,4 +1479,131 @@ input, button, textarea, select {
 .end .first-render #end_enlarged.step-4 {
   opacity: 1;
 }
+
+.solid .first-render #roll.step-1,
+.solid .first-render #circle_small.step-1,
+.solid .first-render #infusion.step-1,
+.solid .first-render #dash_1.step-1,
+.solid .first-render #dash_2.step-1,
+.solid .first-render #circle_large.step-1,
+.solid .first-render #substance.step-1 {
+  transition: 400ms;
+}
+
+.solid .first-render #roll.step-2,
+.solid .first-render #circle_small.step-2,
+.solid .first-render #infusion.step-2,
+.solid .first-render #dash_1.step-2,
+.solid .first-render #dash_2.step-2,
+.solid .first-render #circle_large.step-2,
+.solid .first-render #substance.step-2 {
+  transition: 400ms;
+}
+
+.solid .first-render #roll.step-3,
+.solid .first-render #circle_small.step-3,
+.solid .first-render #infusion.step-3,
+.solid .first-render #dash_1.step-3,
+.solid .first-render #dash_2.step-3,
+.solid .first-render #circle_large.step-3,
+.solid .first-render #substance.step-3 {
+  transition: 400ms;
+}
+
+.solid .first-render #roll.step-4,
+.solid .first-render #circle_small.step-4,
+.solid .first-render #infusion.step-4,
+.solid .first-render #dash_1.step-4,
+.solid .first-render #dash_2.step-4,
+.solid .first-render #circle_large.step-4,
+.solid .first-render #substance.step-4 {
+  transition: 300ms;
+}
+
+.solid .first-render #roll.step-5,
+.solid .first-render #circle_small.step-5,
+.solid .first-render #infusion.step-5,
+.solid .first-render #dash_1.step-5,
+.solid .first-render #dash_2.step-5,
+.solid .first-render #circle_large.step-5,
+.solid .first-render #substance.step-5 {
+  transition: 500ms;
+}
+
+.solid .first-render #roll.step-6,
+.solid .first-render #circle_small.step-6,
+.solid .first-render #infusion.step-6,
+.solid .first-render #dash_1.step-6,
+.solid .first-render #dash_2.step-6,
+.solid .first-render #circle_large.step-6,
+.solid .first-render #substance.step-6 {
+  transition: 500ms;
+}
+
+.solid .first-render #roll {
+  opacity: 0;
+}
+
+.solid .first-render #roll.step-1 {
+  opacity: 0.3;
+}
+
+.solid #roll {
+  opacity: 0.3;
+}
+
+.solid .first-render #circle_small {
+  opacity: 0;
+  transform: rotate(80deg);
+  transform-origin: 85% 27%;
+  transition-duration: 1s !important;
+}
+
+.solid .first-render #circle_small.step-2 {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.solid .first-render #infusion {
+  opacity: 0;
+  transform-origin: 85% 27%;
+}
+
+.solid .first-render #infusion.step-2 {
+  transition-delay: 0.2s;
+  opacity: 1;
+}
+
+.solid .first-render #dash_1,
+.solid .first-render #dash_2 {
+  opacity: 0;
+}
+
+.solid .first-render #dash_1.step-3,
+.solid .first-render #dash_2.step-3 {
+  opacity: 1;
+}
+
+.solid .first-render #circle_large {
+  opacity: 0;
+  transform: rotate(-40deg);
+  transform-origin: 17.5% 46.1%;
+  transition-duration: 0.8s !important;
+}
+
+.solid .first-render #circle_large.step-5 {
+  transform: rotate(0deg);
+  opacity: 1;
+}
+
+.solid .first-render #substance {
+  opacity: 0;
+  transform-origin: 96px 260px;
+  transition-delay: 0.15s !important;
+  transition-duration: 0.8s !important;
+}
+
+.solid .first-render #substance.step-5 {
+  opacity: 1;
+}
 /*# sourceMappingURL=style.css.map */
