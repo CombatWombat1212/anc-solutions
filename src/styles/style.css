@@ -1486,13 +1486,15 @@ input, button, textarea, select {
 .solid .first-render #dash_1.step-1,
 .solid .first-render #dash_2.step-1,
 .solid .first-render #circle_large.step-1,
-.solid .first-render #substance.step-1, .fluid .first-render #roll.step-1,
+.solid .first-render #substance.step-1,
+.fluid .first-render #roll.step-1,
 .fluid .first-render #circle_small.step-1,
 .fluid .first-render #infusion.step-1,
 .fluid .first-render #dash_1.step-1,
 .fluid .first-render #dash_2.step-1,
 .fluid .first-render #circle_large.step-1,
-.fluid .first-render #substance.step-1, .terpenes .first-render #roll.step-1,
+.fluid .first-render #substance.step-1,
+.terpenes .first-render #roll.step-1,
 .terpenes .first-render #circle_small.step-1,
 .terpenes .first-render #infusion.step-1,
 .terpenes .first-render #dash_1.step-1,
@@ -1508,13 +1510,15 @@ input, button, textarea, select {
 .solid .first-render #dash_1.step-2,
 .solid .first-render #dash_2.step-2,
 .solid .first-render #circle_large.step-2,
-.solid .first-render #substance.step-2, .fluid .first-render #roll.step-2,
+.solid .first-render #substance.step-2,
+.fluid .first-render #roll.step-2,
 .fluid .first-render #circle_small.step-2,
 .fluid .first-render #infusion.step-2,
 .fluid .first-render #dash_1.step-2,
 .fluid .first-render #dash_2.step-2,
 .fluid .first-render #circle_large.step-2,
-.fluid .first-render #substance.step-2, .terpenes .first-render #roll.step-2,
+.fluid .first-render #substance.step-2,
+.terpenes .first-render #roll.step-2,
 .terpenes .first-render #circle_small.step-2,
 .terpenes .first-render #infusion.step-2,
 .terpenes .first-render #dash_1.step-2,
@@ -1530,13 +1534,15 @@ input, button, textarea, select {
 .solid .first-render #dash_1.step-3,
 .solid .first-render #dash_2.step-3,
 .solid .first-render #circle_large.step-3,
-.solid .first-render #substance.step-3, .fluid .first-render #roll.step-3,
+.solid .first-render #substance.step-3,
+.fluid .first-render #roll.step-3,
 .fluid .first-render #circle_small.step-3,
 .fluid .first-render #infusion.step-3,
 .fluid .first-render #dash_1.step-3,
 .fluid .first-render #dash_2.step-3,
 .fluid .first-render #circle_large.step-3,
-.fluid .first-render #substance.step-3, .terpenes .first-render #roll.step-3,
+.fluid .first-render #substance.step-3,
+.terpenes .first-render #roll.step-3,
 .terpenes .first-render #circle_small.step-3,
 .terpenes .first-render #infusion.step-3,
 .terpenes .first-render #dash_1.step-3,
@@ -1552,13 +1558,15 @@ input, button, textarea, select {
 .solid .first-render #dash_1.step-4,
 .solid .first-render #dash_2.step-4,
 .solid .first-render #circle_large.step-4,
-.solid .first-render #substance.step-4, .fluid .first-render #roll.step-4,
+.solid .first-render #substance.step-4,
+.fluid .first-render #roll.step-4,
 .fluid .first-render #circle_small.step-4,
 .fluid .first-render #infusion.step-4,
 .fluid .first-render #dash_1.step-4,
 .fluid .first-render #dash_2.step-4,
 .fluid .first-render #circle_large.step-4,
-.fluid .first-render #substance.step-4, .terpenes .first-render #roll.step-4,
+.fluid .first-render #substance.step-4,
+.terpenes .first-render #roll.step-4,
 .terpenes .first-render #circle_small.step-4,
 .terpenes .first-render #infusion.step-4,
 .terpenes .first-render #dash_1.step-4,
@@ -1574,13 +1582,15 @@ input, button, textarea, select {
 .solid .first-render #dash_1.step-5,
 .solid .first-render #dash_2.step-5,
 .solid .first-render #circle_large.step-5,
-.solid .first-render #substance.step-5, .fluid .first-render #roll.step-5,
+.solid .first-render #substance.step-5,
+.fluid .first-render #roll.step-5,
 .fluid .first-render #circle_small.step-5,
 .fluid .first-render #infusion.step-5,
 .fluid .first-render #dash_1.step-5,
 .fluid .first-render #dash_2.step-5,
 .fluid .first-render #circle_large.step-5,
-.fluid .first-render #substance.step-5, .terpenes .first-render #roll.step-5,
+.fluid .first-render #substance.step-5,
+.terpenes .first-render #roll.step-5,
 .terpenes .first-render #circle_small.step-5,
 .terpenes .first-render #infusion.step-5,
 .terpenes .first-render #dash_1.step-5,
@@ -1596,13 +1606,15 @@ input, button, textarea, select {
 .solid .first-render #dash_1.step-6,
 .solid .first-render #dash_2.step-6,
 .solid .first-render #circle_large.step-6,
-.solid .first-render #substance.step-6, .fluid .first-render #roll.step-6,
+.solid .first-render #substance.step-6,
+.fluid .first-render #roll.step-6,
 .fluid .first-render #circle_small.step-6,
 .fluid .first-render #infusion.step-6,
 .fluid .first-render #dash_1.step-6,
 .fluid .first-render #dash_2.step-6,
 .fluid .first-render #circle_large.step-6,
-.fluid .first-render #substance.step-6, .terpenes .first-render #roll.step-6,
+.fluid .first-render #substance.step-6,
+.terpenes .first-render #roll.step-6,
 .terpenes .first-render #circle_small.step-6,
 .terpenes .first-render #infusion.step-6,
 .terpenes .first-render #dash_1.step-6,
@@ -1612,74 +1624,122 @@ input, button, textarea, select {
   transition: 500ms;
 }
 
-.solid .first-render #roll, .fluid .first-render #roll, .terpenes .first-render #roll {
+.solid .first-render #roll,
+.fluid .first-render #roll,
+.terpenes .first-render #roll {
   opacity: 0;
 }
 
-.solid .first-render #roll.step-1, .fluid .first-render #roll.step-1, .terpenes .first-render #roll.step-1 {
+.solid .first-render #roll.step-1,
+.fluid .first-render #roll.step-1,
+.terpenes .first-render #roll.step-1 {
   opacity: 0.3;
 }
 
-.solid #roll, .fluid #roll, .terpenes #roll {
+.solid #roll,
+.fluid #roll,
+.terpenes #roll {
   opacity: 0.3;
 }
 
-.solid .first-render #circle_small, .fluid .first-render #circle_small, .terpenes .first-render #circle_small {
+.solid .first-render [id*="blunt"] #circle_small,
+.fluid .first-render [id*="blunt"] #circle_small,
+.terpenes .first-render [id*="blunt"] #circle_small {
+  transform-origin: 85% 27%;
+}
+
+.solid .first-render [id*="infused"] #circle_small,
+.fluid .first-render [id*="infused"] #circle_small,
+.terpenes .first-render [id*="infused"] #circle_small {
+  transform-origin: 428px 145px;
+}
+
+.solid .first-render #circle_small,
+.fluid .first-render #circle_small,
+.terpenes .first-render #circle_small {
   opacity: 0;
   transform: rotate(80deg);
-  transform-origin: 85% 27%;
   transition-duration: 1s !important;
 }
 
-.solid .first-render #circle_small.step-2, .fluid .first-render #circle_small.step-2, .terpenes .first-render #circle_small.step-2 {
+.solid .first-render #circle_small.step-2,
+.fluid .first-render #circle_small.step-2,
+.terpenes .first-render #circle_small.step-2 {
   opacity: 1;
   transform: rotate(0deg);
 }
 
-.solid .first-render #infusion, .fluid .first-render #infusion, .terpenes .first-render #infusion {
+.solid .first-render #infusion,
+.fluid .first-render #infusion,
+.terpenes .first-render #infusion {
   opacity: 0;
   transform-origin: 85% 27%;
 }
 
-.solid .first-render #infusion.step-2, .fluid .first-render #infusion.step-2, .terpenes .first-render #infusion.step-2 {
+.solid .first-render #infusion.step-2,
+.fluid .first-render #infusion.step-2,
+.terpenes .first-render #infusion.step-2 {
   transition-delay: 0.2s;
   opacity: 1;
 }
 
 .solid .first-render #dash_1,
-.solid .first-render #dash_2, .fluid .first-render #dash_1,
-.fluid .first-render #dash_2, .terpenes .first-render #dash_1,
+.solid .first-render #dash_2,
+.fluid .first-render #dash_1,
+.fluid .first-render #dash_2,
+.terpenes .first-render #dash_1,
 .terpenes .first-render #dash_2 {
   opacity: 0;
 }
 
 .solid .first-render #dash_1.step-3,
-.solid .first-render #dash_2.step-3, .fluid .first-render #dash_1.step-3,
-.fluid .first-render #dash_2.step-3, .terpenes .first-render #dash_1.step-3,
+.solid .first-render #dash_2.step-3,
+.fluid .first-render #dash_1.step-3,
+.fluid .first-render #dash_2.step-3,
+.terpenes .first-render #dash_1.step-3,
 .terpenes .first-render #dash_2.step-3 {
   opacity: 1;
 }
 
-.solid .first-render #circle_large, .fluid .first-render #circle_large, .terpenes .first-render #circle_large {
+.solid .first-render [id*="blunt"] #circle_large,
+.fluid .first-render [id*="blunt"] #circle_large,
+.terpenes .first-render [id*="blunt"] #circle_large {
+  transform-origin: 17.5% 46.1%;
+}
+
+.solid .first-render [id*="infused"] #circle_large,
+.fluid .first-render [id*="infused"] #circle_large,
+.terpenes .first-render [id*="infused"] #circle_large {
+  transform-origin: 96px 269px;
+}
+
+.solid .first-render #circle_large,
+.fluid .first-render #circle_large,
+.terpenes .first-render #circle_large {
   opacity: 0;
   transform: rotate(-40deg);
-  transform-origin: 17.5% 46.1%;
   transition-duration: 0.8s !important;
 }
 
-.solid .first-render #circle_large.step-5, .fluid .first-render #circle_large.step-5, .terpenes .first-render #circle_large.step-5 {
+.solid .first-render #circle_large.step-5,
+.fluid .first-render #circle_large.step-5,
+.terpenes .first-render #circle_large.step-5 {
   transform: rotate(0deg);
   opacity: 1;
 }
 
-.solid .first-render #substance, .fluid .first-render #substance, .terpenes .first-render #substance {
+.solid .first-render #substance,
+.fluid .first-render #substance,
+.terpenes .first-render #substance {
   opacity: 0;
   transform-origin: 96px 260px;
   transition-delay: 0.15s !important;
   transition-duration: 0.8s !important;
 }
 
-.solid .first-render #substance.step-5, .fluid .first-render #substance.step-5, .terpenes .first-render #substance.step-5 {
+.solid .first-render #substance.step-5,
+.fluid .first-render #substance.step-5,
+.terpenes .first-render #substance.step-5 {
   opacity: 1;
 }
 /*# sourceMappingURL=style.css.map */
