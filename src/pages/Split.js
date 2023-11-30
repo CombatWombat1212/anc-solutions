@@ -90,7 +90,7 @@ function Split({ view, type }) {
     },
 
     end: {
-      1: 400,
+      1: 600,
       2: 0,
       3: 400,
       4: 300,

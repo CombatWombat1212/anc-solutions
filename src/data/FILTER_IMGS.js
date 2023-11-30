@@ -40,7 +40,7 @@ const FILTER_IMGS = {
     },
     aluminum: {
       name: "traditional_aluminum",
-      src: URL_PREFIX + "/assets/images/filter/traditional_ceramic.svg",
+      src: URL_PREFIX + "/assets/images/filter/traditional_aluminum.svg",
       alt: "",
       width: 650,
       height: 525,

@@ -1396,7 +1396,7 @@ input, button, textarea, select {
 .end .first-render #dash_1.step-1,
 .end .first-render #dash_2.step-1,
 .end .first-render #end_enlarged.step-1 {
-  transition: 600ms;
+  transition: 650ms;
 }
 
 .end .first-render #filter.step-2,

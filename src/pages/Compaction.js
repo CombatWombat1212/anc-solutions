@@ -85,10 +85,12 @@ function CompactionCol({ comp, index, updateCompactionItem, resizing, tallestMod
 
 
 
-  const [animatedComplete, setAnimatedComplete] = useState(false);
+  const [animatedStart, setAnimatedStart] = useState(false);
 
-  const handleAnimationComplete = () => {
-    setAnimatedComplete(true);
+  const handleAnimationStart = () => {
+    setTimeout(() => {
+    setAnimatedStart(true);
+    }, 200);
   };
 
   const springStyle = useSpring({
@@ -101,13 +103,13 @@ function CompactionCol({ comp, index, updateCompactionItem, resizing, tallestMod
       transform: !view.pageLoading ? "translateX(0)" : "translateX(-1rem)",
     },
     delay: index * 100,
-    onRest: handleAnimationComplete, 
+    onStart: handleAnimationStart, 
   });
 
 
   useEffect(() => {
-    updateCompactionItem(index, "animation", { complete: animatedComplete });
-  }, [animatedComplete]);
+    updateCompactionItem(index, "animation", { complete: animatedStart });
+  }, [animatedStart]);
 
   
   const on = useKeyToggle();
