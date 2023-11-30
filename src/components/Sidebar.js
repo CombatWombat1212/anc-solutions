@@ -58,6 +58,7 @@ function Sidebar({ view }) {
 
   const subpage = view.page != "selection";
 
+
   return (
     <div
       className="viewer--sidebar sidebar"
@@ -107,7 +108,6 @@ function Panel({ view, option, setPanels, index }) {
   }, [hovered, optionId]);
 
   const schematic = view.page == "schematic" ? "schematic" : "other";
-  const isSchematic = view.page == "schematic" ? true : false;
 
   const handleClick = () => {
     // if (view.page == "schematic") return;
@@ -130,7 +130,6 @@ function Panel({ view, option, setPanels, index }) {
   // const ind = String(option.index + 1).padStart(2, "0");
   const ind = String(index + 1).padStart(2, "0");
 
-  // TODO: make it so that you can't click on it if you're already on that page
 
   const isCurrentPage =
     view.page === (view.type && option[view.type] ? option[view.type].link.page : option.link.page) &&

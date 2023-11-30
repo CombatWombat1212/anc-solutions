@@ -200,7 +200,7 @@ input, button, textarea, select {
 }
 
 .viewer .sidebar--panel {
-  padding: calc(var(--viewer-inner-pad) * 0.4) calc(var(--viewer-inner-pad) * 0.95);
+  padding: calc(var(--viewer-inner-pad) * 0.325) calc(var(--viewer-inner-pad) * 0.95);
   border-bottom: 0.125rem solid #ffffff;
 }
 
@@ -1741,5 +1741,138 @@ input, button, textarea, select {
 .fluid .first-render #substance.step-5,
 .terpenes .first-render #substance.step-5 {
   opacity: 1;
+}
+
+.coating .first-render #roll.step-1,
+.coating .first-render #coating.step-1,
+.coating .first-render #brace.step-1,
+.coating .first-render #substance.step-1,
+.coating .first-render #circle.step-1 {
+  transition: 500ms;
+}
+
+.coating .first-render #roll.step-2,
+.coating .first-render #coating.step-2,
+.coating .first-render #brace.step-2,
+.coating .first-render #substance.step-2,
+.coating .first-render #circle.step-2 {
+  transition: 500ms;
+}
+
+.coating .first-render #roll.step-3,
+.coating .first-render #coating.step-3,
+.coating .first-render #brace.step-3,
+.coating .first-render #substance.step-3,
+.coating .first-render #circle.step-3 {
+  transition: 500ms;
+}
+
+.coating .first-render #roll.step-4,
+.coating .first-render #coating.step-4,
+.coating .first-render #brace.step-4,
+.coating .first-render #substance.step-4,
+.coating .first-render #circle.step-4 {
+  transition: 500ms;
+}
+
+.coating .first-render #roll.step-5,
+.coating .first-render #coating.step-5,
+.coating .first-render #brace.step-5,
+.coating .first-render #substance.step-5,
+.coating .first-render #circle.step-5 {
+  transition: 500ms;
+}
+
+.coating .first-render #roll.step-6,
+.coating .first-render #coating.step-6,
+.coating .first-render #brace.step-6,
+.coating .first-render #substance.step-6,
+.coating .first-render #circle.step-6 {
+  transition: 500ms;
+}
+
+.coating .first-render #roll {
+  transition-duration: 500ms !important;
+  transition-delay: 0.2s !important;
+  opacity: 0;
+}
+
+.coating .first-render #roll.step-1 {
+  opacity: 1;
+}
+
+.coating .first-render [id*="cigarette"] #coating {
+  transition-duration: 1.9s !important;
+}
+
+.coating .first-render #coating {
+  transition-duration: 1.7s !important;
+  transition-timing-function: cubic-bezier(1, 0, 0.2, 0.9) !important;
+}
+
+@supports not (clip-path: inset(0)) {
+  .coating .first-render #coating {
+    opacity: 0;
+  }
+}
+
+@supports (clip-path: inset(0)) {
+  .coating .first-render #coating {
+    clip-path: inset(100% 0% 0% 0%);
+  }
+}
+
+@supports not (clip-path: inset(0)) {
+  .coating .first-render #coating.step-2 {
+    opacity: 1;
+  }
+}
+
+@supports (clip-path: inset(0)) {
+  .coating .first-render #coating.step-2 {
+    clip-path: inset(8% 0% 0% 0%);
+  }
+}
+
+.coating .first-render #brace {
+  opacity: 0;
+  transition-duration: 0.3s !important;
+}
+
+.coating .first-render #brace.step-3 {
+  opacity: 1;
+}
+
+.coating .first-render #substance {
+  opacity: 0;
+  transition-duration: 0.8s !important;
+}
+
+.coating .first-render #substance.step-4 {
+  opacity: 1;
+}
+
+.coating .first-render #circle {
+  opacity: 0;
+  transform: rotate(-40deg);
+  transition-duration: 0.8s !important;
+}
+
+.coating .first-render #circle.step-4 {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.coating .first-render [id*="traditional"] #circle,
+.coating .first-render [id*="infused"] #circle {
+  transform-origin: 96px 209px;
+}
+
+.coating .first-render [id*="cigarette"] #circle {
+  transform-origin: 94px 172px;
+}
+
+.coating .first-render [id*="blunt"] #circle {
+  transform-origin: 93px 203px;
 }
 /*# sourceMappingURL=style.css.map */

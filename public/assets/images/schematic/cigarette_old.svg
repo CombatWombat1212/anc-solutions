@@ -13,16 +13,16 @@
       <rect width="255" height="197" stroke="none"/>
       <rect x="0.5" y="0.5" width="254" height="196" fill="none"/>
     </g>
-    <text id="end_body" transform="translate(10068 13490)" fill="#fff" font-size="16" font-family="Acumin VF" font-weight="500"><tspan x="0" y="0">i. Open</tspan><tspan x="0" y="26">Ii. Punched</tspan><tspan x="0" y="52">Iii. Twisted</tspan></text>
-    <text id="paper_body" transform="translate(10068 13806)" fill="#fff" font-size="16" font-family="Acumin VF" font-weight="500"><tspan x="0" y="0">i. Wood (white)</tspan><tspan x="0" y="26">ii. Wood (brown)</tspan><tspan x="0" y="52">iii. Organic Hemp</tspan></text>
+    <text id="end_body" transform="translate(10068 13473)" fill="#fff" font-size="16" font-family="Acumin VF" font-weight="500"><tspan x="0" y="17">i. Open</tspan><tspan x="0" y="43">Ii. Punched</tspan><tspan x="0" y="69">Iii. Twisted</tspan></text>
+    <text id="paper_body" transform="translate(10068 13789)" fill="#fff" font-size="16" font-family="Acumin VF" font-weight="500"><tspan x="0" y="17">i. Wood (white)</tspan><tspan x="0" y="43">ii. Wood (brown)</tspan><tspan x="0" y="69">iii. Organic Hemp</tspan></text>
     <text id="end_title" transform="translate(10068 13456)" fill="#ec0719" font-size="34" font-family="Acumin VF"><tspan x="0" y="0">End Type</tspan></text>
     <text id="paper_title" transform="translate(10068 13772)" fill="#ec0719" font-size="34" font-family="Acumin VF"><tspan x="0" y="0">Paper Type</tspan></text>
     <rect id="paper_dot" width="10" height="10" transform="translate(10449 13772)" fill="#ec0719"/>
     <line id="paper_line" x2="189" transform="translate(10265.5 13776.5)" fill="none" stroke="#ec0719" stroke-width="1"/>
-    <path id="filter_line" d="M1763.93-3014v62.841h190.434" transform="translate(8693 17054)" fill="none" stroke="#ec0719" stroke-width="1"/>
+    <path id="filter_line" d="M1763.927-3014v62.841h190.434" transform="translate(8693 17054)" fill="none" stroke="#ec0719" stroke-width="1"/>
     <g id="roll" transform="translate(10428.496 13456)">
       <g id="Group_523" data-name="Group 523" clip-path="url(#clip-path)">
-        <path id="Path_4964" data-name="Path 4964" d="M30.116,0C13.51,0,0,7.352,0,16.388v543.3c0,9.036,13.51,16.387,30.116,16.387s30.118-7.351,30.118-16.387V16.388C60.234,7.352,46.724,0,30.116,0m0,1.353c15.861,0,28.765,6.744,28.765,15.034s-12.9,15.034-28.765,15.034S1.353,24.677,1.353,16.388,14.255,1.354,30.116,1.354M58.881,559.687c0,8.291-12.9,15.034-28.765,15.034S1.353,567.978,1.353,559.687v-196.3c3.814,6.669,15.267,11.526,28.764,11.526s24.95-4.857,28.765-11.526Zm0-201.157c0,8.289-12.9,15.034-28.765,15.034S1.353,366.82,1.353,358.531V21.249C5.167,27.918,16.62,32.775,30.116,32.775s24.95-4.857,28.765-11.526Z" fill="#fff"/>
+        <path id="Path_4964" data-name="Path 4964" d="M30.116,0C13.51,0,0,7.352,0,16.388v543.3c0,9.036,13.51,16.387,30.116,16.387s30.118-7.351,30.118-16.387V16.388C60.234,7.352,46.724,0,30.116,0m0,1.353c15.861,0,28.765,6.744,28.765,15.034s-12.9,15.034-28.765,15.034S1.353,24.677,1.353,16.388,14.255,1.354,30.116,1.354M58.881,559.687c0,8.291-12.9,15.034-28.765,15.034S1.353,567.978,1.353,559.687v-196.3c3.814,6.669,15.267,11.526,28.764,11.526s24.95-4.857,28.765-11.526Zm0-201.157c0,8.289-12.9,15.034-28.765,15.034S1.353,366.82,1.353,358.531V21.249C5.167,27.918,16.62,32.775,30.116,32.775s24.95-4.857,28.765-11.526Z" transform="translate(0 0)" fill="#fff"/>
       </g>
     </g>
     <line id="end_line" x2="169" transform="translate(10265.5 13460.5)" fill="none" stroke="#ec0719" stroke-width="1"/>
@@ -40,23 +40,15 @@
       <rect width="255" height="135" stroke="none"/>
       <rect x="0.5" y="0.5" width="254" height="134" fill="none"/>
     </g>
-    <text id="filter_body" transform="translate(10706 14042)" fill="#fff" font-size="16" font-family="Acumin VF" font-weight="500"><tspan x="0" y="0">i. Cardboard</tspan><tspan x="0" y="26">ii. W</tspan><tspan x="0" y="52">iii. Foam Hollow</tspan><tspan x="0" y="78">iv. Foam Full</tspan></text>
-    <text id="compaction_body" transform="translate(10706 13796)" fill="#fff" font-size="16" font-family="Acumin VF" font-weight="500"><tspan x="0" y="0">Low, Medium, High</tspan></text>
-    <text id="sizes_body" transform="translate(10706 13595.5)" fill="#fff" font-size="16" font-family="Acumin VF" font-weight="500"><tspan x="0" y="0">0.3g - 1.0g</tspan></text>
+    <text id="filter_body" transform="translate(10706 14025)" fill="#fff" font-size="16" font-family="Acumin VF" font-weight="500"><tspan x="0" y="17">i. Cardboard</tspan><tspan x="0" y="43">ii. W</tspan><tspan x="0" y="69">iii. Foam Hollow</tspan><tspan x="0" y="95">iv. Foam Full</tspan></text>
+    <text id="compaction_body" transform="translate(10706 13779)" fill="#fff" font-size="16" font-family="Acumin VF" font-weight="500"><tspan x="0" y="17">Low, Medium, High</tspan></text>
+    <text id="sizes_body" transform="translate(10706 13578.5)" fill="#fff" font-size="16" font-family="Acumin VF" font-weight="500"><tspan x="0" y="17">0.3g - 1.0g</tspan></text>
     <text id="compaction_title" transform="translate(10706 13762)" fill="#ec0719" font-size="34" font-family="Acumin VF"><tspan x="0" y="0">Compaction</tspan></text>
     <text id="sizes_title" transform="translate(10706 13561.5)" fill="#ec0719" font-size="34" font-family="Acumin VF"><tspan x="0" y="0">Sizes</tspan></text>
     <text id="filter_title" transform="translate(10706 14010)" fill="#ec0719" font-size="34" font-family="Acumin VF"><tspan x="0" y="0">Filter Type</tspan></text>
     <line id="compaction_line" x2="62.313" transform="translate(10585.188 13772)" fill="none" stroke="#ec0719" stroke-width="1"/>
     <line id="sizes_line" x2="62.313" transform="translate(10585.188 13571.5)" fill="none" stroke="#ec0719" stroke-width="1"/>
-    <path id="compaction_brace" d="M1827.35-3593.5h64.839V-3017H1827.35" transform="translate(8693 17054)" fill="none" stroke="#ec0719" stroke-width="1"/>
-    <path id="sizes_brace" d="M1827.35-3593.5h64.839V-3017H1827.35" transform="translate(8693 17054)" fill="none" stroke="#ec0719" stroke-width="1"/>
-    <g id="coating_box" transform="translate(10647 13707)" fill="rgba(255,255,255,0.05)" stroke="#ec0719" stroke-width="1">
-      <rect width="255" height="174" stroke="none"/>
-      <rect x="0.5" y="0.5" width="254" height="173" fill="none"/>
-    </g>
-    <text id="coating_body" transform="translate(10706 13796)" fill="#fff" font-size="16" font-family="Acumin VF" font-weight="500"><tspan x="0" y="0">i. Diamonds</tspan><tspan x="0" y="23">ii. Kief</tspan><tspan x="0" y="46">iii. Isolate</tspan></text>
-    <text id="coating_title" transform="translate(10706 13762)" fill="#ec0719" font-size="34" font-family="Acumin VF"><tspan x="0" y="0">Coating</tspan></text>
-    <line id="coating_line" x2="62.313" transform="translate(10585.188 13772)" fill="none" stroke="#ec0719" stroke-width="1"/>
-    <path id="coating_brace" d="M1827.35-3593.5h64.839v366.563H1827.35" transform="translate(8693 17054)" fill="none" stroke="#ec0719" stroke-width="1"/>
+    <path id="compaction_brace" d="M1827.348-3593.5h64.839V-3017h-64.839" transform="translate(8693 17054)" fill="none" stroke="#ec0719" stroke-width="1"/>
+    <path id="sizes_brace" d="M1827.348-3593.5h64.839V-3017h-64.839" transform="translate(8693 17054)" fill="none" stroke="#ec0719" stroke-width="1"/>
   </g>
 </svg>

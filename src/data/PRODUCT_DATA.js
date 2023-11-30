@@ -10,6 +10,7 @@ import END_DATA from "./END_DATA";
 import SOLID_DATA from "./SOLID_DATA";
 import FLUID_DATA from "./FLUID_DATA";
 import TERPENES_DATA from "./TERPENES_DATA";
+import COATING_DATA from "./COATING_DATA";
 
 
 const PAGE_DATA = {
@@ -73,6 +74,12 @@ const PAGE_DATA = {
     index: 7,
     id: "terpenes",
     title: "Terpenes",
+  },
+  coating: {
+    level: "sub",
+    index: 8,
+    id: "coating",
+    title: "Coating",
   },
 };
 
@@ -249,6 +256,7 @@ const DATABASE = {
   solid: SOLID_DATA,
   fluid: FLUID_DATA,
   terpenes: TERPENES_DATA,
+  coating: COATING_DATA,
 };
 
 

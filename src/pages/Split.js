@@ -11,6 +11,8 @@ import TERPENES_IMGS from "../data/TERPENES_IMGS";
 import { useGraphicLoadManager, useGraphicLoadTracker } from "../scripts/hooks/useGraphicLoadManager";
 import AnimPres from "../components/AnimPres";
 import { cubicBezier } from "framer-motion";
+import COATING_IMGS from "../data/COATING_IMGS";
+import PRODUCT_DATA from "../data/PRODUCT_DATA";
 
 function delay(duration) {
   return new Promise((resolve) => setTimeout(resolve, duration));
@@ -23,6 +25,7 @@ const DATABASE = {
   solid: SOLID_IMGS,
   fluid: FLUID_IMGS,
   terpenes: TERPENES_IMGS,
+  coating: COATING_IMGS,
 };
 
 function Split({ view, type }) {
@@ -64,23 +67,17 @@ function Split({ view, type }) {
 
   const graphic = useRef(null);
 
-
-
-
-
   const specialties = {
-      1: 400,
-      2: 400,
-      3: 300,
-      4: 100,
-      5: 200,
-      6: 900,
+    1: 400,
+    2: 400,
+    3: 300,
+    4: 100,
+    5: 200,
+    6: 900,
   };
 
-
-
   const delays = {
-    default:{
+    default: {
       1: 400,
       2: 0,
       3: 450,
@@ -102,8 +99,14 @@ function Split({ view, type }) {
     fluid: specialties,
     terpenes: specialties,
 
-
-
+    coating: {
+      1: 0,
+      2: 1100,
+      3: 400,
+      4: 500,
+      5: 500,
+      6: 500,
+    },
   };
 
   const [animationComplete, setAnimationComplete] = useState(false);
@@ -157,7 +160,6 @@ function Split({ view, type }) {
       parts.forEach((part) => {
         part.classList.add("step-6");
       });
-
 
       await delay(del[6]);
       if (isCancelled) return;
@@ -334,8 +336,7 @@ function Visual({
   // useEffect(() => {
   //   console.log(animationComplete || dockItemSelected ? "static" : "first-render");
   // }, [animationComplete, dockItemSelected]);
-  useEffect(() => {
-  }, [animationComplete, dockItemSelected]);
+  useEffect(() => {}, [animationComplete, dockItemSelected]);
 
   return (
     <AnimPres animation={animation} condition={true} className={classes} elemkey={imgState.src} mode="wait">

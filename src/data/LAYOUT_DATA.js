@@ -28,12 +28,14 @@ const LAYOUT_DATA = {
         "solid",
         "fluid",
         "terpenes",
+        "coating",
     ],
 
     specialty:[
         "solid",
         "fluid",
         "terpenes",
+        "coating",
     ],
 
 

@@ -1,4 +1,5 @@
 import BAR_LABELS from "./BAR_LABELS";
+import { COATING_DOCK_IMGS } from "./COATING_IMGS";
 import { END_DOCK_IMGS } from "./END_IMGS";
 import { FILTER_DOCK_IMGS } from "./FILTER_IMGS";
 import { FLUID_DOCK_IMGS } from "./FLUID_IMGS";
@@ -939,6 +940,68 @@ const DOCK_DATA = {
       ],
     },
   },
+
+
+
+  coating:{
+
+    diamonds: {
+      id: "diamonds",
+      title: "Diamonds",
+      img: COATING_DOCK_IMGS.diamonds,
+      link: { dock: "diamonds" },
+
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description:
+            "Rolling the outside of the pre-roll in diamond concentrate, comprised of ultra-pure THC or CBD crystals, significantly enhances potency and adds a luxurious, visually appealing crystalline layer.",
+        },
+      ],
+    },
+
+
+    kief: {
+      id: "kief",
+      title: "Kief",
+      img: COATING_DOCK_IMGS.kief,
+      link: { dock: "kief" },
+
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description:
+            "Covering the pre-roll in trichome-rich kief granules, which increases visual appeal with a frosty look and also significantly boosts both flavor and potency.",
+        },
+      ],
+    },
+
+
+    isolate: {
+      id: "isolate",
+      title: "Isolate",
+      img: COATING_DOCK_IMGS.isolate,
+      link: { dock: "isolate" },
+
+      stats: [
+        {
+          title: "Description",
+          type: "description",
+          description:
+            "Coating a pre-roll with isolate, a nearly 100% pure crystalline powder of CBD or THC, boosts potency substantially while maintaining the original flavor profile, ideal for a high concentration of cannabinoids.",
+        },
+      ],
+    },
+
+
+
+
+
+  },
+
+
 };
 
 export default DOCK_DATA;
