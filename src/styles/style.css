@@ -200,13 +200,13 @@ input, button, textarea, select {
 }
 
 .viewer .sidebar--panel {
-  padding: calc(var(--viewer-inner-pad) * 0.325) calc(var(--viewer-inner-pad) * 0.95);
+  padding: calc(var(--viewer-inner-pad) * 0.285) calc(var(--viewer-inner-pad) * 0.95);
   border-bottom: 0.125rem solid #ffffff;
 }
 
 @media screen and (max-width: 91.9375em) {
   .viewer .sidebar--panel {
-    padding: calc(var(--viewer-inner-pad) * 0.35) calc(var(--viewer-inner-pad) * 0.85);
+    padding: calc(var(--viewer-inner-pad) * 0.265) calc(var(--viewer-inner-pad) * 0.85);
   }
 }
 

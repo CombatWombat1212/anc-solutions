@@ -18,12 +18,12 @@
     // padding: calc(var(--viewer-inner-pad) * 0.1) var(--viewer-inner-pad);
     // padding: calc(var(--viewer-inner-pad) * 0.5) var(--viewer-inner-pad);
     // padding: calc(var(--viewer-inner-pad) * 0.4) calc(var(--viewer-inner-pad) * 0.95);
-    padding: calc(var(--viewer-inner-pad) * 0.325) calc(var(--viewer-inner-pad) * 0.95);
+    padding: calc(var(--viewer-inner-pad) * 0.285) calc(var(--viewer-inner-pad) * 0.95);
 
     @include viewer-border(bottom);
     
     @include xxl-down{
-      padding: calc(var(--viewer-inner-pad) * 0.35) calc(var(--viewer-inner-pad) * 0.85) ;
+      padding: calc(var(--viewer-inner-pad) * 0.265) calc(var(--viewer-inner-pad) * 0.85) ;
     }
   }
 
