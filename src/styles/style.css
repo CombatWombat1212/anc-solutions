@@ -1830,7 +1830,7 @@ input, button, textarea, select {
 
 @supports (clip-path: inset(0)) {
   .coating .first-render #coating.step-2 {
-    clip-path: inset(8% 0% 0% 0%);
+    clip-path: inset(6% 0% 0% 0%);
   }
 }
 

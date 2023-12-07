@@ -128,8 +128,6 @@ function Split({ view, type }) {
 
     const del = delays[view.page] || delays.default;
 
-    console.log(parts);
-
     async function animateParts(parts) {
       await delay(del[1]);
       if (isCancelled) return;
