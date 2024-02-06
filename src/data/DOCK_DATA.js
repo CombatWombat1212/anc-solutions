@@ -603,7 +603,7 @@ const DOCK_DATA = {
 
     foam_hallow: {
       id: "foam_hallow",
-      title: "Foam Hallow",
+      title: "Foam Hollow",
       img: FILTER_DOCK_IMGS.foam_hallow,
       link: { dock: "foam_hallow" },
       stats: [
